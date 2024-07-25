@@ -1,0 +1,6 @@
+/home/zzzccc/Desktop/Kotoamatsukami/CMakeFiles/intrinsics_gen.dir
+/home/zzzccc/Desktop/Kotoamatsukami/CMakeFiles/omp_gen.dir
+/home/zzzccc/Desktop/Kotoamatsukami/CMakeFiles/acc_gen.dir
+/home/zzzccc/Desktop/Kotoamatsukami/CMakeFiles/jit_asm.dir
+/home/zzzccc/Desktop/Kotoamatsukami/CMakeFiles/edit_cache.dir
+/home/zzzccc/Desktop/Kotoamatsukami/CMakeFiles/rebuild_cache.dir
