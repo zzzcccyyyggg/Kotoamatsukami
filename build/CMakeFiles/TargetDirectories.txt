@@ -1,0 +1,13 @@
+/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/intrinsics_gen.dir
+/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/omp_gen.dir
+/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/acc_gen.dir
+/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/RISCVTargetParserTableGen.dir
+/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/Kotoamatsukami.dir
+/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/install-Kotoamatsukami.dir
+/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/install-Kotoamatsukami-stripped.dir
+/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/edit_cache.dir
+/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/rebuild_cache.dir
+/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/list_install_components.dir
+/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/install.dir
+/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/install/local.dir
+/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/install/strip.dir

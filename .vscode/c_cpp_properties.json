@@ -6,7 +6,7 @@
                 "${workspaceFolder}/**",
                 "/home/zzzccc/llvm-17/llvm-project/include/**",
                 "/home/zzzccc/llvm-17/llvm-project/llvm/include/**",
-                "/home/zzzccc/Desktop/o-mvll/src/include/**"
+                "/home/zzzccc/cxzz/o-mvll/src/include/**"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/clang",

@@ -1,0 +1,31 @@
+#ifndef LLVM_Kotoamatsukami_Loopen_H
+#define LLVM_Kotoamatsukami_Loopen_H
+
+#include "llvm/IR/PassManager.h"
+#include "llvm/IR/BasicBlock.h"
+#include "llvm/IR/IRBuilder.h"
+#include "llvm/IR/Instructions.h"
+#include "llvm/Pass.h"
+#include "llvm/Transforms/Utils/BasicBlockUtils.h"
+#include "llvm/Passes/PassPlugin.h"
+#include "llvm/Passes/PassBuilder.h"
+#include <map>
+#include <set>
+#include <cstdlib> // 包含 srand 和 rand
+#include <ctime>   // 包含 time
+namespace llvm
+{
+    class Loopen : public PassInfoMixin<Loopen>
+    {
+    public:
+        PreservedAnalyses run(Function &F, FunctionAnalysisManager &AM);
+        // 保证不被跳过
+        static bool isRequired() { return true; }
+    };
+    llvm::Function *createQuickPow(llvm::Module *M);
+    void funcLoopen(IRBuilder<> &builder, LLVMContext &context, Function &F, Function *quickPowFunc, Value *N, Value *M, BasicBlock *OldBB);
+    unsigned int quick_pow(unsigned int base, unsigned int exp, unsigned int mod);
+
+} // namespace llvm
+
+#endif

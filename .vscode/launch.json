@@ -5,29 +5,7 @@
             "name": "Debug jit_asm",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/jit_asm",  // 可执行文件路径
-            "args": [],  // 传递给程序的参数
-            "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
-            "environment": [],
-            "externalConsole": false,
-            "MIMode": "gdb",
-            "setupCommands": [
-                {
-                    "description": "Enable pretty-printing for gdb",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                }
-            ],
-            "miDebuggerPath": "/usr/bin/gdb",  // gdb 的路径
-            "preLaunchTask": "build",  // 调试前执行的任务
-            "internalConsoleOptions": "openOnSessionStart"
-        },
-        {
-            "name": "Debug jit_asm",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${workspaceFolder}/jit_asm",
+            "program": "${workspaceFolder}/build/jit_asm",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",

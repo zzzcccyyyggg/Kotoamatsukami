@@ -65,6 +65,22 @@
         "stop_token": "cpp",
         "thread": "cpp",
         "typeindex": "cpp",
-        "variant": "cpp"
-    }
+        "variant": "cpp",
+        "charconv": "cpp",
+        "format": "cpp",
+        "iomanip": "cpp",
+        "span": "cpp",
+        "text_encoding": "cpp",
+        "__split_buffer": "cpp",
+        "__bit_reference": "cpp",
+        "__hash_table": "cpp",
+        "__tree": "cpp",
+        "__node_handle": "cpp",
+        "queue": "cpp",
+        "stack": "cpp",
+        "fstream": "cpp",
+        "stdio.h": "c",
+        "time.h": "c"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
 }
