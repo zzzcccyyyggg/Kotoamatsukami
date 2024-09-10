@@ -64,14 +64,18 @@ OPT_BC_FILE="${BASENAME}_optimized.ll"
 
 # 第二步：使用 opt 工具处理 LLVM IR 文件（加载插件和后端选项）
 echo $OPT -load-pass-plugin $Kotoamatsukami_so -passes="for-obs-pass" -passes="indirect-jmp-pass" -S -o $OPT_BC_FILE $BC_FILE 
-
 $OPT -load-pass-plugin $Kotoamatsukami_so -passes="switch-2-if" -S -o $OPT_BC_FILE $BC_FILE
-$OPT -load-pass-plugin $Kotoamatsukami_so -passes="indirect-jmp-pass" -S -o $OPT_BC_FILE $OPT_BC_FILE  
-$OPT -load-pass-plugin $Kotoamatsukami_so -passes="for-obs-pass" -S -o $OPT_BC_FILE $OPT_BC_FILE 
+
+echo $OPT -load-pass-plugin $Kotoamatsukami_so -passes="split-basic-block" -S -o $OPT_BC_FILE $OPT_BC_FILE
+$OPT -load-pass-plugin $Kotoamatsukami_so -passes="split-basic-block" -S -o $OPT_BC_FILE $OPT_BC_FILE
+
+# $OPT -load-pass-plugin $Kotoamatsukami_so -passes="for-obs-pass" -S -o $OPT_BC_FILE $OPT_BC_FILE
+$OPT -load-pass-plugin $Kotoamatsukami_so -passes="loopen" -S -o $OPT_BC_FILE $OPT_BC_FILE 
+# $OPT -load-pass-plugin $Kotoamatsukami_so -passes="indirect-jmp-pass" -S -o $OPT_BC_FILE $BC_FILE  
  
 # 第三步：使用 clang 将处理后的 LLVM IR 文件生成最终目标文件或可执行文件（后端选项）
-echo $CLANG $OPT_BC_FILE -o $OUTPUT_FILE -Wno-int-conversion -Wno-implicit-function-declaration -Wl,--unresolved-symbols=ignore-all -Wl,--allow-shlib-undefined "${ALL_ARGS[@]}"
-$CLANG $OPT_BC_FILE -o $OUTPUT_FILE -Wno-int-conversion -Wno-implicit-function-declaration -Wl,--unresolved-symbols=ignore-all -Wl,--allow-shlib-undefined "${ALL_ARGS[@]}"
+echo $CLANG $OPT_BC_FILE -O0 -o $OUTPUT_FILE -Wno-int-conversion -Wno-implicit-function-declaration -Wl,--unresolved-symbols=ignore-all -Wl,--allow-shlib-undefined "${ALL_ARGS[@]}"
+$CLANG $OPT_BC_FILE -O0 -o $OUTPUT_FILE -Wno-int-conversion -Wno-implicit-function-declaration -Wl,--unresolved-symbols=ignore-all -Wl,--allow-shlib-undefined "${ALL_ARGS[@]}"
 
 # 输出保留的中间文件
 echo "Intermediate files retained:"

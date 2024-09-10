@@ -80,7 +80,12 @@
         "stack": "cpp",
         "fstream": "cpp",
         "stdio.h": "c",
-        "time.h": "c"
+        "time.h": "c",
+        "forward_list": "cpp",
+        "valarray": "cpp",
+        "ranges": "cpp",
+        "ios": "cpp",
+        "any": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }

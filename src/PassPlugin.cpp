@@ -5,6 +5,7 @@
 #include "include/ForObsPass.h"
 #include "include/SwitchToIfElsePass.h"
 #include "include/Loopen.hpp"
+#include "SplitBasicBlock.h"
 using namespace llvm;
 
 llvm::PassPluginLibraryInfo getKotoamatsukamiPluginInfo()
@@ -64,6 +65,16 @@ llvm::PassPluginLibraryInfo getKotoamatsukamiPluginInfo()
               if (Name == "loopen")
               {
                 MPM.addPass(createModuleToFunctionPassAdaptor(Loopen()));
+                return true;
+              }
+              return false;
+            });
+        PB.registerPipelineParsingCallback(
+            [](StringRef Name, ModulePassManager &MPM, ArrayRef<PassBuilder::PipelineElement>)
+            {
+              if (Name == "split-basic-block")
+              {
+                MPM.addPass(SplitBasicBlock());
                 return true;
               }
               return false;

@@ -281,9 +281,6 @@ Kotoamatsukami_BINARY_DIR:STATIC=/home/zzzccc/cxzz/Kotoamatsukami/build
 //Value Computed by CMake
 Kotoamatsukami_IS_TOP_LEVEL:STATIC=ON
 
-//Dependencies for the target
-Kotoamatsukami_LIB_DEPENDS:STATIC=general;LLVMExecutionEngine;general;LLVMMCJIT;general;LLVMOrcJIT;general;LLVMCore;general;LLVMSupport;general;LLVMX86CodeGen;general;LLVMX86Desc;general;LLVMX86Info;general;LLVMX86AsmParser;general;LLVMX86CodeGen;general;LLVMX86Desc;general;LLVMX86Disassembler;general;LLVMX86Info;general;LLVMIRReader;general;LLVMX86CodeGen;general;LLVMX86AsmParser;general;LLVMX86Desc;general;LLVMX86Disassembler;general;LLVMX86Info;
-
 //Value Computed by CMake
 Kotoamatsukami_SOURCE_DIR:STATIC=/home/zzzccc/cxzz/Kotoamatsukami
 

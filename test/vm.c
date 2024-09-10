@@ -45,6 +45,7 @@ VM *new_vm(int *instr, int instr_size, int mem_size) {
 void run_vm(VM *vm) {
     int opcode, reg1, reg2, reg3, imm, addr; // Declare variables for the opcode and the operands
     int running = 1; // Declare a variable for the running state
+    printf("input\n");
     while (running) { // Loop while running
         opcode = vm->instr[vm->pc]; // Fetch the opcode from the instruction array
         switch (opcode) { // Switch on the opcode

@@ -191,12 +191,12 @@ CMakeFiles/RISCVTargetParserTableGen.dir/clean:
 CMakeFiles/Kotoamatsukami.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target Kotoamatsukami"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9 "Built target Kotoamatsukami"
 .PHONY : CMakeFiles/Kotoamatsukami.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Kotoamatsukami.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles 9
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Kotoamatsukami.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles 0
 .PHONY : CMakeFiles/Kotoamatsukami.dir/rule
@@ -222,7 +222,7 @@ CMakeFiles/install-Kotoamatsukami.dir/all: CMakeFiles/Kotoamatsukami.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/install-Kotoamatsukami.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles 9
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/install-Kotoamatsukami.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles 0
 .PHONY : CMakeFiles/install-Kotoamatsukami.dir/rule
@@ -248,7 +248,7 @@ CMakeFiles/install-Kotoamatsukami-stripped.dir/all: CMakeFiles/Kotoamatsukami.di
 
 # Build rule for subdir invocation for target.
 CMakeFiles/install-Kotoamatsukami-stripped.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles 9
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/install-Kotoamatsukami-stripped.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles 0
 .PHONY : CMakeFiles/install-Kotoamatsukami-stripped.dir/rule

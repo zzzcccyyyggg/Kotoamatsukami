@@ -372,6 +372,30 @@ src/pass/Loopen.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/Loopen.cpp.s
 .PHONY : src/pass/Loopen.cpp.s
 
+src/pass/SplitBasicBlock.o: src/pass/SplitBasicBlock.cpp.o
+.PHONY : src/pass/SplitBasicBlock.o
+
+# target to build an object file
+src/pass/SplitBasicBlock.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/SplitBasicBlock.cpp.o
+.PHONY : src/pass/SplitBasicBlock.cpp.o
+
+src/pass/SplitBasicBlock.i: src/pass/SplitBasicBlock.cpp.i
+.PHONY : src/pass/SplitBasicBlock.i
+
+# target to preprocess a source file
+src/pass/SplitBasicBlock.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/SplitBasicBlock.cpp.i
+.PHONY : src/pass/SplitBasicBlock.cpp.i
+
+src/pass/SplitBasicBlock.s: src/pass/SplitBasicBlock.cpp.s
+.PHONY : src/pass/SplitBasicBlock.s
+
+# target to generate assembly for a file
+src/pass/SplitBasicBlock.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/SplitBasicBlock.cpp.s
+.PHONY : src/pass/SplitBasicBlock.cpp.s
+
 src/pass/SwitchToIfElsePass.o: src/pass/SwitchToIfElsePass.cpp.o
 .PHONY : src/pass/SwitchToIfElsePass.o
 
@@ -395,6 +419,30 @@ src/pass/SwitchToIfElsePass.s: src/pass/SwitchToIfElsePass.cpp.s
 src/pass/SwitchToIfElsePass.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/SwitchToIfElsePass.cpp.s
 .PHONY : src/pass/SwitchToIfElsePass.cpp.s
+
+src/utils/utils.o: src/utils/utils.cpp.o
+.PHONY : src/utils/utils.o
+
+# target to build an object file
+src/utils/utils.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/utils/utils.cpp.o
+.PHONY : src/utils/utils.cpp.o
+
+src/utils/utils.i: src/utils/utils.cpp.i
+.PHONY : src/utils/utils.i
+
+# target to preprocess a source file
+src/utils/utils.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/utils/utils.cpp.i
+.PHONY : src/utils/utils.cpp.i
+
+src/utils/utils.s: src/utils/utils.cpp.s
+.PHONY : src/utils/utils.s
+
+# target to generate assembly for a file
+src/utils/utils.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/utils/utils.cpp.s
+.PHONY : src/utils/utils.cpp.s
 
 # Help Target
 help:
@@ -430,9 +478,15 @@ help:
 	@echo "... src/pass/Loopen.o"
 	@echo "... src/pass/Loopen.i"
 	@echo "... src/pass/Loopen.s"
+	@echo "... src/pass/SplitBasicBlock.o"
+	@echo "... src/pass/SplitBasicBlock.i"
+	@echo "... src/pass/SplitBasicBlock.s"
 	@echo "... src/pass/SwitchToIfElsePass.o"
 	@echo "... src/pass/SwitchToIfElsePass.i"
 	@echo "... src/pass/SwitchToIfElsePass.s"
+	@echo "... src/utils/utils.o"
+	@echo "... src/utils/utils.i"
+	@echo "... src/utils/utils.s"
 .PHONY : help
 
 

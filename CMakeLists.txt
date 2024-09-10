@@ -28,6 +28,8 @@ add_llvm_pass_plugin(Kotoamatsukami
     src/pass/ForObsPass.cpp
     src/pass/SwitchToIfElsePass.cpp
     src/pass/Loopen.cpp
+    src/pass/SplitBasicBlock.cpp
+    src/utils/utils.cpp
     )
 # # # Define the executable
 # add_executable(jit_asm 
@@ -37,24 +39,24 @@ add_llvm_pass_plugin(Kotoamatsukami
 
 # Link against LLVM libraries
 # 链接LLVM库
-llvm_map_components_to_libnames(llvm_libs 
-  ExecutionEngine
-  MCJIT
-  OrcJIT
-  Core
-  Support
-  nativecodegen
-  X86AsmParser
-  X86CodeGen
-  X86Desc
-  X86Disassembler
-  X86Info
-  native
-  irreader 
-)
+# llvm_map_components_to_libnames(llvm_libs 
+#   ExecutionEngine
+#   MCJIT
+#   OrcJIT
+#   Core
+#   Support
+#   nativecodegen
+#   X86AsmParser
+#   X86CodeGen
+#   X86Desc
+#   X86Disassembler
+#   X86Info
+#   native
+#   irreader 
+# )
 
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -rdynamic")
 # Use LLVM's target link libraries
-target_link_libraries(Kotoamatsukami ${llvm_libs} ${LLVM_LIBRARIES})
+# target_link_libraries(Kotoamatsukami ${llvm_libs} ${LLVM_LIBRARIES})
 
 

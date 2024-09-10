@@ -1,7 +1,7 @@
-CMakeFiles/Kotoamatsukami.dir/src/PassPlugin.cpp.o: \
- /home/zzzccc/cxzz/Kotoamatsukami/src/PassPlugin.cpp \
+CMakeFiles/Kotoamatsukami.dir/src/pass/SplitBasicBlock.cpp.o: \
+ /home/zzzccc/cxzz/Kotoamatsukami/src/pass/SplitBasicBlock.cpp \
  /usr/include/stdc-predef.h \
- /home/zzzccc/cxzz/Kotoamatsukami/src/include/AddJunkCodePass.h \
+ /home/zzzccc/cxzz/Kotoamatsukami/src/include/SplitBasicBlock.h \
  /home/zzzccc/llvm-17/llvm-project/build/include/llvm/IR/PassManager.h \
  /home/zzzccc/llvm-17/llvm-project/build/include/llvm/ADT/DenseMap.h \
  /home/zzzccc/llvm-17/llvm-project/build/include/llvm/ADT/DenseMapInfo.h \
@@ -304,7 +304,6 @@ CMakeFiles/Kotoamatsukami.dir/src/PassPlugin.cpp.o: \
  /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Support/TypeName.h \
  /usr/include/c++/13/list /usr/include/c++/13/bits/stl_list.h \
  /usr/include/c++/13/bits/list.tcc \
- /home/zzzccc/cxzz/Kotoamatsukami/src/include/IndirectJmpPass.h \
  /home/zzzccc/llvm-17/llvm-project/build/include/llvm/ADT/Statistic.h \
  /usr/include/c++/13/atomic \
  /home/zzzccc/llvm-17/llvm-project/build/include/llvm/IR/IRBuilder.h \
@@ -355,24 +354,9 @@ CMakeFiles/Kotoamatsukami.dir/src/PassPlugin.cpp.o: \
  /home/zzzccc/llvm-17/llvm-project/build/include/llvm/IR/InlineAsm.h \
  /usr/include/c++/13/map /usr/include/c++/13/bits/stl_tree.h \
  /usr/include/c++/13/bits/stl_map.h \
- /usr/include/c++/13/bits/stl_multimap.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Passes/PassBuilder.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Analysis/CGSCCPassManager.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Analysis/LazyCallGraph.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/ADT/SetVector.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Analysis/TargetLibraryInfo.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/TargetParser/Triple.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Support/VersionTuple.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Analysis/TargetLibraryInfo.def \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Passes/OptimizationLevel.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Support/PGOOptions.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/ADT/IntrusiveRefCntPtr.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Transforms/IPO/Inliner.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Analysis/InlineAdvisor.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Analysis/InlineCost.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Analysis/InlineModelFeatureMaps.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Analysis/TensorSpec.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Support/JSON.h \
+ /usr/include/c++/13/bits/stl_multimap.h /usr/include/c++/13/set \
+ /usr/include/c++/13/bits/stl_set.h \
+ /usr/include/c++/13/bits/stl_multiset.h /usr/include/c++/13/random \
  /usr/include/c++/13/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
@@ -395,59 +379,8 @@ CMakeFiles/Kotoamatsukami.dir/src/PassPlugin.cpp.o: \
  /usr/include/c++/13/tr1/poly_hermite.tcc \
  /usr/include/c++/13/tr1/poly_laguerre.tcc \
  /usr/include/c++/13/tr1/riemann_zeta.tcc \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Analysis/Utils/ImportedFunctionsInliningStatistics.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Transforms/IPO/ModuleInliner.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Transforms/Instrumentation.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/IR/DebugInfoMetadata.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Support/Discriminator.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/IR/DebugInfoFlags.def \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Transforms/Scalar/LoopPassManager.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/ADT/PriorityWorklist.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Analysis/LoopAnalysisManager.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Analysis/LoopInfo.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Support/GenericLoopInfo.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/ADT/PostOrderIterator.h \
- /usr/include/c++/13/set /usr/include/c++/13/bits/stl_set.h \
- /usr/include/c++/13/bits/stl_multiset.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/ADT/SetOperations.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Support/GenericDomTree.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Support/CFGDiff.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Support/CFGUpdate.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Analysis/LoopNestAnalysis.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Transforms/Utils/LCSSA.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Transforms/Utils/LoopSimplify.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Transforms/Utils/LoopUtils.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Analysis/IVDescriptors.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/IR/IntrinsicInst.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Analysis/LoopAccessAnalysis.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/ADT/EquivalenceClasses.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Analysis/ScalarEvolutionExpressions.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Analysis/ScalarEvolution.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/ADT/FoldingSet.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/IR/ConstantRange.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/IR/ValueMap.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Support/Mutex.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/IR/DiagnosticInfo.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Support/SourceMgr.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Support/MemoryBuffer.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Support/MemoryBufferRef.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Support/SMLoc.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Transforms/Utils/ValueMapper.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Passes/PassPlugin.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Support/DynamicLibrary.h \
- /home/zzzccc/cxzz/Kotoamatsukami/src/include/ForObsPass.h \
- /home/zzzccc/cxzz/Kotoamatsukami/src/include/SwitchToIfElsePass.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Transforms/Utils/BasicBlockUtils.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/IR/Dominators.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/ADT/DepthFirstIterator.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Support/GenericDomTreeConstruction.h \
- /usr/include/c++/13/queue /usr/include/c++/13/deque \
- /usr/include/c++/13/bits/stl_deque.h /usr/include/c++/13/bits/deque.tcc \
- /usr/include/c++/13/bits/stl_queue.h \
- /home/zzzccc/cxzz/Kotoamatsukami/src/include/Loopen.hpp \
- /usr/include/c++/13/random /usr/include/c++/13/bits/random.h \
+ /usr/include/c++/13/bits/random.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/opt_random.h \
  /usr/include/c++/13/bits/random.tcc /usr/include/c++/13/numeric \
  /usr/include/c++/13/bits/stl_numeric.h \
- /usr/include/c++/13/pstl/glue_numeric_defs.h \
- /home/zzzccc/cxzz/Kotoamatsukami/src/include/SplitBasicBlock.h
+ /usr/include/c++/13/pstl/glue_numeric_defs.h

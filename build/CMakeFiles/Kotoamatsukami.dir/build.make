@@ -153,6 +153,34 @@ CMakeFiles/Kotoamatsukami.dir/src/pass/Loopen.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Kotoamatsukami.dir/src/pass/Loopen.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zzzccc/cxzz/Kotoamatsukami/src/pass/Loopen.cpp -o CMakeFiles/Kotoamatsukami.dir/src/pass/Loopen.cpp.s
 
+CMakeFiles/Kotoamatsukami.dir/src/pass/SplitBasicBlock.cpp.o: CMakeFiles/Kotoamatsukami.dir/flags.make
+CMakeFiles/Kotoamatsukami.dir/src/pass/SplitBasicBlock.cpp.o: /home/zzzccc/cxzz/Kotoamatsukami/src/pass/SplitBasicBlock.cpp
+CMakeFiles/Kotoamatsukami.dir/src/pass/SplitBasicBlock.cpp.o: CMakeFiles/Kotoamatsukami.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Kotoamatsukami.dir/src/pass/SplitBasicBlock.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Kotoamatsukami.dir/src/pass/SplitBasicBlock.cpp.o -MF CMakeFiles/Kotoamatsukami.dir/src/pass/SplitBasicBlock.cpp.o.d -o CMakeFiles/Kotoamatsukami.dir/src/pass/SplitBasicBlock.cpp.o -c /home/zzzccc/cxzz/Kotoamatsukami/src/pass/SplitBasicBlock.cpp
+
+CMakeFiles/Kotoamatsukami.dir/src/pass/SplitBasicBlock.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Kotoamatsukami.dir/src/pass/SplitBasicBlock.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zzzccc/cxzz/Kotoamatsukami/src/pass/SplitBasicBlock.cpp > CMakeFiles/Kotoamatsukami.dir/src/pass/SplitBasicBlock.cpp.i
+
+CMakeFiles/Kotoamatsukami.dir/src/pass/SplitBasicBlock.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Kotoamatsukami.dir/src/pass/SplitBasicBlock.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zzzccc/cxzz/Kotoamatsukami/src/pass/SplitBasicBlock.cpp -o CMakeFiles/Kotoamatsukami.dir/src/pass/SplitBasicBlock.cpp.s
+
+CMakeFiles/Kotoamatsukami.dir/src/utils/utils.cpp.o: CMakeFiles/Kotoamatsukami.dir/flags.make
+CMakeFiles/Kotoamatsukami.dir/src/utils/utils.cpp.o: /home/zzzccc/cxzz/Kotoamatsukami/src/utils/utils.cpp
+CMakeFiles/Kotoamatsukami.dir/src/utils/utils.cpp.o: CMakeFiles/Kotoamatsukami.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Kotoamatsukami.dir/src/utils/utils.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Kotoamatsukami.dir/src/utils/utils.cpp.o -MF CMakeFiles/Kotoamatsukami.dir/src/utils/utils.cpp.o.d -o CMakeFiles/Kotoamatsukami.dir/src/utils/utils.cpp.o -c /home/zzzccc/cxzz/Kotoamatsukami/src/utils/utils.cpp
+
+CMakeFiles/Kotoamatsukami.dir/src/utils/utils.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Kotoamatsukami.dir/src/utils/utils.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zzzccc/cxzz/Kotoamatsukami/src/utils/utils.cpp > CMakeFiles/Kotoamatsukami.dir/src/utils/utils.cpp.i
+
+CMakeFiles/Kotoamatsukami.dir/src/utils/utils.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Kotoamatsukami.dir/src/utils/utils.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zzzccc/cxzz/Kotoamatsukami/src/utils/utils.cpp -o CMakeFiles/Kotoamatsukami.dir/src/utils/utils.cpp.s
+
 # Object files for target Kotoamatsukami
 Kotoamatsukami_OBJECTS = \
 "CMakeFiles/Kotoamatsukami.dir/src/PassPlugin.cpp.o" \
@@ -160,7 +188,9 @@ Kotoamatsukami_OBJECTS = \
 "CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectJmpPass.cpp.o" \
 "CMakeFiles/Kotoamatsukami.dir/src/pass/ForObsPass.cpp.o" \
 "CMakeFiles/Kotoamatsukami.dir/src/pass/SwitchToIfElsePass.cpp.o" \
-"CMakeFiles/Kotoamatsukami.dir/src/pass/Loopen.cpp.o"
+"CMakeFiles/Kotoamatsukami.dir/src/pass/Loopen.cpp.o" \
+"CMakeFiles/Kotoamatsukami.dir/src/pass/SplitBasicBlock.cpp.o" \
+"CMakeFiles/Kotoamatsukami.dir/src/utils/utils.cpp.o"
 
 # External object files for target Kotoamatsukami
 Kotoamatsukami_EXTERNAL_OBJECTS =
@@ -171,81 +201,11 @@ Kotoamatsukami.so: CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectJmpPass.cpp.o
 Kotoamatsukami.so: CMakeFiles/Kotoamatsukami.dir/src/pass/ForObsPass.cpp.o
 Kotoamatsukami.so: CMakeFiles/Kotoamatsukami.dir/src/pass/SwitchToIfElsePass.cpp.o
 Kotoamatsukami.so: CMakeFiles/Kotoamatsukami.dir/src/pass/Loopen.cpp.o
+Kotoamatsukami.so: CMakeFiles/Kotoamatsukami.dir/src/pass/SplitBasicBlock.cpp.o
+Kotoamatsukami.so: CMakeFiles/Kotoamatsukami.dir/src/utils/utils.cpp.o
 Kotoamatsukami.so: CMakeFiles/Kotoamatsukami.dir/build.make
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMExecutionEngine.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMMCJIT.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMOrcJIT.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMCore.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMSupport.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMX86CodeGen.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMX86Desc.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMX86Info.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMX86AsmParser.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMX86CodeGen.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMX86Desc.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMX86Disassembler.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMX86Info.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMIRReader.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMX86CodeGen.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMX86AsmParser.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMX86Desc.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMX86Disassembler.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMX86Info.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMExecutionEngine.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMRuntimeDyld.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMPasses.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMCoroutines.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMipo.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMFrontendOpenMP.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMLinker.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMIRPrinter.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMVectorize.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMJITLink.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMOrcTargetProcess.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMOrcShared.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMWindowsDriver.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMOption.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMAsmPrinter.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMCFGuard.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMGlobalISel.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMInstrumentation.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMSelectionDAG.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMCodeGen.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMTarget.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMBitWriter.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMObjCARCOpts.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMScalarOpts.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMAggressiveInstCombine.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMInstCombine.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMTransformUtils.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMAnalysis.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMProfileData.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMSymbolize.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMDebugInfoDWARF.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMDebugInfoPDB.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMObject.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMIRReader.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMAsmParser.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMBitReader.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMCore.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMRemarks.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMBitstreamReader.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMTextAPI.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMDebugInfoMSF.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMDebugInfoBTF.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMCodeGenTypes.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMMCParser.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMMCDisassembler.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMMC.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMBinaryFormat.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMDebugInfoCodeView.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMTargetParser.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMSupport.a
-Kotoamatsukami.so: /home/zzzccc/llvm-17/llvm-project/build/lib/libLLVMDemangle.a
-Kotoamatsukami.so: /usr/lib/x86_64-linux-gnu/libz.so
-Kotoamatsukami.so: /usr/lib/x86_64-linux-gnu/libtinfo.so
 Kotoamatsukami.so: CMakeFiles/Kotoamatsukami.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX shared module Kotoamatsukami.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX shared module Kotoamatsukami.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Kotoamatsukami.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

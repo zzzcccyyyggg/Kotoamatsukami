@@ -9,77 +9,25 @@
  * @copyright Copyright (c) 2022
  *
  */
-#include "Utils.h"
+#include "utils.hpp"
 #include "llvm/IR/IntrinsicInst.h"
+#include "llvm/Support/SourceMgr.h" // For SMDiagnostic
+#include "llvm/IRReader/IRReader.h" // For parseIRFile
 
 using namespace llvm;
 using std::vector;
 
-LLVMContext *CONTEXT = nullptr;
-bool obf_function_name_cmd = false;
-
-/**
- * @brief 参考资料:https://www.jianshu.com/p/0567346fd5e8
- *        作用是读取llvm.global.annotations中的annotation值 从而实现过滤函数 只对单独某功能开启PASS
- * @param f
- * @return std::string
- */
-std::string llvm::readAnnotate(Function *f)
-{ // 取自原版ollvm项目
-    std::string annotation = "";
-    /* Get annotation variable */
-    GlobalVariable *glob = f->getParent()->getGlobalVariable("llvm.global.annotations");
-    if (glob != NULL)
-    {
-        /* Get the array */
-        if (ConstantArray *ca = dyn_cast<ConstantArray>(glob->getInitializer()))
-        {
-            for (unsigned i = 0; i < ca->getNumOperands(); ++i)
-            {
-                /* Get the struct */
-                if (ConstantStruct *structAn = dyn_cast<ConstantStruct>(ca->getOperand(i)))
-                {
-                    if (ConstantExpr *expr = dyn_cast<ConstantExpr>(structAn->getOperand(0)))
-                    {
-                        /*
-                         * If it's a bitcast we can check if the annotation is concerning
-                         * the current function
-                         */
-                        if (expr->getOpcode() == Instruction::BitCast && expr->getOperand(0) == f)
-                        {
-                            ConstantExpr *note = cast<ConstantExpr>(structAn->getOperand(1));
-                            /*
-                             * If it's a GetElementPtr, that means we found the variable
-                             * containing the annotations
-                             */
-                            if (note->getOpcode() == Instruction::GetElementPtr)
-                            {
-                                if (GlobalVariable *annoteStr = dyn_cast<GlobalVariable>(note->getOperand(0)))
-                                {
-                                    if (ConstantDataSequential *data = dyn_cast<ConstantDataSequential>(annoteStr->getInitializer()))
-                                    {
-                                        if (data->isString())
-                                        {
-                                            annotation += data->getAsString().lower() + " ";
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-    return (annotation);
+static bool valueEscapes(const Instruction &Inst) {
+  const BasicBlock *BB = Inst.getParent();
+  for (const User *U : Inst.users()) {
+    const Instruction *UI = cast<Instruction>(U);
+    if (UI->getParent() != BB || isa<PHINode>(UI))
+      return true;
+  }
+  return false;
 }
 
-/**
- * @brief 修复PHI指令和逃逸变量
- *
- * @param F
- */
-void llvm::fixStack(Function &F)
+void fixStack(Function &F)
 {
     vector<PHINode *> origPHI;
     vector<Instruction *> origReg;
@@ -108,89 +56,6 @@ void llvm::fixStack(Function &F)
     }
 }
 
-/**
- * @brief
- *
- * @param Func
- */
-void llvm::FixFunctionConstantExpr(Function *Func)
-{
-    // Replace ConstantExpr with equal instructions
-    // Otherwise replacing on Constant will crash the compiler
-    for (BasicBlock &BB : *Func)
-    {
-        FixBasicBlockConstantExpr(&BB);
-    }
-}
-/**
- * @brief
- *
- * @param BB
- */
-void llvm::FixBasicBlockConstantExpr(BasicBlock *BB)
-{
-    // Replace ConstantExpr with equal instructions
-    // Otherwise replacing on Constant will crash the compiler
-    // Things to note:
-    // - Phis must be placed at BB start so CEs must be placed prior to current BB
-    assert(!BB->empty() && "BasicBlock is empty!");
-    assert((BB->getParent() != NULL) && "BasicBlock must be in a Function!");
-    Instruction *FunctionInsertPt = &*(BB->getParent()->getEntryBlock().getFirstInsertionPt());
-    // Instruction* LocalBBInsertPt=&*(BB.getFirstInsertionPt());
-    for (Instruction &I : *BB)
-    {
-        if (isa<LandingPadInst>(I) || isa<FuncletPadInst>(I))
-        {
-            continue;
-        }
-        for (unsigned i = 0; i < I.getNumOperands(); i++)
-        {
-            if (ConstantExpr *C = dyn_cast<ConstantExpr>(I.getOperand(i)))
-            {
-                Instruction *InsertPt = &I;
-                IRBuilder<NoFolder> IRB(InsertPt);
-                if (isa<PHINode>(I))
-                {
-                    IRB.SetInsertPoint(FunctionInsertPt);
-                }
-                Instruction *Inst = IRB.Insert(C->getAsInstruction());
-                I.setOperand(i, Inst);
-            }
-        }
-    }
-}
-
-/**
- * @brief 随机字符串
- *
- * @param len
- * @return string
- */
-string llvm::rand_str(int len)
-{
-    string str;
-    char c = 'O';
-    int idx;
-    for (idx = 0; idx < len; idx++)
-    {
-
-        switch ((rand() % 3))
-        {
-        case 1:
-            c = 'O';
-            break;
-        case 2:
-            c = '0';
-            break;
-        default:
-            c = 'o';
-            break;
-        }
-        str.push_back(c);
-    }
-    return str;
-}
-
 Function *createFuncFromGenerated(Module *M, std::string funcName, std::string moduleName)
 {
     // 创建一个新的LLVM上下文
@@ -198,6 +63,7 @@ Function *createFuncFromGenerated(Module *M, std::string funcName, std::string m
 
     // 读取模块文件并加载它
     SMDiagnostic Err;
+    llvm::outs() << "[utils]: start createFuncFromGenerated " << moduleName << " " << funcName << "\n";
     std::unique_ptr<Module> SrcModule = parseIRFile(moduleName, Err, Context);
 
     // 错误处理，检查模块是否正确加载
@@ -206,7 +72,7 @@ Function *createFuncFromGenerated(Module *M, std::string funcName, std::string m
         Err.print("createFuncFromGenerated", errs());
         return nullptr;
     }
-
+    // SrcModule->print(llvm::outs(),nullptr);
     // 在加载的模块中查找指定的函数
     Function *SrcFunc = SrcModule->getFunction(funcName);
     if (!SrcFunc)
@@ -215,13 +81,89 @@ Function *createFuncFromGenerated(Module *M, std::string funcName, std::string m
         return nullptr;
     }
 
-    // 复制函数到目标模块
+    auto *NewF =
+        Function::Create(SrcFunc->getFunctionType(), GlobalValue::PrivateLinkage,
+                         funcName, M);
+
     ValueToValueMapTy VMap;
-    Function *NewFunc = CloneFunction(SrcFunc, VMap);
+    auto NewFArgsIt = NewF->arg_begin();
+    auto FArgsIt = SrcFunc->arg_begin();
 
-    // 更新函数的名称和模块
-    NewFunc->setName(funcName);
-    M->getFunctionList().push_back(NewFunc);
+    // 将参数映射到新函数
+    for (auto FArgsEnd = SrcFunc->arg_end(); FArgsIt != FArgsEnd;
+         ++NewFArgsIt, ++FArgsIt)
+    {
+        VMap[&*FArgsIt] = &*NewFArgsIt;
+    }
 
-    return NewFunc;
+    SmallVector<ReturnInst *, 8> Returns;
+    CloneFunctionInto(NewF, SrcFunc, VMap, CloneFunctionChangeType::DifferentModule, Returns);
+
+    // 保留函数属性
+    NewF->setCallingConv(SrcFunc->getCallingConv());
+    NewF->setAttributes(SrcFunc->getAttributes());
+    NewF->setDSOLocal(true);
+    llvm::outs() << "[utils]: Function " << funcName << " successfully cloned into the target module.\n";
+
+    return NewF;
+}
+
+size_t reg2mem(Function& F) {
+  /* The code of this function comes from the pass Reg2Mem.cpp
+   * Note(Romain): I tried to run this pass using the PassManager with the following code:
+   *
+   *    FunctionAnalysisManager FAM;
+   *    FAM.registerPass([&] { return DominatorTreeAnalysis(); });
+   *    FAM.registerPass([&] { return LoopAnalysis(); });
+   *
+   *    FunctionPassManager FPM;
+   *    FPM.addPass(Reg2MemPass())
+   *
+   *    FPM.run(F, FAM);
+   * but it fails on Xcode (crash in AnalysisManager::getResultImp).
+   * It might be worth investigating why it crashes.
+   */
+  SplitAllCriticalEdges(F, CriticalEdgeSplittingOptions());
+  size_t count = 0;
+  // Insert all new allocas into entry block.
+  BasicBlock *BBEntry = &F.getEntryBlock();
+//   F.viewCFG();
+  assert(pred_empty(BBEntry) &&
+         "Entry block to function must not have predecessors!");
+
+  // Find first non-alloca instruction and create insertion point. This is
+  // safe if block is well-formed: it always have terminator, otherwise
+  // we'll get and assertion.
+  BasicBlock::iterator I = BBEntry->begin();
+  while (isa<AllocaInst>(I)) ++I;
+
+  CastInst *AllocaInsertionPoint = new BitCastInst(
+      Constant::getNullValue(Type::getInt32Ty(F.getContext())),
+      Type::getInt32Ty(F.getContext()), "reg2mem alloca point", &*I);
+
+  // Find the escaped instructions. But don't create stack slots for
+  // allocas in entry block.
+  std::list<Instruction*> WorkList;
+  for (Instruction &I : instructions(F))
+    if (!(isa<AllocaInst>(I) && I.getParent() == BBEntry) && valueEscapes(I))
+      WorkList.push_front(&I);
+
+  // Demote escaped instructions
+  count += WorkList.size();
+  for (Instruction *I : WorkList)
+    DemoteRegToStack(*I, false, AllocaInsertionPoint);
+
+  WorkList.clear();
+
+  // Find all phi's
+  for (BasicBlock &BB : F)
+    for (auto &Phi : BB.phis())
+      WorkList.push_front(&Phi);
+
+  // Demote phi nodes
+  count += WorkList.size();
+  for (Instruction *I : WorkList)
+    DemotePHIToStack(cast<PHINode>(I), AllocaInsertionPoint);
+
+  return count;
 }
