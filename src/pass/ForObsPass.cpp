@@ -7,6 +7,7 @@
 #include "llvm/IR/Function.h"
 #include "llvm/Transforms/Utils/BasicBlockUtils.h"
 #include "../include/ForObsPass.h"
+#include "../utils/config.h"
 #include <cstdlib> // 用于随机数生成
 #include <set>     // 用于跟踪已处理的基本块
 
@@ -116,88 +117,101 @@ void insertNestedLoop(IRBuilder<> &builder, LLVMContext &context, Function &F,
             builder.SetInsertPoint(excuteCond);
             builder.CreateBr(NewBB);
 
-            // Value *isExcuteLoad = builder.CreateLoad(intType, isExcutedVal);
-            // Value *isExcuteCond = builder.CreateICmpSGT(isExcuteLoad, ConstantInt::get(intType, 0));
-            // Instruction *newnewBr = BranchInst::Create(innerLoopCond);
-            // ReplaceInstWithInst(NewBB->getTerminator(), newnewBr);
         }
 
         // 内循环结束，跳回外循环
         builder.SetInsertPoint(innerLoopEnd);
         builder.CreateBr(TmpLoopCond); // 跳回外循环体块
-        // F.getParent()->print(llvm::outs(), nullptr);
+        
 
         TmpLoopCond = innerLoopCond;
         TmpLoopBody = innerLoopBody;
         TmpLoopEnd = innerLoopEnd;
-        // F.print(llvm::errs(), nullptr);
+        
     }
 }
 
-PreservedAnalyses ForObsPass::run(Function &F, FunctionAnalysisManager &AM)
+PreservedAnalyses ForObsPass::run(Module &M, ModuleAnalysisManager &AM)
 {
     bool IsChanged = false;
-    double Probability = 0.99;
-
-    llvm::outs() << "Running ForObsPass on function: " << F.getName() << "\n";
-
+    double Probability = 0.5;
     // 初始化随机种子
     srand(time(nullptr));
-
     // 获取 LLVM 上下文和变量类型
-    LLVMContext &context = F.getContext();
+    LLVMContext &context = M.getContext();
     IntegerType *intType = Type::getInt32Ty(context);
     Value *N = ConstantInt::get(intType, 10); // 外循环边界
-    Value *M = ConstantInt::get(intType, 5);  // 内循环边界
-
-    // 遍历函数中的每个基本块
-    for (BasicBlock &BB : F)
-    {
-        IRBuilder<> Builder(context);
-        if (BB.size() < 2)
-        {
-            llvm::errs() << "Skipping block with less than 4 instructions: " << BB.getName() << "\n";
-            continue;
-        }
-        // 确保基本块没有被处理或生成过循环
-        if (forpass_processedBlocks.count(&BB) == 0 && generatedBlocks.count(&BB) == 0)
-        {
-            // 第一步：选择一个随机的指令作为拆分点
-            Instruction *splitInst = nullptr;
-            unsigned instructionIndex = rand() % (BB.size() - 1);
-            auto it = BB.begin();
-            std::advance(it, instructionIndex);
-            splitInst = &(*it);
-            // 第二步：在选定的指令处拆分基本块
-            BasicBlock *newBB = SplitBlock(&BB, splitInst);
-            
-            // 再拆一次
-            instructionIndex = rand() % (newBB->size() - 1);
-            auto it2 = newBB->begin();
-            std::advance(it2, instructionIndex);
-            splitInst = &(*it2);  
-            BasicBlock *newnewBB = SplitBlock(newBB, splitInst);
-
-            // 第三步：为每层循环分配内存给循环变量，并初始化它
-            Builder.SetInsertPoint(&*BB.getFirstInsertionPt());
-            // 生成一个 0 到 1 之间的随机浮点数，并与概率进行比较
-            if ((rand() / (double)RAND_MAX) < Probability)
-            {
-
-                // 调用 insertNestedLoop 函数插入二重循环
-                insertNestedLoop(Builder, context, F, N, M, intType, &BB, newBB,newnewBB, 4);
-
-                // 标记基本块已修改
-                IsChanged = true;
-
-                // 将当前基本块添加到已处理和已生成循环的集合中
-                forpass_processedBlocks.insert(&BB);
-                generatedBlocks.insert(newBB); // 标记新生成的基本块
-                generatedBlocks.insert(newnewBB); 
-                llvm::outs() << "Inserted nested loop into block: " << BB.getName() << "\n";
+    Value *M1 = ConstantInt::get(intType, 5);  // 内循环边界
+    readConfig("/home/zzzccc/cxzz/Kotoamatsukami/config/config.json");
+    if (ForObs.model){
+        for (llvm::Function &F : M) {
+            int addCount = 0;
+            if(ForObs.model == 2){
+                if(std::find(ForObs.enable_function.begin(),ForObs.enable_function.end(),F.getName()) == ForObs.enable_function.end()){
+                    continue;                    
+                }
+            }else if (ForObs.model == 3)
+            {                
+                if(std::find(ForObs.disable_function.begin(),ForObs.disable_function.end(),F.getName()) != ForObs.disable_function.end()){
+                    continue;                    
+                }
             }
-        }
-    }
+            
+            llvm::outs() << "Running ForObsPass on function: " << F.getName() << "\n";
+
+            // 遍历函数中的每个基本块
+            for (BasicBlock &BB : F)
+            {
+                IRBuilder<> Builder(context);
+                if (BB.size() < 2)
+                {
+                    // llvm::errs() << "Skipping block with less than 4 instructions: " << BB.getName() << "\n";
+                    continue;
+                }
+                // 确保基本块没有被处理或生成过循环
+                if (forpass_processedBlocks.count(&BB) == 0 && generatedBlocks.count(&BB) == 0)
+                {
+                    // 第一步：选择一个随机的指令作为拆分点
+                    Instruction *splitInst = nullptr;
+                    unsigned instructionIndex = rand() % (BB.size() - 1);
+                    auto it = BB.begin();
+                    std::advance(it, instructionIndex);
+                    splitInst = &(*it);
+                    // 第二步：在选定的指令处拆分基本块
+                    BasicBlock *newBB = SplitBlock(&BB, splitInst);
+                    
+                    // 再拆一次
+                    instructionIndex = rand() % (newBB->size() - 1);
+                    auto it2 = newBB->begin();
+                    std::advance(it2, instructionIndex);
+                    splitInst = &(*it2);  
+                    BasicBlock *newnewBB = SplitBlock(newBB, splitInst);
+
+                    // 第三步：为每层循环分配内存给循环变量，并初始化它
+                    Builder.SetInsertPoint(&*BB.getFirstInsertionPt());
+                    // 生成一个 0 到 1 之间的随机浮点数，并与概率进行比较
+                    if ((rand() / (double)RAND_MAX) < Probability )
+                    {
+                        if(addCount >= 3){
+                            break;
+                        }    
+                        // 调用 insertNestedLoop 函数插入二重循环
+                        insertNestedLoop(Builder, context, F, N, M1, intType, &BB, newBB,newnewBB, 4);
+
+                        // 标记基本块已修改
+                        IsChanged = true;
+
+                        // 将当前基本块添加到已处理和已生成循环的集合中
+                        forpass_processedBlocks.insert(&BB);
+                        generatedBlocks.insert(newBB); // 标记新生成的基本块
+                        generatedBlocks.insert(newnewBB); 
+                        llvm::outs() << "Inserted nested loop into Func: " << F.getName() << "\n";
+                        addCount++;
+                    }
+                }
+            }
+
+        }}
 
     // 返回适当的分析结果
     if (IsChanged)

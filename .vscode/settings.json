@@ -85,7 +85,11 @@
         "valarray": "cpp",
         "ranges": "cpp",
         "ios": "cpp",
-        "any": "cpp"
+        "any": "cpp",
+        "__config": "cpp",
+        "__locale": "cpp",
+        "__verbose_abort": "cpp",
+        "locale": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }

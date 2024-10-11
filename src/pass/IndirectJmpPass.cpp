@@ -1,5 +1,9 @@
 #include "../include/IndirectJmpPass.h"
-
+/*
+创建变量 按照自己定义的规则定义变量 后续使用变量
+相应的完成相关操作即可 
+这里还是需要注意函数跳转时的栈的维护
+*/
 #include "llvm/IR/IRBuilder.h"
 #include "llvm/IR/InlineAsm.h"
 #include "llvm/IR/Constants.h"

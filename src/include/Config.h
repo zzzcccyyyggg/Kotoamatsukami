@@ -1,1 +1,0 @@
-extern int is_aarch64;

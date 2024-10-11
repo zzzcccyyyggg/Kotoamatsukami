@@ -64,6 +64,7 @@ Function *createFuncFromGenerated(Module *M, std::string funcName, std::string m
     // 读取模块文件并加载它
     SMDiagnostic Err;
     llvm::outs() << "[utils]: start createFuncFromGenerated " << moduleName << " " << funcName << "\n";
+    Context.setDiscardValueNames(false);
     std::unique_ptr<Module> SrcModule = parseIRFile(moduleName, Err, Context);
 
     // 错误处理，检查模块是否正确加载

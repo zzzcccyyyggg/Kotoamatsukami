@@ -420,6 +420,30 @@ src/pass/SwitchToIfElsePass.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/SwitchToIfElsePass.cpp.s
 .PHONY : src/pass/SwitchToIfElsePass.cpp.s
 
+src/utils/config.o: src/utils/config.cpp.o
+.PHONY : src/utils/config.o
+
+# target to build an object file
+src/utils/config.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/utils/config.cpp.o
+.PHONY : src/utils/config.cpp.o
+
+src/utils/config.i: src/utils/config.cpp.i
+.PHONY : src/utils/config.i
+
+# target to preprocess a source file
+src/utils/config.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/utils/config.cpp.i
+.PHONY : src/utils/config.cpp.i
+
+src/utils/config.s: src/utils/config.cpp.s
+.PHONY : src/utils/config.s
+
+# target to generate assembly for a file
+src/utils/config.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/utils/config.cpp.s
+.PHONY : src/utils/config.cpp.s
+
 src/utils/utils.o: src/utils/utils.cpp.o
 .PHONY : src/utils/utils.o
 
@@ -484,6 +508,9 @@ help:
 	@echo "... src/pass/SwitchToIfElsePass.o"
 	@echo "... src/pass/SwitchToIfElsePass.i"
 	@echo "... src/pass/SwitchToIfElsePass.s"
+	@echo "... src/utils/config.o"
+	@echo "... src/utils/config.i"
+	@echo "... src/utils/config.s"
 	@echo "... src/utils/utils.o"
 	@echo "... src/utils/utils.i"
 	@echo "... src/utils/utils.s"

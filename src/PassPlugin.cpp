@@ -27,27 +27,27 @@ llvm::PassPluginLibraryInfo getKotoamatsukamiPluginInfo()
             });
 
         // 你可以按照类似的方式添加更多的 Pass 到不同的 Pass 管理器
-        PB.registerPipelineParsingCallback(
-            [](StringRef Name, ModulePassManager &MPM, ArrayRef<PassBuilder::PipelineElement>)
-            {
-              if (Name == "add-junk-code-pass")
-              {
-                MPM.addPass(createModuleToFunctionPassAdaptor(AddJunkCodePass()));
-                return true;
-              }
-              return false;
-            });
+        // PB.registerPipelineParsingCallback(
+        //     [](StringRef Name, ModulePassManager &MPM, ArrayRef<PassBuilder::PipelineElement>)
+        //     {
+        //       if (Name == "add-junk-code-pass")
+        //       {
+        //         MPM.addPass(createModuleToFunctionPassAdaptor(AddJunkCodePass()));
+        //         return true;
+        //       }
+        //       return false;
+        //     });
 
-        PB.registerPipelineParsingCallback(
-            [](StringRef Name, ModulePassManager &MPM, ArrayRef<PassBuilder::PipelineElement>)
-            {
-              if (Name == "for-obs-pass")
-              {
-                MPM.addPass(createModuleToFunctionPassAdaptor(ForObsPass()));
-                return true;
-              }
-              return false;
-            });
+        // PB.registerPipelineParsingCallback(
+        //     [](StringRef Name, ModulePassManager &MPM, ArrayRef<PassBuilder::PipelineElement>)
+        //     {
+        //       if (Name == "for-obs-pass")
+        //       {
+        //         MPM.addPass(createModuleToFunctionPassAdaptor(ForObsPass()));
+        //         return true;
+        //       }
+        //       return false;
+        //     });
 
         PB.registerPipelineParsingCallback(
             [](StringRef Name, ModulePassManager &MPM, ArrayRef<PassBuilder::PipelineElement>)
@@ -59,26 +59,34 @@ llvm::PassPluginLibraryInfo getKotoamatsukamiPluginInfo()
               }
               return false;
             });
-        PB.registerPipelineParsingCallback(
-            [](StringRef Name, ModulePassManager &MPM, ArrayRef<PassBuilder::PipelineElement>)
-            {
-              if (Name == "loopen")
-              {
-                MPM.addPass(createModuleToFunctionPassAdaptor(Loopen()));
-                return true;
-              }
-              return false;
-            });
-        PB.registerPipelineParsingCallback(
-            [](StringRef Name, ModulePassManager &MPM, ArrayRef<PassBuilder::PipelineElement>)
-            {
-              if (Name == "split-basic-block")
-              {
+        // PB.registerPipelineParsingCallback(
+        //     [](StringRef Name, ModulePassManager &MPM, ArrayRef<PassBuilder::PipelineElement>)
+        //     {
+        //       if (Name == "loopen")
+        //       {
+        //         MPM.addPass(createModuleToFunctionPassAdaptor(Loopen()));
+        //         return true;
+        //       }
+        //       return false;
+        //     });
+        // PB.registerPipelineParsingCallback(
+        //     [](StringRef Name, ModulePassManager &MPM, ArrayRef<PassBuilder::PipelineElement>)
+        //     {
+        //       if (Name == "split-basic-block")
+        //       {
+        //         MPM.addPass(SplitBasicBlock());
+        //         return true;
+        //       }
+        //       return false;
+        //     });
+        PB.registerPipelineStartEPCallback(
+            [](ModulePassManager &MPM, OptimizationLevel Level) {
                 MPM.addPass(SplitBasicBlock());
-                return true;
-              }
-              return false;
-            });
+                MPM.addPass(ForObsPass());
+                MPM.addPass(Loopen());
+                MPM.addPass(AddJunkCodePass());
+        });
+
       }};
 }
 

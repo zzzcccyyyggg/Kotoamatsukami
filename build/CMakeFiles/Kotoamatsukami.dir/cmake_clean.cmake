@@ -13,6 +13,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Kotoamatsukami.dir/src/pass/SplitBasicBlock.cpp.o.d"
   "CMakeFiles/Kotoamatsukami.dir/src/pass/SwitchToIfElsePass.cpp.o"
   "CMakeFiles/Kotoamatsukami.dir/src/pass/SwitchToIfElsePass.cpp.o.d"
+  "CMakeFiles/Kotoamatsukami.dir/src/utils/config.cpp.o"
+  "CMakeFiles/Kotoamatsukami.dir/src/utils/config.cpp.o.d"
   "CMakeFiles/Kotoamatsukami.dir/src/utils/utils.cpp.o"
   "CMakeFiles/Kotoamatsukami.dir/src/utils/utils.cpp.o.d"
   "Kotoamatsukami.pdb"

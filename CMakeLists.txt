@@ -11,9 +11,23 @@ find_package(LLVM REQUIRED CONFIG)
 message(STATUS "Found LLVM ${LLVM_PACKAGE_VERSION}")
 message(STATUS "Using LLVMConfig.cmake in: ${LLVM_DIR}")
 
+# 引入json处理库
+# 添加 nlohmann/json 作为子模块
+include(FetchContent)
+
+FetchContent_Declare(
+    json
+    SOURCE_DIR /home/zzzccc/cxzz/Kotoamatsukami/lib/json
+)
+
+FetchContent_MakeAvailable(json)
+
 # Include LLVM directories
 include_directories(${LLVM_INCLUDE_DIRS})
 include_directories("/home/zzzccc/cxzz/Kotoamatsukami/src/include")
+include_directories("/home/zzzccc/cxzz/Kotoamatsukami/lib/json/include")
+include_directories("/home/zzzccc/cxzz/Kotoamatsukami/lib/json/single_include/nlohmann")
+
 link_directories(${LLVM_LIBRARY_DIRS})
 message(STATUS "WORKING_DIRECTORY: ${WORKING_DIRECTORY}")
 include(AddLLVM)
@@ -30,6 +44,7 @@ add_llvm_pass_plugin(Kotoamatsukami
     src/pass/Loopen.cpp
     src/pass/SplitBasicBlock.cpp
     src/utils/utils.cpp
+    src/utils/config.cpp
     )
 # # # Define the executable
 # add_executable(jit_asm 
@@ -59,4 +74,4 @@ set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -rdynamic")
 # Use LLVM's target link libraries
 # target_link_libraries(Kotoamatsukami ${llvm_libs} ${LLVM_LIBRARIES})
 
-
+target_link_libraries(Kotoamatsukami nlohmann_json::nlohmann_json)

@@ -6,7 +6,7 @@
 namespace llvm {
 class AddJunkCodePass : public PassInfoMixin<AddJunkCodePass> {
 public:
-  PreservedAnalyses run(Function &F, FunctionAnalysisManager &AM);
+  PreservedAnalyses run(Module &F, ModuleAnalysisManager &AM);
   //保证不被跳过
   static bool isRequired() { return true; }
   

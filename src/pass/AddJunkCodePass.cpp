@@ -1,7 +1,6 @@
 
 #include "../include/AddJunkCodePass.h"
-#include "../include/Config.h"
-
+#include "../utils/config.h"
 #include "llvm/ADT/Statistic.h"
 #include "llvm/IR/BasicBlock.h"
 #include "llvm/IR/IRBuilder.h"
@@ -13,53 +12,144 @@
 #include "llvm/Transforms/Scalar.h"
 #include "llvm/Support/FormatVariadic.h"
 #include "llvm/IR/InlineAsm.h"
+
+#include <cstdlib> // rand()
 using namespace llvm;
-#ifdef AARCH64
-int is_aarch64 = 1;
-#else
-int is_aarch64 = 0;
-#endif
+std::vector<std::string> x86AsmCode = {
+    "call {0}f\n"
+    "{0}:\n"
+    "addl $$8, (%esp)\n"
+    "ret\n"
+    ".byte 0xe8\n"
+    ".byte 0x90\n"
+    ".byte 0x90\n"
+    ".byte 0x90\n",
 
-PreservedAnalyses AddJunkCodePass::run(Function &F, FunctionAnalysisManager &AM)
+    "push %ebx\n"
+    "xorl %ebx, %ebx\n"
+    "testl %ebx, %ebx\n"
+    "jne {0}f\n"
+    "je {1}f\n"
+    "{0}:\n"
+    ".byte 0x21\n"
+    "{1}:\n"
+    "pop %ebx\n"};
+std::vector<std::string> x64AsmCode = {
+    "call {0}f\n"
+    "{0}:\n"
+    "addq $$8, (%rsp)\n"
+    "ret\n"
+    ".byte 0xe8\n"
+    ".byte 0x90\n"
+    ".byte 0x90\n"
+    ".byte 0x90\n",
+
+    "push %rbx\n"
+    "xorq %rbx, %rbx\n"
+    "testq %rbx, %rbx\n"
+    "jne {0}f\n"
+    "je {1}f\n"
+    "{0}:\n"
+    ".byte 0x21\n"
+    "{1}:\n"
+    "pop %rbx\n"};
+PreservedAnalyses AddJunkCodePass::run(Module &M, ModuleAnalysisManager &AM)
 {
-    bool InsertedAtLeastOne = false;
-
-    int bb_index = 0;
-    for (auto &BB : F)
+    bool isChanged = false;
+    int flowerIndex = 0;
+    double addJunkCodeProbability = 0.2;
+    srand(time(nullptr));
+    readConfig("/home/zzzccc/cxzz/Kotoamatsukami/config/config.json");
+    if (Junkcode.model)
     {
-        Instruction *beginInst = &*BB.getFirstInsertionPt();
-        IRBuilder<> builder(beginInst);
-        if(is_aarch64){
-            std::string label = formatv(".Llabel_{0}", bb_index);
-            // Assemble the inline assembly code
-            std::string asmCode1 = llvm::formatv(
-                "pushq %rax\n"
-                "callq {0}f\n"
-                "movq $$0xe4, %rax\n"
-                "popq %rax\n"
-                "popq %rax\n",
-                bb_index);
-            std::string asmCode2 = llvm::formatv(
-                "{0}:\n",
-                bb_index);
-            outs() << asmCode1 << asmCode2;
-            auto *FType = llvm::FunctionType::get(builder.getVoidTy(), false);
-            // Create InlineAsm object
-            InlineAsm *rawAsm1 = llvm::InlineAsm::get(FType, asmCode1, "",
-                                                    /* hasSideEffects */ true,
-                                                    /* isStackAligned */ true);
-            InlineAsm *rawAsm2 = llvm::InlineAsm::get(FType, asmCode2, "",
-                                                    /* hasSideEffects */ true,
-                                                    /* isStackAligned */ true);
-            // Create a call to the inline assembly and a return statement
-            builder.CreateCall(rawAsm1);
-            builder.CreateCall(rawAsm2);
-            bb_index += 1;
-            InsertedAtLeastOne = true;
+        for (llvm::Function &F : M)
+        {
+            if (F.isDeclaration())
+            {
+                continue;
+            }
+            int flowerCount = 0;
+            int bb_index = 0;
+            if (Junkcode.model == 2)
+            {
+                if (std::find(Junkcode.enable_function.begin(), Junkcode.enable_function.end(), F.getName()) == Junkcode.enable_function.end())
+                {
+                    continue;
+                }
+            }
+            else if (Junkcode.model == 3)
+            {
+                if (std::find(Junkcode.disable_function.begin(), Junkcode.disable_function.end(), F.getName()) != Junkcode.disable_function.end())
+                {
+                    continue;
+                }
+            }
+            llvm::outs() << "Running JunkcodePass on function: " << F.getName() << "\n";
+            for (auto &BB : F)
+            {
+                if (flowerCount >= 5)
+                {
+                    break;
+                }
+                for (auto &I : BB)
+                {
+                    if (I.isTerminator())
+                    {
+                        continue;
+                    }
+                    if ((rand() / (double)RAND_MAX) < addJunkCodeProbability)
+                    {
+                        IRBuilder<> builder(&I);
+                        auto *FType = llvm::FunctionType::get(builder.getVoidTy(), false);
+                        int flowerClass = rand() % 2;
+                        // int flowerClass = 1;
+                        std::string asmCode;
+                        if (flowerClass == 0)
+                        {
+                            if (targetArch == Arch::X86)
+                            {
+                                asmCode = llvm::formatv(
+                                    x86AsmCode[flowerClass].c_str(),
+                                    flowerIndex++);
+                            }
+                            else if (targetArch == Arch::X86_64)
+                            {
+                                asmCode = llvm::formatv(
+                                    x64AsmCode[flowerClass].c_str(),
+                                    flowerIndex++);
+                            }
+                        }
+                        else
+                        {
+                            if (targetArch == Arch::X86)
+                            {
+                                asmCode = llvm::formatv(
+                                    x86AsmCode[flowerClass].c_str(),
+                                    flowerIndex++,
+                                    flowerIndex++);
+                            }
+                            else if (targetArch == Arch::X86_64)
+                            {
+                                asmCode = llvm::formatv(
+                                    x64AsmCode[flowerClass].c_str(),
+                                    flowerIndex++,
+                                    flowerIndex++);
+                            }
+                        }
+                        // llvm::outs() << archToString(targetArch) <<"\n";
+                        InlineAsm *rawAsm = llvm::InlineAsm::get(FType, asmCode, "",
+                                                                 /* hasSideEffects */ true,
+                                                                 /* isStackAligned */ true);
+                        builder.CreateCall(rawAsm);
+                        flowerCount++;
+                        isChanged = true;
+                    }
+                }
+            }
         }
     }
 
-    if (InsertedAtLeastOne)
+    if (isChanged)
         return PreservedAnalyses::none();
     else
         return PreservedAnalyses::all();

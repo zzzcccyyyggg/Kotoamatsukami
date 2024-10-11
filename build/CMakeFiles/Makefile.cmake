@@ -11,6 +11,10 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.28.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.28.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.28.3/CMakeSystem.cmake"
+  "/home/zzzccc/cxzz/Kotoamatsukami/lib/json/CMakeLists.txt"
+  "/home/zzzccc/cxzz/Kotoamatsukami/lib/json/cmake/config.cmake.in"
+  "/home/zzzccc/cxzz/Kotoamatsukami/lib/json/cmake/nlohmann_jsonConfigVersion.cmake.in"
+  "/home/zzzccc/cxzz/Kotoamatsukami/lib/json/cmake/pkg-config.pc.in"
   "/home/zzzccc/llvm-17/llvm-project/build/lib/cmake/llvm/AddLLVM.cmake"
   "/home/zzzccc/llvm-17/llvm-project/build/lib/cmake/llvm/CheckCompilerVersion.cmake"
   "/home/zzzccc/llvm-17/llvm-project/build/lib/cmake/llvm/CheckProblematicConfigurations.cmake"
@@ -48,6 +52,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-3.28/Modules/CMakeGenericSystem.cmake"
   "/usr/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake"
   "/usr/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake"
+  "/usr/share/cmake-3.28/Modules/CMakePackageConfigHelpers.cmake"
   "/usr/share/cmake-3.28/Modules/CMakeParseArguments.cmake"
   "/usr/share/cmake-3.28/Modules/CMakeParseImplicitIncludeInfo.cmake"
   "/usr/share/cmake-3.28/Modules/CMakeParseImplicitLinkInfo.cmake"
@@ -124,6 +129,10 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-3.28/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake"
   "/usr/share/cmake-3.28/Modules/Compiler/zOS-C-DetermineCompiler.cmake"
   "/usr/share/cmake-3.28/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake"
+  "/usr/share/cmake-3.28/Modules/ExternalProject.cmake"
+  "/usr/share/cmake-3.28/Modules/ExternalProject/shared_internal_commands.cmake"
+  "/usr/share/cmake-3.28/Modules/FetchContent.cmake"
+  "/usr/share/cmake-3.28/Modules/FetchContent/CMakeLists.cmake.in"
   "/usr/share/cmake-3.28/Modules/FindLibXml2.cmake"
   "/usr/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake"
   "/usr/share/cmake-3.28/Modules/FindPackageMessage.cmake"
@@ -143,6 +152,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-3.28/Modules/Platform/Linux.cmake"
   "/usr/share/cmake-3.28/Modules/Platform/UnixPaths.cmake"
   "/usr/share/cmake-3.28/Modules/SelectLibraryConfigurations.cmake"
+  "/usr/share/cmake-3.28/Modules/WriteBasicConfigVersionFile.cmake"
   )
 
 # The corresponding makefile is:
@@ -158,7 +168,12 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/3.28.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.28.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.28.3/CMakeCXXCompiler.cmake"
+  "_deps/json-subbuild/CMakeLists.txt"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
+  "_deps/json-build/nlohmann_json.pc"
+  "_deps/json-build/nlohmann_jsonConfigVersion.cmake"
+  "_deps/json-build/nlohmann_jsonConfig.cmake"
+  "_deps/json-build/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:

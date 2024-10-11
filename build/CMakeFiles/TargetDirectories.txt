@@ -11,3 +11,9 @@
 /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/install.dir
 /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/install/local.dir
 /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/install/strip.dir
+/home/zzzccc/cxzz/Kotoamatsukami/build/_deps/json-build/CMakeFiles/edit_cache.dir
+/home/zzzccc/cxzz/Kotoamatsukami/build/_deps/json-build/CMakeFiles/rebuild_cache.dir
+/home/zzzccc/cxzz/Kotoamatsukami/build/_deps/json-build/CMakeFiles/list_install_components.dir
+/home/zzzccc/cxzz/Kotoamatsukami/build/_deps/json-build/CMakeFiles/install.dir
+/home/zzzccc/cxzz/Kotoamatsukami/build/_deps/json-build/CMakeFiles/install/local.dir
+/home/zzzccc/cxzz/Kotoamatsukami/build/_deps/json-build/CMakeFiles/install/strip.dir

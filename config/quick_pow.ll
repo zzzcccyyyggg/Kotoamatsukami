@@ -9,51 +9,66 @@ define dso_local i32 @quick_pow(i32 noundef %0, i32 noundef %1, i32 noundef %2) 
   %5 = alloca i32, align 4
   %6 = alloca i32, align 4
   %7 = alloca i32, align 4
-  store i32 %0, ptr %4, align 4
-  store i32 %1, ptr %5, align 4
-  store i32 %2, ptr %6, align 4
-  store i32 1, ptr %7, align 4
-  %8 = load i32, ptr %4, align 4
-  %9 = load i32, ptr %6, align 4
-  %10 = urem i32 %8, %9
-  store i32 %10, ptr %4, align 4
-  br label %11
+  %8 = alloca i32, align 4
+  store i32 %0, ptr %5, align 4
+  store i32 %1, ptr %6, align 4
+  store i32 %2, ptr %7, align 4
+  store i32 1, ptr %8, align 4
+  %9 = load i32, ptr %5, align 4
+  %10 = load i32, ptr %7, align 4
+  %11 = urem i32 %9, %10
+  store i32 %11, ptr %5, align 4
+  %12 = load i32, ptr %6, align 4
+  %13 = icmp ugt i32 %12, 5
+  br i1 %13, label %14, label %15
 
-11:                                               ; preds = %24, %3
-  %12 = load i32, ptr %5, align 4
-  %13 = icmp ugt i32 %12, 0
-  br i1 %13, label %14, label %32
+14:                                               ; preds = %3
+  store i32 0, ptr %4, align 4
+  br label %39
 
-14:                                               ; preds = %11
-  %15 = load i32, ptr %5, align 4
-  %16 = urem i32 %15, 2
-  %17 = icmp eq i32 %16, 1
-  br i1 %17, label %18, label %24
+15:                                               ; preds = %3
+  br label %16
 
-18:                                               ; preds = %14
-  %19 = load i32, ptr %7, align 4
-  %20 = load i32, ptr %4, align 4
-  %21 = mul i32 %19, %20
-  %22 = load i32, ptr %6, align 4
-  %23 = urem i32 %21, %22
-  store i32 %23, ptr %7, align 4
-  br label %24
+16:                                               ; preds = %29, %15
+  %17 = load i32, ptr %6, align 4
+  %18 = icmp ugt i32 %17, 0
+  br i1 %18, label %19, label %37
 
-24:                                               ; preds = %18, %14
-  %25 = load i32, ptr %4, align 4
-  %26 = load i32, ptr %4, align 4
-  %27 = mul i32 %25, %26
-  %28 = load i32, ptr %6, align 4
-  %29 = urem i32 %27, %28
-  store i32 %29, ptr %4, align 4
+19:                                               ; preds = %16
+  %20 = load i32, ptr %6, align 4
+  %21 = urem i32 %20, 2
+  %22 = icmp eq i32 %21, 1
+  br i1 %22, label %23, label %29
+
+23:                                               ; preds = %19
+  %24 = load i32, ptr %8, align 4
+  %25 = load i32, ptr %5, align 4
+  %26 = mul i32 %24, %25
+  %27 = load i32, ptr %7, align 4
+  %28 = urem i32 %26, %27
+  store i32 %28, ptr %8, align 4
+  br label %29
+
+29:                                               ; preds = %23, %19
   %30 = load i32, ptr %5, align 4
-  %31 = udiv i32 %30, 2
-  store i32 %31, ptr %5, align 4
-  br label %11, !llvm.loop !6
-
-32:                                               ; preds = %11
+  %31 = load i32, ptr %5, align 4
+  %32 = mul i32 %30, %31
   %33 = load i32, ptr %7, align 4
-  ret i32 %33
+  %34 = urem i32 %32, %33
+  store i32 %34, ptr %5, align 4
+  %35 = load i32, ptr %6, align 4
+  %36 = udiv i32 %35, 2
+  store i32 %36, ptr %6, align 4
+  br label %16, !llvm.loop !6
+
+37:                                               ; preds = %16
+  %38 = load i32, ptr %8, align 4
+  store i32 %38, ptr %4, align 4
+  br label %39
+
+39:                                               ; preds = %37, %14
+  %40 = load i32, ptr %4, align 4
+  ret i32 %40
 }
 
 ; Function Attrs: noinline nounwind optnone uwtable
