@@ -12,40 +12,34 @@ target triple = "x86_64-unknown-linux-gnu"
 @.str.2 = private unnamed_addr constant [16 x i8] c"wronnnnnnnnng!\0A\00", align 1
 @.str.3 = private unnamed_addr constant [20 x i8] c"Invalid opcode: %d\0A\00", align 1
 @prog = dso_local global [51 x i32] [i32 9, i32 0, i32 1, i32 0, i32 0, i32 1, i32 1, i32 128, i32 1, i32 13, i32 34, i32 1, i32 14, i32 1, i32 1, i32 15, i32 233, i32 12, i32 2, i32 0, i32 7, i32 3, i32 2, i32 15, i32 12, i32 4, i32 1, i32 10, i32 4, i32 3, i32 11, i32 48, i32 3, i32 0, i32 0, i32 14, i32 3, i32 1, i32 1, i32 14, i32 10, i32 0, i32 13, i32 11, i32 17, i32 13, i32 1, i32 0, i32 13, i32 0, i32 0], align 16
+@AllFunctions_IndirectBrTargets = private global [1 x [26 x ptr]] [[26 x ptr] [ptr blockaddress(@run_vm, %11), ptr blockaddress(@run_vm, %14), ptr blockaddress(@run_vm, %25), ptr blockaddress(@run_vm, %26), ptr blockaddress(@run_vm, %57), ptr blockaddress(@run_vm, %93), ptr blockaddress(@run_vm, %146), ptr blockaddress(@run_vm, %199), ptr blockaddress(@run_vm, %252), ptr blockaddress(@run_vm, %305), ptr blockaddress(@run_vm, %358), ptr blockaddress(@run_vm, %372), ptr blockaddress(@run_vm, %395), ptr blockaddress(@run_vm, %436), ptr blockaddress(@run_vm, %441), ptr blockaddress(@run_vm, %454), ptr blockaddress(@run_vm, %459), ptr blockaddress(@run_vm, %460), ptr blockaddress(@run_vm, %504), ptr blockaddress(@run_vm, %516), ptr blockaddress(@run_vm, %518), ptr blockaddress(@run_vm, %520), ptr blockaddress(@run_vm, %525), ptr blockaddress(@run_vm, %528), ptr blockaddress(@run_vm, %529), ptr null]]
+@llvm.compiler.used = appending global [1 x ptr] [ptr @AllFunctions_IndirectBrTargets], section "llvm.metadata"
 
 ; Function Attrs: noinline nounwind optnone uwtable
 define dso_local ptr @new_vm(ptr noundef %0, i32 noundef %1, i32 noundef %2) #0 {
-  call void asm sideeffect alignstack "xorq %rax, %rax\0Atestq %rax, %rax\0Ajne 1f\0Aje 0f\0A1:\0A.byte 0x5e\0A0:\0A", ""()
   %4 = alloca ptr, align 8
   %5 = alloca i32, align 4
   %6 = alloca i32, align 4
   %7 = alloca ptr, align 8
-  call void asm sideeffect alignstack "push %rbx\0Axorq %rbx, %rbx\0Atestq %rbx, %rbx\0Ajne 3f\0Aje 2f\0A3:\0A.byte 0x21\0A2:\0Apop %rbx\0A", ""()
   store ptr %0, ptr %4, align 8
   store i32 %1, ptr %5, align 4
   store i32 %2, ptr %6, align 4
-  call void asm sideeffect alignstack "push %rbx\0Axorq %rbx, %rbx\0Atestq %rbx, %rbx\0Ajne 5f\0Aje 4f\0A5:\0A.byte 0x21\0A4:\0Apop %rbx\0A", ""()
-  %8 = call noalias ptr @malloc(i64 noundef 88) #6
+  %8 = call noalias ptr @malloc(i64 noundef 88) #7
   store ptr %8, ptr %7, align 8
   %9 = load ptr, ptr %4, align 8
   %10 = load ptr, ptr %7, align 8
   %11 = getelementptr inbounds %struct.VM, ptr %10, i32 0, i32 1
   store ptr %9, ptr %11, align 8
-  call void asm sideeffect alignstack "call 6f\0A6:\0Aaddq $$8, (%rsp)\0Aret\0A.byte 0xe8\0A.byte 0x90\0A.byte 0x90\0A.byte 0x90\0A", ""()
   %12 = load ptr, ptr %7, align 8
   %13 = getelementptr inbounds %struct.VM, ptr %12, i32 0, i32 2
-  call void asm sideeffect alignstack "call 7f\0A7:\0Aaddq $$8, (%rsp)\0Aret\0A.byte 0xe8\0A.byte 0x90\0A.byte 0x90\0A.byte 0x90\0A", ""()
   store i32 0, ptr %13, align 8
   %14 = load ptr, ptr %7, align 8
-  call void asm sideeffect alignstack "push %rbx\0Axorq %rbx, %rbx\0Atestq %rbx, %rbx\0Ajne 9f\0Aje 8f\0A9:\0A.byte 0x21\0A8:\0Apop %rbx\0A", ""()
   %15 = getelementptr inbounds %struct.VM, ptr %14, i32 0, i32 3
   store i32 0, ptr %15, align 4
-  call void asm sideeffect alignstack "xorq %rax, %rax\0Atestq %rax, %rax\0Ajne 11f\0Aje 10f\0A11:\0A.byte 0x5e\0A10:\0A", ""()
   %16 = load i32, ptr %6, align 4
   %17 = sext i32 %16 to i64
   %18 = mul i64 4, %17
-  %19 = call noalias ptr @malloc(i64 noundef %18) #6
-  call void asm sideeffect alignstack "call 12f\0A12:\0Aaddq $$8, (%rsp)\0Aret\0A.byte 0xe8\0A.byte 0x90\0A.byte 0x90\0A.byte 0x90\0A", ""()
+  %19 = call noalias ptr @malloc(i64 noundef %18) #7
   %20 = load ptr, ptr %7, align 8
   %21 = getelementptr inbounds %struct.VM, ptr %20, i32 0, i32 4
   store ptr %19, ptr %21, align 8
@@ -56,7 +50,6 @@ define dso_local ptr @new_vm(ptr noundef %0, i32 noundef %1, i32 noundef %2) #0 
   %26 = sext i32 %25 to i64
   call void @llvm.memset.p0.i64(ptr align 1 %24, i8 0, i64 %26, i1 false)
   %27 = load ptr, ptr %7, align 8
-  call void asm sideeffect alignstack "xorq %rax, %rax\0Atestq %rax, %rax\0Ajne 14f\0Aje 13f\0A14:\0A.byte 0x5e\0A13:\0A", ""()
   %28 = getelementptr inbounds %struct.VM, ptr %27, i32 0, i32 4
   %29 = load ptr, ptr %28, align 8
   %30 = getelementptr inbounds i8, ptr %29, i64 128
@@ -77,7 +70,6 @@ declare void @llvm.memcpy.p0.p0.i64(ptr noalias nocapture writeonly, ptr noalias
 ; Function Attrs: noinline nounwind optnone uwtable
 define dso_local void @run_vm(ptr noundef %0) #0 {
   %2 = alloca ptr, align 8
-  call void asm sideeffect alignstack "xorq %rax, %rax\0Atestq %rax, %rax\0Ajne 16f\0Aje 15f\0A16:\0A.byte 0x50\0A15:\0A", ""()
   %3 = alloca i32, align 4
   %4 = alloca i32, align 4
   %5 = alloca i32, align 4
@@ -86,26 +78,22 @@ define dso_local void @run_vm(ptr noundef %0) #0 {
   %8 = alloca i32, align 4
   %9 = alloca i32, align 4
   store ptr %0, ptr %2, align 8
-  call void asm sideeffect alignstack "call 17f\0A17:\0Aaddq $$8, (%rsp)\0Aret\0A.byte 0xe8\0A.byte 0x90\0A.byte 0x90\0A.byte 0x90\0A", ""()
   store i32 1, ptr %9, align 4
   %10 = call i32 (ptr, ...) @printf(ptr noundef @.str)
   br label %11
 
 11:                                               ; preds = %528, %1
   %12 = load i32, ptr %9, align 4
-  call void asm sideeffect alignstack "xorq %rax, %rax\0Atestq %rax, %rax\0Ajne 19f\0Aje 18f\0A19:\0A.byte 0x5e\0A18:\0A", ""()
   %13 = icmp ne i32 %12, 0
+  call void asm sideeffect "push %rax\0Apush %rbx\0Amov %rax, $0\0Axor %rbx, %rbx\0Amov %bl, $1\0Acall IndirectConditionalJumpFunc\0Apop %rbx\0Apop %rax\0A", "r, r"(i64 65560, i1 %13)
   br i1 %13, label %14, label %529
 
 14:                                               ; preds = %11
-  call void asm sideeffect alignstack "xorq %rax, %rax\0Atestq %rax, %rax\0Ajne 21f\0Aje 20f\0A21:\0A.byte 0x50\0A20:\0A", ""()
   %15 = load ptr, ptr %2, align 8
   %16 = getelementptr inbounds %struct.VM, ptr %15, i32 0, i32 1
   %17 = load ptr, ptr %16, align 8
-  call void asm sideeffect alignstack "xorq %rax, %rax\0Atestq %rax, %rax\0Ajne 23f\0Aje 22f\0A23:\0A.byte 0x5e\0A22:\0A", ""()
   %18 = load ptr, ptr %2, align 8
   %19 = getelementptr inbounds %struct.VM, ptr %18, i32 0, i32 2
-  call void asm sideeffect alignstack "xorq %rax, %rax\0Atestq %rax, %rax\0Ajne 25f\0Aje 24f\0A25:\0A.byte 0x5e\0A24:\0A", ""()
   %20 = load i32, ptr %19, align 8
   %21 = sext i32 %20 to i64
   %22 = getelementptr inbounds i32, ptr %17, i64 %21
@@ -609,6 +597,7 @@ define dso_local void @run_vm(ptr noundef %0) #0 {
   %438 = getelementptr inbounds %struct.VM, ptr %437, i32 0, i32 3
   %439 = load i32, ptr %438, align 4
   %440 = icmp ne i32 %439, 0
+  call void asm sideeffect "push %rax\0Apush %rbx\0Amov %rax, $0\0Axor %rbx, %rbx\0Amov %bl, $1\0Acall IndirectConditionalJumpFunc\0Apop %rbx\0Apop %rax\0A", "r, r"(i64 55835557902, i1 %440)
   br i1 %440, label %454, label %441
 
 441:                                              ; preds = %436
@@ -701,6 +690,7 @@ define dso_local void @run_vm(ptr noundef %0) #0 {
   %513 = getelementptr inbounds i32, ptr %507, i64 %512
   %514 = load i32, ptr %513, align 4
   %515 = icmp ne i32 %514, 0
+  call void asm sideeffect "push %rax\0Apush %rbx\0Amov %rax, $0\0Axor %rbx, %rbx\0Amov %bl, $1\0Acall IndirectConditionalJumpFunc\0Apop %rbx\0Apop %rax\0A", "r, r"(i64 77310656532, i1 %515)
   br i1 %515, label %516, label %518
 
 516:                                              ; preds = %504
@@ -722,7 +712,7 @@ define dso_local void @run_vm(ptr noundef %0) #0 {
 525:                                              ; preds = %14
   %526 = load i32, ptr %3, align 4
   %527 = call i32 (ptr, ...) @printf(ptr noundef @.str.3, i32 noundef %526)
-  call void @exit(i32 noundef 1) #7
+  call void @exit(i32 noundef 1) #8
   unreachable
 
 528:                                              ; preds = %520, %460, %459, %395, %372, %358, %305, %252, %199, %146, %93, %57, %26, %25
@@ -745,9 +735,47 @@ define dso_local i32 @main() #0 {
   %2 = call ptr @new_vm(ptr noundef @prog, i32 noundef 51, i32 noundef 256)
   store ptr %2, ptr %1, align 8
   %3 = load ptr, ptr %1, align 8
-  call void asm sideeffect alignstack "xorq %rax, %rax\0Atestq %rax, %rax\0Ajne 27f\0Aje 26f\0A27:\0A.byte 0x5e\0A26:\0A", ""()
   call void @run_vm(ptr noundef %3)
   ret i32 0
+}
+
+; Function Attrs: naked
+define void @IndirectCallFunc() #6 {
+  %1 = call i64 asm sideeffect "mov $0, %rax", "=r"()
+  %2 = lshr i64 %1, 48
+  %3 = trunc i64 %2 to i16
+  %4 = lshr i64 %1, 32
+  %5 = trunc i64 %4 to i16
+  %6 = getelementptr [1 x [26 x ptr]], ptr @AllFunctions_IndirectBrTargets, i32 0, i16 %3
+  %7 = getelementptr [26 x ptr], ptr %6, i32 0, i16 %5
+  %8 = load ptr, ptr %7, align 8
+  call void asm sideeffect "pop %rax", ""()
+  call void asm sideeffect "pop %rax", ""()
+  call void asm sideeffect "jmp *$0", "r"(ptr %8)
+  ret void
+}
+
+define void @IndirectConditionalJumpFunc() {
+  %1 = call i64 asm sideeffect "mov $0, %rax", "=r"()
+  %2 = lshr i64 %1, 48
+  %3 = trunc i64 %2 to i16
+  %4 = lshr i64 %1, 16
+  %5 = trunc i64 %4 to i16
+  %6 = trunc i64 %1 to i16
+  %7 = call i64 asm sideeffect "mov $0, %rbx", "=r"()
+  %8 = getelementptr [1 x [26 x ptr]], ptr @AllFunctions_IndirectBrTargets, i32 0, i16 %3
+  %9 = getelementptr [26 x ptr], ptr %8, i32 0, i16 %5
+  %10 = load ptr, ptr %9, align 8
+  %11 = getelementptr [1 x [26 x ptr]], ptr @AllFunctions_IndirectBrTargets, i32 0, i16 %3
+  %12 = getelementptr [26 x ptr], ptr %11, i32 0, i16 %6
+  %13 = load ptr, ptr %12, align 8
+  %14 = icmp eq i64 %7, 1
+  %15 = select i1 %14, ptr %10, ptr %13
+  call void asm sideeffect "pop %rax", ""()
+  call void asm sideeffect "pop %rbx", ""()
+  call void asm sideeffect "pop %rax", ""()
+  call void asm sideeffect "jmp *$0", "r"(ptr %15)
+  ret void
 }
 
 attributes #0 = { noinline nounwind optnone uwtable "frame-pointer"="all" "min-legal-vector-width"="0" "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
@@ -756,8 +784,9 @@ attributes #2 = { nocallback nofree nounwind willreturn memory(argmem: write) }
 attributes #3 = { nocallback nofree nounwind willreturn memory(argmem: readwrite) }
 attributes #4 = { "frame-pointer"="all" "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
 attributes #5 = { noreturn nounwind "frame-pointer"="all" "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
-attributes #6 = { nounwind allocsize(0) }
-attributes #7 = { noreturn nounwind }
+attributes #6 = { naked }
+attributes #7 = { nounwind allocsize(0) }
+attributes #8 = { noreturn nounwind }
 
 !llvm.module.flags = !{!0, !1, !2, !3, !4}
 !llvm.ident = !{!5}

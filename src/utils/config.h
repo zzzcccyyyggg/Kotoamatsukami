@@ -39,6 +39,7 @@ extern FunctionSettings loopen;
 extern FunctionSettings ForObs;
 extern FunctionSettings SplitBasicBlocks;
 extern FunctionSettings IndirectJmpPass;
+extern FunctionSettings x86IndirectJmpPass;
 extern FunctionSettings Junkcode;
 extern FunctionSettings Antihook;
 extern Arch targetArch ;

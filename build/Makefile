@@ -420,6 +420,30 @@ src/pass/SwitchToIfElsePass.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/SwitchToIfElsePass.cpp.s
 .PHONY : src/pass/SwitchToIfElsePass.cpp.s
 
+src/pass/X86IndirectJmpPass.o: src/pass/X86IndirectJmpPass.cpp.o
+.PHONY : src/pass/X86IndirectJmpPass.o
+
+# target to build an object file
+src/pass/X86IndirectJmpPass.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/X86IndirectJmpPass.cpp.o
+.PHONY : src/pass/X86IndirectJmpPass.cpp.o
+
+src/pass/X86IndirectJmpPass.i: src/pass/X86IndirectJmpPass.cpp.i
+.PHONY : src/pass/X86IndirectJmpPass.i
+
+# target to preprocess a source file
+src/pass/X86IndirectJmpPass.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/X86IndirectJmpPass.cpp.i
+.PHONY : src/pass/X86IndirectJmpPass.cpp.i
+
+src/pass/X86IndirectJmpPass.s: src/pass/X86IndirectJmpPass.cpp.s
+.PHONY : src/pass/X86IndirectJmpPass.s
+
+# target to generate assembly for a file
+src/pass/X86IndirectJmpPass.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/X86IndirectJmpPass.cpp.s
+.PHONY : src/pass/X86IndirectJmpPass.cpp.s
+
 src/utils/config.o: src/utils/config.cpp.o
 .PHONY : src/utils/config.o
 
@@ -508,6 +532,9 @@ help:
 	@echo "... src/pass/SwitchToIfElsePass.o"
 	@echo "... src/pass/SwitchToIfElsePass.i"
 	@echo "... src/pass/SwitchToIfElsePass.s"
+	@echo "... src/pass/X86IndirectJmpPass.o"
+	@echo "... src/pass/X86IndirectJmpPass.i"
+	@echo "... src/pass/X86IndirectJmpPass.s"
 	@echo "... src/utils/config.o"
 	@echo "... src/utils/config.i"
 	@echo "... src/utils/config.s"

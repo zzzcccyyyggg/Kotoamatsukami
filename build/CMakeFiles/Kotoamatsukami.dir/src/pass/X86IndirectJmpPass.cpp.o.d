@@ -1,7 +1,7 @@
-CMakeFiles/Kotoamatsukami.dir/src/PassPlugin.cpp.o: \
- /home/zzzccc/cxzz/Kotoamatsukami/src/PassPlugin.cpp \
+CMakeFiles/Kotoamatsukami.dir/src/pass/X86IndirectJmpPass.cpp.o: \
+ /home/zzzccc/cxzz/Kotoamatsukami/src/pass/X86IndirectJmpPass.cpp \
  /usr/include/stdc-predef.h \
- /home/zzzccc/cxzz/Kotoamatsukami/src/include/AddJunkCodePass.h \
+ /home/zzzccc/cxzz/Kotoamatsukami/src/pass/../include/X86IndirectJmpPass.h \
  /home/zzzccc/llvm-17/llvm-project/build/include/llvm/IR/PassManager.h \
  /home/zzzccc/llvm-17/llvm-project/build/include/llvm/ADT/DenseMap.h \
  /home/zzzccc/llvm-17/llvm-project/build/include/llvm/ADT/DenseMapInfo.h \
@@ -304,7 +304,6 @@ CMakeFiles/Kotoamatsukami.dir/src/PassPlugin.cpp.o: \
  /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Support/TypeName.h \
  /usr/include/c++/13/list /usr/include/c++/13/bits/stl_list.h \
  /usr/include/c++/13/bits/list.tcc \
- /home/zzzccc/cxzz/Kotoamatsukami/src/include/IndirectJmpPass.h \
  /home/zzzccc/llvm-17/llvm-project/build/include/llvm/ADT/Statistic.h \
  /usr/include/c++/13/atomic \
  /home/zzzccc/llvm-17/llvm-project/build/include/llvm/IR/IRBuilder.h \
@@ -356,20 +355,21 @@ CMakeFiles/Kotoamatsukami.dir/src/PassPlugin.cpp.o: \
  /usr/include/c++/13/map /usr/include/c++/13/bits/stl_tree.h \
  /usr/include/c++/13/bits/stl_map.h \
  /usr/include/c++/13/bits/stl_multimap.h \
- /home/zzzccc/cxzz/Kotoamatsukami/src/include/X86IndirectJmpPass.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Passes/PassBuilder.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Analysis/CGSCCPassManager.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Analysis/LazyCallGraph.h \
+ /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Transforms/Utils/BasicBlockUtils.h \
  /home/zzzccc/llvm-17/llvm-project/build/include/llvm/ADT/SetVector.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Analysis/TargetLibraryInfo.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/TargetParser/Triple.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Support/VersionTuple.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Analysis/TargetLibraryInfo.def \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Passes/OptimizationLevel.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Support/PGOOptions.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/ADT/IntrusiveRefCntPtr.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Transforms/IPO/Inliner.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Analysis/InlineAdvisor.h \
+ /home/zzzccc/llvm-17/llvm-project/build/include/llvm/IR/Dominators.h \
+ /home/zzzccc/llvm-17/llvm-project/build/include/llvm/ADT/DepthFirstIterator.h \
+ /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Support/CFGDiff.h \
+ /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Support/CFGUpdate.h \
+ /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Support/GenericDomTree.h \
+ /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Support/GenericDomTreeConstruction.h \
+ /usr/include/c++/13/queue /usr/include/c++/13/deque \
+ /usr/include/c++/13/bits/stl_deque.h /usr/include/c++/13/bits/deque.tcc \
+ /usr/include/c++/13/bits/stl_queue.h \
+ /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Transforms/Utils/ModuleUtils.h \
+ /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Support/MemoryBufferRef.h \
+ /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Transforms/Utils/Cloning.h \
+ /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Analysis/AssumptionCache.h \
  /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Analysis/InlineCost.h \
  /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Analysis/InlineModelFeatureMaps.h \
  /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Analysis/TensorSpec.h \
@@ -396,59 +396,53 @@ CMakeFiles/Kotoamatsukami.dir/src/PassPlugin.cpp.o: \
  /usr/include/c++/13/tr1/poly_hermite.tcc \
  /usr/include/c++/13/tr1/poly_laguerre.tcc \
  /usr/include/c++/13/tr1/riemann_zeta.tcc \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Analysis/Utils/ImportedFunctionsInliningStatistics.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Transforms/IPO/ModuleInliner.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Transforms/Instrumentation.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/IR/DebugInfoMetadata.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Support/Discriminator.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/IR/DebugInfoFlags.def \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Transforms/Scalar/LoopPassManager.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/ADT/PriorityWorklist.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Analysis/LoopAnalysisManager.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Analysis/LoopInfo.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Support/GenericLoopInfo.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/ADT/PostOrderIterator.h \
- /usr/include/c++/13/set /usr/include/c++/13/bits/stl_set.h \
- /usr/include/c++/13/bits/stl_multiset.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/ADT/SetOperations.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Support/GenericDomTree.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Support/CFGDiff.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Support/CFGUpdate.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Analysis/LoopNestAnalysis.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Transforms/Utils/LCSSA.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Transforms/Utils/LoopSimplify.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Transforms/Utils/LoopUtils.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Analysis/IVDescriptors.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/IR/IntrinsicInst.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Analysis/LoopAccessAnalysis.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/ADT/EquivalenceClasses.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Analysis/ScalarEvolutionExpressions.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Analysis/ScalarEvolution.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/ADT/FoldingSet.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/IR/ConstantRange.h \
+ /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Transforms/Utils/ValueMapper.h \
  /home/zzzccc/llvm-17/llvm-project/build/include/llvm/IR/ValueMap.h \
  /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Support/Mutex.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/IR/DiagnosticInfo.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Support/SourceMgr.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Support/MemoryBuffer.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Support/MemoryBufferRef.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Support/SMLoc.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Transforms/Utils/ValueMapper.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Passes/PassPlugin.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Support/DynamicLibrary.h \
- /home/zzzccc/cxzz/Kotoamatsukami/src/include/ForObsPass.h \
- /home/zzzccc/cxzz/Kotoamatsukami/src/include/SwitchToIfElsePass.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Transforms/Utils/BasicBlockUtils.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/IR/Dominators.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/ADT/DepthFirstIterator.h \
- /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Support/GenericDomTreeConstruction.h \
- /usr/include/c++/13/queue /usr/include/c++/13/deque \
- /usr/include/c++/13/bits/stl_deque.h /usr/include/c++/13/bits/deque.tcc \
- /usr/include/c++/13/bits/stl_queue.h \
- /home/zzzccc/cxzz/Kotoamatsukami/src/include/Loopen.hpp \
  /usr/include/c++/13/random /usr/include/c++/13/bits/random.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/opt_random.h \
  /usr/include/c++/13/bits/random.tcc /usr/include/c++/13/numeric \
  /usr/include/c++/13/bits/stl_numeric.h \
- /usr/include/c++/13/pstl/glue_numeric_defs.h \
- /home/zzzccc/cxzz/Kotoamatsukami/src/include/SplitBasicBlock.h
+ /usr/include/c++/13/pstl/glue_numeric_defs.h /usr/include/c++/13/set \
+ /usr/include/c++/13/bits/stl_set.h \
+ /usr/include/c++/13/bits/stl_multiset.h /usr/include/c++/13/sstream \
+ /usr/include/c++/13/istream /usr/include/c++/13/ios \
+ /usr/include/c++/13/bits/basic_ios.h \
+ /usr/include/c++/13/bits/locale_facets.h /usr/include/c++/13/cwctype \
+ /usr/include/wctype.h /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_base.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_inline.h \
+ /usr/include/c++/13/bits/locale_facets.tcc \
+ /usr/include/c++/13/bits/basic_ios.tcc /usr/include/c++/13/ostream \
+ /usr/include/c++/13/bits/ostream.tcc \
+ /usr/include/c++/13/bits/istream.tcc \
+ /usr/include/c++/13/bits/sstream.tcc /usr/include/c++/13/iomanip \
+ /usr/include/c++/13/locale \
+ /usr/include/c++/13/bits/locale_facets_nonio.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/time_members.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/messages_members.h \
+ /usr/include/libintl.h /usr/include/c++/13/bits/codecvt.h \
+ /usr/include/c++/13/bits/locale_facets_nonio.tcc \
+ /usr/include/c++/13/bits/locale_conv.h \
+ /usr/include/c++/13/bits/quoted_string.h \
+ /home/zzzccc/cxzz/Kotoamatsukami/src/pass/../utils/config.h \
+ /usr/include/c++/13/iostream /usr/include/c++/13/fstream \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
+ /usr/include/c++/13/bits/fstream.tcc \
+ /home/zzzccc/cxzz/Kotoamatsukami/lib/json/single_include/nlohmann/json.hpp \
+ /usr/include/c++/13/forward_list /usr/include/c++/13/bits/forward_list.h \
+ /usr/include/c++/13/bits/forward_list.tcc /usr/include/c++/13/valarray \
+ /usr/include/c++/13/bits/valarray_array.h \
+ /usr/include/c++/13/bits/valarray_array.tcc \
+ /usr/include/c++/13/bits/valarray_before.h \
+ /usr/include/c++/13/bits/slice_array.h \
+ /usr/include/c++/13/bits/valarray_after.h \
+ /usr/include/c++/13/bits/gslice.h \
+ /usr/include/c++/13/bits/gslice_array.h \
+ /usr/include/c++/13/bits/mask_array.h \
+ /usr/include/c++/13/bits/indirect_array.h /usr/include/c++/13/version \
+ /usr/include/c++/13/filesystem /usr/include/c++/13/bits/fs_fwd.h \
+ /usr/include/c++/13/bits/fs_path.h /usr/include/c++/13/codecvt \
+ /usr/include/c++/13/bits/fs_dir.h /usr/include/c++/13/bits/fs_ops.h \
+ /usr/include/c++/13/any

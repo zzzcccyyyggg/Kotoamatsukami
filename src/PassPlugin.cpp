@@ -1,5 +1,6 @@
 #include "include/AddJunkCodePass.h"
 #include "include/IndirectJmpPass.h"
+#include "include/X86IndirectJmpPass.h"
 #include "llvm/Passes/PassBuilder.h"
 #include "llvm/Passes/PassPlugin.h"
 #include "include/ForObsPass.h"
@@ -85,6 +86,7 @@ llvm::PassPluginLibraryInfo getKotoamatsukamiPluginInfo()
                 MPM.addPass(ForObsPass());
                 MPM.addPass(Loopen());
                 MPM.addPass(AddJunkCodePass());
+                MPM.addPass(X86IndirectJmpPass());
         });
 
       }};
