@@ -88,7 +88,7 @@ namespace
         // 将各个部分移位并组合成最终的 64 位值
         long long int X9Value = 0;
         X9Value |= ((long long int)FunctionID << 48); // 前16位
-        X9Value |= ((long long int)ID1 << 32);        // 接下来的16位
+        X9Value |= ((long long int)ID1 << 32);        // 这里好像没啥用 保留之后可作为加密密钥啥的
         X9Value |= ((long long int)TrueID << 16);     // 再接下来的16位
         X9Value |= (long long int)FalseID;            // 最后16位
 
@@ -159,7 +159,7 @@ namespace
         }
         else
         {
-            llvm::outs() << "ExistingFunctionArrays :" << ExistingFunctionArrays.size();
+            // llvm::outs() << "ExistingFunctionArrays :" << ExistingFunctionArrays.size();
             // 如果全局变量存在，先删除它
             GV->eraseFromParent();
             // 重新创建全局变量
@@ -204,54 +204,77 @@ namespace
                         FunctionType::get(Type::getVoidTy(Ctx), {Type::getInt64Ty(Ctx), Type::getInt64Ty(Ctx)}, false),
                         "push %rax\n"
                         "push %rbx\n"
-                        "mov $$0x"+hexValue+", %rax\n" // 将第一个参数（X9Value）移到 rax
-                        "xor %rbx, %rbx\n"
-                        "mov $1, %bl\n"                      // 将第二个参数（Cond）移到 rbx
-                        "call IndirectConditionalJumpFunc\n", // 调用 IndirectConditionalJumpFunc
-                        "r, r", // 指定参数的约束
+                        "push %rcx\n"
+                        "push %rdx\n"
+                        "mov $$0x" +
+                            hexValue + ", %rax\n" // 将第一个参数（X9Value）移到 rax
+                                       "xor %rbx, %rbx\n"
+                                       "mov $1, %bl\n"                       // 将第二个参数（Cond）移到 rbx
+                                       "call IndirectConditionalJumpFunc\n", // 调用 IndirectConditionalJumpFunc
+                        "r, r",                                              // 指定参数的约束
                         true);
                     std::vector<Value *> Args = {X9Value, Cond};
                     Builder.CreateCall(Asm, Args);
                     llvm::InlineAsm *Asm2 = llvm::InlineAsm::get(
                         llvm::FunctionType::get(llvm::Type::getVoidTy(Ctx), {}, false), // 返回类型为 void，没有参数
                         "pop %rax\n"
+                        "pop %rdx\n"
+                        "pop %rcx\n"
                         "pop %rbx\n"
                         "pop %rax\n", // 内联汇编指令
                         "",           // 不需要输入参数
                         true          // 为 true 表示不对外部调用
                     );
-                    Builder.SetInsertPoint(BI->getSuccessor(0),BI->getSuccessor(0)->getFirstInsertionPt());
+                    Builder.SetInsertPoint(BI->getSuccessor(0), BI->getSuccessor(0)->getFirstInsertionPt());
                     Builder.CreateCall(Asm2);
-                    Builder.SetInsertPoint(BI->getSuccessor(1),BI->getSuccessor(1)->getFirstInsertionPt());
+                    Builder.SetInsertPoint(BI->getSuccessor(1), BI->getSuccessor(1)->getFirstInsertionPt());
                     Builder.CreateCall(Asm2);
                 }
             }
             else
             {
-                return 0;
                 IRBuilder<> Builder(F.getContext());
-                Builder.SetInsertPoint(BI); // 设置插入点为 BI
-                // 计算 X9 的值
-                long long int x9 = ComputeRegisterValue(FunctionID, BBNumbering[&BB], BBNumbering[BI->getSuccessor(0)], BBNumbering[BI->getSuccessor(1)]);
-                // 将 X9 的值作为常量传递给内联汇编
-                Value *X9Value = ConstantInt::get(Type::getInt64Ty(Ctx), x9);
-                std::stringstream ss;
-                ss << std::hex << x9; // 将值转换为十六进制格式
-                std::string hexValue = ss.str();
-                // 创建内联汇编，添加参数约束
-                InlineAsm *Asm = InlineAsm::get(
-                    FunctionType::get(Type::getVoidTy(Ctx), {Type::getInt64Ty(Ctx)}, false),
-                    "push %rax\n"             // 保存 rax 的当前值
-                    "mov $$0x"+hexValue+", %rax\n"          // 将第一个参数（X9Value）移到 rax
-                    "call IndirectCallFunc\n", // 调用 IndirectCallFunc
-                    "r",          // 参数约束
-                    true);
+                if (hasUniquePredecessor(BI->getSuccessor(0)))
+                {
+                    Builder.SetInsertPoint(BI); // 设置插入点为 BI
+                    // 计算 X9 的值
+                    long long int x9 = ComputeRegisterValue(FunctionID, BBNumbering[&BB], BBNumbering[BI->getSuccessor(0)], 0);
+                    // 将 X9 的值作为常量传递给内联汇编
+                    Value *X9Value = ConstantInt::get(Type::getInt64Ty(Ctx), x9);
+                    std::stringstream ss;
+                    ss << std::hex << x9; // 将值转换为十六进制格式
+                    std::string hexValue = ss.str();
+                    // 创建内联汇编，添加参数约束
+                    InlineAsm *Asm = InlineAsm::get(
+                        FunctionType::get(Type::getVoidTy(Ctx), {Type::getInt64Ty(Ctx)}, false),
+                        "push %rax\n" // 保存 rax 的当前值
+                        "push %rbx\n"
+                        "push %rcx\n"
+                        "push %rdx\n"
+                        "mov $$0x" +
+                            hexValue + ", %rax\n"                 // 将第一个参数（X9Value）移到 rax
+                                       "call IndirectCallFunc\n", // 调用 IndirectCallFunc
+                        "r",                                      // 参数约束
+                        true);
 
-                // 创建参数向量，按顺序添加参数
-                std::vector<Value *> Args = {X9Value};
+                    // 创建参数向量，按顺序添加参数
+                    std::vector<Value *> Args = {X9Value};
 
-                // 创建内联汇编调用
-                Builder.CreateCall(Asm, Args);
+                    // 创建内联汇编调用
+                    Builder.CreateCall(Asm, Args);
+                    llvm::InlineAsm *Asm2 = llvm::InlineAsm::get(
+                        llvm::FunctionType::get(llvm::Type::getVoidTy(Ctx), {}, false), // 返回类型为 void，没有参数
+                        "pop %rax\n"
+                        "pop %rdx\n"
+                        "pop %rcx\n"
+                        "pop %rbx\n"
+                        "pop %rax\n", // 内联汇编指令
+                        "",           // 不需要输入参数
+                        true          // 为 true 表示不对外部调用
+                    );
+                    Builder.SetInsertPoint(BI->getSuccessor(0), BI->getSuccessor(0)->getFirstInsertionPt());
+                    Builder.CreateCall(Asm2);
+                }
             }
         }
 
@@ -308,7 +331,7 @@ namespace
 
         // 提取 FunctionID 和 ID1
         Value *FunctionID = Builder.CreateTrunc(Builder.CreateLShr(RaxValue, 48), Type::getInt16Ty(Ctx));
-        Value *ID1 = Builder.CreateTrunc(Builder.CreateLShr(RaxValue, 32), Type::getInt16Ty(Ctx));
+        Value *ID1 = Builder.CreateTrunc(Builder.CreateLShr(RaxValue, 16), Type::getInt16Ty(Ctx));
 
         // 调用 getBasicBlockAddress 来获取 BasicBlock 地址
         Value *BBAddr = getBasicBlockAddress(FunctionID, ID1, Builder, M);
@@ -450,7 +473,7 @@ PreservedAnalyses X86IndirectJmpPass::run(Module &M, ModuleAnalysisManager &AM)
                 }
                 auto *BI = dyn_cast<BranchInst>(Terminator);
 
-                if (BI && BI->isConditional())
+                if (BI)
                 {
                     unsigned FunctionID = FunctionIndexMap[&F];
                     createIndirectCallFunc(M);

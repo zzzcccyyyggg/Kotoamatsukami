@@ -11,8 +11,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/Kotoamatsukami.dir/src/pass/Loopen.cpp.o.d"
   "CMakeFiles/Kotoamatsukami.dir/src/pass/SplitBasicBlock.cpp.o"
   "CMakeFiles/Kotoamatsukami.dir/src/pass/SplitBasicBlock.cpp.o.d"
-  "CMakeFiles/Kotoamatsukami.dir/src/pass/SwitchToIfElsePass.cpp.o"
-  "CMakeFiles/Kotoamatsukami.dir/src/pass/SwitchToIfElsePass.cpp.o.d"
   "CMakeFiles/Kotoamatsukami.dir/src/pass/X86IndirectJmpPass.cpp.o"
   "CMakeFiles/Kotoamatsukami.dir/src/pass/X86IndirectJmpPass.cpp.o.d"
   "CMakeFiles/Kotoamatsukami.dir/src/utils/config.cpp.o"

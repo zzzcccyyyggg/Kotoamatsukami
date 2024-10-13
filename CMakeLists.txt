@@ -41,7 +41,6 @@ add_llvm_pass_plugin(Kotoamatsukami
     src/pass/IndirectJmpPass.cpp
     src/pass/X86IndirectJmpPass.cpp
     src/pass/ForObsPass.cpp
-    src/pass/SwitchToIfElsePass.cpp
     src/pass/Loopen.cpp
     src/pass/SplitBasicBlock.cpp
     src/utils/utils.cpp

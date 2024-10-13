@@ -20,7 +20,7 @@ namespace llvm
   class IndirectJmpPass : public PassInfoMixin<IndirectJmpPass>
   {
   public:
-    PreservedAnalyses run(Function &F, FunctionAnalysisManager &AM);
+    PreservedAnalyses run(Module &M, ModuleAnalysisManager &AM);
     // 保证不被跳过
     static bool isRequired() { return true; }
   };

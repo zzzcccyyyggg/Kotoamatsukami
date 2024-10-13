@@ -396,30 +396,6 @@ src/pass/SplitBasicBlock.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/SplitBasicBlock.cpp.s
 .PHONY : src/pass/SplitBasicBlock.cpp.s
 
-src/pass/SwitchToIfElsePass.o: src/pass/SwitchToIfElsePass.cpp.o
-.PHONY : src/pass/SwitchToIfElsePass.o
-
-# target to build an object file
-src/pass/SwitchToIfElsePass.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/SwitchToIfElsePass.cpp.o
-.PHONY : src/pass/SwitchToIfElsePass.cpp.o
-
-src/pass/SwitchToIfElsePass.i: src/pass/SwitchToIfElsePass.cpp.i
-.PHONY : src/pass/SwitchToIfElsePass.i
-
-# target to preprocess a source file
-src/pass/SwitchToIfElsePass.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/SwitchToIfElsePass.cpp.i
-.PHONY : src/pass/SwitchToIfElsePass.cpp.i
-
-src/pass/SwitchToIfElsePass.s: src/pass/SwitchToIfElsePass.cpp.s
-.PHONY : src/pass/SwitchToIfElsePass.s
-
-# target to generate assembly for a file
-src/pass/SwitchToIfElsePass.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/SwitchToIfElsePass.cpp.s
-.PHONY : src/pass/SwitchToIfElsePass.cpp.s
-
 src/pass/X86IndirectJmpPass.o: src/pass/X86IndirectJmpPass.cpp.o
 .PHONY : src/pass/X86IndirectJmpPass.o
 
@@ -529,9 +505,6 @@ help:
 	@echo "... src/pass/SplitBasicBlock.o"
 	@echo "... src/pass/SplitBasicBlock.i"
 	@echo "... src/pass/SplitBasicBlock.s"
-	@echo "... src/pass/SwitchToIfElsePass.o"
-	@echo "... src/pass/SwitchToIfElsePass.i"
-	@echo "... src/pass/SwitchToIfElsePass.s"
 	@echo "... src/pass/X86IndirectJmpPass.o"
 	@echo "... src/pass/X86IndirectJmpPass.i"
 	@echo "... src/pass/X86IndirectJmpPass.s"

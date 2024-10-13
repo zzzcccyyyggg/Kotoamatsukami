@@ -29,6 +29,6 @@ def remove_assembly_code(input_file, output_file):
         outfile.writelines(modified_lines)
 
 # 示例用法
-input_file = 'vm.s'   # 输入的汇编文件
-output_file = 'vm.s'  # 输出的汇编文件
+input_file = 'rc4.s'   # 输入的汇编文件
+output_file = 'rc4.s'  # 输出的汇编文件
 remove_assembly_code(input_file, output_file)

@@ -1,7 +1,8 @@
 #include "../include/IndirectJmpPass.h"
+#include "../utils/config.h"
 /*
 创建变量 按照自己定义的规则定义变量 后续使用变量
-相应的完成相关操作即可 
+相应的完成相关操作即可
 这里还是需要注意函数跳转时的栈的维护
 */
 #include "llvm/IR/IRBuilder.h"
@@ -20,6 +21,7 @@
 #include <iomanip>
 using namespace llvm;
 #define MaxBlockNumber 4096
+int block_count = 0;
 std::map<BasicBlock *, unsigned> BBNumbering; // 基本块编号映射
 int BBNumberingCount = 0;
 std::vector<BasicBlock *> BBTargets;
@@ -38,43 +40,12 @@ int functionCount = 0;
 // 维护一个全局变量引用，用于存储函数的基本块地址数组
 static std::map<Function *, unsigned> FunctionIndexMap;
 
-void splitEntryBlockAndReplaceTerminator(Function &F)
-{
-  BasicBlock &entryBlock = F.getEntryBlock();
-  LLVMContext &context = entryBlock.getContext();
-  IRBuilder<> builder(context);
-
-  BasicBlock::iterator splitPoint = entryBlock.begin();
-  std::advance(splitPoint, 0); // 在中间左右的位置进行拆分
-
-  BasicBlock *NewBB = entryBlock.splitBasicBlock(splitPoint, entryBlock.getName() + ".split");
-  // 在拆分后的前半部分（BB）中插入对 Func1 的调用
-  auto *Terminator = NewBB->getTerminator();
-  builder.SetInsertPoint(Terminator);
-  Value *CE = ConstantExpr::getBitCast(BlockAddress::get(Terminator->getSuccessor(0)), Type::getInt8PtrTy(F.getContext()));
-  IndirectBrInst *IBI = IndirectBrInst::Create(CE, unreachableBlocks.size() + 1);
-  // F.getParent()->print(llvm::outs(), nullptr);
-  for (auto *BB : unreachableBlocks)
-  {
-    IBI->addDestination(BB);
-  }
-  IBI->addDestination(Terminator->getSuccessor(0));
-  ReplaceInstWithInst(Terminator, IBI);
-  unreachableBlocks.clear();
-}
 void createInlineAsm_MovCond2X10(Function &F, IRBuilder<> &Builder, Value *Cond)
 {
-  // 获取当前函数的上下文
   LLVMContext &Ctx = F.getContext();
-
-  // 构建内联汇编字符串
   std::string AsmString;
   AsmString += "mov x10, $0\n"; // 如果条件为0，跳转到.Lfalse
-
-  // 构建内联汇编
   InlineAsm *IA = InlineAsm::get(FunctionType::get(Type::getVoidTy(Ctx), {Type::getInt1Ty(Ctx)}, false), AsmString, "r", true);
-
-  // 创建调用指令
   Builder.CreateCall(IA, Cond);
 }
 // 为函数的基本块编号
@@ -131,31 +102,11 @@ long long int ComputeX9Value(unsigned FunctionID, unsigned ID1, unsigned TrueID,
 // 将基本块的前驱块处理并插入对func1和处理函数的调用
 GlobalVariable *getIndirectTargetsWithMap(Module &M, Function *F, GlobalVariable *&GV, bool updateBasicBlocks)
 {
-  // llvm::outs() << "11";
-  // 构造全局变量的名称
   std::string GVName = "AllFunctions_IndirectBrTargets";
-
-  // 初始化全局变量，如果尚未创建
   if (!GV)
   {
     GV = M.getNamedGlobal(GVName);
   }
-
-  // if (GV)
-  // {
-  //   // ExistingFunctionArrays.clear();
-  //   llvm::outs() << "clear finished ExistingFunctionArrays :" << ExistingFunctionArrays.size();
-  //   // 如果全局变量已经存在，提取已有的函数数组
-  //   auto *OuterArray = dyn_cast<ConstantArray>(GV->getInitializer());
-  //   if (OuterArray)
-  //   {
-  //     for (unsigned i = 0; i < OuterArray->getNumOperands(); ++i)
-  //     {
-  //       ExistingFunctionArrays[i] = OuterArray->getOperand(i);
-  //     }
-  //   }
-  // }
-  // 将函数指针与其索引关联
   unsigned NewIndex;
   if (ExistingFunctionArrays.size() == 0)
   {
@@ -309,29 +260,15 @@ int ProcessPredecessorsAndInsertFuncCall(Function &F, BasicBlock &BB, unsigned F
     // Instruction *Terminator = BB.getTerminator();
     // Builder.SetInsertPoint(Terminator);
     // std::string X9ASM = "mov x9
-        // 将 x9 的值转换为字符串
+    // 将 x9 的值转换为字符串
     std::stringstream ss;
-    ss << std::hex << x9;  // 将值转换为十六进制格式
-    std::string x9Str = ss.str();  // 获取字符串
+    ss << std::hex << x9;         // 将值转换为十六进制格式
+    std::string x9Str = ss.str(); // 获取字符串
     llvm::outs() << "the func" << F.getName().str() << x9Str << "\n";
     InlineAsm *Asm = InlineAsm::get(FunctionType::get(Type::getVoidTy(Ctx), {Type::getInt64Ty(Ctx)}, false), "mov x9, $0", "r", true);
 
     // 插入内联汇编调用，将 X9Value 设置到 X9 寄存器
     Builder.CreateCall(Asm, X9Value);
-    // Builder.CreateCall(Func1);
-    // 构造内联汇编的字符串 "b func1"
-    // std::string asmString = "b func1";
-
-    // 构造汇编指令的约束：没有输入参数和输出参数
-    // std::string constraints = "";
-
-    // 创建内联汇编对象
-    // InlineAsm *inlineAsm = InlineAsm::get(FunctionType::get(Type::getVoidTy(Builder.getContext()), false),
-    // asmString, constraints, /*hasSideEffects=*/true);
-    // ReplaceInstWithInst(Terminator, Builder.CreateUnreachable());
-    // unreachableBlocks.insert(NewBB);
-    // 记录处理成功的块
-    // Builder.CreateCall(inlineAsm);
     processedBlocks.insert(&BB);
     // processedBlocks.insert(NewBB);
 
@@ -340,48 +277,13 @@ int ProcessPredecessorsAndInsertFuncCall(Function &F, BasicBlock &BB, unsigned F
     // 首先删除终结指令
     Builder.SetInsertPoint(Terminator2);
     createInlineAsm_MovCond2X10(F, Builder, Cond);
-    // createInlineAsm_MovCond2X10(F,Builder,Cond);
-    //     // 创建一个指针来存储要跳转的目标基本块
-    // LLVMContext &Context = F.getContext();
-    // AllocaInst *BlockPtr = Builder.CreateAlloca(Type::getInt8PtrTy(Context));
-
-    // // 将 TMPBlock 的地址加载到运行时指针中
-    // Value *BlockAddr = BlockAddress::get(&F, TMPBlock);
-    // Value *BitCastBlockAddr = Builder.CreateBitCast(BlockAddr, Type::getInt8PtrTy(Context));
-    // Builder.CreateStore(BitCastBlockAddr, BlockPtr);
-
-    // // 从指针中加载基本块地址
-    // Value *LoadedBlockAddr = Builder.CreateLoad(Type::getInt8PtrTy(Context), BlockPtr);
     std::string asmString = "b ConditionalJumpFunc_byX10";
-
     // 构造汇编指令的约束：没有输入参数和输出参数
     std::string constraints = "";
-
     // 创建内联汇编对象
     InlineAsm *inlineAsm = InlineAsm::get(FunctionType::get(Type::getVoidTy(Builder.getContext()), false),
                                           asmString, constraints, /*hasSideEffects=*/true);
-    // ReplaceInstWithInst(Terminator, Builder.CreateUnreachable());
-    // unreachableBlocks.insert(NewBB);
-    // 记录处理成功的块
-    Builder.CreateCall(inlineAsm);
-    // Builder.CreateCall(ConditionalJumpFunc_byX10);
-    // Value *CE = ConstantExpr::getBitCast(BlockAddress::get(Terminator2->getSuccessor(0)), Type::getInt8PtrTy(F.getContext()));
-    // IndirectBrInst *IBI = IndirectBrInst::Create(CE, 2);
-    // // F.getParent()->print(llvm::outs(), nullptr);
-    // IBI->addDestination(Terminator2->getSuccessor(0));
-    // IBI->addDestination(Terminator2->getSuccessor(1));
-    // // IBI->addDestination(TMPBlock);
-    // // ReplaceInstWithInst(Terminator2, IBI);
-    // unreachableBlocks.insert(Terminator2->getSuccessor(0));
-    // unreachableBlocks.insert(Terminator2->getSuccessor(1));
-    // F.getParent()->print(llvm::outs(), nullptr);
-
-    // BasicBlock *NormalDest = Terminator2->getSuccessor(0);  // 正常返回后的块
-    // BasicBlock *ExceptionDest = Terminator2->getSuccessor(1);  // 异常处理的块
-    // InvokeInst *Invoke = InvokeInst::Create(ConditionalJumpFunc_byX10, NormalDest, ExceptionDest,ArrayRef<Value *>(), "",NewBB);
-    // ReplaceInstWithInst(Terminator2, Builder.CreateUnreachable());
-
-    // ReplaceInstWithInst(Terminator2, Builder.CreateUnreachable());
+                               Builder.CreateCall(inlineAsm);
     return 1; // 表示成功处理
   }
 
@@ -577,110 +479,97 @@ void createConditionalJumpFuncs(Module &M)
     Builder.CreateRetVoid();
   }
 }
-PreservedAnalyses IndirectJmpPass::run(Function &F, FunctionAnalysisManager &AM)
+int getBasicBlockCountIfNotSkipped(const Function &F)
 {
-  // 跳过名为 "func1" 或 "ConditionalJumpFunc_byX8" 到 "ConditionalJumpFunc_byX21" 的函数
+  // 跳过自创建函数函数
   std::string functionName = F.getName().str();
-  llvm::outs() << "processing " << functionName;
-  // 检查是否为 "func1"
-  if (functionName == "func1")
-  {
-    llvm::errs() << "Skipping function: " << functionName << "\n";
-    return PreservedAnalyses::all();
-  }
-
-  // 检查是否为 "ConditionalJumpFunc_byX8" 到 "ConditionalJumpFunc_byX21"
   for (int regNum = 8; regNum <= 21; ++regNum)
   {
     std::string conditionalJumpFuncName = "ConditionalJumpFunc_byX" + std::to_string(regNum);
     if (functionName == conditionalJumpFuncName)
     {
-      llvm::errs() << "Skipping function: " << functionName << "\n";
-      return PreservedAnalyses::all();
+      return -1;
     }
+  }
+  if (functionName == "func1" || functionName == "ConditionalJumpFunc_byRAX" || functionName == "ConditionalJumpFunc_byRAX")
+  {
+    return -1; // -1 表示跳过该函数
   }
 
   if (F.empty() || F.hasLinkOnceLinkage() || F.getSection() == ".text.startup")
   {
-    llvm::errs() << "Skipping function: " << F.getName() << "\n"; // 输出跳过的函数名
-    return PreservedAnalyses::all();
+    return -1; // -1 表示跳过该函数
   }
 
-  LLVMContext &Ctx = F.getContext();
-  // 添加一个标记属性，表示禁用特定寄存器
-  F.addFnAttr("disable-x9");
-  F.addFnAttr("disable-x10");
-
-  BBNumbering.clear();
-  BBTargets.clear();
-  llvm::errs() << "Processing function: " << F.getName() << "\n"; // 输出正在处理的函数名
-
-  // 拆分关键边
-  // SplitAllCriticalEdges(F, CriticalEdgeSplittingOptions(nullptr, nullptr));
-  // NumberBasicBlock(F);
-
-  // 遍历 Module 中的所有函数
-  if (!functionCount)
+  if (IndirectJmp.model == 2)
   {
-    llvm::outs() << "Initial function count: " << functionCount << "\n";
-    for (const llvm::Function &F : F.getParent()->functions())
+    if (std::find(IndirectJmp.enable_function.begin(), IndirectJmp.enable_function.end(), functionName) == IndirectJmp.enable_function.end())
     {
-      // 检查函数名称，排除 createFunc1 和 createConditionalJumpFuncs
-      if (F.getName() == "createFunc1" || F.getName().startswith("ConditionalJumpFunc_byX"))
-      {
-        continue; // 跳过这些特定的函数
-      }
-
-      // 识别是否为外部函数
-      if (F.isDeclaration())
-      {
-        llvm::outs() << "External function (declaration only): " << F.getName() << "\n";
-      }
-      else
-      {
-        llvm::outs() << "Internal function (defined in this file): " << F.getName() << "\n";
-        FunctionIndexMap[const_cast<llvm::Function *>(&F)] = functionCount;
-        functionCount++;
-      }
-    }
-    llvm::outs() << "Final function count: " << functionCount << "\n";
-  }
-
-  AllFunctions_IndirectBrTargets = getIndirectTargetsWithMap(*F.getParent(), &F, AllFunctions_IndirectBrTargets, 0);
-
-  int block_count = 0;
-  // 遍历函数中的所有基本块
-
-  // TMPBlock = &F.back();
-  // // 获取函数名并与 "TMP" 拼接
-  // std::string NewName = F.getName().str() + "_TMP";
-
-  // // 设置基本块的名称
-  // TMPBlock->setName(NewName);
-
-  for (auto &BB : F)
-  {
-    auto *BI = dyn_cast<BranchInst>(BB.getTerminator());
-
-    if (BI && BI->isConditional())
-    {
-      llvm::errs() << "Found conditional branch in block: " << BB.getName() << "\n";
-      // 创建 `Func1` 和条件跳转函数
-      createFunc1(*F.getParent());
-      createConditionalJumpFuncs(*F.getParent());
-      llvm::errs() << "Found conditional branch in block: " << BB.getName() << "\n";
-      // 获取函数的 ID
-      unsigned FunctionID = FunctionIndexMap[&F];
-      llvm::errs() << "Found conditional branch in block: " << BB.getName() << "\n";
-      // 插入对前驱块的处理并插入 `Func1` 和 `HandlerFunc` 的调用
-      ProcessPredecessorsAndInsertFuncCall(F, BB, FunctionID, F.getParent()->getFunction("func1"), F.getParent()->getFunction("ConditionalJumpFunc_byX10"));
-
-      ++block_count;
+      return -1; // -1 表示跳过该函数
     }
   }
-  // splitEntryBlockAndReplaceTerminator(F);
-  // F.getParent()->print(llvm::outs(), nullptr);
-  llvm::errs() << "Processed " << block_count << " blocks with conditional branches.\n";
+  else if (IndirectJmp.model == 3)
+  {
+    if (std::find(IndirectJmp.disable_function.begin(), IndirectJmp.disable_function.end(), functionName) != IndirectJmp.disable_function.end())
+    {
+      return -1; // -1 表示跳过该函数
+    }
+  }
 
+  // 返回该函数的基本块数量
+  return F.size(); // F.size() 返回基本块的数量
+}
+PreservedAnalyses IndirectJmpPass::run(Module &M, ModuleAnalysisManager &AM)
+{
+  LLVMContext &Ctx = M.getContext();
+  readConfig("/home/zzzccc/cxzz/Kotoamatsukami/config/config.json");
+  if (IndirectJmp.model)
+  {
+    // 统计有效的函数数量
+    for (llvm::Function &F : M)
+    {
+      if (getBasicBlockCountIfNotSkipped(F) != -1)
+      {
+        if (getBasicBlockCountIfNotSkipped(F) < MaxBlockNumber)
+        {
+          functionCount += 1;
+        }
+      }
+      llvm::outs() << "Final function count: " << functionCount << "\n";
+    }
+    for (llvm::Function &F : M)
+    {
+      BBNumbering.clear();
+      BBTargets.clear();
+      if (getBasicBlockCountIfNotSkipped(F) == -1 || getBasicBlockCountIfNotSkipped(F) > MaxBlockNumber)
+      {
+        continue;
+      }
+      // 添加一个标记属性，表示禁用特定寄存器
+      F.addFnAttr("disable-x9");
+      F.addFnAttr("disable-x10");
+      AllFunctions_IndirectBrTargets = getIndirectTargetsWithMap(*F.getParent(), &F, AllFunctions_IndirectBrTargets, 0);
+      for (auto &BB : F)
+      {
+        auto *BI = dyn_cast<BranchInst>(BB.getTerminator());
+
+        if (BI && BI->isConditional())
+        {
+          llvm::errs() << "Found conditional branch in block: " << BB.getName() << "\n";
+          // 创建 `Func1` 和条件跳转函数
+          createFunc1(*F.getParent());
+          createConditionalJumpFuncs(*F.getParent());
+          llvm::errs() << "Found conditional branch in block: " << BB.getName() << "\n";
+          // 获取函数的 ID
+          unsigned FunctionID = FunctionIndexMap[&F];
+          llvm::errs() << "Found conditional branch in block: " << BB.getName() << "\n";
+          // 插入对前驱块的处理并插入 `Func1` 和 `HandlerFunc` 的调用
+          ProcessPredecessorsAndInsertFuncCall(F, BB, FunctionID, F.getParent()->getFunction("func1"), F.getParent()->getFunction("ConditionalJumpFunc_byX10"));
+
+          ++block_count;
+        }
+      }
+    }
+  }
   return block_count > 0 ? PreservedAnalyses::none() : PreservedAnalyses::all();
 }

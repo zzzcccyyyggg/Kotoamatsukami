@@ -48,99 +48,86 @@ void run_vm(VM *vm) {
     printf("input\n");
     while (running) { // Loop while running
         opcode = vm->instr[vm->pc]; // Fetch the opcode from the instruction array
-        switch (opcode) { // Switch on the opcode
-            case HALT: // If the opcode is HALT
-                running = 0; // Set the running state to 0
-                break; // Break the switch
-            case LOAD: // If the opcode is LOAD
-                reg1 = vm->instr[vm->pc + 1]; // Fetch the first register from the instruction array
-                imm = vm->instr[vm->pc + 2]; // Fetch the immediate value from the instruction array
-                vm->regs[reg1] = imm; // Load the immediate value into the first register
-                vm->pc += 3; // Increment the program counter by 3
-                break; // Break the switch
-            case MOVE: // If the opcode is MOVE
-                reg1 = vm->instr[vm->pc + 1]; // Fetch the first register from the instruction array
-                reg2 = vm->instr[vm->pc + 2]; // Fetch the second register from the instruction array
-                vm->regs[reg2] = vm->regs[reg1]; // MOVE the value of the first register into the second register
-                vm->pc += 3; // Increment the program counter by 3
-                break; // Break the switch
-            case ADD: // If the opcode is ADD
-                reg1 = vm->instr[vm->pc + 3]; // Fetch the first register from the instruction array
-                reg2 = vm->instr[vm->pc + 2]; // Fetch the second register from the instruction array
-                reg3 = vm->instr[vm->pc + 1]; // Fetch the third register from the instruction array
-                vm->regs[reg3] = vm->regs[reg1] + vm->regs[reg2]; // Add the values of the first and second registers and store the result in the third register
-                vm->pc += 4; // Increment the program counter by 4
-                break; // Break the switch
-            case SUB: // If the opcode is SUB
-                reg1 = vm->instr[vm->pc + 3]; // Fetch the first register from the instruction array
-                reg2 = vm->instr[vm->pc + 2]; // Fetch the second register from the instruction array
-                reg3 = vm->instr[vm->pc + 1]; // Fetch the third register from the instruction array
-                vm->regs[reg3] = vm->regs[reg1] - vm->regs[reg2]; // Subtract the value of the second register from the first register and store the result in the third register
-                vm->pc += 4; // Increment the program counter by 4
-                break; // Break the switch
-            case MUL: // If the opcode is MUL
-                reg1 = vm->instr[vm->pc + 3]; // Fetch the first register from the instruction array
-                reg2 = vm->instr[vm->pc + 2]; // Fetch the second register from the instruction array
-                reg3 = vm->instr[vm->pc + 1]; // Fetch the third register from the instruction array
-                vm->regs[reg3] = vm->regs[reg1] * vm->regs[reg2]; // Multiply the values of the first and second registers and store the result in the third register
-                vm->pc += 4; // Increment the program counter by 4
-                break; // Break the switch
-            case DIV: // If the opcode is DIV
-                reg1 = vm->instr[vm->pc + 3]; // Fetch the first register from the instruction array
-                reg2 = vm->instr[vm->pc + 2]; // Fetch the second register from the instruction array
-                reg3 = vm->instr[vm->pc + 1]; // Fetch the third register from the instruction array
-                vm->regs[reg3] = vm->regs[reg1] / vm->regs[reg2]; // Divide the value of the first register by the value of the second register and store the result in the third register
-                vm->pc += 4; // Increment the program counter by 4
-                break; // Break the switch
-            case XOR: // If the opcode is XOR
-                reg1 = vm->instr[vm->pc + 3]; // Fetch the first register from the instruction array
-                reg2 = vm->instr[vm->pc + 2]; // Fetch the second register from the instruction array
-                reg3 = vm->instr[vm->pc + 1]; // Fetch the third register from the instruction array
-                vm->regs[reg3] = vm->regs[reg1] ^ vm->regs[reg2]; // XOR the values of the first and second registers and store the result in the third register
-                vm->pc += 4; // Increment the program counter by 4
-                break; // Break the switch
-            case JMP: // If the opcode is JMP
-                imm = vm->instr[vm->pc + 1]; // Fetch the immediate value from the instruction array
-                vm->pc = imm; // Set the program counter to the immediate value
-                break; // Break the switch
-            case IN: // If the opcode is IN
-                addr = vm->instr[vm->pc + 1]; // Fetch the memory address from the instruction array
-                fgets(vm->mem + addr, 256, stdin); // Read a string from the standard input and store it in the memory starting from the address
-                vm->pc += 2; // Increment the program counter by 2
-                break; // Break the switch
-            case CMP: // If the opcode is CMP
-                reg1 = vm->instr[vm->pc + 1]; // Fetch the first register from the instruction array
-                reg2 = vm->instr[vm->pc + 2]; // Fetch the second register from the instruction array
-                vm->flag = vm->regs[reg1] == vm->regs[reg2]; // Compare the values of the first and second registers and store the result in the flag register
-                vm->pc += 3; // Increment the program counter by 3
-                break; // Break the switch
-            case JNE:
-                if(!vm->flag) 
-                    vm->pc = vm->instr[vm->pc + 1];
-                else vm->pc += 2;
-                break;
-            case LOADM:  // ld r1,[r2]
-                reg1 = vm->instr[vm->pc + 1];
-                reg2 = vm->instr[vm->pc + 2];
-                addr = vm->regs[reg2];
-                vm->regs[reg1] = vm->mem[addr];
-                vm->pc += 3;
-                break;
-            case OUT:
-                if(vm->instr[vm->pc + 1]){
-                    printf("righhhhhhhhht!\n");
-                }
-                else{
-                    printf("wronnnnnnnnng!\n");
-                }
-                vm->pc+=1;
-                break;
-            default: // If the opcode is invalid
-                printf("Invalid opcode: %d\n", opcode); // Print an error message
-                exit(1); // Exit the program with an error code
+
+        if (opcode == HALT) { // If the opcode is HALT
+            running = 0; // Set the running state to 0
+        } else if (opcode == LOAD) { // If the opcode is LOAD
+            reg1 = vm->instr[vm->pc + 1]; // Fetch the first register from the instruction array
+            imm = vm->instr[vm->pc + 2]; // Fetch the immediate value from the instruction array
+            vm->regs[reg1] = imm; // Load the immediate value into the first register
+            vm->pc += 3; // Increment the program counter by 3
+        } else if (opcode == MOVE) { // If the opcode is MOVE
+            reg1 = vm->instr[vm->pc + 1]; // Fetch the first register from the instruction array
+            reg2 = vm->instr[vm->pc + 2]; // Fetch the second register from the instruction array
+            vm->regs[reg2] = vm->regs[reg1]; // MOVE the value of the first register into the second register
+            vm->pc += 3; // Increment the program counter by 3
+        } else if (opcode == ADD) { // If the opcode is ADD
+            reg1 = vm->instr[vm->pc + 3]; // Fetch the first register from the instruction array
+            reg2 = vm->instr[vm->pc + 2]; // Fetch the second register from the instruction array
+            reg3 = vm->instr[vm->pc + 1]; // Fetch the third register from the instruction array
+            vm->regs[reg3] = vm->regs[reg1] + vm->regs[reg2]; // Add the values of the first and second registers and store the result in the third register
+            vm->pc += 4; // Increment the program counter by 4
+        } else if (opcode == SUB) { // If the opcode is SUB
+            reg1 = vm->instr[vm->pc + 3]; // Fetch the first register from the instruction array
+            reg2 = vm->instr[vm->pc + 2]; // Fetch the second register from the instruction array
+            reg3 = vm->instr[vm->pc + 1]; // Fetch the third register from the instruction array
+            vm->regs[reg3] = vm->regs[reg1] - vm->regs[reg2]; // Subtract the value of the second register from the first register and store the result in the third register
+            vm->pc += 4; // Increment the program counter by 4
+        } else if (opcode == MUL) { // If the opcode is MUL
+            reg1 = vm->instr[vm->pc + 3]; // Fetch the first register from the instruction array
+            reg2 = vm->instr[vm->pc + 2]; // Fetch the second register from the instruction array
+            reg3 = vm->instr[vm->pc + 1]; // Fetch the third register from the instruction array
+            vm->regs[reg3] = vm->regs[reg1] * vm->regs[reg2]; // Multiply the values of the first and second registers and store the result in the third register
+            vm->pc += 4; // Increment the program counter by 4
+        } else if (opcode == DIV) { // If the opcode is DIV
+            reg1 = vm->instr[vm->pc + 3]; // Fetch the first register from the instruction array
+            reg2 = vm->instr[vm->pc + 2]; // Fetch the second register from the instruction array
+            reg3 = vm->instr[vm->pc + 1]; // Fetch the third register from the instruction array
+            vm->regs[reg3] = vm->regs[reg1] / vm->regs[reg2]; // Divide the value of the first register by the value of the second register and store the result in the third register
+            vm->pc += 4; // Increment the program counter by 4
+        } else if (opcode == XOR) { // If the opcode is XOR
+            reg1 = vm->instr[vm->pc + 3]; // Fetch the first register from the instruction array
+            reg2 = vm->instr[vm->pc + 2]; // Fetch the second register from the instruction array
+            reg3 = vm->instr[vm->pc + 1]; // Fetch the third register from the instruction array
+            vm->regs[reg3] = vm->regs[reg1] ^ vm->regs[reg2]; // XOR the values of the first and second registers and store the result in the third register
+            vm->pc += 4; // Increment the program counter by 4
+        } else if (opcode == JMP) { // If the opcode is JMP
+            imm = vm->instr[vm->pc + 1]; // Fetch the immediate value from the instruction array
+            vm->pc = imm; // Set the program counter to the immediate value
+        } else if (opcode == IN) { // If the opcode is IN
+            addr = vm->instr[vm->pc + 1]; // Fetch the memory address from the instruction array
+            fgets(vm->mem + addr, 256, stdin); // Read a string from the standard input and store it in the memory starting from the address
+            vm->pc += 2; // Increment the program counter by 2
+        } else if (opcode == CMP) { // If the opcode is CMP
+            reg1 = vm->instr[vm->pc + 1]; // Fetch the first register from the instruction array
+            reg2 = vm->instr[vm->pc + 2]; // Fetch the second register from the instruction array
+            vm->flag = vm->regs[reg1] == vm->regs[reg2]; // Compare the values of the first and second registers and store the result in the flag register
+            vm->pc += 3; // Increment the program counter by 3
+        } else if (opcode == JNE) { // If the opcode is JNE
+            if (!vm->flag) 
+                vm->pc = vm->instr[vm->pc + 1];
+            else 
+                vm->pc += 2;
+        } else if (opcode == LOADM) { // If the opcode is LOADM
+            reg1 = vm->instr[vm->pc + 1];
+            reg2 = vm->instr[vm->pc + 2];
+            addr = vm->regs[reg2];
+            vm->regs[reg1] = vm->mem[addr];
+            vm->pc += 3;
+        } else if (opcode == OUT) { // If the opcode is OUT
+            if (vm->instr[vm->pc + 1]) {
+                printf("righhhhhhhhht!\n");
+            } else {
+                printf("wronnnnnnnnng!\n");
+            }
+            vm->pc += 1;
+        } else { // If the opcode is invalid
+            printf("Invalid opcode: %d\n", opcode); // Print an error message
+            exit(1); // Exit the program with an error code
         }
     }
 }
+
 
 int prog[] = {
     IN, 0,

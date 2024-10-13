@@ -8,7 +8,7 @@
 FunctionSettings loopen;
 FunctionSettings ForObs;
 FunctionSettings SplitBasicBlocks;
-FunctionSettings IndirectJmpPass;
+FunctionSettings IndirectJmp;
 FunctionSettings x86IndirectJmpPass;
 FunctionSettings Junkcode;
 FunctionSettings Antihook;
@@ -90,7 +90,7 @@ void parseConfig(const std::string& filename) {
     parseFunctionSettings(config["loopen"], loopen);
     parseFunctionSettings(config["ForObs"], ForObs);
     parseFunctionSettings(config["SplitBasicBlocks"], SplitBasicBlocks);
-    parseFunctionSettings(config["IndirectJmpPass"], IndirectJmpPass);
+    parseFunctionSettings(config["IndirectJmpPass"], IndirectJmp);
     parseFunctionSettings(config["X86IndirectJmpPass"], x86IndirectJmpPass);
     parseFunctionSettings(config["Junkcode"], Junkcode);
     parseFunctionSettings(config["Antihook"], Antihook);

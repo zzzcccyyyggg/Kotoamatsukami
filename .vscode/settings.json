@@ -89,7 +89,9 @@
         "__config": "cpp",
         "__locale": "cpp",
         "__verbose_abort": "cpp",
-        "locale": "cpp"
+        "locale": "cpp",
+        "des.h": "c",
+        "stdbool.h": "c"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
