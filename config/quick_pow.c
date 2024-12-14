@@ -5,7 +5,7 @@ unsigned int quick_pow(unsigned int base, unsigned int exp, unsigned int mod)
 {
     int result = 1; 
     base = base % mod;
-    if (exp > 5){
+    if (exp != 2){
         return 0;
     }
     while (exp > 0)

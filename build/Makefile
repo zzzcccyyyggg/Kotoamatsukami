@@ -300,6 +300,102 @@ src/pass/AddJunkCodePass.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/AddJunkCodePass.cpp.s
 .PHONY : src/pass/AddJunkCodePass.cpp.s
 
+src/pass/AntiDebugPass.o: src/pass/AntiDebugPass.cpp.o
+.PHONY : src/pass/AntiDebugPass.o
+
+# target to build an object file
+src/pass/AntiDebugPass.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/AntiDebugPass.cpp.o
+.PHONY : src/pass/AntiDebugPass.cpp.o
+
+src/pass/AntiDebugPass.i: src/pass/AntiDebugPass.cpp.i
+.PHONY : src/pass/AntiDebugPass.i
+
+# target to preprocess a source file
+src/pass/AntiDebugPass.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/AntiDebugPass.cpp.i
+.PHONY : src/pass/AntiDebugPass.cpp.i
+
+src/pass/AntiDebugPass.s: src/pass/AntiDebugPass.cpp.s
+.PHONY : src/pass/AntiDebugPass.s
+
+# target to generate assembly for a file
+src/pass/AntiDebugPass.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/AntiDebugPass.cpp.s
+.PHONY : src/pass/AntiDebugPass.cpp.s
+
+src/pass/BogusControlFlow.o: src/pass/BogusControlFlow.cpp.o
+.PHONY : src/pass/BogusControlFlow.o
+
+# target to build an object file
+src/pass/BogusControlFlow.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/BogusControlFlow.cpp.o
+.PHONY : src/pass/BogusControlFlow.cpp.o
+
+src/pass/BogusControlFlow.i: src/pass/BogusControlFlow.cpp.i
+.PHONY : src/pass/BogusControlFlow.i
+
+# target to preprocess a source file
+src/pass/BogusControlFlow.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/BogusControlFlow.cpp.i
+.PHONY : src/pass/BogusControlFlow.cpp.i
+
+src/pass/BogusControlFlow.s: src/pass/BogusControlFlow.cpp.s
+.PHONY : src/pass/BogusControlFlow.s
+
+# target to generate assembly for a file
+src/pass/BogusControlFlow.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/BogusControlFlow.cpp.s
+.PHONY : src/pass/BogusControlFlow.cpp.s
+
+src/pass/Branch2Call.o: src/pass/Branch2Call.cpp.o
+.PHONY : src/pass/Branch2Call.o
+
+# target to build an object file
+src/pass/Branch2Call.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/Branch2Call.cpp.o
+.PHONY : src/pass/Branch2Call.cpp.o
+
+src/pass/Branch2Call.i: src/pass/Branch2Call.cpp.i
+.PHONY : src/pass/Branch2Call.i
+
+# target to preprocess a source file
+src/pass/Branch2Call.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/Branch2Call.cpp.i
+.PHONY : src/pass/Branch2Call.cpp.i
+
+src/pass/Branch2Call.s: src/pass/Branch2Call.cpp.s
+.PHONY : src/pass/Branch2Call.s
+
+# target to generate assembly for a file
+src/pass/Branch2Call.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/Branch2Call.cpp.s
+.PHONY : src/pass/Branch2Call.cpp.s
+
+src/pass/Branch2Call_32.o: src/pass/Branch2Call_32.cpp.o
+.PHONY : src/pass/Branch2Call_32.o
+
+# target to build an object file
+src/pass/Branch2Call_32.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/Branch2Call_32.cpp.o
+.PHONY : src/pass/Branch2Call_32.cpp.o
+
+src/pass/Branch2Call_32.i: src/pass/Branch2Call_32.cpp.i
+.PHONY : src/pass/Branch2Call_32.i
+
+# target to preprocess a source file
+src/pass/Branch2Call_32.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/Branch2Call_32.cpp.i
+.PHONY : src/pass/Branch2Call_32.cpp.i
+
+src/pass/Branch2Call_32.s: src/pass/Branch2Call_32.cpp.s
+.PHONY : src/pass/Branch2Call_32.s
+
+# target to generate assembly for a file
+src/pass/Branch2Call_32.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/Branch2Call_32.cpp.s
+.PHONY : src/pass/Branch2Call_32.cpp.s
+
 src/pass/ForObsPass.o: src/pass/ForObsPass.cpp.o
 .PHONY : src/pass/ForObsPass.o
 
@@ -324,29 +420,53 @@ src/pass/ForObsPass.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/ForObsPass.cpp.s
 .PHONY : src/pass/ForObsPass.cpp.s
 
-src/pass/IndirectJmpPass.o: src/pass/IndirectJmpPass.cpp.o
-.PHONY : src/pass/IndirectJmpPass.o
+src/pass/IndirectBranch.o: src/pass/IndirectBranch.cpp.o
+.PHONY : src/pass/IndirectBranch.o
 
 # target to build an object file
-src/pass/IndirectJmpPass.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectJmpPass.cpp.o
-.PHONY : src/pass/IndirectJmpPass.cpp.o
+src/pass/IndirectBranch.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectBranch.cpp.o
+.PHONY : src/pass/IndirectBranch.cpp.o
 
-src/pass/IndirectJmpPass.i: src/pass/IndirectJmpPass.cpp.i
-.PHONY : src/pass/IndirectJmpPass.i
+src/pass/IndirectBranch.i: src/pass/IndirectBranch.cpp.i
+.PHONY : src/pass/IndirectBranch.i
 
 # target to preprocess a source file
-src/pass/IndirectJmpPass.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectJmpPass.cpp.i
-.PHONY : src/pass/IndirectJmpPass.cpp.i
+src/pass/IndirectBranch.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectBranch.cpp.i
+.PHONY : src/pass/IndirectBranch.cpp.i
 
-src/pass/IndirectJmpPass.s: src/pass/IndirectJmpPass.cpp.s
-.PHONY : src/pass/IndirectJmpPass.s
+src/pass/IndirectBranch.s: src/pass/IndirectBranch.cpp.s
+.PHONY : src/pass/IndirectBranch.s
 
 # target to generate assembly for a file
-src/pass/IndirectJmpPass.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectJmpPass.cpp.s
-.PHONY : src/pass/IndirectJmpPass.cpp.s
+src/pass/IndirectBranch.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectBranch.cpp.s
+.PHONY : src/pass/IndirectBranch.cpp.s
+
+src/pass/IndirectCall.o: src/pass/IndirectCall.cpp.o
+.PHONY : src/pass/IndirectCall.o
+
+# target to build an object file
+src/pass/IndirectCall.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectCall.cpp.o
+.PHONY : src/pass/IndirectCall.cpp.o
+
+src/pass/IndirectCall.i: src/pass/IndirectCall.cpp.i
+.PHONY : src/pass/IndirectCall.i
+
+# target to preprocess a source file
+src/pass/IndirectCall.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectCall.cpp.i
+.PHONY : src/pass/IndirectCall.cpp.i
+
+src/pass/IndirectCall.s: src/pass/IndirectCall.cpp.s
+.PHONY : src/pass/IndirectCall.s
+
+# target to generate assembly for a file
+src/pass/IndirectCall.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectCall.cpp.s
+.PHONY : src/pass/IndirectCall.cpp.s
 
 src/pass/Loopen.o: src/pass/Loopen.cpp.o
 .PHONY : src/pass/Loopen.o
@@ -395,30 +515,6 @@ src/pass/SplitBasicBlock.s: src/pass/SplitBasicBlock.cpp.s
 src/pass/SplitBasicBlock.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/SplitBasicBlock.cpp.s
 .PHONY : src/pass/SplitBasicBlock.cpp.s
-
-src/pass/X86IndirectJmpPass.o: src/pass/X86IndirectJmpPass.cpp.o
-.PHONY : src/pass/X86IndirectJmpPass.o
-
-# target to build an object file
-src/pass/X86IndirectJmpPass.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/X86IndirectJmpPass.cpp.o
-.PHONY : src/pass/X86IndirectJmpPass.cpp.o
-
-src/pass/X86IndirectJmpPass.i: src/pass/X86IndirectJmpPass.cpp.i
-.PHONY : src/pass/X86IndirectJmpPass.i
-
-# target to preprocess a source file
-src/pass/X86IndirectJmpPass.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/X86IndirectJmpPass.cpp.i
-.PHONY : src/pass/X86IndirectJmpPass.cpp.i
-
-src/pass/X86IndirectJmpPass.s: src/pass/X86IndirectJmpPass.cpp.s
-.PHONY : src/pass/X86IndirectJmpPass.s
-
-# target to generate assembly for a file
-src/pass/X86IndirectJmpPass.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/X86IndirectJmpPass.cpp.s
-.PHONY : src/pass/X86IndirectJmpPass.cpp.s
 
 src/utils/config.o: src/utils/config.cpp.o
 .PHONY : src/utils/config.o
@@ -493,21 +589,33 @@ help:
 	@echo "... src/pass/AddJunkCodePass.o"
 	@echo "... src/pass/AddJunkCodePass.i"
 	@echo "... src/pass/AddJunkCodePass.s"
+	@echo "... src/pass/AntiDebugPass.o"
+	@echo "... src/pass/AntiDebugPass.i"
+	@echo "... src/pass/AntiDebugPass.s"
+	@echo "... src/pass/BogusControlFlow.o"
+	@echo "... src/pass/BogusControlFlow.i"
+	@echo "... src/pass/BogusControlFlow.s"
+	@echo "... src/pass/Branch2Call.o"
+	@echo "... src/pass/Branch2Call.i"
+	@echo "... src/pass/Branch2Call.s"
+	@echo "... src/pass/Branch2Call_32.o"
+	@echo "... src/pass/Branch2Call_32.i"
+	@echo "... src/pass/Branch2Call_32.s"
 	@echo "... src/pass/ForObsPass.o"
 	@echo "... src/pass/ForObsPass.i"
 	@echo "... src/pass/ForObsPass.s"
-	@echo "... src/pass/IndirectJmpPass.o"
-	@echo "... src/pass/IndirectJmpPass.i"
-	@echo "... src/pass/IndirectJmpPass.s"
+	@echo "... src/pass/IndirectBranch.o"
+	@echo "... src/pass/IndirectBranch.i"
+	@echo "... src/pass/IndirectBranch.s"
+	@echo "... src/pass/IndirectCall.o"
+	@echo "... src/pass/IndirectCall.i"
+	@echo "... src/pass/IndirectCall.s"
 	@echo "... src/pass/Loopen.o"
 	@echo "... src/pass/Loopen.i"
 	@echo "... src/pass/Loopen.s"
 	@echo "... src/pass/SplitBasicBlock.o"
 	@echo "... src/pass/SplitBasicBlock.i"
 	@echo "... src/pass/SplitBasicBlock.s"
-	@echo "... src/pass/X86IndirectJmpPass.o"
-	@echo "... src/pass/X86IndirectJmpPass.i"
-	@echo "... src/pass/X86IndirectJmpPass.s"
 	@echo "... src/utils/config.o"
 	@echo "... src/utils/config.i"
 	@echo "... src/utils/config.s"

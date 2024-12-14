@@ -38,10 +38,14 @@ struct FunctionSettings {
 extern FunctionSettings loopen;
 extern FunctionSettings ForObs;
 extern FunctionSettings SplitBasicBlocks;
-extern FunctionSettings IndirectJmp;
-extern FunctionSettings x86IndirectJmpPass;
+extern FunctionSettings branch2call;
+extern FunctionSettings branch2call_32;
 extern FunctionSettings Junkcode;
 extern FunctionSettings Antihook;
+extern FunctionSettings Antidebug;
+extern FunctionSettings indirect_branch;
+extern FunctionSettings indirect_call;
+extern FunctionSettings bogus_control_flow;
 extern Arch targetArch ;
 extern int isConfigured;
 extern int x[2048];

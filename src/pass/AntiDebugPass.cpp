@@ -1,36 +1,68 @@
-#include "llvm/IR/Function.h"
-#include "llvm/IR/Module.h"
-#include "llvm/IR/IRBuilder.h"
-#include "llvm/IR/GlobalVariable.h"
-#include "llvm/IR/Constants.h"
+#include "AntiDebugPass.h"
+#include "config.h"
+#include "utils.hpp"
+using namespace llvm;
+std::vector<llvm::Function*> defineAntiDebugFunc(llvm::Module *M, LLVMContext &Context) {
+    // 创建一个存储函数的vector
+    std::vector<llvm::Function*> functions;
+    // 可以继续创建更多函数
+    for (int i = 1; i <= 7; ++i) {
+        std::string funcName = "Kotoamatsukami_Antidebug" + std::to_string(i);
+        FunctionType *FT = FunctionType::get(Type::getVoidTy(Context), false);
+        Function *F = Function::Create(FT, Function::ExternalLinkage, funcName, M);
+        functions.push_back(F);
+    }
+    // 返回包含所有函数的vector
+    return functions;
+}
 
-// 创建并插入构造函数
-void insertConstructorFunction(llvm::Module &module) {
+// 插入构造函数，将7个反调试函数加入到llvm.global_ctors
+void insertConstructorFunctions(llvm::Module &module, std::vector<llvm::Function*> &antidebugFuncs) {
     llvm::LLVMContext &context = module.getContext();
     
-    // 创建一个void类型的函数
-    llvm::FunctionType *funcType = llvm::FunctionType::get(llvm::Type::getVoidTy(context), false);
-    llvm::Function *constructorFunction = llvm::Function::Create(funcType, llvm::Function::ExternalLinkage, "my_function", &module);
-
-    // 在函数中插入指令 (示例)
-    llvm::BasicBlock *entry = llvm::BasicBlock::Create(context, "entry", constructorFunction);
-    llvm::IRBuilder<> builder(entry);
-    builder.CreateRetVoid();
+    // 创建结构体类型，存储（优先级, 函数指针）
+    llvm::StructType *ctorStructType = llvm::StructType::get(
+        context, {llvm::Type::getInt32Ty(context), llvm::Type::getInt8PtrTy(context)}
+    );
     
-    // 创建一个全局的`llvm.global_ctors`数组，用来存储构造函数
-    llvm::ArrayType *globalCtorType = llvm::ArrayType::get(llvm::StructType::get(
-        llvm::Type::getInt32Ty(context), funcType->getPointerTo(), nullptr), 1);
-
+    // 创建全局的 llvm.global_ctors 数组，用来存储构造函数
+    llvm::ArrayType *globalCtorType = llvm::ArrayType::get(ctorStructType, antidebugFuncs.size());
     llvm::GlobalVariable *globalCtor = new llvm::GlobalVariable(
-        module, globalCtorType, false, llvm::GlobalValue::AppendingLinkage, nullptr, "llvm.global_ctors");
+        module, globalCtorType, false, llvm::GlobalValue::AppendingLinkage, nullptr, "llvm.global_ctors"
+    );
 
-    // 插入优先级为65535的构造函数 (优先级越小越早执行)
-    llvm::Constant *elements[1] = {
-        llvm::ConstantStruct::get(llvm::StructType::get(llvm::Type::getInt32Ty(context), funcType->getPointerTo()), {
-            llvm::ConstantInt::get(llvm::Type::getInt32Ty(context), 65535),
-            constructorFunction
-        })
-    };
+    // 创建每个构造函数条目的常量
+    std::vector<llvm::Constant*> elements;
+    for (auto &antidebugFunc : antidebugFuncs) {
+        llvm::Constant *ctorStruct = llvm::ConstantStruct::get(
+            ctorStructType, {
+                llvm::ConstantInt::get(llvm::Type::getInt32Ty(context), 65535), // 优先级，65535是默认值
+                llvm::ConstantExpr::getBitCast(antidebugFunc, llvm::Type::getInt8PtrTy(context)) // 函数指针
+            }
+        );
+        elements.push_back(ctorStruct);
+    }
 
+    // 将所有条目加入到全局变量 llvm.global_ctors 中
     globalCtor->setInitializer(llvm::ConstantArray::get(globalCtorType, elements));
+}
+
+PreservedAnalyses AntiDebugPass::run(Module &M, ModuleAnalysisManager &AM)
+{
+    bool isChanged = false;
+    readConfig("/home/zzzccc/cxzz/Kotoamatsukami/config/config.json");
+    if (Antidebug.model)
+    {
+            std::vector<llvm::Function*> antiDebugFuncs = defineAntiDebugFunc(&M, M.getContext());
+
+            // 插入构造函数
+            insertConstructorFunctions(M, antiDebugFuncs);
+
+            isChanged = true;
+    }
+
+    if (isChanged)
+        return PreservedAnalyses::none();
+    else
+        return PreservedAnalyses::all();
 }

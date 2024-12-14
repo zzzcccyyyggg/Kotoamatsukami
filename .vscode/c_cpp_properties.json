@@ -6,10 +6,10 @@
                 "${workspaceFolder}/**",
                 "/home/zzzccc/llvm-17/llvm-project/include/**",
                 "/home/zzzccc/llvm-17/llvm-project/llvm/include/**",
-                "/home/zzzccc/cxzz/o-mvll/src/include/**"
+                "/home/zzzccc/cxzz/Kotoamatsukami/src/include/**"
             ],
             "defines": [],
-            "compilerPath": "/usr/bin/clang",
+            "compilerPath": "/home/zzzccc/llvm-17/llvm-project/build/bin/clang",
             "cStandard": "c17",
             "cppStandard": "c++14",
             "intelliSenseMode": "linux-clang-x64"

@@ -1,6 +1,6 @@
 
 #include "../include/AddJunkCodePass.h"
-#include "../utils/config.h"
+#include "config.h"
 #include "llvm/ADT/Statistic.h"
 #include "llvm/IR/BasicBlock.h"
 #include "llvm/IR/IRBuilder.h"
@@ -64,7 +64,7 @@ PreservedAnalyses AddJunkCodePass::run(Module &M, ModuleAnalysisManager &AM)
     {
         for (llvm::Function &F : M)
         {
-            if (F.isDeclaration())
+            if (!F.hasExactDefinition())
             {
                 continue;
             }

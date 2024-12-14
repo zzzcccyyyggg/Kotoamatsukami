@@ -10,11 +10,15 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/zzzccc/cxzz/Kotoamatsukami/src/PassPlugin.cpp" "CMakeFiles/Kotoamatsukami.dir/src/PassPlugin.cpp.o" "gcc" "CMakeFiles/Kotoamatsukami.dir/src/PassPlugin.cpp.o.d"
   "/home/zzzccc/cxzz/Kotoamatsukami/src/pass/AddJunkCodePass.cpp" "CMakeFiles/Kotoamatsukami.dir/src/pass/AddJunkCodePass.cpp.o" "gcc" "CMakeFiles/Kotoamatsukami.dir/src/pass/AddJunkCodePass.cpp.o.d"
+  "/home/zzzccc/cxzz/Kotoamatsukami/src/pass/AntiDebugPass.cpp" "CMakeFiles/Kotoamatsukami.dir/src/pass/AntiDebugPass.cpp.o" "gcc" "CMakeFiles/Kotoamatsukami.dir/src/pass/AntiDebugPass.cpp.o.d"
+  "/home/zzzccc/cxzz/Kotoamatsukami/src/pass/BogusControlFlow.cpp" "CMakeFiles/Kotoamatsukami.dir/src/pass/BogusControlFlow.cpp.o" "gcc" "CMakeFiles/Kotoamatsukami.dir/src/pass/BogusControlFlow.cpp.o.d"
+  "/home/zzzccc/cxzz/Kotoamatsukami/src/pass/Branch2Call.cpp" "CMakeFiles/Kotoamatsukami.dir/src/pass/Branch2Call.cpp.o" "gcc" "CMakeFiles/Kotoamatsukami.dir/src/pass/Branch2Call.cpp.o.d"
+  "/home/zzzccc/cxzz/Kotoamatsukami/src/pass/Branch2Call_32.cpp" "CMakeFiles/Kotoamatsukami.dir/src/pass/Branch2Call_32.cpp.o" "gcc" "CMakeFiles/Kotoamatsukami.dir/src/pass/Branch2Call_32.cpp.o.d"
   "/home/zzzccc/cxzz/Kotoamatsukami/src/pass/ForObsPass.cpp" "CMakeFiles/Kotoamatsukami.dir/src/pass/ForObsPass.cpp.o" "gcc" "CMakeFiles/Kotoamatsukami.dir/src/pass/ForObsPass.cpp.o.d"
-  "/home/zzzccc/cxzz/Kotoamatsukami/src/pass/IndirectJmpPass.cpp" "CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectJmpPass.cpp.o" "gcc" "CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectJmpPass.cpp.o.d"
+  "/home/zzzccc/cxzz/Kotoamatsukami/src/pass/IndirectBranch.cpp" "CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectBranch.cpp.o" "gcc" "CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectBranch.cpp.o.d"
+  "/home/zzzccc/cxzz/Kotoamatsukami/src/pass/IndirectCall.cpp" "CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectCall.cpp.o" "gcc" "CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectCall.cpp.o.d"
   "/home/zzzccc/cxzz/Kotoamatsukami/src/pass/Loopen.cpp" "CMakeFiles/Kotoamatsukami.dir/src/pass/Loopen.cpp.o" "gcc" "CMakeFiles/Kotoamatsukami.dir/src/pass/Loopen.cpp.o.d"
   "/home/zzzccc/cxzz/Kotoamatsukami/src/pass/SplitBasicBlock.cpp" "CMakeFiles/Kotoamatsukami.dir/src/pass/SplitBasicBlock.cpp.o" "gcc" "CMakeFiles/Kotoamatsukami.dir/src/pass/SplitBasicBlock.cpp.o.d"
-  "/home/zzzccc/cxzz/Kotoamatsukami/src/pass/X86IndirectJmpPass.cpp" "CMakeFiles/Kotoamatsukami.dir/src/pass/X86IndirectJmpPass.cpp.o" "gcc" "CMakeFiles/Kotoamatsukami.dir/src/pass/X86IndirectJmpPass.cpp.o.d"
   "/home/zzzccc/cxzz/Kotoamatsukami/src/utils/config.cpp" "CMakeFiles/Kotoamatsukami.dir/src/utils/config.cpp.o" "gcc" "CMakeFiles/Kotoamatsukami.dir/src/utils/config.cpp.o.d"
   "/home/zzzccc/cxzz/Kotoamatsukami/src/utils/utils.cpp" "CMakeFiles/Kotoamatsukami.dir/src/utils/utils.cpp.o" "gcc" "CMakeFiles/Kotoamatsukami.dir/src/utils/utils.cpp.o.d"
   )

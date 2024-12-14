@@ -97,33 +97,33 @@ CMakeFiles/Kotoamatsukami.dir/src/pass/AddJunkCodePass.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Kotoamatsukami.dir/src/pass/AddJunkCodePass.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zzzccc/cxzz/Kotoamatsukami/src/pass/AddJunkCodePass.cpp -o CMakeFiles/Kotoamatsukami.dir/src/pass/AddJunkCodePass.cpp.s
 
-CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectJmpPass.cpp.o: CMakeFiles/Kotoamatsukami.dir/flags.make
-CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectJmpPass.cpp.o: /home/zzzccc/cxzz/Kotoamatsukami/src/pass/IndirectJmpPass.cpp
-CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectJmpPass.cpp.o: CMakeFiles/Kotoamatsukami.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectJmpPass.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectJmpPass.cpp.o -MF CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectJmpPass.cpp.o.d -o CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectJmpPass.cpp.o -c /home/zzzccc/cxzz/Kotoamatsukami/src/pass/IndirectJmpPass.cpp
+CMakeFiles/Kotoamatsukami.dir/src/pass/Branch2Call.cpp.o: CMakeFiles/Kotoamatsukami.dir/flags.make
+CMakeFiles/Kotoamatsukami.dir/src/pass/Branch2Call.cpp.o: /home/zzzccc/cxzz/Kotoamatsukami/src/pass/Branch2Call.cpp
+CMakeFiles/Kotoamatsukami.dir/src/pass/Branch2Call.cpp.o: CMakeFiles/Kotoamatsukami.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Kotoamatsukami.dir/src/pass/Branch2Call.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Kotoamatsukami.dir/src/pass/Branch2Call.cpp.o -MF CMakeFiles/Kotoamatsukami.dir/src/pass/Branch2Call.cpp.o.d -o CMakeFiles/Kotoamatsukami.dir/src/pass/Branch2Call.cpp.o -c /home/zzzccc/cxzz/Kotoamatsukami/src/pass/Branch2Call.cpp
 
-CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectJmpPass.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectJmpPass.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zzzccc/cxzz/Kotoamatsukami/src/pass/IndirectJmpPass.cpp > CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectJmpPass.cpp.i
+CMakeFiles/Kotoamatsukami.dir/src/pass/Branch2Call.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Kotoamatsukami.dir/src/pass/Branch2Call.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zzzccc/cxzz/Kotoamatsukami/src/pass/Branch2Call.cpp > CMakeFiles/Kotoamatsukami.dir/src/pass/Branch2Call.cpp.i
 
-CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectJmpPass.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectJmpPass.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zzzccc/cxzz/Kotoamatsukami/src/pass/IndirectJmpPass.cpp -o CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectJmpPass.cpp.s
+CMakeFiles/Kotoamatsukami.dir/src/pass/Branch2Call.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Kotoamatsukami.dir/src/pass/Branch2Call.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zzzccc/cxzz/Kotoamatsukami/src/pass/Branch2Call.cpp -o CMakeFiles/Kotoamatsukami.dir/src/pass/Branch2Call.cpp.s
 
-CMakeFiles/Kotoamatsukami.dir/src/pass/X86IndirectJmpPass.cpp.o: CMakeFiles/Kotoamatsukami.dir/flags.make
-CMakeFiles/Kotoamatsukami.dir/src/pass/X86IndirectJmpPass.cpp.o: /home/zzzccc/cxzz/Kotoamatsukami/src/pass/X86IndirectJmpPass.cpp
-CMakeFiles/Kotoamatsukami.dir/src/pass/X86IndirectJmpPass.cpp.o: CMakeFiles/Kotoamatsukami.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Kotoamatsukami.dir/src/pass/X86IndirectJmpPass.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Kotoamatsukami.dir/src/pass/X86IndirectJmpPass.cpp.o -MF CMakeFiles/Kotoamatsukami.dir/src/pass/X86IndirectJmpPass.cpp.o.d -o CMakeFiles/Kotoamatsukami.dir/src/pass/X86IndirectJmpPass.cpp.o -c /home/zzzccc/cxzz/Kotoamatsukami/src/pass/X86IndirectJmpPass.cpp
+CMakeFiles/Kotoamatsukami.dir/src/pass/Branch2Call_32.cpp.o: CMakeFiles/Kotoamatsukami.dir/flags.make
+CMakeFiles/Kotoamatsukami.dir/src/pass/Branch2Call_32.cpp.o: /home/zzzccc/cxzz/Kotoamatsukami/src/pass/Branch2Call_32.cpp
+CMakeFiles/Kotoamatsukami.dir/src/pass/Branch2Call_32.cpp.o: CMakeFiles/Kotoamatsukami.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Kotoamatsukami.dir/src/pass/Branch2Call_32.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Kotoamatsukami.dir/src/pass/Branch2Call_32.cpp.o -MF CMakeFiles/Kotoamatsukami.dir/src/pass/Branch2Call_32.cpp.o.d -o CMakeFiles/Kotoamatsukami.dir/src/pass/Branch2Call_32.cpp.o -c /home/zzzccc/cxzz/Kotoamatsukami/src/pass/Branch2Call_32.cpp
 
-CMakeFiles/Kotoamatsukami.dir/src/pass/X86IndirectJmpPass.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Kotoamatsukami.dir/src/pass/X86IndirectJmpPass.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zzzccc/cxzz/Kotoamatsukami/src/pass/X86IndirectJmpPass.cpp > CMakeFiles/Kotoamatsukami.dir/src/pass/X86IndirectJmpPass.cpp.i
+CMakeFiles/Kotoamatsukami.dir/src/pass/Branch2Call_32.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Kotoamatsukami.dir/src/pass/Branch2Call_32.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zzzccc/cxzz/Kotoamatsukami/src/pass/Branch2Call_32.cpp > CMakeFiles/Kotoamatsukami.dir/src/pass/Branch2Call_32.cpp.i
 
-CMakeFiles/Kotoamatsukami.dir/src/pass/X86IndirectJmpPass.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Kotoamatsukami.dir/src/pass/X86IndirectJmpPass.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zzzccc/cxzz/Kotoamatsukami/src/pass/X86IndirectJmpPass.cpp -o CMakeFiles/Kotoamatsukami.dir/src/pass/X86IndirectJmpPass.cpp.s
+CMakeFiles/Kotoamatsukami.dir/src/pass/Branch2Call_32.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Kotoamatsukami.dir/src/pass/Branch2Call_32.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zzzccc/cxzz/Kotoamatsukami/src/pass/Branch2Call_32.cpp -o CMakeFiles/Kotoamatsukami.dir/src/pass/Branch2Call_32.cpp.s
 
 CMakeFiles/Kotoamatsukami.dir/src/pass/ForObsPass.cpp.o: CMakeFiles/Kotoamatsukami.dir/flags.make
 CMakeFiles/Kotoamatsukami.dir/src/pass/ForObsPass.cpp.o: /home/zzzccc/cxzz/Kotoamatsukami/src/pass/ForObsPass.cpp
@@ -153,10 +153,24 @@ CMakeFiles/Kotoamatsukami.dir/src/pass/Loopen.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Kotoamatsukami.dir/src/pass/Loopen.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zzzccc/cxzz/Kotoamatsukami/src/pass/Loopen.cpp -o CMakeFiles/Kotoamatsukami.dir/src/pass/Loopen.cpp.s
 
+CMakeFiles/Kotoamatsukami.dir/src/pass/AntiDebugPass.cpp.o: CMakeFiles/Kotoamatsukami.dir/flags.make
+CMakeFiles/Kotoamatsukami.dir/src/pass/AntiDebugPass.cpp.o: /home/zzzccc/cxzz/Kotoamatsukami/src/pass/AntiDebugPass.cpp
+CMakeFiles/Kotoamatsukami.dir/src/pass/AntiDebugPass.cpp.o: CMakeFiles/Kotoamatsukami.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Kotoamatsukami.dir/src/pass/AntiDebugPass.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Kotoamatsukami.dir/src/pass/AntiDebugPass.cpp.o -MF CMakeFiles/Kotoamatsukami.dir/src/pass/AntiDebugPass.cpp.o.d -o CMakeFiles/Kotoamatsukami.dir/src/pass/AntiDebugPass.cpp.o -c /home/zzzccc/cxzz/Kotoamatsukami/src/pass/AntiDebugPass.cpp
+
+CMakeFiles/Kotoamatsukami.dir/src/pass/AntiDebugPass.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Kotoamatsukami.dir/src/pass/AntiDebugPass.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zzzccc/cxzz/Kotoamatsukami/src/pass/AntiDebugPass.cpp > CMakeFiles/Kotoamatsukami.dir/src/pass/AntiDebugPass.cpp.i
+
+CMakeFiles/Kotoamatsukami.dir/src/pass/AntiDebugPass.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Kotoamatsukami.dir/src/pass/AntiDebugPass.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zzzccc/cxzz/Kotoamatsukami/src/pass/AntiDebugPass.cpp -o CMakeFiles/Kotoamatsukami.dir/src/pass/AntiDebugPass.cpp.s
+
 CMakeFiles/Kotoamatsukami.dir/src/pass/SplitBasicBlock.cpp.o: CMakeFiles/Kotoamatsukami.dir/flags.make
 CMakeFiles/Kotoamatsukami.dir/src/pass/SplitBasicBlock.cpp.o: /home/zzzccc/cxzz/Kotoamatsukami/src/pass/SplitBasicBlock.cpp
 CMakeFiles/Kotoamatsukami.dir/src/pass/SplitBasicBlock.cpp.o: CMakeFiles/Kotoamatsukami.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Kotoamatsukami.dir/src/pass/SplitBasicBlock.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Kotoamatsukami.dir/src/pass/SplitBasicBlock.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Kotoamatsukami.dir/src/pass/SplitBasicBlock.cpp.o -MF CMakeFiles/Kotoamatsukami.dir/src/pass/SplitBasicBlock.cpp.o.d -o CMakeFiles/Kotoamatsukami.dir/src/pass/SplitBasicBlock.cpp.o -c /home/zzzccc/cxzz/Kotoamatsukami/src/pass/SplitBasicBlock.cpp
 
 CMakeFiles/Kotoamatsukami.dir/src/pass/SplitBasicBlock.cpp.i: cmake_force
@@ -167,10 +181,52 @@ CMakeFiles/Kotoamatsukami.dir/src/pass/SplitBasicBlock.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Kotoamatsukami.dir/src/pass/SplitBasicBlock.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zzzccc/cxzz/Kotoamatsukami/src/pass/SplitBasicBlock.cpp -o CMakeFiles/Kotoamatsukami.dir/src/pass/SplitBasicBlock.cpp.s
 
+CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectBranch.cpp.o: CMakeFiles/Kotoamatsukami.dir/flags.make
+CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectBranch.cpp.o: /home/zzzccc/cxzz/Kotoamatsukami/src/pass/IndirectBranch.cpp
+CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectBranch.cpp.o: CMakeFiles/Kotoamatsukami.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectBranch.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectBranch.cpp.o -MF CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectBranch.cpp.o.d -o CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectBranch.cpp.o -c /home/zzzccc/cxzz/Kotoamatsukami/src/pass/IndirectBranch.cpp
+
+CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectBranch.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectBranch.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zzzccc/cxzz/Kotoamatsukami/src/pass/IndirectBranch.cpp > CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectBranch.cpp.i
+
+CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectBranch.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectBranch.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zzzccc/cxzz/Kotoamatsukami/src/pass/IndirectBranch.cpp -o CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectBranch.cpp.s
+
+CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectCall.cpp.o: CMakeFiles/Kotoamatsukami.dir/flags.make
+CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectCall.cpp.o: /home/zzzccc/cxzz/Kotoamatsukami/src/pass/IndirectCall.cpp
+CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectCall.cpp.o: CMakeFiles/Kotoamatsukami.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectCall.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectCall.cpp.o -MF CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectCall.cpp.o.d -o CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectCall.cpp.o -c /home/zzzccc/cxzz/Kotoamatsukami/src/pass/IndirectCall.cpp
+
+CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectCall.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectCall.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zzzccc/cxzz/Kotoamatsukami/src/pass/IndirectCall.cpp > CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectCall.cpp.i
+
+CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectCall.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectCall.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zzzccc/cxzz/Kotoamatsukami/src/pass/IndirectCall.cpp -o CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectCall.cpp.s
+
+CMakeFiles/Kotoamatsukami.dir/src/pass/BogusControlFlow.cpp.o: CMakeFiles/Kotoamatsukami.dir/flags.make
+CMakeFiles/Kotoamatsukami.dir/src/pass/BogusControlFlow.cpp.o: /home/zzzccc/cxzz/Kotoamatsukami/src/pass/BogusControlFlow.cpp
+CMakeFiles/Kotoamatsukami.dir/src/pass/BogusControlFlow.cpp.o: CMakeFiles/Kotoamatsukami.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Kotoamatsukami.dir/src/pass/BogusControlFlow.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Kotoamatsukami.dir/src/pass/BogusControlFlow.cpp.o -MF CMakeFiles/Kotoamatsukami.dir/src/pass/BogusControlFlow.cpp.o.d -o CMakeFiles/Kotoamatsukami.dir/src/pass/BogusControlFlow.cpp.o -c /home/zzzccc/cxzz/Kotoamatsukami/src/pass/BogusControlFlow.cpp
+
+CMakeFiles/Kotoamatsukami.dir/src/pass/BogusControlFlow.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Kotoamatsukami.dir/src/pass/BogusControlFlow.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zzzccc/cxzz/Kotoamatsukami/src/pass/BogusControlFlow.cpp > CMakeFiles/Kotoamatsukami.dir/src/pass/BogusControlFlow.cpp.i
+
+CMakeFiles/Kotoamatsukami.dir/src/pass/BogusControlFlow.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Kotoamatsukami.dir/src/pass/BogusControlFlow.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zzzccc/cxzz/Kotoamatsukami/src/pass/BogusControlFlow.cpp -o CMakeFiles/Kotoamatsukami.dir/src/pass/BogusControlFlow.cpp.s
+
 CMakeFiles/Kotoamatsukami.dir/src/utils/utils.cpp.o: CMakeFiles/Kotoamatsukami.dir/flags.make
 CMakeFiles/Kotoamatsukami.dir/src/utils/utils.cpp.o: /home/zzzccc/cxzz/Kotoamatsukami/src/utils/utils.cpp
 CMakeFiles/Kotoamatsukami.dir/src/utils/utils.cpp.o: CMakeFiles/Kotoamatsukami.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Kotoamatsukami.dir/src/utils/utils.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Kotoamatsukami.dir/src/utils/utils.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Kotoamatsukami.dir/src/utils/utils.cpp.o -MF CMakeFiles/Kotoamatsukami.dir/src/utils/utils.cpp.o.d -o CMakeFiles/Kotoamatsukami.dir/src/utils/utils.cpp.o -c /home/zzzccc/cxzz/Kotoamatsukami/src/utils/utils.cpp
 
 CMakeFiles/Kotoamatsukami.dir/src/utils/utils.cpp.i: cmake_force
@@ -184,7 +240,7 @@ CMakeFiles/Kotoamatsukami.dir/src/utils/utils.cpp.s: cmake_force
 CMakeFiles/Kotoamatsukami.dir/src/utils/config.cpp.o: CMakeFiles/Kotoamatsukami.dir/flags.make
 CMakeFiles/Kotoamatsukami.dir/src/utils/config.cpp.o: /home/zzzccc/cxzz/Kotoamatsukami/src/utils/config.cpp
 CMakeFiles/Kotoamatsukami.dir/src/utils/config.cpp.o: CMakeFiles/Kotoamatsukami.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Kotoamatsukami.dir/src/utils/config.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Kotoamatsukami.dir/src/utils/config.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Kotoamatsukami.dir/src/utils/config.cpp.o -MF CMakeFiles/Kotoamatsukami.dir/src/utils/config.cpp.o.d -o CMakeFiles/Kotoamatsukami.dir/src/utils/config.cpp.o -c /home/zzzccc/cxzz/Kotoamatsukami/src/utils/config.cpp
 
 CMakeFiles/Kotoamatsukami.dir/src/utils/config.cpp.i: cmake_force
@@ -199,11 +255,15 @@ CMakeFiles/Kotoamatsukami.dir/src/utils/config.cpp.s: cmake_force
 Kotoamatsukami_OBJECTS = \
 "CMakeFiles/Kotoamatsukami.dir/src/PassPlugin.cpp.o" \
 "CMakeFiles/Kotoamatsukami.dir/src/pass/AddJunkCodePass.cpp.o" \
-"CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectJmpPass.cpp.o" \
-"CMakeFiles/Kotoamatsukami.dir/src/pass/X86IndirectJmpPass.cpp.o" \
+"CMakeFiles/Kotoamatsukami.dir/src/pass/Branch2Call.cpp.o" \
+"CMakeFiles/Kotoamatsukami.dir/src/pass/Branch2Call_32.cpp.o" \
 "CMakeFiles/Kotoamatsukami.dir/src/pass/ForObsPass.cpp.o" \
 "CMakeFiles/Kotoamatsukami.dir/src/pass/Loopen.cpp.o" \
+"CMakeFiles/Kotoamatsukami.dir/src/pass/AntiDebugPass.cpp.o" \
 "CMakeFiles/Kotoamatsukami.dir/src/pass/SplitBasicBlock.cpp.o" \
+"CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectBranch.cpp.o" \
+"CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectCall.cpp.o" \
+"CMakeFiles/Kotoamatsukami.dir/src/pass/BogusControlFlow.cpp.o" \
 "CMakeFiles/Kotoamatsukami.dir/src/utils/utils.cpp.o" \
 "CMakeFiles/Kotoamatsukami.dir/src/utils/config.cpp.o"
 
@@ -212,16 +272,20 @@ Kotoamatsukami_EXTERNAL_OBJECTS =
 
 Kotoamatsukami.so: CMakeFiles/Kotoamatsukami.dir/src/PassPlugin.cpp.o
 Kotoamatsukami.so: CMakeFiles/Kotoamatsukami.dir/src/pass/AddJunkCodePass.cpp.o
-Kotoamatsukami.so: CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectJmpPass.cpp.o
-Kotoamatsukami.so: CMakeFiles/Kotoamatsukami.dir/src/pass/X86IndirectJmpPass.cpp.o
+Kotoamatsukami.so: CMakeFiles/Kotoamatsukami.dir/src/pass/Branch2Call.cpp.o
+Kotoamatsukami.so: CMakeFiles/Kotoamatsukami.dir/src/pass/Branch2Call_32.cpp.o
 Kotoamatsukami.so: CMakeFiles/Kotoamatsukami.dir/src/pass/ForObsPass.cpp.o
 Kotoamatsukami.so: CMakeFiles/Kotoamatsukami.dir/src/pass/Loopen.cpp.o
+Kotoamatsukami.so: CMakeFiles/Kotoamatsukami.dir/src/pass/AntiDebugPass.cpp.o
 Kotoamatsukami.so: CMakeFiles/Kotoamatsukami.dir/src/pass/SplitBasicBlock.cpp.o
+Kotoamatsukami.so: CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectBranch.cpp.o
+Kotoamatsukami.so: CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectCall.cpp.o
+Kotoamatsukami.so: CMakeFiles/Kotoamatsukami.dir/src/pass/BogusControlFlow.cpp.o
 Kotoamatsukami.so: CMakeFiles/Kotoamatsukami.dir/src/utils/utils.cpp.o
 Kotoamatsukami.so: CMakeFiles/Kotoamatsukami.dir/src/utils/config.cpp.o
 Kotoamatsukami.so: CMakeFiles/Kotoamatsukami.dir/build.make
 Kotoamatsukami.so: CMakeFiles/Kotoamatsukami.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX shared module Kotoamatsukami.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX shared module Kotoamatsukami.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Kotoamatsukami.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

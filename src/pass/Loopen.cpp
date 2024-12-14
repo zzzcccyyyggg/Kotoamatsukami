@@ -1,9 +1,9 @@
 #include "utils.hpp"
 #include "Loopen.hpp"
-#include "../utils/config.h"
+#include "config.h"
 // #include "llvm/Transforms/Utils/LowerSwitch.h"
 //  namespace
-#define QUICK_POW 123456789
+#define QUICK_POW 2147483647
 using namespace llvm;
 std::vector<BasicBlock *> origBB;
 std::map<BasicBlock *, int> BB2X;
@@ -15,7 +15,9 @@ unsigned int quick_pow(unsigned int base, unsigned int exp, unsigned int mod)
 {
     unsigned int result = 1;
     base = base % mod;
-
+    if(exp != 2){
+        return 0;
+    }
     while (exp > 0)
     {
         if (exp % 2 == 1)
@@ -123,19 +125,7 @@ void funcLoopen(IRBuilder<> &builder, LLVMContext &context, Function &F, Functio
     // 将原基本块插入到返回块之前，并分配case值
     for (BasicBlock *BB : origBB)
     {
-        int randY = std::rand() % 4;
-        if (randY == 0)
-        {
-            randY = 1;
-        }
-        while (resultSet.count(quick_pow(x[xCount], randY, QUICK_POW)) != 0)
-        {
-            randY = std::rand() % 4;
-            if (randY == 0)
-            {
-                randY = 1;
-            }
-        }
+        int randY = 2;        
         // BB->moveBefore(innerLoopEnd);
         swInst->addCase(ConstantInt::get(intType, quick_pow(x[xCount], randY, QUICK_POW)), BB);
         resultSet.insert(quick_pow(x[xCount], randY, QUICK_POW));
@@ -222,18 +212,18 @@ PreservedAnalyses Loopen::run(Module &M, ModuleAnalysisManager &AM)
             llvm::LLVMContext &context = M->getContext();
             IntegerType *intType = llvm::Type::getInt32Ty(context);
             IRBuilder<> Builder(context);
-            Value *xMax = ConstantInt::get(intType, 123456789); // 外循环边界
+            Value *xMax = ConstantInt::get(intType, 2147483647); // 外循环边界
             Value *yMax = ConstantInt::get(intType, 4);     // 内循环边界
             std::srand(static_cast<unsigned int>(std::time(nullptr)));
             // 基本块数量不超过1则无需处理
             if (F.getName().contains("quick_pow"))
             {
-                return PreservedAnalyses::all();
+                continue;
             }
-            // // ReplaceInstWithInst(BB->getTerminator(), BR2innerLoopEnd);
-            if (F.size() <= 1)
+            // // ReplaceInstWithInstBB->getTerminator(), BR2innerLoopEnd);
+            if (F.size() <= 2)
             {
-                return PreservedAnalyses::all();
+                continue;
             }
             llvm::outs() << "[Loopen]: start process Function: " << F.getName().str() << "\n";
             llvm::outs() << "[Loopen]: the blocknumber is : " << blockCount << "\n";
@@ -277,8 +267,8 @@ PreservedAnalyses Loopen::run(Module &M, ModuleAnalysisManager &AM)
             llvm::outs() << "[Loopen]: start funcLoopen " << "\n";
             funcLoopen(Builder, context, F, quickPowFunc, xMax, yMax, &entryBB);
             llvm::outs() << "[Loopen]: start fixStack " << "\n";
-            fixStack(F); // 修复逃逸变量和PHI指令
-            // reg2mem(F);
+            demoteRegisters(&F);
+
         }
     }
 

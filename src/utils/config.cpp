@@ -3,15 +3,19 @@
 #include <vector>
 #include <string>
 #include "json.hpp"
-#include "../utils/config.h"
+#include "config.h"
 
 FunctionSettings loopen;
 FunctionSettings ForObs;
 FunctionSettings SplitBasicBlocks;
-FunctionSettings IndirectJmp;
-FunctionSettings x86IndirectJmpPass;
+FunctionSettings branch2call;
+FunctionSettings branch2call_32;
 FunctionSettings Junkcode;
 FunctionSettings Antihook;
+FunctionSettings Antidebug;
+FunctionSettings indirect_branch;
+FunctionSettings indirect_call;
+FunctionSettings bogus_control_flow;
 Arch targetArch;
 std::string target;
 int isConfigured = false;
@@ -62,14 +66,9 @@ void parseConfig(const std::string& filename) {
         std::cerr << "Unable to open config file!" << std::endl;
         return;
     }
-
     json config;
     configFile >> config;
-
-    // 读取 target
     targetArch = parseArch(config["target"]);
-
-    // 解析各个功能设置
     auto parseFunctionSettings = [](const json& j, FunctionSettings& settings) {
         settings.model = j["model"];
         settings.enable_function = j["enable function"].get<std::vector<std::string>>();
@@ -90,10 +89,14 @@ void parseConfig(const std::string& filename) {
     parseFunctionSettings(config["loopen"], loopen);
     parseFunctionSettings(config["ForObs"], ForObs);
     parseFunctionSettings(config["SplitBasicBlocks"], SplitBasicBlocks);
-    parseFunctionSettings(config["IndirectJmpPass"], IndirectJmp);
-    parseFunctionSettings(config["X86IndirectJmpPass"], x86IndirectJmpPass);
+    parseFunctionSettings(config["branch2call"], branch2call);
+    parseFunctionSettings(config["branch2call_32"], branch2call_32);
     parseFunctionSettings(config["Junkcode"], Junkcode);
     parseFunctionSettings(config["Antihook"], Antihook);
+    parseFunctionSettings(config["Antidebug"], Antidebug);
+    parseFunctionSettings(config["indirect_branch"], indirect_branch);
+    parseFunctionSettings(config["indirect_call"], indirect_call);
+    parseFunctionSettings(config["bogus_control_flow"], bogus_control_flow);
     
 }
 

@@ -9,7 +9,7 @@ def remove_assembly_code(input_file, output_file):
 
     for line in lines:
         # 检测到 callq 行时，设置标志
-        if re.match(r'\s*callq\s+IndirectConditionalJumpFunc', line):
+        if re.match(r'\s*calll\s+IndirectConditionalJumpFunc', line):
             inside_block = True
             modified_lines.append(line)
             continue  # 跳过这行，开始删除
@@ -29,6 +29,6 @@ def remove_assembly_code(input_file, output_file):
         outfile.writelines(modified_lines)
 
 # 示例用法
-input_file = 'rc4.s'   # 输入的汇编文件
-output_file = 'rc4.s'  # 输出的汇编文件
+input_file = 'test-branch2call_32.s'   # 输入的汇编文件
+output_file = 'test-branch2call_32.s'  # 输出的汇编文件_
 remove_assembly_code(input_file, output_file)

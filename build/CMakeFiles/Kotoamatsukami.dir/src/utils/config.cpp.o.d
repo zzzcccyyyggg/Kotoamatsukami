@@ -246,4 +246,4 @@ CMakeFiles/Kotoamatsukami.dir/src/utils/config.cpp.o: \
  /usr/include/c++/13/bits/fs_dir.h /usr/include/c++/13/bits/fs_ops.h \
  /usr/include/c++/13/numeric /usr/include/c++/13/bits/stl_numeric.h \
  /usr/include/c++/13/pstl/glue_numeric_defs.h /usr/include/c++/13/any \
- /home/zzzccc/cxzz/Kotoamatsukami/src/utils/../utils/config.h
+ /home/zzzccc/cxzz/Kotoamatsukami/src/include/config.h

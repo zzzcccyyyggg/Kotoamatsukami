@@ -4,25 +4,19 @@
 // LLVM libs
 #include "llvm/IR/Module.h"
 #include "llvm/IR/Function.h"
-#include "llvm/IR/NoFolder.h"
-#include "llvm/IR/IRBuilder.h"
-#include "llvm/IR/InstIterator.h"
 #include "llvm/IR/Instructions.h"
 #include "llvm/Transforms/Utils/Local.h"
 #include "llvm/Transforms/Utils/Cloning.h"
 #include "llvm/Transforms/Utils/ValueMapper.h"
 #include <llvm/Transforms/Utils/BasicBlockUtils.h>
 #include <llvm/Transforms/Utils/Local.h>
-// #include "llvm/Support/CFGPrinter.h" 
-// System libs
-#include <map>
-#include <set>
-#include <vector>
-#include <stdio.h>
-#include <sstream>
-using namespace std;
+#include "llvm/IRReader/IRReader.h" // For parseIRFile
+#include "llvm/Support/SourceMgr.h" // For SMDiagnostic
 
-void fixStack(llvm::Function &F); // 修复PHI指令和逃逸变量
+using namespace std;
+using namespace llvm;
+void demoteRegisters(llvm::Function *f);
 llvm::Function *createFuncFromGenerated(llvm::Module *M, std::string funcName, std::string moduleName);
-size_t reg2mem(llvm::Function& F);
+uint64_t getRandomNumber();
+BasicBlock* cloneBasicBlock(BasicBlock* BB);
 #endif // LLVM_UTILS_H

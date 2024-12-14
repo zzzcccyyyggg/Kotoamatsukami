@@ -19,7 +19,7 @@ define dso_local i32 @quick_pow(i32 noundef %0, i32 noundef %1, i32 noundef %2) 
   %11 = urem i32 %9, %10
   store i32 %11, ptr %5, align 4
   %12 = load i32, ptr %6, align 4
-  %13 = icmp ugt i32 %12, 5
+  %13 = icmp ne i32 %12, 2
   br i1 %13, label %14, label %15
 
 14:                                               ; preds = %3

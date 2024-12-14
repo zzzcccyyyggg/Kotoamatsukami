@@ -3,7 +3,7 @@
     "loopen": {
         "model": 0,
         "enable function": [
-            "main"
+            "main","run_vm"
         ],
         "disable function": [],
         "loopen_x_list": [
@@ -254,25 +254,28 @@
     "SplitBasicBlocks": {
         "model": 0,
         "enable function": [
+            "main",
             "run_vm"
         ],
         "disable function": [],
         "split number": 3
     },
-    "IndirectJmpPass": {
-        "model": 2,
+    "branch2call": {
+        "model": 0,
         "enable function": [
-            "main"
+            "confuse_key"
+
         ],
         "disable function": [
             "func1"
         ],
         "split number": 3
     },
-    "X86IndirectJmpPass": {
-        "model":0,
+    "branch2call_32": {
+        "model": 0,
         "enable function": [
-            "main"
+            "confuse_key"
+
         ],
         "disable function": [
             "func1"
@@ -295,6 +298,42 @@
         ],
         "disable function": [
             "func1"
+        ]
+    },    
+    "Antidebug": {
+        "model": 0,
+        "enable function": [
+            "main"
+        ],
+        "disable function": [
+            ""
+        ]
+    },    
+    "indirect_branch": {
+        "model": 0,
+        "enable function": [
+            "main"
+        ],
+        "disable function": [
+            ""
+        ]
+    },    
+    "indirect_call": {
+        "model": 1,
+        "enable function": [
+            "main"
+        ],
+        "disable function": [
+            ""
+        ]
+    },
+    "bogus_control_flow": {
+        "model": 0,
+        "enable function": [
+            "main"
+        ],
+        "disable function": [
+            ""
         ]
     }
 }

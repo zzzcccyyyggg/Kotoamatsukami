@@ -38,11 +38,15 @@ add_definitions("${LLVM_DEFINITIONS}")
 add_llvm_pass_plugin(Kotoamatsukami 
     src/PassPlugin.cpp
     src/pass/AddJunkCodePass.cpp
-    src/pass/IndirectJmpPass.cpp
-    src/pass/X86IndirectJmpPass.cpp
+    src/pass/Branch2Call.cpp
+    src/pass/Branch2Call_32.cpp
     src/pass/ForObsPass.cpp
     src/pass/Loopen.cpp
+    src/pass/AntiDebugPass.cpp
     src/pass/SplitBasicBlock.cpp
+    src/pass/IndirectBranch.cpp
+    src/pass/IndirectCall.cpp
+    src/pass/BogusControlFlow.cpp
     src/utils/utils.cpp
     src/utils/config.cpp
     )

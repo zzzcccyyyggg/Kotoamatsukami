@@ -1,11 +1,15 @@
 #include "include/AddJunkCodePass.h"
-#include "include/IndirectJmpPass.h"
-#include "include/X86IndirectJmpPass.h"
+#include "include/Branch2Call.h"
+#include "include/Branch2Call_32.h"
 #include "llvm/Passes/PassBuilder.h"
 #include "llvm/Passes/PassPlugin.h"
 #include "include/ForObsPass.h"
 #include "include/Loopen.hpp"
 #include "SplitBasicBlock.h"
+#include "AntiDebugPass.h"
+#include "IndirectBranch.h"
+#include "IndirectCall.h"
+#include "BogusControlFlow.h"
 using namespace llvm;
 
 llvm::PassPluginLibraryInfo getKotoamatsukamiPluginInfo()
@@ -82,11 +86,15 @@ llvm::PassPluginLibraryInfo getKotoamatsukamiPluginInfo()
         PB.registerPipelineStartEPCallback(
             [](ModulePassManager &MPM, OptimizationLevel Level) {
                 MPM.addPass(SplitBasicBlock());
-                MPM.addPass(ForObsPass());
+                MPM.addPass(BogusControlFlow());
                 MPM.addPass(Loopen());
+                MPM.addPass(ForObsPass());
                 MPM.addPass(AddJunkCodePass());
-                MPM.addPass(X86IndirectJmpPass());
-                MPM.addPass(IndirectJmpPass());
+                MPM.addPass(Branch2Call_32());
+                MPM.addPass(Branch2Call());
+                MPM.addPass(AntiDebugPass());
+                MPM.addPass(IndirectBranch());
+                MPM.addPass(IndirectCall());
         });
 
       }};

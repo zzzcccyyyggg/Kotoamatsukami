@@ -1,5 +1,5 @@
-#ifndef LLVM_Kotoamatsukami_IndirectJmpPass_H
-#define LLVM_Kotoamatsukami_IndirectJmpPass_H
+#ifndef LLVM_Kotoamatsukami_Branch2Call_H
+#define LLVM_Kotoamatsukami_Branch2Call_H
 //现在仅适配了AArch64架构 因为不同架构之间汇编不一样
 #include "llvm/IR/PassManager.h"
 #include "llvm/ADT/Statistic.h"
@@ -13,21 +13,24 @@
 #include "llvm/Transforms/Scalar.h"
 #include "llvm/Support/FormatVariadic.h"
 #include "llvm/IR/InlineAsm.h"
-#include <map>
+#include "llvm/IR/Constants.h"
+#include "llvm/IR/Function.h"
+#include "llvm/IR/GlobalVariable.h"
+#include "llvm/Transforms/Utils/BasicBlockUtils.h"
+#include "llvm/Transforms/Utils/ModuleUtils.h"
+#include "llvm/Support/raw_ostream.h"
+#include "llvm/Transforms/Utils/Cloning.h"
+
+
 using namespace llvm;
 namespace llvm
 {
-  class IndirectJmpPass : public PassInfoMixin<IndirectJmpPass>
+  class Branch2Call : public PassInfoMixin<Branch2Call>
   {
   public:
-    PreservedAnalyses run(Module &M, ModuleAnalysisManager &AM);
+    PreservedAnalyses run(Module &F, ModuleAnalysisManager &AM);
     // 保证不被跳过
     static bool isRequired() { return true; }
   };
 } // namespace llvm
-void NumberBasicBlock(Function &F);
-GlobalVariable *getIndirectTargets(Function &F, ConstantInt *EncKey);
-void createInlineAsm_MovAddr2X9(Function &F, IRBuilder<> &Builder, Value *DestAddr);
-void createInlineAsm_MovAddr2X10(Function &F, IRBuilder<> &Builder, Value *DestAddr);
-void createInlineAsm_IndirectJumpByX9X10(Function &F, IRBuilder<> &Builder, Value *Cond);
 #endif

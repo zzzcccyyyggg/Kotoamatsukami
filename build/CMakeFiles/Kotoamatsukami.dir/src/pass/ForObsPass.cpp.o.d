@@ -343,7 +343,7 @@ CMakeFiles/Kotoamatsukami.dir/src/pass/ForObsPass.cpp.o: \
  /usr/include/c++/13/bits/stl_deque.h /usr/include/c++/13/bits/deque.tcc \
  /usr/include/c++/13/bits/stl_queue.h \
  /home/zzzccc/cxzz/Kotoamatsukami/src/pass/../include/ForObsPass.h \
- /home/zzzccc/cxzz/Kotoamatsukami/src/pass/../utils/config.h \
+ /home/zzzccc/cxzz/Kotoamatsukami/src/include/config.h \
  /usr/include/c++/13/iostream /usr/include/c++/13/ostream \
  /usr/include/c++/13/ios /usr/include/c++/13/bits/basic_ios.h \
  /usr/include/c++/13/bits/locale_facets.h /usr/include/c++/13/cwctype \

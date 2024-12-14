@@ -7,7 +7,7 @@
 #include "llvm/IR/Function.h"
 #include "llvm/Transforms/Utils/BasicBlockUtils.h"
 #include "../include/ForObsPass.h"
-#include "../utils/config.h"
+#include "config.h"
 #include <cstdlib> // 用于随机数生成
 #include <set>     // 用于跟踪已处理的基本块
 
