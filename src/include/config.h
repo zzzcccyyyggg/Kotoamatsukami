@@ -46,6 +46,7 @@ extern FunctionSettings Antidebug;
 extern FunctionSettings indirect_branch;
 extern FunctionSettings indirect_call;
 extern FunctionSettings bogus_control_flow;
+extern FunctionSettings substitution;
 extern Arch targetArch ;
 extern int isConfigured;
 extern int x[2048];

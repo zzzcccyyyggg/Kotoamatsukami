@@ -21,6 +21,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Kotoamatsukami.dir/src/pass/Loopen.cpp.o.d"
   "CMakeFiles/Kotoamatsukami.dir/src/pass/SplitBasicBlock.cpp.o"
   "CMakeFiles/Kotoamatsukami.dir/src/pass/SplitBasicBlock.cpp.o.d"
+  "CMakeFiles/Kotoamatsukami.dir/src/pass/Substitution.cpp.o"
+  "CMakeFiles/Kotoamatsukami.dir/src/pass/Substitution.cpp.o.d"
   "CMakeFiles/Kotoamatsukami.dir/src/utils/config.cpp.o"
   "CMakeFiles/Kotoamatsukami.dir/src/utils/config.cpp.o.d"
   "CMakeFiles/Kotoamatsukami.dir/src/utils/utils.cpp.o"

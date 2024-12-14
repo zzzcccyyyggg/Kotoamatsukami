@@ -223,10 +223,24 @@ CMakeFiles/Kotoamatsukami.dir/src/pass/BogusControlFlow.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Kotoamatsukami.dir/src/pass/BogusControlFlow.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zzzccc/cxzz/Kotoamatsukami/src/pass/BogusControlFlow.cpp -o CMakeFiles/Kotoamatsukami.dir/src/pass/BogusControlFlow.cpp.s
 
+CMakeFiles/Kotoamatsukami.dir/src/pass/Substitution.cpp.o: CMakeFiles/Kotoamatsukami.dir/flags.make
+CMakeFiles/Kotoamatsukami.dir/src/pass/Substitution.cpp.o: /home/zzzccc/cxzz/Kotoamatsukami/src/pass/Substitution.cpp
+CMakeFiles/Kotoamatsukami.dir/src/pass/Substitution.cpp.o: CMakeFiles/Kotoamatsukami.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Kotoamatsukami.dir/src/pass/Substitution.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Kotoamatsukami.dir/src/pass/Substitution.cpp.o -MF CMakeFiles/Kotoamatsukami.dir/src/pass/Substitution.cpp.o.d -o CMakeFiles/Kotoamatsukami.dir/src/pass/Substitution.cpp.o -c /home/zzzccc/cxzz/Kotoamatsukami/src/pass/Substitution.cpp
+
+CMakeFiles/Kotoamatsukami.dir/src/pass/Substitution.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Kotoamatsukami.dir/src/pass/Substitution.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zzzccc/cxzz/Kotoamatsukami/src/pass/Substitution.cpp > CMakeFiles/Kotoamatsukami.dir/src/pass/Substitution.cpp.i
+
+CMakeFiles/Kotoamatsukami.dir/src/pass/Substitution.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Kotoamatsukami.dir/src/pass/Substitution.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zzzccc/cxzz/Kotoamatsukami/src/pass/Substitution.cpp -o CMakeFiles/Kotoamatsukami.dir/src/pass/Substitution.cpp.s
+
 CMakeFiles/Kotoamatsukami.dir/src/utils/utils.cpp.o: CMakeFiles/Kotoamatsukami.dir/flags.make
 CMakeFiles/Kotoamatsukami.dir/src/utils/utils.cpp.o: /home/zzzccc/cxzz/Kotoamatsukami/src/utils/utils.cpp
 CMakeFiles/Kotoamatsukami.dir/src/utils/utils.cpp.o: CMakeFiles/Kotoamatsukami.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Kotoamatsukami.dir/src/utils/utils.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Kotoamatsukami.dir/src/utils/utils.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Kotoamatsukami.dir/src/utils/utils.cpp.o -MF CMakeFiles/Kotoamatsukami.dir/src/utils/utils.cpp.o.d -o CMakeFiles/Kotoamatsukami.dir/src/utils/utils.cpp.o -c /home/zzzccc/cxzz/Kotoamatsukami/src/utils/utils.cpp
 
 CMakeFiles/Kotoamatsukami.dir/src/utils/utils.cpp.i: cmake_force
@@ -240,7 +254,7 @@ CMakeFiles/Kotoamatsukami.dir/src/utils/utils.cpp.s: cmake_force
 CMakeFiles/Kotoamatsukami.dir/src/utils/config.cpp.o: CMakeFiles/Kotoamatsukami.dir/flags.make
 CMakeFiles/Kotoamatsukami.dir/src/utils/config.cpp.o: /home/zzzccc/cxzz/Kotoamatsukami/src/utils/config.cpp
 CMakeFiles/Kotoamatsukami.dir/src/utils/config.cpp.o: CMakeFiles/Kotoamatsukami.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Kotoamatsukami.dir/src/utils/config.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Kotoamatsukami.dir/src/utils/config.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Kotoamatsukami.dir/src/utils/config.cpp.o -MF CMakeFiles/Kotoamatsukami.dir/src/utils/config.cpp.o.d -o CMakeFiles/Kotoamatsukami.dir/src/utils/config.cpp.o -c /home/zzzccc/cxzz/Kotoamatsukami/src/utils/config.cpp
 
 CMakeFiles/Kotoamatsukami.dir/src/utils/config.cpp.i: cmake_force
@@ -264,6 +278,7 @@ Kotoamatsukami_OBJECTS = \
 "CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectBranch.cpp.o" \
 "CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectCall.cpp.o" \
 "CMakeFiles/Kotoamatsukami.dir/src/pass/BogusControlFlow.cpp.o" \
+"CMakeFiles/Kotoamatsukami.dir/src/pass/Substitution.cpp.o" \
 "CMakeFiles/Kotoamatsukami.dir/src/utils/utils.cpp.o" \
 "CMakeFiles/Kotoamatsukami.dir/src/utils/config.cpp.o"
 
@@ -281,11 +296,12 @@ Kotoamatsukami.so: CMakeFiles/Kotoamatsukami.dir/src/pass/SplitBasicBlock.cpp.o
 Kotoamatsukami.so: CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectBranch.cpp.o
 Kotoamatsukami.so: CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectCall.cpp.o
 Kotoamatsukami.so: CMakeFiles/Kotoamatsukami.dir/src/pass/BogusControlFlow.cpp.o
+Kotoamatsukami.so: CMakeFiles/Kotoamatsukami.dir/src/pass/Substitution.cpp.o
 Kotoamatsukami.so: CMakeFiles/Kotoamatsukami.dir/src/utils/utils.cpp.o
 Kotoamatsukami.so: CMakeFiles/Kotoamatsukami.dir/src/utils/config.cpp.o
 Kotoamatsukami.so: CMakeFiles/Kotoamatsukami.dir/build.make
 Kotoamatsukami.so: CMakeFiles/Kotoamatsukami.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX shared module Kotoamatsukami.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX shared module Kotoamatsukami.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Kotoamatsukami.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -47,6 +47,7 @@ add_llvm_pass_plugin(Kotoamatsukami
     src/pass/IndirectBranch.cpp
     src/pass/IndirectCall.cpp
     src/pass/BogusControlFlow.cpp
+    src/pass/Substitution.cpp
     src/utils/utils.cpp
     src/utils/config.cpp
     )

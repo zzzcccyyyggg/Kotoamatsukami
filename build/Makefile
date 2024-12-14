@@ -516,6 +516,30 @@ src/pass/SplitBasicBlock.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/SplitBasicBlock.cpp.s
 .PHONY : src/pass/SplitBasicBlock.cpp.s
 
+src/pass/Substitution.o: src/pass/Substitution.cpp.o
+.PHONY : src/pass/Substitution.o
+
+# target to build an object file
+src/pass/Substitution.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/Substitution.cpp.o
+.PHONY : src/pass/Substitution.cpp.o
+
+src/pass/Substitution.i: src/pass/Substitution.cpp.i
+.PHONY : src/pass/Substitution.i
+
+# target to preprocess a source file
+src/pass/Substitution.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/Substitution.cpp.i
+.PHONY : src/pass/Substitution.cpp.i
+
+src/pass/Substitution.s: src/pass/Substitution.cpp.s
+.PHONY : src/pass/Substitution.s
+
+# target to generate assembly for a file
+src/pass/Substitution.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/Substitution.cpp.s
+.PHONY : src/pass/Substitution.cpp.s
+
 src/utils/config.o: src/utils/config.cpp.o
 .PHONY : src/utils/config.o
 
@@ -616,6 +640,9 @@ help:
 	@echo "... src/pass/SplitBasicBlock.o"
 	@echo "... src/pass/SplitBasicBlock.i"
 	@echo "... src/pass/SplitBasicBlock.s"
+	@echo "... src/pass/Substitution.o"
+	@echo "... src/pass/Substitution.i"
+	@echo "... src/pass/Substitution.s"
 	@echo "... src/utils/config.o"
 	@echo "... src/utils/config.i"
 	@echo "... src/utils/config.s"

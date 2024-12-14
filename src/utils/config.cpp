@@ -16,11 +16,12 @@ FunctionSettings Antidebug;
 FunctionSettings indirect_branch;
 FunctionSettings indirect_call;
 FunctionSettings bogus_control_flow;
+FunctionSettings substitution;
 Arch targetArch;
 std::string target;
 int isConfigured = false;
 int x[2048] = {0};
-using json = nlohmann::json;
+using json = json;
 
 std::string archToString(Arch arch) {
     switch (arch) {
@@ -97,6 +98,7 @@ void parseConfig(const std::string& filename) {
     parseFunctionSettings(config["indirect_branch"], indirect_branch);
     parseFunctionSettings(config["indirect_call"], indirect_call);
     parseFunctionSettings(config["bogus_control_flow"], bogus_control_flow);
+    parseFunctionSettings(config["substitution"], substitution);
     
 }
 

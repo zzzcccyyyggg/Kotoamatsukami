@@ -319,7 +319,7 @@
         ]
     },    
     "indirect_call": {
-        "model": 1,
+        "model": 0,
         "enable function": [
             "main"
         ],
@@ -329,6 +329,15 @@
     },
     "bogus_control_flow": {
         "model": 0,
+        "enable function": [
+            "main"
+        ],
+        "disable function": [
+            ""
+        ]
+    },
+    "substitution": {
+        "model": 1,
         "enable function": [
             "main"
         ],
