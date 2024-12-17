@@ -396,6 +396,30 @@ src/pass/Branch2Call_32.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/Branch2Call_32.cpp.s
 .PHONY : src/pass/Branch2Call_32.cpp.s
 
+src/pass/Flatten.o: src/pass/Flatten.cpp.o
+.PHONY : src/pass/Flatten.o
+
+# target to build an object file
+src/pass/Flatten.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/Flatten.cpp.o
+.PHONY : src/pass/Flatten.cpp.o
+
+src/pass/Flatten.i: src/pass/Flatten.cpp.i
+.PHONY : src/pass/Flatten.i
+
+# target to preprocess a source file
+src/pass/Flatten.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/Flatten.cpp.i
+.PHONY : src/pass/Flatten.cpp.i
+
+src/pass/Flatten.s: src/pass/Flatten.cpp.s
+.PHONY : src/pass/Flatten.s
+
+# target to generate assembly for a file
+src/pass/Flatten.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/Flatten.cpp.s
+.PHONY : src/pass/Flatten.cpp.s
+
 src/pass/ForObsPass.o: src/pass/ForObsPass.cpp.o
 .PHONY : src/pass/ForObsPass.o
 
@@ -625,6 +649,9 @@ help:
 	@echo "... src/pass/Branch2Call_32.o"
 	@echo "... src/pass/Branch2Call_32.i"
 	@echo "... src/pass/Branch2Call_32.s"
+	@echo "... src/pass/Flatten.o"
+	@echo "... src/pass/Flatten.i"
+	@echo "... src/pass/Flatten.s"
 	@echo "... src/pass/ForObsPass.o"
 	@echo "... src/pass/ForObsPass.i"
 	@echo "... src/pass/ForObsPass.s"

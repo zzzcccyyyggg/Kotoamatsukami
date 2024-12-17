@@ -17,6 +17,7 @@ FunctionSettings indirect_branch;
 FunctionSettings indirect_call;
 FunctionSettings bogus_control_flow;
 FunctionSettings substitution;
+FunctionSettings flatten;
 Arch targetArch;
 std::string target;
 int isConfigured = false;
@@ -99,6 +100,7 @@ void parseConfig(const std::string& filename) {
     parseFunctionSettings(config["indirect_call"], indirect_call);
     parseFunctionSettings(config["bogus_control_flow"], bogus_control_flow);
     parseFunctionSettings(config["substitution"], substitution);
+    parseFunctionSettings(config["flatten"], flatten);
     
 }
 

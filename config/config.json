@@ -310,7 +310,7 @@
         ]
     },    
     "indirect_branch": {
-        "model": 0,
+        "model": 1,
         "enable function": [
             "main"
         ],
@@ -337,7 +337,16 @@
         ]
     },
     "substitution": {
-        "model": 1,
+        "model": 0,
+        "enable function": [
+            "main"
+        ],
+        "disable function": [
+            ""
+        ]
+    },
+    "flatten": {
+        "model": 0,
         "enable function": [
             "main"
         ],

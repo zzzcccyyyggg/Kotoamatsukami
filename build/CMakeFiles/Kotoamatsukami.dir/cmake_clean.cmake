@@ -11,6 +11,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Kotoamatsukami.dir/src/pass/Branch2Call.cpp.o.d"
   "CMakeFiles/Kotoamatsukami.dir/src/pass/Branch2Call_32.cpp.o"
   "CMakeFiles/Kotoamatsukami.dir/src/pass/Branch2Call_32.cpp.o.d"
+  "CMakeFiles/Kotoamatsukami.dir/src/pass/Flatten.cpp.o"
+  "CMakeFiles/Kotoamatsukami.dir/src/pass/Flatten.cpp.o.d"
   "CMakeFiles/Kotoamatsukami.dir/src/pass/ForObsPass.cpp.o"
   "CMakeFiles/Kotoamatsukami.dir/src/pass/ForObsPass.cpp.o.d"
   "CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectBranch.cpp.o"

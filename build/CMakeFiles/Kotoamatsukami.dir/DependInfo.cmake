@@ -14,6 +14,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/zzzccc/cxzz/Kotoamatsukami/src/pass/BogusControlFlow.cpp" "CMakeFiles/Kotoamatsukami.dir/src/pass/BogusControlFlow.cpp.o" "gcc" "CMakeFiles/Kotoamatsukami.dir/src/pass/BogusControlFlow.cpp.o.d"
   "/home/zzzccc/cxzz/Kotoamatsukami/src/pass/Branch2Call.cpp" "CMakeFiles/Kotoamatsukami.dir/src/pass/Branch2Call.cpp.o" "gcc" "CMakeFiles/Kotoamatsukami.dir/src/pass/Branch2Call.cpp.o.d"
   "/home/zzzccc/cxzz/Kotoamatsukami/src/pass/Branch2Call_32.cpp" "CMakeFiles/Kotoamatsukami.dir/src/pass/Branch2Call_32.cpp.o" "gcc" "CMakeFiles/Kotoamatsukami.dir/src/pass/Branch2Call_32.cpp.o.d"
+  "/home/zzzccc/cxzz/Kotoamatsukami/src/pass/Flatten.cpp" "CMakeFiles/Kotoamatsukami.dir/src/pass/Flatten.cpp.o" "gcc" "CMakeFiles/Kotoamatsukami.dir/src/pass/Flatten.cpp.o.d"
   "/home/zzzccc/cxzz/Kotoamatsukami/src/pass/ForObsPass.cpp" "CMakeFiles/Kotoamatsukami.dir/src/pass/ForObsPass.cpp.o" "gcc" "CMakeFiles/Kotoamatsukami.dir/src/pass/ForObsPass.cpp.o.d"
   "/home/zzzccc/cxzz/Kotoamatsukami/src/pass/IndirectBranch.cpp" "CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectBranch.cpp.o" "gcc" "CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectBranch.cpp.o.d"
   "/home/zzzccc/cxzz/Kotoamatsukami/src/pass/IndirectCall.cpp" "CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectCall.cpp.o" "gcc" "CMakeFiles/Kotoamatsukami.dir/src/pass/IndirectCall.cpp.o.d"

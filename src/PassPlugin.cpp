@@ -11,6 +11,7 @@
 #include "IndirectCall.h"
 #include "BogusControlFlow.h"
 #include "Substitution.h"
+#include "Flatten.h"
 using namespace llvm;
 
 llvm::PassPluginLibraryInfo getKotoamatsukamiPluginInfo()
@@ -97,6 +98,7 @@ llvm::PassPluginLibraryInfo getKotoamatsukamiPluginInfo()
                 MPM.addPass(IndirectBranch());
                 MPM.addPass(IndirectCall());
                 MPM.addPass(Substitution());
+                MPM.addPass(Flatten());
         });
 
       }};

@@ -473,4 +473,5 @@ CMakeFiles/Kotoamatsukami.dir/src/PassPlugin.cpp.o: \
  /home/zzzccc/llvm-17/llvm-project/build/include/llvm/IRReader/IRReader.h \
  /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Bitcode/BitcodeReader.h \
  /home/zzzccc/llvm-17/llvm-project/build/include/llvm/Bitstream/BitCodeEnums.h \
- /home/zzzccc/cxzz/Kotoamatsukami/src/include/Substitution.h
+ /home/zzzccc/cxzz/Kotoamatsukami/src/include/Substitution.h \
+ /home/zzzccc/cxzz/Kotoamatsukami/src/include/Flatten.h

@@ -8,6 +8,7 @@
 #include "llvm/IR/Module.h"
 #include "llvm/Support/Casting.h"
 #include <cstdio>
+#include <string>
 #include <vector>
 using namespace llvm;
 namespace Kotoamatsukami {
@@ -24,7 +25,7 @@ namespace IndirectBranch {
         int indirectBBs_count = 0;
         std::vector<BranchInst*> branchInsts;
         auto gloablName = F.getName().str() + "_Jmuptable";
-        
+
         for (BasicBlock& BB : F) {
             for (Instruction& I : BB) {
                 if (isa<BranchInst>(I)) {

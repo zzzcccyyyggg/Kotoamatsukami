@@ -119,3 +119,11 @@ BasicBlock* cloneBasicBlock(BasicBlock* BB)
     }
     return cloneBB;
 }
+
+std::string getInstructionAsString(llvm::Instruction* I)
+{
+    std::string output;
+    llvm::raw_string_ostream stream(output);
+    I->print(stream); // 将指令输出到 stream 中
+    return output; // 返回捕获的字符串
+}
