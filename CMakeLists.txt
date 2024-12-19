@@ -49,8 +49,10 @@ add_llvm_pass_plugin(Kotoamatsukami
     src/pass/BogusControlFlow.cpp
     src/pass/Substitution.cpp
     src/pass/Flatten.cpp
+    src/pass/GVEncrypt.cpp
     src/utils/utils.cpp
     src/utils/config.cpp
+    src/utils/TaintAnalysis.cpp
     )
 # # # Define the executable
 # add_executable(jit_asm 

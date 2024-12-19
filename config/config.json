@@ -310,7 +310,7 @@
         ]
     },    
     "indirect_branch": {
-        "model": 1,
+        "model": 0,
         "enable function": [
             "main"
         ],
@@ -347,6 +347,15 @@
     },
     "flatten": {
         "model": 0,
+        "enable function": [
+            "main"
+        ],
+        "disable function": [
+            ""
+        ]
+    },
+    "gv_encrypt": {
+        "model": 1,
         "enable function": [
             "main"
         ],

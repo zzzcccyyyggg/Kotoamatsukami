@@ -12,6 +12,7 @@
 #include "BogusControlFlow.h"
 #include "Substitution.h"
 #include "Flatten.h"
+#include "GVEncrypt.h"
 using namespace llvm;
 
 llvm::PassPluginLibraryInfo getKotoamatsukamiPluginInfo()
@@ -99,6 +100,7 @@ llvm::PassPluginLibraryInfo getKotoamatsukamiPluginInfo()
                 MPM.addPass(IndirectCall());
                 MPM.addPass(Substitution());
                 MPM.addPass(Flatten());
+                MPM.addPass(GVEncrypt());
         });
 
       }};

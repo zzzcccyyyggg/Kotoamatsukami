@@ -61,8 +61,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-NcWjrQ"
-      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-NcWjrQ"
+      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-poiVFW"
+      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-poiVFW"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -71,13 +71,13 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-NcWjrQ'
+        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-poiVFW'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_212ae/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_212ae.dir/build.make CMakeFiles/cmTC_212ae.dir/build
-        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-NcWjrQ'
-        Building C object CMakeFiles/cmTC_212ae.dir/CMakeCCompilerABI.c.o
-        /usr/bin/cc   -v -o CMakeFiles/cmTC_212ae.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_ad947/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_ad947.dir/build.make CMakeFiles/cmTC_ad947.dir/build
+        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-poiVFW'
+        Building C object CMakeFiles/cmTC_ad947.dir/CMakeCCompilerABI.c.o
+        /usr/bin/cc   -v -o CMakeFiles/cmTC_ad947.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c
         Using built-in specs.
         COLLECT_GCC=/usr/bin/cc
         OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
@@ -87,8 +87,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_212ae.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_212ae.dir/'
-         /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_212ae.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccE3pmWY.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ad947.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ad947.dir/'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_ad947.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccwQtqIn.s
         GNU C17 (Ubuntu 13.3.0-6ubuntu2~24.04) version 13.3.0 (x86_64-linux-gnu)
         	compiled by GNU C version 13.3.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.26-GMP
         
@@ -105,15 +105,15 @@ events:
          /usr/include
         End of search list.
         Compiler executable checksum: 38987c28e967c64056a6454abdef726e
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_212ae.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_212ae.dir/'
-         as -v --64 -o CMakeFiles/cmTC_212ae.dir/CMakeCCompilerABI.c.o /tmp/ccE3pmWY.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ad947.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ad947.dir/'
+         as -v --64 -o CMakeFiles/cmTC_ad947.dir/CMakeCCompilerABI.c.o /tmp/ccwQtqIn.s
         GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42
         COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_212ae.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_212ae.dir/CMakeCCompilerABI.c.'
-        Linking C executable cmTC_212ae
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_212ae.dir/link.txt --verbose=1
-        /usr/bin/cc  -v CMakeFiles/cmTC_212ae.dir/CMakeCCompilerABI.c.o -o cmTC_212ae 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ad947.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ad947.dir/CMakeCCompilerABI.c.'
+        Linking C executable cmTC_ad947
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ad947.dir/link.txt --verbose=1
+        /usr/bin/cc  -v CMakeFiles/cmTC_ad947.dir/CMakeCCompilerABI.c.o -o cmTC_ad947 
         Using built-in specs.
         COLLECT_GCC=/usr/bin/cc
         COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper
@@ -126,10 +126,10 @@ events:
         gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) 
         COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_212ae' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_212ae.'
-         /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccSZvQ73.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_212ae /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_212ae.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_212ae' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_212ae.'
-        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-NcWjrQ'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_ad947' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_ad947.'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccEFU7Yk.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_ad947 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_ad947.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_ad947' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_ad947.'
+        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-poiVFW'
         
       exitCode: 0
   -
@@ -161,13 +161,13 @@ events:
     message: |
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        ignore line: [Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-NcWjrQ']
+        ignore line: [Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-poiVFW']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_212ae/fast]
-        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_212ae.dir/build.make CMakeFiles/cmTC_212ae.dir/build]
-        ignore line: [gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-NcWjrQ']
-        ignore line: [Building C object CMakeFiles/cmTC_212ae.dir/CMakeCCompilerABI.c.o]
-        ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_212ae.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c]
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_ad947/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_ad947.dir/build.make CMakeFiles/cmTC_ad947.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-poiVFW']
+        ignore line: [Building C object CMakeFiles/cmTC_ad947.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_ad947.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/cc]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
@@ -177,8 +177,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_212ae.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_212ae.dir/']
-        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_212ae.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccE3pmWY.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ad947.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ad947.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_ad947.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccwQtqIn.s]
         ignore line: [GNU C17 (Ubuntu 13.3.0-6ubuntu2~24.04) version 13.3.0 (x86_64-linux-gnu)]
         ignore line: [	compiled by GNU C version 13.3.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.26-GMP]
         ignore line: []
@@ -195,15 +195,15 @@ events:
         ignore line: [ /usr/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: 38987c28e967c64056a6454abdef726e]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_212ae.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_212ae.dir/']
-        ignore line: [ as -v --64 -o CMakeFiles/cmTC_212ae.dir/CMakeCCompilerABI.c.o /tmp/ccE3pmWY.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ad947.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ad947.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_ad947.dir/CMakeCCompilerABI.c.o /tmp/ccwQtqIn.s]
         ignore line: [GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_212ae.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_212ae.dir/CMakeCCompilerABI.c.']
-        ignore line: [Linking C executable cmTC_212ae]
-        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_212ae.dir/link.txt --verbose=1]
-        ignore line: [/usr/bin/cc  -v CMakeFiles/cmTC_212ae.dir/CMakeCCompilerABI.c.o -o cmTC_212ae ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ad947.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ad947.dir/CMakeCCompilerABI.c.']
+        ignore line: [Linking C executable cmTC_ad947]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ad947.dir/link.txt --verbose=1]
+        ignore line: [/usr/bin/cc  -v CMakeFiles/cmTC_ad947.dir/CMakeCCompilerABI.c.o -o cmTC_ad947 ]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/cc]
         ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper]
@@ -216,13 +216,13 @@ events:
         ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) ]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_212ae' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_212ae.']
-        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccSZvQ73.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_212ae /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_212ae.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_ad947' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_ad947.']
+        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccEFU7Yk.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_ad947 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_ad947.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
           arg [/usr/libexec/gcc/x86_64-linux-gnu/13/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/ccSZvQ73.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccEFU7Yk.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -240,7 +240,7 @@ events:
           arg [-znow] ==> ignore
           arg [-zrelro] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_212ae] ==> ignore
+          arg [cmTC_ad947] ==> ignore
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o]
@@ -252,7 +252,7 @@ events:
           arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
           arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
           arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../..]
-          arg [CMakeFiles/cmTC_212ae.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [CMakeFiles/cmTC_ad947.dir/CMakeCCompilerABI.c.o] ==> ignore
           arg [-lgcc] ==> lib [gcc]
           arg [--push-state] ==> ignore
           arg [--as-needed] ==> ignore
@@ -292,8 +292,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-mWFc5A"
-      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-mWFc5A"
+      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-SvyGu0"
+      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-SvyGu0"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -302,13 +302,13 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-mWFc5A'
+        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-SvyGu0'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_ba8bb/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_ba8bb.dir/build.make CMakeFiles/cmTC_ba8bb.dir/build
-        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-mWFc5A'
-        Building CXX object CMakeFiles/cmTC_ba8bb.dir/CMakeCXXCompilerABI.cpp.o
-        /usr/bin/c++   -v -o CMakeFiles/cmTC_ba8bb.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_52c25/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_52c25.dir/build.make CMakeFiles/cmTC_52c25.dir/build
+        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-SvyGu0'
+        Building CXX object CMakeFiles/cmTC_52c25.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/c++   -v -o CMakeFiles/cmTC_52c25.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
         Using built-in specs.
         COLLECT_GCC=/usr/bin/c++
         OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
@@ -318,8 +318,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ba8bb.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ba8bb.dir/'
-         /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_ba8bb.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccpMocZ8.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_52c25.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_52c25.dir/'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_52c25.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccA5NmB2.s
         GNU C++17 (Ubuntu 13.3.0-6ubuntu2~24.04) version 13.3.0 (x86_64-linux-gnu)
         	compiled by GNU C version 13.3.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.26-GMP
         
@@ -340,15 +340,15 @@ events:
          /usr/include
         End of search list.
         Compiler executable checksum: c81c05345ce537099dafd5580045814a
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ba8bb.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ba8bb.dir/'
-         as -v --64 -o CMakeFiles/cmTC_ba8bb.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccpMocZ8.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_52c25.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_52c25.dir/'
+         as -v --64 -o CMakeFiles/cmTC_52c25.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccA5NmB2.s
         GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42
         COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ba8bb.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ba8bb.dir/CMakeCXXCompilerABI.cpp.'
-        Linking CXX executable cmTC_ba8bb
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ba8bb.dir/link.txt --verbose=1
-        /usr/bin/c++  -v CMakeFiles/cmTC_ba8bb.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_ba8bb 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_52c25.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_52c25.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_52c25
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_52c25.dir/link.txt --verbose=1
+        /usr/bin/c++  -v CMakeFiles/cmTC_52c25.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_52c25 
         Using built-in specs.
         COLLECT_GCC=/usr/bin/c++
         COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper
@@ -361,10 +361,10 @@ events:
         gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) 
         COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_ba8bb' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_ba8bb.'
-         /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/cciqflLJ.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_ba8bb /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_ba8bb.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_ba8bb' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_ba8bb.'
-        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-mWFc5A'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_52c25' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_52c25.'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccH28ccz.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_52c25 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_52c25.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_52c25' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_52c25.'
+        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-SvyGu0'
         
       exitCode: 0
   -
@@ -402,13 +402,13 @@ events:
     message: |
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        ignore line: [Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-mWFc5A']
+        ignore line: [Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-SvyGu0']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_ba8bb/fast]
-        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_ba8bb.dir/build.make CMakeFiles/cmTC_ba8bb.dir/build]
-        ignore line: [gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-mWFc5A']
-        ignore line: [Building CXX object CMakeFiles/cmTC_ba8bb.dir/CMakeCXXCompilerABI.cpp.o]
-        ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_ba8bb.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_52c25/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_52c25.dir/build.make CMakeFiles/cmTC_52c25.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-SvyGu0']
+        ignore line: [Building CXX object CMakeFiles/cmTC_52c25.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_52c25.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/c++]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
@@ -418,8 +418,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ba8bb.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ba8bb.dir/']
-        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_ba8bb.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccpMocZ8.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_52c25.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_52c25.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_52c25.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccA5NmB2.s]
         ignore line: [GNU C++17 (Ubuntu 13.3.0-6ubuntu2~24.04) version 13.3.0 (x86_64-linux-gnu)]
         ignore line: [	compiled by GNU C version 13.3.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.26-GMP]
         ignore line: []
@@ -440,15 +440,15 @@ events:
         ignore line: [ /usr/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: c81c05345ce537099dafd5580045814a]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ba8bb.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ba8bb.dir/']
-        ignore line: [ as -v --64 -o CMakeFiles/cmTC_ba8bb.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccpMocZ8.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_52c25.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_52c25.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_52c25.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccA5NmB2.s]
         ignore line: [GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ba8bb.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ba8bb.dir/CMakeCXXCompilerABI.cpp.']
-        ignore line: [Linking CXX executable cmTC_ba8bb]
-        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ba8bb.dir/link.txt --verbose=1]
-        ignore line: [/usr/bin/c++  -v CMakeFiles/cmTC_ba8bb.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_ba8bb ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_52c25.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_52c25.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_52c25]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_52c25.dir/link.txt --verbose=1]
+        ignore line: [/usr/bin/c++  -v CMakeFiles/cmTC_52c25.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_52c25 ]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/c++]
         ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper]
@@ -461,13 +461,13 @@ events:
         ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) ]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_ba8bb' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_ba8bb.']
-        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/cciqflLJ.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_ba8bb /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_ba8bb.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_52c25' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_52c25.']
+        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccH28ccz.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_52c25 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_52c25.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
           arg [/usr/libexec/gcc/x86_64-linux-gnu/13/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/cciqflLJ.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccH28ccz.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -485,7 +485,7 @@ events:
           arg [-znow] ==> ignore
           arg [-zrelro] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_ba8bb] ==> ignore
+          arg [cmTC_52c25] ==> ignore
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o]
@@ -497,7 +497,7 @@ events:
           arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
           arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
           arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../..]
-          arg [CMakeFiles/cmTC_ba8bb.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [CMakeFiles/cmTC_52c25.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
           arg [-lstdc++] ==> lib [stdc++]
           arg [-lm] ==> lib [m]
           arg [-lgcc_s] ==> lib [gcc_s]
@@ -535,8 +535,8 @@ events:
     checks:
       - "Performing Test Terminfo_LINKABLE"
     directories:
-      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-KGE9vF"
-      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-KGE9vF"
+      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-TUXWvo"
+      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-TUXWvo"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -546,17 +546,17 @@ events:
       variable: "Terminfo_LINKABLE"
       cached: true
       stdout: |
-        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-KGE9vF'
+        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-TUXWvo'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_a95de/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_a95de.dir/build.make CMakeFiles/cmTC_a95de.dir/build
-        gmake[1]: 进入目录“/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-KGE9vF”
-        Building C object CMakeFiles/cmTC_a95de.dir/src.c.o
-        /usr/bin/cc -DTerminfo_LINKABLE   -o CMakeFiles/cmTC_a95de.dir/src.c.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-KGE9vF/src.c
-        Linking C executable cmTC_a95de
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a95de.dir/link.txt --verbose=1
-        /usr/bin/cc CMakeFiles/cmTC_a95de.dir/src.c.o -o cmTC_a95de  /usr/lib/x86_64-linux-gnu/libtinfo.so 
-        gmake[1]: 离开目录“/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-KGE9vF”
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_c92b7/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_c92b7.dir/build.make CMakeFiles/cmTC_c92b7.dir/build
+        gmake[1]: 进入目录“/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-TUXWvo”
+        Building C object CMakeFiles/cmTC_c92b7.dir/src.c.o
+        /usr/bin/cc -DTerminfo_LINKABLE   -o CMakeFiles/cmTC_c92b7.dir/src.c.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-TUXWvo/src.c
+        Linking C executable cmTC_c92b7
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c92b7.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_c92b7.dir/src.c.o -o cmTC_c92b7  /usr/lib/x86_64-linux-gnu/libtinfo.so 
+        gmake[1]: 离开目录“/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-TUXWvo”
         
       exitCode: 0
   -
@@ -571,8 +571,8 @@ events:
     checks:
       - "Performing Test C_SUPPORTS_FPIC"
     directories:
-      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-wS8Gf7"
-      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-wS8Gf7"
+      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-vEDBJm"
+      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-vEDBJm"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -582,17 +582,17 @@ events:
       variable: "C_SUPPORTS_FPIC"
       cached: true
       stdout: |
-        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-wS8Gf7'
+        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-vEDBJm'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_189dd/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_189dd.dir/build.make CMakeFiles/cmTC_189dd.dir/build
-        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-wS8Gf7'
-        Building C object CMakeFiles/cmTC_189dd.dir/src.c.o
-        /usr/bin/cc -DC_SUPPORTS_FPIC  -Werror -fPIC -o CMakeFiles/cmTC_189dd.dir/src.c.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-wS8Gf7/src.c
-        Linking C executable cmTC_189dd
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_189dd.dir/link.txt --verbose=1
-        /usr/bin/cc CMakeFiles/cmTC_189dd.dir/src.c.o -o cmTC_189dd 
-        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-wS8Gf7'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_9f51b/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_9f51b.dir/build.make CMakeFiles/cmTC_9f51b.dir/build
+        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-vEDBJm'
+        Building C object CMakeFiles/cmTC_9f51b.dir/src.c.o
+        /usr/bin/cc -DC_SUPPORTS_FPIC  -Werror -fPIC -o CMakeFiles/cmTC_9f51b.dir/src.c.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-vEDBJm/src.c
+        Linking C executable cmTC_9f51b
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9f51b.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_9f51b.dir/src.c.o -o cmTC_9f51b 
+        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-vEDBJm'
         
       exitCode: 0
   -
@@ -607,8 +607,8 @@ events:
     checks:
       - "Performing Test CXX_SUPPORTS_FPIC"
     directories:
-      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-t7V8XR"
-      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-t7V8XR"
+      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-vmGkTh"
+      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-vmGkTh"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -618,17 +618,17 @@ events:
       variable: "CXX_SUPPORTS_FPIC"
       cached: true
       stdout: |
-        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-t7V8XR'
+        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-vmGkTh'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_87a74/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_87a74.dir/build.make CMakeFiles/cmTC_87a74.dir/build
-        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-t7V8XR'
-        Building CXX object CMakeFiles/cmTC_87a74.dir/src.cxx.o
-        /usr/bin/c++ -DCXX_SUPPORTS_FPIC  -std=gnu++17   -Werror -fPIC -o CMakeFiles/cmTC_87a74.dir/src.cxx.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-t7V8XR/src.cxx
-        Linking CXX executable cmTC_87a74
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_87a74.dir/link.txt --verbose=1
-        /usr/bin/c++ CMakeFiles/cmTC_87a74.dir/src.cxx.o -o cmTC_87a74 
-        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-t7V8XR'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_2084c/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_2084c.dir/build.make CMakeFiles/cmTC_2084c.dir/build
+        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-vmGkTh'
+        Building CXX object CMakeFiles/cmTC_2084c.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_SUPPORTS_FPIC  -std=gnu++17   -Werror -fPIC -o CMakeFiles/cmTC_2084c.dir/src.cxx.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-vmGkTh/src.cxx
+        Linking CXX executable cmTC_2084c
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2084c.dir/link.txt --verbose=1
+        /usr/bin/c++ CMakeFiles/cmTC_2084c.dir/src.cxx.o -o cmTC_2084c 
+        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-vmGkTh'
         
       exitCode: 0
   -
@@ -643,8 +643,8 @@ events:
     checks:
       - "Performing Test C_SUPPORTS_FNO_SEMANTIC_INTERPOSITION"
     directories:
-      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-HNNdtx"
-      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-HNNdtx"
+      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-1qFhA4"
+      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-1qFhA4"
     cmakeVariables:
       CMAKE_C_FLAGS: " -fPIC"
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -654,17 +654,17 @@ events:
       variable: "C_SUPPORTS_FNO_SEMANTIC_INTERPOSITION"
       cached: true
       stdout: |
-        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-HNNdtx'
+        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-1qFhA4'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_dd4ce/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_dd4ce.dir/build.make CMakeFiles/cmTC_dd4ce.dir/build
-        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-HNNdtx'
-        Building C object CMakeFiles/cmTC_dd4ce.dir/src.c.o
-        /usr/bin/cc -DC_SUPPORTS_FNO_SEMANTIC_INTERPOSITION  -fPIC    -Werror -fno-semantic-interposition -o CMakeFiles/cmTC_dd4ce.dir/src.c.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-HNNdtx/src.c
-        Linking C executable cmTC_dd4ce
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dd4ce.dir/link.txt --verbose=1
-        /usr/bin/cc  -fPIC  CMakeFiles/cmTC_dd4ce.dir/src.c.o -o cmTC_dd4ce 
-        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-HNNdtx'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_825dc/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_825dc.dir/build.make CMakeFiles/cmTC_825dc.dir/build
+        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-1qFhA4'
+        Building C object CMakeFiles/cmTC_825dc.dir/src.c.o
+        /usr/bin/cc -DC_SUPPORTS_FNO_SEMANTIC_INTERPOSITION  -fPIC    -Werror -fno-semantic-interposition -o CMakeFiles/cmTC_825dc.dir/src.c.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-1qFhA4/src.c
+        Linking C executable cmTC_825dc
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_825dc.dir/link.txt --verbose=1
+        /usr/bin/cc  -fPIC  CMakeFiles/cmTC_825dc.dir/src.c.o -o cmTC_825dc 
+        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-1qFhA4'
         
       exitCode: 0
   -
@@ -679,8 +679,8 @@ events:
     checks:
       - "Performing Test CXX_SUPPORTS_FNO_SEMANTIC_INTERPOSITION"
     directories:
-      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-FosN1J"
-      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-FosN1J"
+      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-ljySUN"
+      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-ljySUN"
     cmakeVariables:
       CMAKE_CXX_FLAGS: " -fPIC"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -690,17 +690,17 @@ events:
       variable: "CXX_SUPPORTS_FNO_SEMANTIC_INTERPOSITION"
       cached: true
       stdout: |
-        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-FosN1J'
+        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-ljySUN'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_5254e/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_5254e.dir/build.make CMakeFiles/cmTC_5254e.dir/build
-        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-FosN1J'
-        Building CXX object CMakeFiles/cmTC_5254e.dir/src.cxx.o
-        /usr/bin/c++ -DCXX_SUPPORTS_FNO_SEMANTIC_INTERPOSITION  -fPIC  -std=gnu++17   -Werror -fno-semantic-interposition -o CMakeFiles/cmTC_5254e.dir/src.cxx.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-FosN1J/src.cxx
-        Linking CXX executable cmTC_5254e
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5254e.dir/link.txt --verbose=1
-        /usr/bin/c++  -fPIC  CMakeFiles/cmTC_5254e.dir/src.cxx.o -o cmTC_5254e 
-        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-FosN1J'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_3b5e5/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_3b5e5.dir/build.make CMakeFiles/cmTC_3b5e5.dir/build
+        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-ljySUN'
+        Building CXX object CMakeFiles/cmTC_3b5e5.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_SUPPORTS_FNO_SEMANTIC_INTERPOSITION  -fPIC  -std=gnu++17   -Werror -fno-semantic-interposition -o CMakeFiles/cmTC_3b5e5.dir/src.cxx.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-ljySUN/src.cxx
+        Linking CXX executable cmTC_3b5e5
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3b5e5.dir/link.txt --verbose=1
+        /usr/bin/c++  -fPIC  CMakeFiles/cmTC_3b5e5.dir/src.cxx.o -o cmTC_3b5e5 
+        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-ljySUN'
         
       exitCode: 0
   -
@@ -714,8 +714,8 @@ events:
     checks:
       - "Performing Test SUPPORTS_FVISIBILITY_INLINES_HIDDEN_FLAG"
     directories:
-      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-9DKmQG"
-      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-9DKmQG"
+      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-B13Gof"
+      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-B13Gof"
     cmakeVariables:
       CMAKE_CXX_FLAGS: " -fPIC -fno-semantic-interposition"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -725,17 +725,17 @@ events:
       variable: "SUPPORTS_FVISIBILITY_INLINES_HIDDEN_FLAG"
       cached: true
       stdout: |
-        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-9DKmQG'
+        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-B13Gof'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_59283/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_59283.dir/build.make CMakeFiles/cmTC_59283.dir/build
-        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-9DKmQG'
-        Building CXX object CMakeFiles/cmTC_59283.dir/src.cxx.o
-        /usr/bin/c++ -DSUPPORTS_FVISIBILITY_INLINES_HIDDEN_FLAG  -fPIC -fno-semantic-interposition  -std=gnu++17   -fvisibility-inlines-hidden -o CMakeFiles/cmTC_59283.dir/src.cxx.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-9DKmQG/src.cxx
-        Linking CXX executable cmTC_59283
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_59283.dir/link.txt --verbose=1
-        /usr/bin/c++  -fPIC -fno-semantic-interposition  CMakeFiles/cmTC_59283.dir/src.cxx.o -o cmTC_59283 
-        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-9DKmQG'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_f78e6/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_f78e6.dir/build.make CMakeFiles/cmTC_f78e6.dir/build
+        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-B13Gof'
+        Building CXX object CMakeFiles/cmTC_f78e6.dir/src.cxx.o
+        /usr/bin/c++ -DSUPPORTS_FVISIBILITY_INLINES_HIDDEN_FLAG  -fPIC -fno-semantic-interposition  -std=gnu++17   -fvisibility-inlines-hidden -o CMakeFiles/cmTC_f78e6.dir/src.cxx.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-B13Gof/src.cxx
+        Linking CXX executable cmTC_f78e6
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f78e6.dir/link.txt --verbose=1
+        /usr/bin/c++  -fPIC -fno-semantic-interposition  CMakeFiles/cmTC_f78e6.dir/src.cxx.o -o cmTC_f78e6 
+        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-B13Gof'
         
       exitCode: 0
   -
@@ -750,8 +750,8 @@ events:
     checks:
       - "Performing Test C_SUPPORTS_WERROR_DATE_TIME"
     directories:
-      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-eNntXR"
-      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-eNntXR"
+      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-6tiIXV"
+      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-6tiIXV"
     cmakeVariables:
       CMAKE_C_FLAGS: " -fPIC -fno-semantic-interposition"
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -761,17 +761,17 @@ events:
       variable: "C_SUPPORTS_WERROR_DATE_TIME"
       cached: true
       stdout: |
-        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-eNntXR'
+        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-6tiIXV'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_2e02e/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_2e02e.dir/build.make CMakeFiles/cmTC_2e02e.dir/build
-        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-eNntXR'
-        Building C object CMakeFiles/cmTC_2e02e.dir/src.c.o
-        /usr/bin/cc -DC_SUPPORTS_WERROR_DATE_TIME  -fPIC -fno-semantic-interposition    -Werror -Werror=date-time -o CMakeFiles/cmTC_2e02e.dir/src.c.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-eNntXR/src.c
-        Linking C executable cmTC_2e02e
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2e02e.dir/link.txt --verbose=1
-        /usr/bin/cc  -fPIC -fno-semantic-interposition  CMakeFiles/cmTC_2e02e.dir/src.c.o -o cmTC_2e02e 
-        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-eNntXR'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_a7fe8/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_a7fe8.dir/build.make CMakeFiles/cmTC_a7fe8.dir/build
+        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-6tiIXV'
+        Building C object CMakeFiles/cmTC_a7fe8.dir/src.c.o
+        /usr/bin/cc -DC_SUPPORTS_WERROR_DATE_TIME  -fPIC -fno-semantic-interposition    -Werror -Werror=date-time -o CMakeFiles/cmTC_a7fe8.dir/src.c.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-6tiIXV/src.c
+        Linking C executable cmTC_a7fe8
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a7fe8.dir/link.txt --verbose=1
+        /usr/bin/cc  -fPIC -fno-semantic-interposition  CMakeFiles/cmTC_a7fe8.dir/src.c.o -o cmTC_a7fe8 
+        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-6tiIXV'
         
       exitCode: 0
   -
@@ -786,8 +786,8 @@ events:
     checks:
       - "Performing Test CXX_SUPPORTS_WERROR_DATE_TIME"
     directories:
-      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-VHz66W"
-      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-VHz66W"
+      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-EJ85uv"
+      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-EJ85uv"
     cmakeVariables:
       CMAKE_CXX_FLAGS: " -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -797,17 +797,17 @@ events:
       variable: "CXX_SUPPORTS_WERROR_DATE_TIME"
       cached: true
       stdout: |
-        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-VHz66W'
+        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-EJ85uv'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_04229/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_04229.dir/build.make CMakeFiles/cmTC_04229.dir/build
-        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-VHz66W'
-        Building CXX object CMakeFiles/cmTC_04229.dir/src.cxx.o
-        /usr/bin/c++ -DCXX_SUPPORTS_WERROR_DATE_TIME  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden  -std=gnu++17   -Werror -Werror=date-time -o CMakeFiles/cmTC_04229.dir/src.cxx.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-VHz66W/src.cxx
-        Linking CXX executable cmTC_04229
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_04229.dir/link.txt --verbose=1
-        /usr/bin/c++  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden  CMakeFiles/cmTC_04229.dir/src.cxx.o -o cmTC_04229 
-        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-VHz66W'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_69d6e/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_69d6e.dir/build.make CMakeFiles/cmTC_69d6e.dir/build
+        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-EJ85uv'
+        Building CXX object CMakeFiles/cmTC_69d6e.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_SUPPORTS_WERROR_DATE_TIME  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden  -std=gnu++17   -Werror -Werror=date-time -o CMakeFiles/cmTC_69d6e.dir/src.cxx.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-EJ85uv/src.cxx
+        Linking CXX executable cmTC_69d6e
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_69d6e.dir/link.txt --verbose=1
+        /usr/bin/c++  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden  CMakeFiles/cmTC_69d6e.dir/src.cxx.o -o cmTC_69d6e 
+        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-EJ85uv'
         
       exitCode: 0
   -
@@ -822,8 +822,8 @@ events:
     checks:
       - "Performing Test C_SUPPORTS_WERROR_UNGUARDED_AVAILABILITY_NEW"
     directories:
-      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-DcQ7zQ"
-      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-DcQ7zQ"
+      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-qz0tTz"
+      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-qz0tTz"
     cmakeVariables:
       CMAKE_C_FLAGS: " -fPIC -fno-semantic-interposition -Werror=date-time"
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -833,17 +833,17 @@ events:
       variable: "C_SUPPORTS_WERROR_UNGUARDED_AVAILABILITY_NEW"
       cached: true
       stdout: |
-        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-DcQ7zQ'
+        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-qz0tTz'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_dae4d/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_dae4d.dir/build.make CMakeFiles/cmTC_dae4d.dir/build
-        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-DcQ7zQ'
-        Building C object CMakeFiles/cmTC_dae4d.dir/src.c.o
-        /usr/bin/cc -DC_SUPPORTS_WERROR_UNGUARDED_AVAILABILITY_NEW  -fPIC -fno-semantic-interposition -Werror=date-time    -Werror -Werror=unguarded-availability-new -o CMakeFiles/cmTC_dae4d.dir/src.c.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-DcQ7zQ/src.c
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_de599/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_de599.dir/build.make CMakeFiles/cmTC_de599.dir/build
+        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-qz0tTz'
+        Building C object CMakeFiles/cmTC_de599.dir/src.c.o
+        /usr/bin/cc -DC_SUPPORTS_WERROR_UNGUARDED_AVAILABILITY_NEW  -fPIC -fno-semantic-interposition -Werror=date-time    -Werror -Werror=unguarded-availability-new -o CMakeFiles/cmTC_de599.dir/src.c.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-qz0tTz/src.c
         cc1: error: '-Werror=unguarded-availability-new': no option '-Wunguarded-availability-new'
-        gmake[1]: *** [CMakeFiles/cmTC_dae4d.dir/build.make:78: CMakeFiles/cmTC_dae4d.dir/src.c.o] Error 1
-        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-DcQ7zQ'
-        gmake: *** [Makefile:127: cmTC_dae4d/fast] Error 2
+        gmake[1]: *** [CMakeFiles/cmTC_de599.dir/build.make:78: CMakeFiles/cmTC_de599.dir/src.c.o] Error 1
+        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-qz0tTz'
+        gmake: *** [Makefile:127: cmTC_de599/fast] Error 2
         
       exitCode: 2
   -
@@ -858,8 +858,8 @@ events:
     checks:
       - "Performing Test CXX_SUPPORTS_WERROR_UNGUARDED_AVAILABILITY_NEW"
     directories:
-      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-BtUEDu"
-      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-BtUEDu"
+      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-pZvI88"
+      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-pZvI88"
     cmakeVariables:
       CMAKE_CXX_FLAGS: " -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -869,17 +869,17 @@ events:
       variable: "CXX_SUPPORTS_WERROR_UNGUARDED_AVAILABILITY_NEW"
       cached: true
       stdout: |
-        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-BtUEDu'
+        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-pZvI88'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_ec93c/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_ec93c.dir/build.make CMakeFiles/cmTC_ec93c.dir/build
-        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-BtUEDu'
-        Building CXX object CMakeFiles/cmTC_ec93c.dir/src.cxx.o
-        /usr/bin/c++ -DCXX_SUPPORTS_WERROR_UNGUARDED_AVAILABILITY_NEW  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time  -std=gnu++17   -Werror -Werror=unguarded-availability-new -o CMakeFiles/cmTC_ec93c.dir/src.cxx.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-BtUEDu/src.cxx
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_ab553/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_ab553.dir/build.make CMakeFiles/cmTC_ab553.dir/build
+        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-pZvI88'
+        Building CXX object CMakeFiles/cmTC_ab553.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_SUPPORTS_WERROR_UNGUARDED_AVAILABILITY_NEW  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time  -std=gnu++17   -Werror -Werror=unguarded-availability-new -o CMakeFiles/cmTC_ab553.dir/src.cxx.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-pZvI88/src.cxx
         cc1plus: error: '-Werror=unguarded-availability-new': no option '-Wunguarded-availability-new'
-        gmake[1]: *** [CMakeFiles/cmTC_ec93c.dir/build.make:78: CMakeFiles/cmTC_ec93c.dir/src.cxx.o] Error 1
-        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-BtUEDu'
-        gmake: *** [Makefile:127: cmTC_ec93c/fast] Error 2
+        gmake[1]: *** [CMakeFiles/cmTC_ab553.dir/build.make:78: CMakeFiles/cmTC_ab553.dir/src.cxx.o] Error 1
+        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-pZvI88'
+        gmake: *** [Makefile:127: cmTC_ab553/fast] Error 2
         
       exitCode: 2
   -
@@ -894,8 +894,8 @@ events:
     checks:
       - "Performing Test C_SUPPORTS_CMAKE_CXX_FLAGS"
     directories:
-      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-P2SEBH"
-      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-P2SEBH"
+      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-N4QPtH"
+      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-N4QPtH"
     cmakeVariables:
       CMAKE_C_FLAGS: " -fPIC -fno-semantic-interposition -Werror=date-time"
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -905,17 +905,17 @@ events:
       variable: "C_SUPPORTS_CMAKE_CXX_FLAGS"
       cached: true
       stdout: |
-        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-P2SEBH'
+        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-N4QPtH'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_e68c0/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_e68c0.dir/build.make CMakeFiles/cmTC_e68c0.dir/build
-        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-P2SEBH'
-        Building C object CMakeFiles/cmTC_e68c0.dir/src.c.o
-        /usr/bin/cc -DC_SUPPORTS_CMAKE_CXX_FLAGS  -fPIC -fno-semantic-interposition -Werror=date-time    -Werror -fno-lifetime-dse -o CMakeFiles/cmTC_e68c0.dir/src.c.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-P2SEBH/src.c
-        Linking C executable cmTC_e68c0
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e68c0.dir/link.txt --verbose=1
-        /usr/bin/cc  -fPIC -fno-semantic-interposition -Werror=date-time  CMakeFiles/cmTC_e68c0.dir/src.c.o -o cmTC_e68c0 
-        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-P2SEBH'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_eaa78/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_eaa78.dir/build.make CMakeFiles/cmTC_eaa78.dir/build
+        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-N4QPtH'
+        Building C object CMakeFiles/cmTC_eaa78.dir/src.c.o
+        /usr/bin/cc -DC_SUPPORTS_CMAKE_CXX_FLAGS  -fPIC -fno-semantic-interposition -Werror=date-time    -Werror -fno-lifetime-dse -o CMakeFiles/cmTC_eaa78.dir/src.c.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-N4QPtH/src.c
+        Linking C executable cmTC_eaa78
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_eaa78.dir/link.txt --verbose=1
+        /usr/bin/cc  -fPIC -fno-semantic-interposition -Werror=date-time  CMakeFiles/cmTC_eaa78.dir/src.c.o -o cmTC_eaa78 
+        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-N4QPtH'
         
       exitCode: 0
   -
@@ -930,8 +930,8 @@ events:
     checks:
       - "Performing Test CXX_SUPPORTS_CMAKE_CXX_FLAGS"
     directories:
-      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-Q5B2SZ"
-      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-Q5B2SZ"
+      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-awyYZ2"
+      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-awyYZ2"
     cmakeVariables:
       CMAKE_CXX_FLAGS: " -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -941,17 +941,17 @@ events:
       variable: "CXX_SUPPORTS_CMAKE_CXX_FLAGS"
       cached: true
       stdout: |
-        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-Q5B2SZ'
+        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-awyYZ2'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_b8880/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_b8880.dir/build.make CMakeFiles/cmTC_b8880.dir/build
-        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-Q5B2SZ'
-        Building CXX object CMakeFiles/cmTC_b8880.dir/src.cxx.o
-        /usr/bin/c++ -DCXX_SUPPORTS_CMAKE_CXX_FLAGS  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time  -std=gnu++17   -Werror -fno-lifetime-dse -o CMakeFiles/cmTC_b8880.dir/src.cxx.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-Q5B2SZ/src.cxx
-        Linking CXX executable cmTC_b8880
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b8880.dir/link.txt --verbose=1
-        /usr/bin/c++  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time  CMakeFiles/cmTC_b8880.dir/src.cxx.o -o cmTC_b8880 
-        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-Q5B2SZ'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_0e565/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_0e565.dir/build.make CMakeFiles/cmTC_0e565.dir/build
+        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-awyYZ2'
+        Building CXX object CMakeFiles/cmTC_0e565.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_SUPPORTS_CMAKE_CXX_FLAGS  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time  -std=gnu++17   -Werror -fno-lifetime-dse -o CMakeFiles/cmTC_0e565.dir/src.cxx.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-awyYZ2/src.cxx
+        Linking CXX executable cmTC_0e565
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0e565.dir/link.txt --verbose=1
+        /usr/bin/c++  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time  CMakeFiles/cmTC_0e565.dir/src.cxx.o -o cmTC_0e565 
+        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-awyYZ2'
         
       exitCode: 0
   -
@@ -965,8 +965,8 @@ events:
     checks:
       - "Performing Test CXX_SUPPORTS_MISSING_FIELD_INITIALIZERS_FLAG"
     directories:
-      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-ZlaUub"
-      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-ZlaUub"
+      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-fbWuSb"
+      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-fbWuSb"
     cmakeVariables:
       CMAKE_CXX_FLAGS: " -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -976,17 +976,17 @@ events:
       variable: "CXX_SUPPORTS_MISSING_FIELD_INITIALIZERS_FLAG"
       cached: true
       stdout: |
-        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-ZlaUub'
+        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-fbWuSb'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_10ea8/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_10ea8.dir/build.make CMakeFiles/cmTC_10ea8.dir/build
-        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-ZlaUub'
-        Building CXX object CMakeFiles/cmTC_10ea8.dir/src.cxx.o
-        /usr/bin/c++ -DCXX_SUPPORTS_MISSING_FIELD_INITIALIZERS_FLAG  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual  -std=gnu++17   -Wmissing-field-initializers -o CMakeFiles/cmTC_10ea8.dir/src.cxx.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-ZlaUub/src.cxx
-        Linking CXX executable cmTC_10ea8
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_10ea8.dir/link.txt --verbose=1
-        /usr/bin/c++  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual  CMakeFiles/cmTC_10ea8.dir/src.cxx.o -o cmTC_10ea8 
-        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-ZlaUub'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_50420/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_50420.dir/build.make CMakeFiles/cmTC_50420.dir/build
+        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-fbWuSb'
+        Building CXX object CMakeFiles/cmTC_50420.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_SUPPORTS_MISSING_FIELD_INITIALIZERS_FLAG  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual  -std=gnu++17   -Wmissing-field-initializers -o CMakeFiles/cmTC_50420.dir/src.cxx.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-fbWuSb/src.cxx
+        Linking CXX executable cmTC_50420
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_50420.dir/link.txt --verbose=1
+        /usr/bin/c++  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual  CMakeFiles/cmTC_50420.dir/src.cxx.o -o cmTC_50420 
+        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-fbWuSb'
         
       exitCode: 0
   -
@@ -1001,8 +1001,8 @@ events:
     checks:
       - "Performing Test C_SUPPORTS_IMPLICIT_FALLTHROUGH_FLAG"
     directories:
-      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-B49RmM"
-      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-B49RmM"
+      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-Fkvnep"
+      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-Fkvnep"
     cmakeVariables:
       CMAKE_C_FLAGS: " -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers"
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -1012,17 +1012,17 @@ events:
       variable: "C_SUPPORTS_IMPLICIT_FALLTHROUGH_FLAG"
       cached: true
       stdout: |
-        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-B49RmM'
+        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-Fkvnep'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_f8df1/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_f8df1.dir/build.make CMakeFiles/cmTC_f8df1.dir/build
-        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-B49RmM'
-        Building C object CMakeFiles/cmTC_f8df1.dir/src.c.o
-        /usr/bin/cc -DC_SUPPORTS_IMPLICIT_FALLTHROUGH_FLAG  -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers    -Werror -Wimplicit-fallthrough -o CMakeFiles/cmTC_f8df1.dir/src.c.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-B49RmM/src.c
-        Linking C executable cmTC_f8df1
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f8df1.dir/link.txt --verbose=1
-        /usr/bin/cc  -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers  CMakeFiles/cmTC_f8df1.dir/src.c.o -o cmTC_f8df1 
-        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-B49RmM'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_d91ca/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_d91ca.dir/build.make CMakeFiles/cmTC_d91ca.dir/build
+        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-Fkvnep'
+        Building C object CMakeFiles/cmTC_d91ca.dir/src.c.o
+        /usr/bin/cc -DC_SUPPORTS_IMPLICIT_FALLTHROUGH_FLAG  -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers    -Werror -Wimplicit-fallthrough -o CMakeFiles/cmTC_d91ca.dir/src.c.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-Fkvnep/src.c
+        Linking C executable cmTC_d91ca
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d91ca.dir/link.txt --verbose=1
+        /usr/bin/cc  -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers  CMakeFiles/cmTC_d91ca.dir/src.c.o -o cmTC_d91ca 
+        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-Fkvnep'
         
       exitCode: 0
   -
@@ -1037,8 +1037,8 @@ events:
     checks:
       - "Performing Test CXX_SUPPORTS_IMPLICIT_FALLTHROUGH_FLAG"
     directories:
-      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-3zOudt"
-      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-3zOudt"
+      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-pKJr3n"
+      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-pKJr3n"
     cmakeVariables:
       CMAKE_CXX_FLAGS: " -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1048,17 +1048,17 @@ events:
       variable: "CXX_SUPPORTS_IMPLICIT_FALLTHROUGH_FLAG"
       cached: true
       stdout: |
-        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-3zOudt'
+        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-pKJr3n'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_c4eb0/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_c4eb0.dir/build.make CMakeFiles/cmTC_c4eb0.dir/build
-        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-3zOudt'
-        Building CXX object CMakeFiles/cmTC_c4eb0.dir/src.cxx.o
-        /usr/bin/c++ -DCXX_SUPPORTS_IMPLICIT_FALLTHROUGH_FLAG  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers  -std=gnu++17   -Werror -Wimplicit-fallthrough -o CMakeFiles/cmTC_c4eb0.dir/src.cxx.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-3zOudt/src.cxx
-        Linking CXX executable cmTC_c4eb0
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c4eb0.dir/link.txt --verbose=1
-        /usr/bin/c++  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers  CMakeFiles/cmTC_c4eb0.dir/src.cxx.o -o cmTC_c4eb0 
-        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-3zOudt'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_d3a50/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_d3a50.dir/build.make CMakeFiles/cmTC_d3a50.dir/build
+        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-pKJr3n'
+        Building CXX object CMakeFiles/cmTC_d3a50.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_SUPPORTS_IMPLICIT_FALLTHROUGH_FLAG  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers  -std=gnu++17   -Werror -Wimplicit-fallthrough -o CMakeFiles/cmTC_d3a50.dir/src.cxx.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-pKJr3n/src.cxx
+        Linking CXX executable cmTC_d3a50
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d3a50.dir/link.txt --verbose=1
+        /usr/bin/c++  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers  CMakeFiles/cmTC_d3a50.dir/src.cxx.o -o cmTC_d3a50 
+        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-pKJr3n'
         
       exitCode: 0
   -
@@ -1073,8 +1073,8 @@ events:
     checks:
       - "Performing Test C_SUPPORTS_COVERED_SWITCH_DEFAULT_FLAG"
     directories:
-      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-DjTTdd"
-      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-DjTTdd"
+      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-DDZXKx"
+      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-DDZXKx"
     cmakeVariables:
       CMAKE_C_FLAGS: " -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough"
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -1084,17 +1084,17 @@ events:
       variable: "C_SUPPORTS_COVERED_SWITCH_DEFAULT_FLAG"
       cached: true
       stdout: |
-        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-DjTTdd'
+        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-DDZXKx'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_32cd1/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_32cd1.dir/build.make CMakeFiles/cmTC_32cd1.dir/build
-        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-DjTTdd'
-        Building C object CMakeFiles/cmTC_32cd1.dir/src.c.o
-        /usr/bin/cc -DC_SUPPORTS_COVERED_SWITCH_DEFAULT_FLAG  -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough    -Werror -Wcovered-switch-default -o CMakeFiles/cmTC_32cd1.dir/src.c.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-DjTTdd/src.c
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_94498/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_94498.dir/build.make CMakeFiles/cmTC_94498.dir/build
+        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-DDZXKx'
+        Building C object CMakeFiles/cmTC_94498.dir/src.c.o
+        /usr/bin/cc -DC_SUPPORTS_COVERED_SWITCH_DEFAULT_FLAG  -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough    -Werror -Wcovered-switch-default -o CMakeFiles/cmTC_94498.dir/src.c.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-DDZXKx/src.c
         cc: error: unrecognized command-line option '-Wcovered-switch-default'; did you mean '-Wno-switch-default'?
-        gmake[1]: *** [CMakeFiles/cmTC_32cd1.dir/build.make:78: CMakeFiles/cmTC_32cd1.dir/src.c.o] Error 1
-        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-DjTTdd'
-        gmake: *** [Makefile:127: cmTC_32cd1/fast] Error 2
+        gmake[1]: *** [CMakeFiles/cmTC_94498.dir/build.make:78: CMakeFiles/cmTC_94498.dir/src.c.o] Error 1
+        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-DDZXKx'
+        gmake: *** [Makefile:127: cmTC_94498/fast] Error 2
         
       exitCode: 2
   -
@@ -1109,8 +1109,8 @@ events:
     checks:
       - "Performing Test CXX_SUPPORTS_COVERED_SWITCH_DEFAULT_FLAG"
     directories:
-      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-c6yG2A"
-      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-c6yG2A"
+      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-gURs9J"
+      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-gURs9J"
     cmakeVariables:
       CMAKE_CXX_FLAGS: " -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1120,17 +1120,17 @@ events:
       variable: "CXX_SUPPORTS_COVERED_SWITCH_DEFAULT_FLAG"
       cached: true
       stdout: |
-        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-c6yG2A'
+        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-gURs9J'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_34185/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_34185.dir/build.make CMakeFiles/cmTC_34185.dir/build
-        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-c6yG2A'
-        Building CXX object CMakeFiles/cmTC_34185.dir/src.cxx.o
-        /usr/bin/c++ -DCXX_SUPPORTS_COVERED_SWITCH_DEFAULT_FLAG  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough  -std=gnu++17   -Werror -Wcovered-switch-default -o CMakeFiles/cmTC_34185.dir/src.cxx.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-c6yG2A/src.cxx
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_d5c59/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_d5c59.dir/build.make CMakeFiles/cmTC_d5c59.dir/build
+        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-gURs9J'
+        Building CXX object CMakeFiles/cmTC_d5c59.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_SUPPORTS_COVERED_SWITCH_DEFAULT_FLAG  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough  -std=gnu++17   -Werror -Wcovered-switch-default -o CMakeFiles/cmTC_d5c59.dir/src.cxx.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-gURs9J/src.cxx
         c++: error: unrecognized command-line option '-Wcovered-switch-default'; did you mean '-Wno-switch-default'?
-        gmake[1]: *** [CMakeFiles/cmTC_34185.dir/build.make:78: CMakeFiles/cmTC_34185.dir/src.cxx.o] Error 1
-        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-c6yG2A'
-        gmake: *** [Makefile:127: cmTC_34185/fast] Error 2
+        gmake[1]: *** [CMakeFiles/cmTC_d5c59.dir/build.make:78: CMakeFiles/cmTC_d5c59.dir/src.cxx.o] Error 1
+        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-gURs9J'
+        gmake: *** [Makefile:127: cmTC_d5c59/fast] Error 2
         
       exitCode: 2
   -
@@ -1144,8 +1144,8 @@ events:
     checks:
       - "Performing Test CXX_SUPPORTS_CLASS_MEMACCESS_FLAG"
     directories:
-      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-XJYPmT"
-      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-XJYPmT"
+      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-EUDA6c"
+      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-EUDA6c"
     cmakeVariables:
       CMAKE_CXX_FLAGS: " -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1155,17 +1155,17 @@ events:
       variable: "CXX_SUPPORTS_CLASS_MEMACCESS_FLAG"
       cached: true
       stdout: |
-        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-XJYPmT'
+        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-EUDA6c'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_3d86d/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_3d86d.dir/build.make CMakeFiles/cmTC_3d86d.dir/build
-        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-XJYPmT'
-        Building CXX object CMakeFiles/cmTC_3d86d.dir/src.cxx.o
-        /usr/bin/c++ -DCXX_SUPPORTS_CLASS_MEMACCESS_FLAG  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull  -std=gnu++17   -Wclass-memaccess -o CMakeFiles/cmTC_3d86d.dir/src.cxx.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-XJYPmT/src.cxx
-        Linking CXX executable cmTC_3d86d
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3d86d.dir/link.txt --verbose=1
-        /usr/bin/c++  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull  CMakeFiles/cmTC_3d86d.dir/src.cxx.o -o cmTC_3d86d 
-        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-XJYPmT'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_bcb04/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_bcb04.dir/build.make CMakeFiles/cmTC_bcb04.dir/build
+        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-EUDA6c'
+        Building CXX object CMakeFiles/cmTC_bcb04.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_SUPPORTS_CLASS_MEMACCESS_FLAG  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull  -std=gnu++17   -Wclass-memaccess -o CMakeFiles/cmTC_bcb04.dir/src.cxx.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-EUDA6c/src.cxx
+        Linking CXX executable cmTC_bcb04
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bcb04.dir/link.txt --verbose=1
+        /usr/bin/c++  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull  CMakeFiles/cmTC_bcb04.dir/src.cxx.o -o cmTC_bcb04 
+        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-EUDA6c'
         
       exitCode: 0
   -
@@ -1179,8 +1179,8 @@ events:
     checks:
       - "Performing Test CXX_SUPPORTS_REDUNDANT_MOVE_FLAG"
     directories:
-      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-OjSnC7"
-      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-OjSnC7"
+      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-Xt9xmd"
+      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-Xt9xmd"
     cmakeVariables:
       CMAKE_CXX_FLAGS: " -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1190,17 +1190,17 @@ events:
       variable: "CXX_SUPPORTS_REDUNDANT_MOVE_FLAG"
       cached: true
       stdout: |
-        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-OjSnC7'
+        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-Xt9xmd'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_b09ce/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_b09ce.dir/build.make CMakeFiles/cmTC_b09ce.dir/build
-        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-OjSnC7'
-        Building CXX object CMakeFiles/cmTC_b09ce.dir/src.cxx.o
-        /usr/bin/c++ -DCXX_SUPPORTS_REDUNDANT_MOVE_FLAG  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess  -std=gnu++17   -Wredundant-move -o CMakeFiles/cmTC_b09ce.dir/src.cxx.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-OjSnC7/src.cxx
-        Linking CXX executable cmTC_b09ce
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b09ce.dir/link.txt --verbose=1
-        /usr/bin/c++  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess  CMakeFiles/cmTC_b09ce.dir/src.cxx.o -o cmTC_b09ce 
-        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-OjSnC7'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_3d0ef/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_3d0ef.dir/build.make CMakeFiles/cmTC_3d0ef.dir/build
+        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-Xt9xmd'
+        Building CXX object CMakeFiles/cmTC_3d0ef.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_SUPPORTS_REDUNDANT_MOVE_FLAG  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess  -std=gnu++17   -Wredundant-move -o CMakeFiles/cmTC_3d0ef.dir/src.cxx.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-Xt9xmd/src.cxx
+        Linking CXX executable cmTC_3d0ef
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3d0ef.dir/link.txt --verbose=1
+        /usr/bin/c++  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess  CMakeFiles/cmTC_3d0ef.dir/src.cxx.o -o cmTC_3d0ef 
+        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-Xt9xmd'
         
       exitCode: 0
   -
@@ -1214,8 +1214,8 @@ events:
     checks:
       - "Performing Test CXX_SUPPORTS_PESSIMIZING_MOVE_FLAG"
     directories:
-      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-xER2AG"
-      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-xER2AG"
+      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-xJAdRv"
+      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-xJAdRv"
     cmakeVariables:
       CMAKE_CXX_FLAGS: " -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1225,17 +1225,17 @@ events:
       variable: "CXX_SUPPORTS_PESSIMIZING_MOVE_FLAG"
       cached: true
       stdout: |
-        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-xER2AG'
+        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-xJAdRv'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_051c4/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_051c4.dir/build.make CMakeFiles/cmTC_051c4.dir/build
-        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-xER2AG'
-        Building CXX object CMakeFiles/cmTC_051c4.dir/src.cxx.o
-        /usr/bin/c++ -DCXX_SUPPORTS_PESSIMIZING_MOVE_FLAG  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move  -std=gnu++17   -Wpessimizing-move -o CMakeFiles/cmTC_051c4.dir/src.cxx.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-xER2AG/src.cxx
-        Linking CXX executable cmTC_051c4
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_051c4.dir/link.txt --verbose=1
-        /usr/bin/c++  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move  CMakeFiles/cmTC_051c4.dir/src.cxx.o -o cmTC_051c4 
-        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-xER2AG'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_ada79/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_ada79.dir/build.make CMakeFiles/cmTC_ada79.dir/build
+        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-xJAdRv'
+        Building CXX object CMakeFiles/cmTC_ada79.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_SUPPORTS_PESSIMIZING_MOVE_FLAG  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move  -std=gnu++17   -Wpessimizing-move -o CMakeFiles/cmTC_ada79.dir/src.cxx.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-xJAdRv/src.cxx
+        Linking CXX executable cmTC_ada79
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ada79.dir/link.txt --verbose=1
+        /usr/bin/c++  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move  CMakeFiles/cmTC_ada79.dir/src.cxx.o -o cmTC_ada79 
+        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-xJAdRv'
         
       exitCode: 0
   -
@@ -1249,8 +1249,8 @@ events:
     checks:
       - "Performing Test CXX_SUPPORTS_NOEXCEPT_TYPE_FLAG"
     directories:
-      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-njpyRu"
-      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-njpyRu"
+      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-a0M3VA"
+      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-a0M3VA"
     cmakeVariables:
       CMAKE_CXX_FLAGS: " -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1260,17 +1260,17 @@ events:
       variable: "CXX_SUPPORTS_NOEXCEPT_TYPE_FLAG"
       cached: true
       stdout: |
-        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-njpyRu'
+        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-a0M3VA'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_b6261/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_b6261.dir/build.make CMakeFiles/cmTC_b6261.dir/build
-        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-njpyRu'
-        Building CXX object CMakeFiles/cmTC_b6261.dir/src.cxx.o
-        /usr/bin/c++ -DCXX_SUPPORTS_NOEXCEPT_TYPE_FLAG  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move  -std=gnu++17   -Wnoexcept-type -o CMakeFiles/cmTC_b6261.dir/src.cxx.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-njpyRu/src.cxx
-        Linking CXX executable cmTC_b6261
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b6261.dir/link.txt --verbose=1
-        /usr/bin/c++  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move  CMakeFiles/cmTC_b6261.dir/src.cxx.o -o cmTC_b6261 
-        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-njpyRu'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_263d2/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_263d2.dir/build.make CMakeFiles/cmTC_263d2.dir/build
+        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-a0M3VA'
+        Building CXX object CMakeFiles/cmTC_263d2.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_SUPPORTS_NOEXCEPT_TYPE_FLAG  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move  -std=gnu++17   -Wnoexcept-type -o CMakeFiles/cmTC_263d2.dir/src.cxx.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-a0M3VA/src.cxx
+        Linking CXX executable cmTC_263d2
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_263d2.dir/link.txt --verbose=1
+        /usr/bin/c++  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move  CMakeFiles/cmTC_263d2.dir/src.cxx.o -o cmTC_263d2 
+        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-a0M3VA'
         
       exitCode: 0
   -
@@ -1283,8 +1283,8 @@ events:
     checks:
       - "Performing Test CXX_WONT_WARN_ON_FINAL_NONVIRTUALDTOR"
     directories:
-      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-EH1xQh"
-      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-EH1xQh"
+      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-Uc77FH"
+      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-Uc77FH"
     cmakeVariables:
       CMAKE_CXX_FLAGS: " -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1294,20 +1294,20 @@ events:
       variable: "CXX_WONT_WARN_ON_FINAL_NONVIRTUALDTOR"
       cached: true
       stdout: |
-        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-EH1xQh'
+        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-Uc77FH'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_46303/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_46303.dir/build.make CMakeFiles/cmTC_46303.dir/build
-        gmake[1]: 进入目录“/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-EH1xQh”
-        Building CXX object CMakeFiles/cmTC_46303.dir/src.cxx.o
-        /usr/bin/c++ -DCXX_WONT_WARN_ON_FINAL_NONVIRTUALDTOR  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type  -Werror=non-virtual-dtor -std=gnu++17 -o CMakeFiles/cmTC_46303.dir/src.cxx.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-EH1xQh/src.cxx
-        /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-EH1xQh/src.cxx:2:36: error: ‘class base’ has virtual functions and accessible non-virtual destructor [-Werror=non-virtual-dtor]
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_d73fa/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_d73fa.dir/build.make CMakeFiles/cmTC_d73fa.dir/build
+        gmake[1]: 进入目录“/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-Uc77FH”
+        Building CXX object CMakeFiles/cmTC_d73fa.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_WONT_WARN_ON_FINAL_NONVIRTUALDTOR  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type  -Werror=non-virtual-dtor -std=gnu++17 -o CMakeFiles/cmTC_d73fa.dir/src.cxx.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-Uc77FH/src.cxx
+        /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-Uc77FH/src.cxx:2:36: error: ‘class base’ has virtual functions and accessible non-virtual destructor [-Werror=non-virtual-dtor]
             2 |                              class base {friend f; public: virtual void anchor();protected: ~base();};
               |                                    ^~~~
         cc1plus: some warnings being treated as errors
-        gmake[1]: *** [CMakeFiles/cmTC_46303.dir/build.make:78：CMakeFiles/cmTC_46303.dir/src.cxx.o] 错误 1
-        gmake[1]: 离开目录“/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-EH1xQh”
-        gmake: *** [Makefile:127：cmTC_46303/fast] 错误 2
+        gmake[1]: *** [CMakeFiles/cmTC_d73fa.dir/build.make:78：CMakeFiles/cmTC_d73fa.dir/src.cxx.o] 错误 1
+        gmake[1]: 离开目录“/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-Uc77FH”
+        gmake: *** [Makefile:127：cmTC_d73fa/fast] 错误 2
         
       exitCode: 2
   -
@@ -1321,8 +1321,8 @@ events:
     checks:
       - "Performing Test CXX_SUPPORTS_SUGGEST_OVERRIDE_FLAG"
     directories:
-      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-RpSmyC"
-      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-RpSmyC"
+      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-JODYFU"
+      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-JODYFU"
     cmakeVariables:
       CMAKE_CXX_FLAGS: " -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1332,17 +1332,17 @@ events:
       variable: "CXX_SUPPORTS_SUGGEST_OVERRIDE_FLAG"
       cached: true
       stdout: |
-        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-RpSmyC'
+        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-JODYFU'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_e0e02/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_e0e02.dir/build.make CMakeFiles/cmTC_e0e02.dir/build
-        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-RpSmyC'
-        Building CXX object CMakeFiles/cmTC_e0e02.dir/src.cxx.o
-        /usr/bin/c++ -DCXX_SUPPORTS_SUGGEST_OVERRIDE_FLAG  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor  -std=gnu++17   -Wsuggest-override -o CMakeFiles/cmTC_e0e02.dir/src.cxx.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-RpSmyC/src.cxx
-        Linking CXX executable cmTC_e0e02
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e0e02.dir/link.txt --verbose=1
-        /usr/bin/c++  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor  CMakeFiles/cmTC_e0e02.dir/src.cxx.o -o cmTC_e0e02 
-        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-RpSmyC'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_7229d/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_7229d.dir/build.make CMakeFiles/cmTC_7229d.dir/build
+        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-JODYFU'
+        Building CXX object CMakeFiles/cmTC_7229d.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_SUPPORTS_SUGGEST_OVERRIDE_FLAG  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor  -std=gnu++17   -Wsuggest-override -o CMakeFiles/cmTC_7229d.dir/src.cxx.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-JODYFU/src.cxx
+        Linking CXX executable cmTC_7229d
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7229d.dir/link.txt --verbose=1
+        /usr/bin/c++  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor  CMakeFiles/cmTC_7229d.dir/src.cxx.o -o cmTC_7229d 
+        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-JODYFU'
         
       exitCode: 0
   -
@@ -1355,8 +1355,8 @@ events:
     checks:
       - "Performing Test CXX_WSUGGEST_OVERRIDE_ALLOWS_ONLY_FINAL"
     directories:
-      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-Ov95oC"
-      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-Ov95oC"
+      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-Nt1Ooq"
+      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-Nt1Ooq"
     cmakeVariables:
       CMAKE_CXX_FLAGS: " -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1366,17 +1366,17 @@ events:
       variable: "CXX_WSUGGEST_OVERRIDE_ALLOWS_ONLY_FINAL"
       cached: true
       stdout: |
-        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-Ov95oC'
+        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-Nt1Ooq'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_a15fe/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_a15fe.dir/build.make CMakeFiles/cmTC_a15fe.dir/build
-        gmake[1]: 进入目录“/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-Ov95oC”
-        Building CXX object CMakeFiles/cmTC_a15fe.dir/src.cxx.o
-        /usr/bin/c++ -DCXX_WSUGGEST_OVERRIDE_ALLOWS_ONLY_FINAL  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor  -Werror=suggest-override -std=gnu++17 -o CMakeFiles/cmTC_a15fe.dir/src.cxx.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-Ov95oC/src.cxx
-        Linking CXX executable cmTC_a15fe
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a15fe.dir/link.txt --verbose=1
-        /usr/bin/c++  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor  -Werror=suggest-override CMakeFiles/cmTC_a15fe.dir/src.cxx.o -o cmTC_a15fe 
-        gmake[1]: 离开目录“/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-Ov95oC”
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_f7cbc/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_f7cbc.dir/build.make CMakeFiles/cmTC_f7cbc.dir/build
+        gmake[1]: 进入目录“/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-Nt1Ooq”
+        Building CXX object CMakeFiles/cmTC_f7cbc.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_WSUGGEST_OVERRIDE_ALLOWS_ONLY_FINAL  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor  -Werror=suggest-override -std=gnu++17 -o CMakeFiles/cmTC_f7cbc.dir/src.cxx.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-Nt1Ooq/src.cxx
+        Linking CXX executable cmTC_f7cbc
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f7cbc.dir/link.txt --verbose=1
+        /usr/bin/c++  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor  -Werror=suggest-override CMakeFiles/cmTC_f7cbc.dir/src.cxx.o -o cmTC_f7cbc 
+        gmake[1]: 离开目录“/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-Nt1Ooq”
         
       exitCode: 0
   -
@@ -1389,8 +1389,8 @@ events:
     checks:
       - "Performing Test C_WCOMMENT_ALLOWS_LINE_WRAP"
     directories:
-      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-j9tlCm"
-      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-j9tlCm"
+      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-1R8tth"
+      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-1R8tth"
     cmakeVariables:
       CMAKE_C_FLAGS: " -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough"
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -1400,20 +1400,20 @@ events:
       variable: "C_WCOMMENT_ALLOWS_LINE_WRAP"
       cached: true
       stdout: |
-        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-j9tlCm'
+        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-1R8tth'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_211d3/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_211d3.dir/build.make CMakeFiles/cmTC_211d3.dir/build
-        gmake[1]: 进入目录“/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-j9tlCm”
-        Building C object CMakeFiles/cmTC_211d3.dir/src.c.o
-        /usr/bin/cc -DC_WCOMMENT_ALLOWS_LINE_WRAP  -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough  -Werror -Wcomment -o CMakeFiles/cmTC_211d3.dir/src.c.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-j9tlCm/src.c
-        /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-j9tlCm/src.c:1:1: error: multi-line comment [-Werror=comment]
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_3fab4/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_3fab4.dir/build.make CMakeFiles/cmTC_3fab4.dir/build
+        gmake[1]: 进入目录“/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-1R8tth”
+        Building C object CMakeFiles/cmTC_3fab4.dir/src.c.o
+        /usr/bin/cc -DC_WCOMMENT_ALLOWS_LINE_WRAP  -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough  -Werror -Wcomment -o CMakeFiles/cmTC_3fab4.dir/src.c.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-1R8tth/src.c
+        /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-1R8tth/src.c:1:1: error: multi-line comment [-Werror=comment]
             1 | // \\
               | ^
         cc1: all warnings being treated as errors
-        gmake[1]: *** [CMakeFiles/cmTC_211d3.dir/build.make:78：CMakeFiles/cmTC_211d3.dir/src.c.o] 错误 1
-        gmake[1]: 离开目录“/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-j9tlCm”
-        gmake: *** [Makefile:127：cmTC_211d3/fast] 错误 2
+        gmake[1]: *** [CMakeFiles/cmTC_3fab4.dir/build.make:78：CMakeFiles/cmTC_3fab4.dir/src.c.o] 错误 1
+        gmake[1]: 离开目录“/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-1R8tth”
+        gmake: *** [Makefile:127：cmTC_3fab4/fast] 错误 2
         
       exitCode: 2
   -
@@ -1428,8 +1428,8 @@ events:
     checks:
       - "Performing Test C_SUPPORTS_STRING_CONVERSION_FLAG"
     directories:
-      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-aZ81bW"
-      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-aZ81bW"
+      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-3y4FE3"
+      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-3y4FE3"
     cmakeVariables:
       CMAKE_C_FLAGS: " -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-comment"
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -1439,17 +1439,17 @@ events:
       variable: "C_SUPPORTS_STRING_CONVERSION_FLAG"
       cached: true
       stdout: |
-        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-aZ81bW'
+        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-3y4FE3'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_bb5d5/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_bb5d5.dir/build.make CMakeFiles/cmTC_bb5d5.dir/build
-        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-aZ81bW'
-        Building C object CMakeFiles/cmTC_bb5d5.dir/src.c.o
-        /usr/bin/cc -DC_SUPPORTS_STRING_CONVERSION_FLAG  -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-comment    -Werror -Wstring-conversion -o CMakeFiles/cmTC_bb5d5.dir/src.c.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-aZ81bW/src.c
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_1ff97/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_1ff97.dir/build.make CMakeFiles/cmTC_1ff97.dir/build
+        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-3y4FE3'
+        Building C object CMakeFiles/cmTC_1ff97.dir/src.c.o
+        /usr/bin/cc -DC_SUPPORTS_STRING_CONVERSION_FLAG  -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-comment    -Werror -Wstring-conversion -o CMakeFiles/cmTC_1ff97.dir/src.c.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-3y4FE3/src.c
         cc: error: unrecognized command-line option '-Wstring-conversion'; did you mean '-Wsign-conversion'?
-        gmake[1]: *** [CMakeFiles/cmTC_bb5d5.dir/build.make:78: CMakeFiles/cmTC_bb5d5.dir/src.c.o] Error 1
-        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-aZ81bW'
-        gmake: *** [Makefile:127: cmTC_bb5d5/fast] Error 2
+        gmake[1]: *** [CMakeFiles/cmTC_1ff97.dir/build.make:78: CMakeFiles/cmTC_1ff97.dir/src.c.o] Error 1
+        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-3y4FE3'
+        gmake: *** [Makefile:127: cmTC_1ff97/fast] Error 2
         
       exitCode: 2
   -
@@ -1464,8 +1464,8 @@ events:
     checks:
       - "Performing Test CXX_SUPPORTS_STRING_CONVERSION_FLAG"
     directories:
-      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-LcdlMW"
-      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-LcdlMW"
+      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-ffx87R"
+      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-ffx87R"
     cmakeVariables:
       CMAKE_CXX_FLAGS: " -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1475,17 +1475,17 @@ events:
       variable: "CXX_SUPPORTS_STRING_CONVERSION_FLAG"
       cached: true
       stdout: |
-        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-LcdlMW'
+        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-ffx87R'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_67959/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_67959.dir/build.make CMakeFiles/cmTC_67959.dir/build
-        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-LcdlMW'
-        Building CXX object CMakeFiles/cmTC_67959.dir/src.cxx.o
-        /usr/bin/c++ -DCXX_SUPPORTS_STRING_CONVERSION_FLAG  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment  -std=gnu++17   -Werror -Wstring-conversion -o CMakeFiles/cmTC_67959.dir/src.cxx.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-LcdlMW/src.cxx
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_9b135/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_9b135.dir/build.make CMakeFiles/cmTC_9b135.dir/build
+        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-ffx87R'
+        Building CXX object CMakeFiles/cmTC_9b135.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_SUPPORTS_STRING_CONVERSION_FLAG  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment  -std=gnu++17   -Werror -Wstring-conversion -o CMakeFiles/cmTC_9b135.dir/src.cxx.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-ffx87R/src.cxx
         c++: error: unrecognized command-line option '-Wstring-conversion'; did you mean '-Wsign-conversion'?
-        gmake[1]: *** [CMakeFiles/cmTC_67959.dir/build.make:78: CMakeFiles/cmTC_67959.dir/src.cxx.o] Error 1
-        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-LcdlMW'
-        gmake: *** [Makefile:127: cmTC_67959/fast] Error 2
+        gmake[1]: *** [CMakeFiles/cmTC_9b135.dir/build.make:78: CMakeFiles/cmTC_9b135.dir/src.cxx.o] Error 1
+        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-ffx87R'
+        gmake: *** [Makefile:127: cmTC_9b135/fast] Error 2
         
       exitCode: 2
   -
@@ -1499,8 +1499,8 @@ events:
     checks:
       - "Performing Test CXX_SUPPORTS_MISLEADING_INDENTATION_FLAG"
     directories:
-      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-U0dUYJ"
-      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-U0dUYJ"
+      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-CwNWzy"
+      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-CwNWzy"
     cmakeVariables:
       CMAKE_CXX_FLAGS: " -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1510,17 +1510,17 @@ events:
       variable: "CXX_SUPPORTS_MISLEADING_INDENTATION_FLAG"
       cached: true
       stdout: |
-        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-U0dUYJ'
+        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-CwNWzy'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_f26bf/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_f26bf.dir/build.make CMakeFiles/cmTC_f26bf.dir/build
-        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-U0dUYJ'
-        Building CXX object CMakeFiles/cmTC_f26bf.dir/src.cxx.o
-        /usr/bin/c++ -DCXX_SUPPORTS_MISLEADING_INDENTATION_FLAG  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment  -std=gnu++17   -Wmisleading-indentation -o CMakeFiles/cmTC_f26bf.dir/src.cxx.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-U0dUYJ/src.cxx
-        Linking CXX executable cmTC_f26bf
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f26bf.dir/link.txt --verbose=1
-        /usr/bin/c++  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment  CMakeFiles/cmTC_f26bf.dir/src.cxx.o -o cmTC_f26bf 
-        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-U0dUYJ'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_f230c/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_f230c.dir/build.make CMakeFiles/cmTC_f230c.dir/build
+        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-CwNWzy'
+        Building CXX object CMakeFiles/cmTC_f230c.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_SUPPORTS_MISLEADING_INDENTATION_FLAG  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment  -std=gnu++17   -Wmisleading-indentation -o CMakeFiles/cmTC_f230c.dir/src.cxx.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-CwNWzy/src.cxx
+        Linking CXX executable cmTC_f230c
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f230c.dir/link.txt --verbose=1
+        /usr/bin/c++  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment  CMakeFiles/cmTC_f230c.dir/src.cxx.o -o cmTC_f230c 
+        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-CwNWzy'
         
       exitCode: 0
   -
@@ -1535,8 +1535,8 @@ events:
     checks:
       - "Performing Test C_SUPPORTS_CTAD_MAYBE_UNSPPORTED_FLAG"
     directories:
-      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-BdPQWa"
-      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-BdPQWa"
+      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-a2tjwa"
+      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-a2tjwa"
     cmakeVariables:
       CMAKE_C_FLAGS: " -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-comment"
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -1546,18 +1546,18 @@ events:
       variable: "C_SUPPORTS_CTAD_MAYBE_UNSPPORTED_FLAG"
       cached: true
       stdout: |
-        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-BdPQWa'
+        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-a2tjwa'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_68b37/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_68b37.dir/build.make CMakeFiles/cmTC_68b37.dir/build
-        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-BdPQWa'
-        Building C object CMakeFiles/cmTC_68b37.dir/src.c.o
-        /usr/bin/cc -DC_SUPPORTS_CTAD_MAYBE_UNSPPORTED_FLAG  -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-comment    -Werror -Wctad-maybe-unsupported -o CMakeFiles/cmTC_68b37.dir/src.c.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-BdPQWa/src.c
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_32b68/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_32b68.dir/build.make CMakeFiles/cmTC_32b68.dir/build
+        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-a2tjwa'
+        Building C object CMakeFiles/cmTC_32b68.dir/src.c.o
+        /usr/bin/cc -DC_SUPPORTS_CTAD_MAYBE_UNSPPORTED_FLAG  -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-comment    -Werror -Wctad-maybe-unsupported -o CMakeFiles/cmTC_32b68.dir/src.c.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-a2tjwa/src.c
         cc1: error: command-line option '-Wctad-maybe-unsupported' is valid for C++/ObjC++ but not for C [-Werror]
         cc1: all warnings being treated as errors
-        gmake[1]: *** [CMakeFiles/cmTC_68b37.dir/build.make:78: CMakeFiles/cmTC_68b37.dir/src.c.o] Error 1
-        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-BdPQWa'
-        gmake: *** [Makefile:127: cmTC_68b37/fast] Error 2
+        gmake[1]: *** [CMakeFiles/cmTC_32b68.dir/build.make:78: CMakeFiles/cmTC_32b68.dir/src.c.o] Error 1
+        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-a2tjwa'
+        gmake: *** [Makefile:127: cmTC_32b68/fast] Error 2
         
       exitCode: 2
   -
@@ -1572,8 +1572,8 @@ events:
     checks:
       - "Performing Test CXX_SUPPORTS_CTAD_MAYBE_UNSPPORTED_FLAG"
     directories:
-      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-ytpFAc"
-      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-ytpFAc"
+      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-tQ2uN0"
+      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-tQ2uN0"
     cmakeVariables:
       CMAKE_CXX_FLAGS: " -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wno-misleading-indentation"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1583,17 +1583,17 @@ events:
       variable: "CXX_SUPPORTS_CTAD_MAYBE_UNSPPORTED_FLAG"
       cached: true
       stdout: |
-        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-ytpFAc'
+        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-tQ2uN0'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_28171/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_28171.dir/build.make CMakeFiles/cmTC_28171.dir/build
-        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-ytpFAc'
-        Building CXX object CMakeFiles/cmTC_28171.dir/src.cxx.o
-        /usr/bin/c++ -DCXX_SUPPORTS_CTAD_MAYBE_UNSPPORTED_FLAG  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wno-misleading-indentation  -std=gnu++17   -Werror -Wctad-maybe-unsupported -o CMakeFiles/cmTC_28171.dir/src.cxx.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-ytpFAc/src.cxx
-        Linking CXX executable cmTC_28171
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_28171.dir/link.txt --verbose=1
-        /usr/bin/c++  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wno-misleading-indentation  CMakeFiles/cmTC_28171.dir/src.cxx.o -o cmTC_28171 
-        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-ytpFAc'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_4b991/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_4b991.dir/build.make CMakeFiles/cmTC_4b991.dir/build
+        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-tQ2uN0'
+        Building CXX object CMakeFiles/cmTC_4b991.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_SUPPORTS_CTAD_MAYBE_UNSPPORTED_FLAG  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wno-misleading-indentation  -std=gnu++17   -Werror -Wctad-maybe-unsupported -o CMakeFiles/cmTC_4b991.dir/src.cxx.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-tQ2uN0/src.cxx
+        Linking CXX executable cmTC_4b991
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4b991.dir/link.txt --verbose=1
+        /usr/bin/c++  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wno-misleading-indentation  CMakeFiles/cmTC_4b991.dir/src.cxx.o -o cmTC_4b991 
+        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-tQ2uN0'
         
       exitCode: 0
   -
@@ -1607,8 +1607,8 @@ events:
     checks:
       - "Performing Test C_SUPPORTS_FNO_FUNCTION_SECTIONS"
     directories:
-      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-RuSSBz"
-      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-RuSSBz"
+      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-prxZUM"
+      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-prxZUM"
     cmakeVariables:
       CMAKE_C_FLAGS: " -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-comment"
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -1618,17 +1618,17 @@ events:
       variable: "C_SUPPORTS_FNO_FUNCTION_SECTIONS"
       cached: true
       stdout: |
-        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-RuSSBz'
+        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-prxZUM'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_57f99/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_57f99.dir/build.make CMakeFiles/cmTC_57f99.dir/build
-        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-RuSSBz'
-        Building C object CMakeFiles/cmTC_57f99.dir/src.c.o
-        /usr/bin/cc -DC_SUPPORTS_FNO_FUNCTION_SECTIONS  -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-comment    -Werror -fno-function-sections -o CMakeFiles/cmTC_57f99.dir/src.c.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-RuSSBz/src.c
-        Linking C executable cmTC_57f99
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_57f99.dir/link.txt --verbose=1
-        /usr/bin/cc  -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-comment  CMakeFiles/cmTC_57f99.dir/src.c.o -o cmTC_57f99 
-        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-RuSSBz'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_3f2fb/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_3f2fb.dir/build.make CMakeFiles/cmTC_3f2fb.dir/build
+        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-prxZUM'
+        Building C object CMakeFiles/cmTC_3f2fb.dir/src.c.o
+        /usr/bin/cc -DC_SUPPORTS_FNO_FUNCTION_SECTIONS  -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-comment    -Werror -fno-function-sections -o CMakeFiles/cmTC_3f2fb.dir/src.c.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-prxZUM/src.c
+        Linking C executable cmTC_3f2fb
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3f2fb.dir/link.txt --verbose=1
+        /usr/bin/cc  -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-comment  CMakeFiles/cmTC_3f2fb.dir/src.c.o -o cmTC_3f2fb 
+        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-prxZUM'
         
       exitCode: 0
   -
@@ -1643,8 +1643,8 @@ events:
     checks:
       - "Performing Test C_SUPPORTS_FFUNCTION_SECTIONS"
     directories:
-      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-L8oQ0L"
-      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-L8oQ0L"
+      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-0vQuXp"
+      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-0vQuXp"
     cmakeVariables:
       CMAKE_C_FLAGS: " -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-comment"
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -1654,17 +1654,17 @@ events:
       variable: "C_SUPPORTS_FFUNCTION_SECTIONS"
       cached: true
       stdout: |
-        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-L8oQ0L'
+        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-0vQuXp'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_6fa63/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_6fa63.dir/build.make CMakeFiles/cmTC_6fa63.dir/build
-        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-L8oQ0L'
-        Building C object CMakeFiles/cmTC_6fa63.dir/src.c.o
-        /usr/bin/cc -DC_SUPPORTS_FFUNCTION_SECTIONS  -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-comment    -Werror -ffunction-sections -o CMakeFiles/cmTC_6fa63.dir/src.c.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-L8oQ0L/src.c
-        Linking C executable cmTC_6fa63
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6fa63.dir/link.txt --verbose=1
-        /usr/bin/cc  -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-comment  CMakeFiles/cmTC_6fa63.dir/src.c.o -o cmTC_6fa63 
-        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-L8oQ0L'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_d52bc/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_d52bc.dir/build.make CMakeFiles/cmTC_d52bc.dir/build
+        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-0vQuXp'
+        Building C object CMakeFiles/cmTC_d52bc.dir/src.c.o
+        /usr/bin/cc -DC_SUPPORTS_FFUNCTION_SECTIONS  -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-comment    -Werror -ffunction-sections -o CMakeFiles/cmTC_d52bc.dir/src.c.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-0vQuXp/src.c
+        Linking C executable cmTC_d52bc
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d52bc.dir/link.txt --verbose=1
+        /usr/bin/cc  -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-comment  CMakeFiles/cmTC_d52bc.dir/src.c.o -o cmTC_d52bc 
+        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-0vQuXp'
         
       exitCode: 0
   -
@@ -1679,8 +1679,8 @@ events:
     checks:
       - "Performing Test CXX_SUPPORTS_FFUNCTION_SECTIONS"
     directories:
-      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-BWNHDf"
-      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-BWNHDf"
+      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-GNFaku"
+      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-GNFaku"
     cmakeVariables:
       CMAKE_CXX_FLAGS: " -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wno-misleading-indentation -Wctad-maybe-unsupported"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1690,17 +1690,17 @@ events:
       variable: "CXX_SUPPORTS_FFUNCTION_SECTIONS"
       cached: true
       stdout: |
-        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-BWNHDf'
+        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-GNFaku'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_17beb/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_17beb.dir/build.make CMakeFiles/cmTC_17beb.dir/build
-        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-BWNHDf'
-        Building CXX object CMakeFiles/cmTC_17beb.dir/src.cxx.o
-        /usr/bin/c++ -DCXX_SUPPORTS_FFUNCTION_SECTIONS  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wno-misleading-indentation -Wctad-maybe-unsupported  -std=gnu++17   -Werror -ffunction-sections -o CMakeFiles/cmTC_17beb.dir/src.cxx.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-BWNHDf/src.cxx
-        Linking CXX executable cmTC_17beb
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_17beb.dir/link.txt --verbose=1
-        /usr/bin/c++  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wno-misleading-indentation -Wctad-maybe-unsupported  CMakeFiles/cmTC_17beb.dir/src.cxx.o -o cmTC_17beb 
-        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-BWNHDf'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_737d1/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_737d1.dir/build.make CMakeFiles/cmTC_737d1.dir/build
+        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-GNFaku'
+        Building CXX object CMakeFiles/cmTC_737d1.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_SUPPORTS_FFUNCTION_SECTIONS  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wno-misleading-indentation -Wctad-maybe-unsupported  -std=gnu++17   -Werror -ffunction-sections -o CMakeFiles/cmTC_737d1.dir/src.cxx.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-GNFaku/src.cxx
+        Linking CXX executable cmTC_737d1
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_737d1.dir/link.txt --verbose=1
+        /usr/bin/c++  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wno-misleading-indentation -Wctad-maybe-unsupported  CMakeFiles/cmTC_737d1.dir/src.cxx.o -o cmTC_737d1 
+        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-GNFaku'
         
       exitCode: 0
   -
@@ -1715,8 +1715,8 @@ events:
     checks:
       - "Performing Test C_SUPPORTS_FDATA_SECTIONS"
     directories:
-      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-vq7wQ2"
-      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-vq7wQ2"
+      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-5OGfI4"
+      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-5OGfI4"
     cmakeVariables:
       CMAKE_C_FLAGS: " -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-comment -ffunction-sections"
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -1726,17 +1726,17 @@ events:
       variable: "C_SUPPORTS_FDATA_SECTIONS"
       cached: true
       stdout: |
-        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-vq7wQ2'
+        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-5OGfI4'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_a097e/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_a097e.dir/build.make CMakeFiles/cmTC_a097e.dir/build
-        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-vq7wQ2'
-        Building C object CMakeFiles/cmTC_a097e.dir/src.c.o
-        /usr/bin/cc -DC_SUPPORTS_FDATA_SECTIONS  -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-comment -ffunction-sections    -Werror -fdata-sections -o CMakeFiles/cmTC_a097e.dir/src.c.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-vq7wQ2/src.c
-        Linking C executable cmTC_a097e
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a097e.dir/link.txt --verbose=1
-        /usr/bin/cc  -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-comment -ffunction-sections  CMakeFiles/cmTC_a097e.dir/src.c.o -o cmTC_a097e 
-        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-vq7wQ2'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_78a77/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_78a77.dir/build.make CMakeFiles/cmTC_78a77.dir/build
+        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-5OGfI4'
+        Building C object CMakeFiles/cmTC_78a77.dir/src.c.o
+        /usr/bin/cc -DC_SUPPORTS_FDATA_SECTIONS  -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-comment -ffunction-sections    -Werror -fdata-sections -o CMakeFiles/cmTC_78a77.dir/src.c.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-5OGfI4/src.c
+        Linking C executable cmTC_78a77
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_78a77.dir/link.txt --verbose=1
+        /usr/bin/cc  -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-comment -ffunction-sections  CMakeFiles/cmTC_78a77.dir/src.c.o -o cmTC_78a77 
+        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-5OGfI4'
         
       exitCode: 0
   -
@@ -1751,8 +1751,8 @@ events:
     checks:
       - "Performing Test CXX_SUPPORTS_FDATA_SECTIONS"
     directories:
-      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-Q0Szai"
-      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-Q0Szai"
+      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-LsRNIv"
+      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-LsRNIv"
     cmakeVariables:
       CMAKE_CXX_FLAGS: " -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wno-misleading-indentation -Wctad-maybe-unsupported -ffunction-sections"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1762,17 +1762,17 @@ events:
       variable: "CXX_SUPPORTS_FDATA_SECTIONS"
       cached: true
       stdout: |
-        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-Q0Szai'
+        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-LsRNIv'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_72efe/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_72efe.dir/build.make CMakeFiles/cmTC_72efe.dir/build
-        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-Q0Szai'
-        Building CXX object CMakeFiles/cmTC_72efe.dir/src.cxx.o
-        /usr/bin/c++ -DCXX_SUPPORTS_FDATA_SECTIONS  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wno-misleading-indentation -Wctad-maybe-unsupported -ffunction-sections  -std=gnu++17   -Werror -fdata-sections -o CMakeFiles/cmTC_72efe.dir/src.cxx.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-Q0Szai/src.cxx
-        Linking CXX executable cmTC_72efe
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_72efe.dir/link.txt --verbose=1
-        /usr/bin/c++  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wno-misleading-indentation -Wctad-maybe-unsupported -ffunction-sections  CMakeFiles/cmTC_72efe.dir/src.cxx.o -o cmTC_72efe 
-        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-Q0Szai'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_4d14f/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_4d14f.dir/build.make CMakeFiles/cmTC_4d14f.dir/build
+        gmake[1]: Entering directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-LsRNIv'
+        Building CXX object CMakeFiles/cmTC_4d14f.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_SUPPORTS_FDATA_SECTIONS  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wno-misleading-indentation -Wctad-maybe-unsupported -ffunction-sections  -std=gnu++17   -Werror -fdata-sections -o CMakeFiles/cmTC_4d14f.dir/src.cxx.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-LsRNIv/src.cxx
+        Linking CXX executable cmTC_4d14f
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4d14f.dir/link.txt --verbose=1
+        /usr/bin/c++  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wno-misleading-indentation -Wctad-maybe-unsupported -ffunction-sections  CMakeFiles/cmTC_4d14f.dir/src.cxx.o -o cmTC_4d14f 
+        gmake[1]: Leaving directory '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-LsRNIv'
         
       exitCode: 0
   -
@@ -1785,8 +1785,8 @@ events:
     checks:
       - "Looking for os_signpost_interval_begin"
     directories:
-      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-8U4Rpz"
-      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-8U4Rpz"
+      source: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-Z2H98F"
+      binary: "/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-Z2H98F"
     cmakeVariables:
       CMAKE_C_FLAGS: " -fPIC -fno-semantic-interposition -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-comment -ffunction-sections -fdata-sections"
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -1796,20 +1796,20 @@ events:
       variable: "macos_signposts_available"
       cached: true
       stdout: |
-        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-8U4Rpz'
+        Change Dir: '/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-Z2H98F'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_42ebb/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_42ebb.dir/build.make CMakeFiles/cmTC_42ebb.dir/build
-        gmake[1]: 进入目录“/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-8U4Rpz”
-        Building C object CMakeFiles/cmTC_42ebb.dir/CheckSymbolExists.c.o
-        /usr/bin/cc   -fPIC -fno-semantic-interposition -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-comment -ffunction-sections -fdata-sections  -o CMakeFiles/cmTC_42ebb.dir/CheckSymbolExists.c.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-8U4Rpz/CheckSymbolExists.c
-        /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-8U4Rpz/CheckSymbolExists.c:2:10: fatal error: os/signpost.h: 没有那个文件或目录
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_4cb7b/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_4cb7b.dir/build.make CMakeFiles/cmTC_4cb7b.dir/build
+        gmake[1]: 进入目录“/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-Z2H98F”
+        Building C object CMakeFiles/cmTC_4cb7b.dir/CheckSymbolExists.c.o
+        /usr/bin/cc   -fPIC -fno-semantic-interposition -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-comment -ffunction-sections -fdata-sections  -o CMakeFiles/cmTC_4cb7b.dir/CheckSymbolExists.c.o -c /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-Z2H98F/CheckSymbolExists.c
+        /home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-Z2H98F/CheckSymbolExists.c:2:10: fatal error: os/signpost.h: 没有那个文件或目录
             2 | #include <os/signpost.h>
               |          ^~~~~~~~~~~~~~~
         compilation terminated.
-        gmake[1]: *** [CMakeFiles/cmTC_42ebb.dir/build.make:78：CMakeFiles/cmTC_42ebb.dir/CheckSymbolExists.c.o] 错误 1
-        gmake[1]: 离开目录“/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-8U4Rpz”
-        gmake: *** [Makefile:127：cmTC_42ebb/fast] 错误 2
+        gmake[1]: *** [CMakeFiles/cmTC_4cb7b.dir/build.make:78：CMakeFiles/cmTC_4cb7b.dir/CheckSymbolExists.c.o] 错误 1
+        gmake[1]: 离开目录“/home/zzzccc/cxzz/Kotoamatsukami/build/CMakeFiles/CMakeScratch/TryCompile-Z2H98F”
+        gmake: *** [Makefile:127：cmTC_4cb7b/fast] 错误 2
         
       exitCode: 2
 ...

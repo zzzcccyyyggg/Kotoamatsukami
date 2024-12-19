@@ -444,6 +444,30 @@ src/pass/ForObsPass.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/ForObsPass.cpp.s
 .PHONY : src/pass/ForObsPass.cpp.s
 
+src/pass/GVEncrypt.o: src/pass/GVEncrypt.cpp.o
+.PHONY : src/pass/GVEncrypt.o
+
+# target to build an object file
+src/pass/GVEncrypt.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/GVEncrypt.cpp.o
+.PHONY : src/pass/GVEncrypt.cpp.o
+
+src/pass/GVEncrypt.i: src/pass/GVEncrypt.cpp.i
+.PHONY : src/pass/GVEncrypt.i
+
+# target to preprocess a source file
+src/pass/GVEncrypt.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/GVEncrypt.cpp.i
+.PHONY : src/pass/GVEncrypt.cpp.i
+
+src/pass/GVEncrypt.s: src/pass/GVEncrypt.cpp.s
+.PHONY : src/pass/GVEncrypt.s
+
+# target to generate assembly for a file
+src/pass/GVEncrypt.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/GVEncrypt.cpp.s
+.PHONY : src/pass/GVEncrypt.cpp.s
+
 src/pass/IndirectBranch.o: src/pass/IndirectBranch.cpp.o
 .PHONY : src/pass/IndirectBranch.o
 
@@ -564,6 +588,30 @@ src/pass/Substitution.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/pass/Substitution.cpp.s
 .PHONY : src/pass/Substitution.cpp.s
 
+src/utils/TaintAnalysis.o: src/utils/TaintAnalysis.cpp.o
+.PHONY : src/utils/TaintAnalysis.o
+
+# target to build an object file
+src/utils/TaintAnalysis.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/utils/TaintAnalysis.cpp.o
+.PHONY : src/utils/TaintAnalysis.cpp.o
+
+src/utils/TaintAnalysis.i: src/utils/TaintAnalysis.cpp.i
+.PHONY : src/utils/TaintAnalysis.i
+
+# target to preprocess a source file
+src/utils/TaintAnalysis.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/utils/TaintAnalysis.cpp.i
+.PHONY : src/utils/TaintAnalysis.cpp.i
+
+src/utils/TaintAnalysis.s: src/utils/TaintAnalysis.cpp.s
+.PHONY : src/utils/TaintAnalysis.s
+
+# target to generate assembly for a file
+src/utils/TaintAnalysis.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Kotoamatsukami.dir/build.make CMakeFiles/Kotoamatsukami.dir/src/utils/TaintAnalysis.cpp.s
+.PHONY : src/utils/TaintAnalysis.cpp.s
+
 src/utils/config.o: src/utils/config.cpp.o
 .PHONY : src/utils/config.o
 
@@ -655,6 +703,9 @@ help:
 	@echo "... src/pass/ForObsPass.o"
 	@echo "... src/pass/ForObsPass.i"
 	@echo "... src/pass/ForObsPass.s"
+	@echo "... src/pass/GVEncrypt.o"
+	@echo "... src/pass/GVEncrypt.i"
+	@echo "... src/pass/GVEncrypt.s"
 	@echo "... src/pass/IndirectBranch.o"
 	@echo "... src/pass/IndirectBranch.i"
 	@echo "... src/pass/IndirectBranch.s"
@@ -670,6 +721,9 @@ help:
 	@echo "... src/pass/Substitution.o"
 	@echo "... src/pass/Substitution.i"
 	@echo "... src/pass/Substitution.s"
+	@echo "... src/utils/TaintAnalysis.o"
+	@echo "... src/utils/TaintAnalysis.i"
+	@echo "... src/utils/TaintAnalysis.s"
 	@echo "... src/utils/config.o"
 	@echo "... src/utils/config.i"
 	@echo "... src/utils/config.s"

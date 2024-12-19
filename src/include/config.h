@@ -48,6 +48,7 @@ extern FunctionSettings indirect_call;
 extern FunctionSettings bogus_control_flow;
 extern FunctionSettings substitution;
 extern FunctionSettings flatten;
+extern FunctionSettings gv_encrypt;
 extern Arch targetArch ;
 extern int isConfigured;
 extern int x[2048];
