@@ -33,6 +33,7 @@ struct FunctionSettings {
     std::vector<std::string> disable_function;
     int op1 = 0;  
     int op2 = 0;
+    std::string module_name;
 };
 
 extern FunctionSettings loopen;

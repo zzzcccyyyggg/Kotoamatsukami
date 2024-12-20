@@ -391,7 +391,7 @@ PreservedAnalyses Branch2Call::run(llvm::Module& M,
                 if (!Terminator) {
                     llvm::errs() << "Terminator is null for basic block: " << BB.getName()
                                  << "\n";
-                    F.print(llvm::outs());
+                    // F.print(llvm::outs());
                     continue;
                 }
                 auto* BI = dyn_cast<BranchInst>(Terminator);
@@ -406,7 +406,7 @@ PreservedAnalyses Branch2Call::run(llvm::Module& M,
                     ++block_count;
                 }
             }
-            F.print(llvm::outs());
+            // F.print(llvm::outs());
         }
     }
 

@@ -86,6 +86,11 @@ void parseConfig(const std::string& filename) {
                 x[i] = tmp[i];
             }
         }
+        if (j.contains("module_name"))
+        {
+            std::string tmp = j["module_name"].get<std::string>();
+            settings.module_name = tmp;
+        }
         
     };
 

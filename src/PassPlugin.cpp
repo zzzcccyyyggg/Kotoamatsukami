@@ -88,19 +88,19 @@ llvm::PassPluginLibraryInfo getKotoamatsukamiPluginInfo()
         //     });
         PB.registerPipelineStartEPCallback(
             [](ModulePassManager &MPM, OptimizationLevel Level) {
+                MPM.addPass(AntiDebugPass());
                 MPM.addPass(SplitBasicBlock());
+                MPM.addPass(GVEncrypt());
                 MPM.addPass(BogusControlFlow());
+                MPM.addPass(AddJunkCodePass());
                 MPM.addPass(Loopen());
                 MPM.addPass(ForObsPass());
-                MPM.addPass(AddJunkCodePass());
                 MPM.addPass(Branch2Call_32());
                 MPM.addPass(Branch2Call());
-                MPM.addPass(AntiDebugPass());
-                MPM.addPass(IndirectBranch());
                 MPM.addPass(IndirectCall());
-                MPM.addPass(Substitution());
+                MPM.addPass(IndirectBranch());
                 MPM.addPass(Flatten());
-                MPM.addPass(GVEncrypt());
+                MPM.addPass(Substitution());
         });
 
       }};

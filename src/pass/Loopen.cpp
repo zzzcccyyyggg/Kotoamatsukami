@@ -31,10 +31,8 @@ unsigned int quick_pow(unsigned int base, unsigned int exp, unsigned int mod)
     return result;
 }
 
-llvm::Function *createQuickPow(llvm::Module *M)
+llvm::Function *createQuickPow(llvm::Module *M,std::string &moduleName)
 {
-    // 定义模块名称和函数名称
-    std::string moduleName = "/home/zzzccc/cxzz/Kotoamatsukami/config/quick_pow.ll";
     std::string funcName = "quick_pow";
 
     // 在模块中检查是否已经存在同名的函数
@@ -250,7 +248,7 @@ PreservedAnalyses Loopen::run(Module &M, ModuleAnalysisManager &AM)
             // 使用 std::shuffle 随机打乱从第二个到最后一个元素
             // std::shuffle(origBB.begin() + 1, origBB.end(), e);
             llvm::outs() << "[Loopen]: start createQuickPow " << "\n";
-            llvm::Function *quickPowFunc = createQuickPow(M);
+            llvm::Function *quickPowFunc = createQuickPow(M,loopen.module_name);
             // 检查基本块中是否至少有两条指令
             if (std::distance(entryBB.begin(), entryBB.end()) >= 2)
             {

@@ -3,7 +3,7 @@
     "loopen": {
         "model": 0,
         "enable function": [
-            "main","run_vm"
+            ""
         ],
         "disable function": [],
         "loopen_x_list": [
@@ -240,22 +240,22 @@
             510,
             511,
             512
-        ]
+        ],
+        "module_name": "/home/zzzccc/cxzz/Kotoamatsukami/config/quick_pow.ll"
     },
     "ForObs": {
         "model": 0,
         "enable function": [
-            "main"
+            ""
         ],
         "disable function": [
-            "func1"
+            ""
         ]
     },
     "SplitBasicBlocks": {
         "model": 0,
         "enable function": [
-            "main",
-            "run_vm"
+            ""
         ],
         "disable function": [],
         "split number": 3
@@ -263,29 +263,29 @@
     "branch2call": {
         "model": 0,
         "enable function": [
-            "confuse_key"
+            ""
 
         ],
         "disable function": [
-            "func1"
+            ""
         ],
         "split number": 3
     },
     "branch2call_32": {
         "model": 0,
         "enable function": [
-            "confuse_key"
+            ""
 
         ],
         "disable function": [
-            "func1"
+            ""
         ],
         "split number": 3
     },
     "Junkcode": {
         "model": 0,
         "enable function": [
-            "main"
+            ""
         ],
         "disable function": [
             ""
@@ -297,13 +297,13 @@
             ""
         ],
         "disable function": [
-            "func1"
+            ""
         ]
     },    
     "Antidebug": {
-        "model": 0,
+        "model": 1,
         "enable function": [
-            "main"
+            ""
         ],
         "disable function": [
             ""
@@ -312,7 +312,7 @@
     "indirect_branch": {
         "model": 0,
         "enable function": [
-            "main"
+            ""
         ],
         "disable function": [
             ""
@@ -321,7 +321,7 @@
     "indirect_call": {
         "model": 0,
         "enable function": [
-            "main"
+            ""
         ],
         "disable function": [
             ""
@@ -330,7 +330,7 @@
     "bogus_control_flow": {
         "model": 0,
         "enable function": [
-            "main"
+            ""
         ],
         "disable function": [
             ""
@@ -339,7 +339,7 @@
     "substitution": {
         "model": 0,
         "enable function": [
-            "main"
+            ""
         ],
         "disable function": [
             ""
@@ -348,16 +348,16 @@
     "flatten": {
         "model": 0,
         "enable function": [
-            "main"
+            ""
         ],
         "disable function": [
             ""
         ]
     },
     "gv_encrypt": {
-        "model": 1,
+        "model": 0,
         "enable function": [
-            "main"
+            ""
         ],
         "disable function": [
             ""

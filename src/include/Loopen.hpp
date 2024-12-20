@@ -26,7 +26,7 @@ namespace llvm
     };
 
 } // namespace llvm
-llvm::Function *createQuickPow(llvm::Module *M);
+llvm::Function *createQuickPow(llvm::Module *M, std::string &moduleName);
 void funcLoopen(llvm::IRBuilder<> &builder, llvm::LLVMContext &context, llvm::Function &F, llvm::Function *quickPowFunc, llvm::Value *N, llvm::Value *M, llvm::BasicBlock *OldBB);
 
 unsigned int quick_pow(unsigned int base, unsigned int exp, unsigned int mod);

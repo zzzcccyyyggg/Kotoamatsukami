@@ -84,15 +84,15 @@ void Kotoamatsukami_Antidebug7() {
     printf("No debugger detected, continuing...\n");
 }
 
-int main() {
-    // Kotoamatsukami_Antidebug1();  // ptrace 检测
-    // Kotoamatsukami_Antidebug2();  // getsid/getppid 检测
-    // Kotoamatsukami_Antidebug3();  // int3 检测
-    // Kotoamatsukami_Antidebug4();  // $_ 环境变量检测
-    Kotoamatsukami_Antidebug5();  // alarm 定时器检测
-    // Kotoamatsukami_Antidebug6();  // ptrace 再次检测
-    // Kotoamatsukami_Antidebug7();  // 父进程检测
+// int main() {
+//     // Kotoamatsukami_Antidebug1();  // ptrace 检测
+//     // Kotoamatsukami_Antidebug2();  // getsid/getppid 检测
+//     // Kotoamatsukami_Antidebug3();  // int3 检测
+//     // Kotoamatsukami_Antidebug4();  // $_ 环境变量检测
+//     Kotoamatsukami_Antidebug5();  // alarm 定时器检测
+//     // Kotoamatsukami_Antidebug6();  // ptrace 再次检测
+//     // Kotoamatsukami_Antidebug7();  // 父进程检测
 
-    printf("Program running normally!\n");
-    return 0;
-}
+//     printf("Program running normally!\n");
+//     return 0;
+// }
