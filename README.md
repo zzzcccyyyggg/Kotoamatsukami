@@ -4,17 +4,17 @@ Kotoamatsukami is an obfuscator based on LLVM-17, utilizing LLVM's new pass to i
 
 The name "Kotoamatsukami" is derived from my favorite anime, **Naruto**, which features the best genjutsu in my heart.
 
-I will provide a complete set of related documentation in the future.
+I will provide a complete set of related documentation in the future,now you can find the dynamically link files-Kotoamatsukami.so in /bin/build,and the /bin/test contains the different files obsfucated by different methods.
 
 PS:This project is written by myself out of interest, it may not be complete, if you have any questions about this project, please feel free to contact me.
 
 ## Obfuscation
 
-Currently open obfuscation functions include:
-
 The following test file is rc4 encryption algorithm(source file in the end of this readme),the ida view of the original file is as follows:
 
 ![image-20241220160418783](https://zzzcccimage1.oss-cn-beijing.aliyuncs.com/img/image-20241220160418783.png)
+
+Currently open obfuscation functions include:
 
 ### Loopen
 
@@ -47,7 +47,9 @@ The performance of using ForObs only:
 ### BogusControlFlow
 
 My bogus-control-flow is based on the version of rimao (source code: https://github.com/za233/Polaris-Obfuscator/blob/main/src/llvm/lib/Transforms/Obfuscation/BogusControlFlow2.cpp)
-What i have done is to modify the judging conditions from certain to possible , but it's probability of occurrence is so liitle that it can't happen when the actual program running .And I add a local viriables to reinforces the illusion that it can be run.
+What i have done is to modify the judging conditions from certain to possible , but it's probability
+of occurrence is so liitle that it can't happen when the actual program running .And I add a local
+viriables to reinforces the illusion that it can be run.
 
 But what I want to do is that make the false block can be real excute on a very low probability.And  if the false block have excuted ,the program will find it and re-execute the true block.But the fake variable in my false block is un-alloced so that it will corrupt.Hope I will have time to finish this in the future.
 
@@ -82,7 +84,6 @@ For example , the performance of using it and the Loopen:
 ### AddJunkCode
 
 Add assembly level junk code , currently only support X86 and X64.
-
 The performance of using AddJunkCode only:
 
 ![image-20241220164639032](https://zzzcccimage1.oss-cn-beijing.aliyuncs.com/img/image-20241220164639032.png)
@@ -90,9 +91,7 @@ The performance of using AddJunkCode only:
 ### Flatten
 
 This code is adapted from the Pluto project (https://github.com/DreamSoule/ollvm17)
-
 Thanks to the contributions of our predecessors!
-
 The performance of using Flatten only:
 
 ![image-20241220211100256](https://zzzcccimage1.oss-cn-beijing.aliyuncs.com/img/image-20241220211100256.png)
@@ -100,13 +99,9 @@ The performance of using Flatten only:
 ### Substitution
 
 This code is adapted from the Pluto project (https://github.com/bluesadi/Pluto)
-
-Source file: https://github.com/bluesadi/Pluto/blob/kanxue/Transforms/src/Substitution.cpp
-
+source file: https://github.com/bluesadi/Pluto/blob/kanxue/Transforms/src/Substitution.cpp
 I just adapted it to the LLVM-17 and the LLVM New Pass
-
 Thanks to the contributions of our predecessors!
-
 The performance of using Substitution only:
 
 ![image-20241220210934072](https://zzzcccimage1.oss-cn-beijing.aliyuncs.com/img/image-20241220210934072.png)
@@ -122,7 +117,6 @@ The performance of using GVEncrypt only:
 ### AntiDebug
 
 The method will insert some anti-debugging functions into the program's constructor list to be called when the program starts running:
-
 And I try to make the anti-debugging functions configurable,see code for details.
 
 The performance of using AntiDebug only:
