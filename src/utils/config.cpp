@@ -112,8 +112,8 @@ void parseConfig(const std::string& filename) {
 }
 
 // 读取配置文件的函数
-void readConfig(const std::string& filename) {
-    // std::cout << "[config]: The target arch is " << archToString(targetArch) << "\n";
+void readConfig(const std::string& filename){
+    std::string fileName = "/tmp/Kotoamatsukami/Kotoamatsukami.config"; // 当前目录下的配置文件
     if (!isConfigured) {
         parseConfig(filename); // 如果未读取，解析配置
         isConfigured = true;     // 标记为已读取

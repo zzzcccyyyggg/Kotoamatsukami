@@ -123,6 +123,424 @@ The performance of using AntiDebug only:
 
 ![image-20241220214513409](https://zzzcccimage1.oss-cn-beijing.aliyuncs.com/img/image-20241220214513409.png)
 
+## How to install
+
+You can compile LLVM-17 project in by youself in your computer,then modify the CMakeLists.txt of this project to compile it.
+
+The following are the commands I use for your reference:
+
+```
+git clone --depth 1 -b release/17.x https://github.com/llvm/llvm-project.git
+mkdir build
+cmake -G Ninja -DLLVM_ENABLE_PROJECTS="clang;lld" -DLLVM_TARGETS_TO_BUILD="X86;ARM;AArch64" -DCMAKE_BUILD_TYPE=Release -DLLVM_INCLUDE_TESTS=OFF -DLLVM_ENABLE_RTTI=ON -DLLVM_OBFUSCATION_LINK_INTO_TOOLS=
+ON -DCMAKE_INSTALL_PREFIX=./build/ ../llvm-project/llvm
+ninja -j8
+ninja install
+```
+
+These commands will install compiled products to <your-llvmdir>/build,then your need modify the CMakeLists.txt of this project.
+
+```
+cd Kotoamatsukami
+mkdir build
+cd build
+cmake ..
+make -j
+```
+
+ finish ~~
+
+### How to use
+
+You need set the configuration file in `/tmp/Kotoamatsukami/Kotoamatsukami.config`,which format is as follows.
+
+**`0`**: All functions are turned off (everything is disabled).
+
+**`1`**: All functions are turned on (everything is enabled).
+
+**`2`**: Enable only the functions that are already enabled (keep the enabled functions on, others unchanged).
+
+**`3`**: Enable all functions except those that are explicitly disabled (enable all functions that are not disabled).
+
+Then you can use the Kotoamatsukami.so as follows:
+
+```shell
+<your-clang-17> -fpass-plugin=<your-Kotoamatsukami_so>
+```
+
+`Kotoamatsukami.config`
+
+```json
+{
+    "target": "X86_64",
+    "loopen": {
+        "model": 0,
+        "enable function": [
+            ""
+        ],
+        "disable function": [],
+        "loopen_x_list": [
+            2,
+            3,
+            5,
+            8,
+            11,
+            12,
+            13,
+            14,
+            18,
+            20,
+            21,
+            27,
+            30,
+            31,
+            32,
+            34,
+            35,
+            37,
+            38,
+            41,
+            43,
+            44,
+            45,
+            46,
+            48,
+            50,
+            51,
+            52,
+            56,
+            57,
+            66,
+            69,
+            71,
+            72,
+            73,
+            75,
+            77,
+            78,
+            80,
+            84,
+            85,
+            89,
+            91,
+            94,
+            95,
+            97,
+            98,
+            99,
+            103,
+            106,
+            108,
+            110,
+            113,
+            115,
+            116,
+            120,
+            124,
+            125,
+            126,
+            128,
+            130,
+            134,
+            136,
+            137,
+            140,
+            141,
+            147,
+            148,
+            152,
+            157,
+            158,
+            159,
+            162,
+            163,
+            164,
+            165,
+            167,
+            172,
+            173,
+            174,
+            176,
+            180,
+            184,
+            187,
+            189,
+            192,
+            195,
+            197,
+            199,
+            200,
+            201,
+            202,
+            204,
+            209,
+            210,
+            214,
+            217,
+            218,
+            221,
+            222,
+            224,
+            227,
+            228,
+            233,
+            235,
+            236,
+            237,
+            238,
+            239,
+            241,
+            242,
+            243,
+            244,
+            245,
+            246,
+            247,
+            249,
+            253,
+            254,
+            257,
+            258,
+            259,
+            261,
+            262,
+            263,
+            264,
+            266,
+            270,
+            275,
+            276,
+            278,
+            279,
+            284,
+            286,
+            287,
+            288,
+            290,
+            292,
+            293,
+            298,
+            299,
+            300,
+            301,
+            303,
+            306,
+            307,
+            308,
+            310,
+            311,
+            312,
+            315,
+            320,
+            322,
+            325,
+            327,
+            333,
+            335,
+            336,
+            337,
+            338,
+            340,
+            342,
+            347,
+            350,
+            353,
+            354,
+            356,
+            357,
+            363,
+            364,
+            366,
+            369,
+            370,
+            373,
+            376,
+            379,
+            380,
+            382,
+            386,
+            387,
+            388,
+            392,
+            393,
+            395,
+            396,
+            397,
+            399,
+            405,
+            410,
+            412,
+            414,
+            415,
+            417,
+            421,
+            422,
+            424,
+            426,
+            429,
+            430,
+            432,
+            433,
+            435,
+            438,
+            440,
+            443,
+            446,
+            447,
+            450,
+            453,
+            458,
+            459,
+            460,
+            462,
+            464,
+            465,
+            467,
+            468,
+            479,
+            480,
+            483,
+            493,
+            496,
+            497,
+            499,
+            500,
+            502,
+            504,
+            505,
+            507,
+            509,
+            510,
+            511,
+            512
+        ],
+        "module_name": "/home/zzzccc/cxzz/Kotoamatsukami/config/quick_pow.ll"
+    },
+    "ForObs": {
+        "model": 0,
+        "enable function": [
+            ""
+        ],
+        "disable function": [
+            ""
+        ]
+    },
+    "SplitBasicBlocks": {
+        "model": 0,
+        "enable function": [
+            ""
+        ],
+        "disable function": [],
+        "split number": 3
+    },
+    "branch2call": {
+        "model": 0,
+        "enable function": [
+            ""
+
+        ],
+        "disable function": [
+            ""
+        ],
+        "split number": 3
+    },
+    "branch2call_32": {
+        "model": 0,
+        "enable function": [
+            ""
+
+        ],
+        "disable function": [
+            ""
+        ],
+        "split number": 3
+    },
+    "Junkcode": {
+        "model": 0,
+        "enable function": [
+            ""
+        ],
+        "disable function": [
+            ""
+        ]
+    },
+    "Antihook": {
+        "model": 0,
+        "enable function": [
+            ""
+        ],
+        "disable function": [
+            ""
+        ]
+    },    
+    "Antidebug": {
+        "model": 1,
+        "enable function": [
+            ""
+        ],
+        "disable function": [
+            ""
+        ]
+    },    
+    "indirect_branch": {
+        "model": 0,
+        "enable function": [
+            ""
+        ],
+        "disable function": [
+            ""
+        ]
+    },    
+    "indirect_call": {
+        "model": 0,
+        "enable function": [
+            ""
+        ],
+        "disable function": [
+            ""
+        ]
+    },
+    "bogus_control_flow": {
+        "model": 0,
+        "enable function": [
+            ""
+        ],
+        "disable function": [
+            ""
+        ]
+    },
+    "substitution": {
+        "model": 0,
+        "enable function": [
+            ""
+        ],
+        "disable function": [
+            ""
+        ]
+    },
+    "flatten": {
+        "model": 0,
+        "enable function": [
+            ""
+        ],
+        "disable function": [
+            ""
+        ]
+    },
+    "gv_encrypt": {
+        "model": 0,
+        "enable function": [
+            ""
+        ],
+        "disable function": [
+            ""
+        ]
+    }
+}
+```
+
+
+
 ## Test
 
 ```c
