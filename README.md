@@ -669,13 +669,3 @@ int main() {
 
 ```
 
-                 return true;
-                    } else if (Name == "flatten") {
-                        MPM.addPass(Flatten());
-                        return true;
-                    } else if (Name == "substitution") {
-                        MPM.addPass(Substitution());
-                        return true;
-                    }
-                    return false;
-                });
