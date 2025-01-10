@@ -5,7 +5,7 @@ CLANG=clang-17
 OPT=opt-17
 current_dir=$(pwd)
 BRANCH2CALL_PROCESS="$current_dir/branch2call_process.py"
-
+ANTIDEBUG_SOURCEFILE="$current_dir/Kotoamatsukami_Antidebug.c"
 obfuscate_args=()
 source_files=""
 output_file=""
@@ -16,6 +16,7 @@ in_output_arg=false
 old_args=""
 clang_args=""
 
+$CLANG $ANTIDEBUG_SOURCEFILE -O0 -emit-llvm -S -o ${ANTIDEBUG_SOURCEFILE%.c}.ll
 for arg in "$@"; do
     old_args+=("$arg")
     if [[ "$in_kotoamatsukami_args" == true ]]; then
@@ -76,7 +77,7 @@ if [[ -f "$source_files" && "$source_files" == *".c" ]]; then
         # echo $OPT --load-pass-plugin=$Kotoamatsukami_so $ll_file --passes=""${kotoamatsukami_args[@]}"" -S -o "${ll_file%.ll}.obfuscated.ll"
         obfuscated_ll_file="${ll_file%.ll}.obfuscated.ll"
         # echo $CLANG "$obfuscated_ll_file" "${clang_args[@]}"  -Wno-unused-command-line-argument -o $output_file
-        $CLANG "$obfuscated_ll_file" "${clang_args[@]}"  -Wno-unused-command-line-argument -o $output_file
+        $CLANG "$obfuscated_ll_file" "${clang_args[@]}" -Wno-unused-command-line-argument -o $output_file
     fi
 else
     echo "Not a valid .c file. Passing to clang directly."

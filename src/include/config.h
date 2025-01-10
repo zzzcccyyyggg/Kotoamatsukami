@@ -43,7 +43,7 @@ extern FunctionSettings branch2call;
 extern FunctionSettings branch2call_32;
 extern FunctionSettings Junkcode;
 extern FunctionSettings Antihook;
-extern FunctionSettings Antidebug;
+extern FunctionSettings antidebug;
 extern FunctionSettings indirect_branch;
 extern FunctionSettings indirect_call;
 extern FunctionSettings bogus_control_flow;

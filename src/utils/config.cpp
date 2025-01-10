@@ -13,7 +13,7 @@ FunctionSettings branch2call;
 FunctionSettings branch2call_32;
 FunctionSettings Junkcode;
 FunctionSettings Antihook;
-FunctionSettings Antidebug;
+FunctionSettings antidebug;
 FunctionSettings indirect_branch;
 FunctionSettings indirect_call;
 FunctionSettings bogus_control_flow;
@@ -102,7 +102,7 @@ void parseConfig(const std::string& filename) {
     parseFunctionSettings(config["branch2call_32"], branch2call_32);
     parseFunctionSettings(config["Junkcode"], Junkcode);
     parseFunctionSettings(config["Antihook"], Antihook);
-    parseFunctionSettings(config["Antidebug"], Antidebug);
+    parseFunctionSettings(config["antidebug"], antidebug);
     parseFunctionSettings(config["indirect_branch"], indirect_branch);
     parseFunctionSettings(config["indirect_call"], indirect_call);
     parseFunctionSettings(config["bogus_control_flow"], bogus_control_flow);

@@ -300,14 +300,15 @@
             ""
         ]
     },    
-    "Antidebug": {
+    "antidebug": {
         "model": 0,
         "enable function": [
             ""
         ],
         "disable function": [
             ""
-        ]
+        ],
+        "module_name": "/home/zzzccc/cxzz/Kotoamatsukami/config/quick_pow.ll"
     },    
     "indirect_branch": {
         "model": 0,
