@@ -16,7 +16,7 @@ in_output_arg=false
 old_args=""
 clang_args=""
 
-$CLANG $ANTIDEBUG_SOURCEFILE -O0 -emit-llvm -S -o ${ANTIDEBUG_SOURCEFILE%.c}.ll
+# $CLANG $ANTIDEBUG_SOURCEFILE -O0 -emit-llvm -S -o ${ANTIDEBUG_SOURCEFILE%.c}.ll
 for arg in "$@"; do
     old_args+=("$arg")
     if [[ "$in_kotoamatsukami_args" == true ]]; then

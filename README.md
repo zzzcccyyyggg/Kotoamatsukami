@@ -116,12 +116,10 @@ The performance of using GVEncrypt only:
 
 ### AntiDebug
 
-The method will insert some anti-debugging functions into the program's constructor list to be called when the program starts running:
-And I try to make the anti-debugging functions configurable,see code for details.
+~~The method will insert some anti-debugging functions into the program's constructor list to be called when the program starts running:
+And I try to make the anti-debugging functions configurable,see code for details~~.
 
-The performance of using AntiDebug only:
-
-![image-20241220214513409](https://zzzcccimage1.oss-cn-beijing.aliyuncs.com/img/image-20241220214513409.png)
+Now the method wiil randomly insert some anti-debug functions into the each functions of the program to guard the program in runtime. 
 
 ## How to install
 
@@ -150,7 +148,48 @@ make -j
 
  finish ~~
 
-### How to use
+## How to use
+
+Now you can use this obfucator easily,you just need install the clang-17 first,then modify the `Kotoamatsukami_so`  in the `compiler/clang_wrapper.sh`,then  you can use it in `compiler`  directory, and i will supply compiled so in the `/bin`.
+
+The compile options to use as shown below:
+
+```sh
+./clang_wrapper.sh -kotoamatsukami {obfuscation_options} <input_file> -o <output_file>
+```
+
+- <input_file>: Path to the source code file you want to obfuscate (e.g., my_program.c).
+- -o <output_file>: Path to the output executable file (e.g., my_program).
+- {obfuscation_options}: This is a space-separated list of obfuscation passes you wish to apply. Here are the available options (matching the internal pass names in the provided code snippet):
+  - **split-basic-block**: Splits basic blocks within the code.
+  - **anti-debug**: Inserts anti-debugging techniques.
+  - **gv-encrypt**: Encrypts global variables.
+  - **bogus-control-flow**: Inserts bogus control flow to confuse analysis.
+  - **add-junk-code**: Adds junk code to increase code size and complexity.
+  - **loopen**: Applies loop-based obfuscation.
+  - **for-obs**: Applies for loop based obfuscation
+  - **branch2call-32**: Converts branches to calls (32-bit version).
+  - **branch2call**: Converts branches to calls.
+  - **indirect-call**: Inserts indirect function calls.
+  - **indirect-branch**: Inserts indirect branches.
+  - **flatten**: Flattens the control flow of the program.
+  - **substitution**: Replaces instructions with equivalent sequences.
+
+**Example:**
+
+To apply global variable encryption and bogus control flow to a file named rc4.c, and generate an executable named rc4, you would use:
+
+```sh
+./clang_wrapper.sh -kotoamatsukami { gv-encrypt bogus-control-flow } ./tests/rc4.c -o ./tests/rc4
+```
+
+To apply global variable encryption only:
+
+```sh
+./clang_wrapper.sh -kotoamatsukami { gv-encrypt } ./tests/rc4.c -o ./tests/rc4
+```
+
+### Details
 
 You need set the configuration file in `/tmp/Kotoamatsukami/Kotoamatsukami.config`,which format is as follows.
 
@@ -626,3 +665,13 @@ int main() {
 
 ```
 
+                 return true;
+                    } else if (Name == "flatten") {
+                        MPM.addPass(Flatten());
+                        return true;
+                    } else if (Name == "substitution") {
+                        MPM.addPass(Substitution());
+                        return true;
+                    }
+                    return false;
+                });
