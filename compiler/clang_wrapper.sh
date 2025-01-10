@@ -1,6 +1,6 @@
 #!/bin/bash
 # arguments
-Kotoamatsukami_so=/home/zzzccc/cxzz/Kotoamatsukami/build/Kotoamatsukami.so
+Kotoamatsukami_so=/home/root/Kotoamatsukami/build/Kotoamatsukami.so
 CLANG=clang-17
 OPT=opt-17
 current_dir=$(pwd)
@@ -69,7 +69,12 @@ if [[ -f "$source_files" && "$source_files" == *".c" ]]; then
         echo python3 $BRANCH2CALL_PROCESS $asm_file $asm_file
         python3 $BRANCH2CALL_PROCESS $asm_file $asm_file
         $CLANG "$asm_file" "${clang_args[@]}"  -Wno-unused-command-line-argument -o "$output_file"
-        echo $CLANG "$asm_file" "${clang_args[@]}"  -Wno-unused-command-line-argument -o "$output_file"
+        
+         # Delete intermediate files
+         if [[ -z "$DEBUG" || "$DEBUG" != "1" ]]; then
+            rm "$ll_file" "$obfuscated_ll_file" "$asm_file"
+         fi
+
     else
         $CLANG -S -emit-llvm "${clang_args[@]}" $source_files -o "${source_files%.c}.ll"
         ll_file="${source_files%.c}.ll"
@@ -77,7 +82,13 @@ if [[ -f "$source_files" && "$source_files" == *".c" ]]; then
         # echo $OPT --load-pass-plugin=$Kotoamatsukami_so $ll_file --passes=""${kotoamatsukami_args[@]}"" -S -o "${ll_file%.ll}.obfuscated.ll"
         obfuscated_ll_file="${ll_file%.ll}.obfuscated.ll"
         # echo $CLANG "$obfuscated_ll_file" "${clang_args[@]}"  -Wno-unused-command-line-argument -o $output_file
-        $CLANG "$obfuscated_ll_file" "${clang_args[@]}" -Wno-unused-command-line-argument -o $output_file
+        $CLANG "$obfuscated_ll_file" "${clang_args[@]}" -Wno-unused-command-line-argument -o "$output_file"
+        
+        # Delete intermediate files
+        if [[ -z "$DEBUG" || "$DEBUG" != "1" ]]; then
+            rm "$ll_file" "$obfuscated_ll_file"
+        fi
+
     fi
 else
     echo "Not a valid .c file. Passing to clang directly."
