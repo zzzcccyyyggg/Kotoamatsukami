@@ -156,6 +156,7 @@ PreservedAnalyses GVEncrypt::run(Module& M, ModuleAnalysisManager& AM)
     bool is_processed = false;
     const DataLayout& DL = M.getDataLayout();
     if (gv_encrypt.model) {
+    llvm::errs() << "yes it is ";
         for (auto& GV : M.globals()) {
             if (!Kotoamatsukami::GVEncrypt::shouldSkip(GV) && needEncGV.find(&GV) == needEncGV.end()) {
                 needEncGV.insert(&GV);

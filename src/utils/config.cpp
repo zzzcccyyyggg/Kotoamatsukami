@@ -2,6 +2,7 @@
 #include <fstream>
 #include <vector>
 #include <string>
+#include <filesystem>
 #include "json.hpp"
 #include "config.h"
 
@@ -111,14 +112,21 @@ void parseConfig(const std::string& filename) {
     
 }
 
-// 读取配置文件的函数
-void readConfig(const std::string& filename){
-    std::string fileName = "/tmp/Kotoamatsukami/Kotoamatsukami.config"; // 当前目录下的配置文件
+void readConfig(const std::string& filename) {
+    // 获取当前工作目录
+    std::filesystem::path currentDir = std::filesystem::current_path();
+    
+    // 拼接相对路径
+    std::filesystem::path filePath = currentDir / "Kotoamatsukami.config";
+    
+    // 转换为字符串
+    std::string fileName = filePath.string();
+
     if (!isConfigured) {
-        parseConfig(filename); // 如果未读取，解析配置
-        isConfigured = true;     // 标记为已读取
+        parseConfig(fileName);  // 如果未读取，解析配置
+        isConfigured = true;    // 标记为已读取
     } else {
-        std::cout << "Configuration already read." << std::endl; // 提示已读取
+        std::cout << "Configuration already read." << std::endl;  // 提示已读取
     }
 }
 

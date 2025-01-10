@@ -1,10 +1,8 @@
 #!/bin/bash
 # arguments
 Kotoamatsukami_so=/home/zzzccc/cxzz/Kotoamatsukami/build/Kotoamatsukami.so
-CLANG=/home/zzzccc/llvm-17/llvm-project/build/bin/clang
-OPT=/home/zzzccc/llvm-17/llvm-project/build/bin/opt
-LD=/home/zzzccc/llvm-17/llvm-project/build/bin/lld
-LLVM_DIS=/home/zzzccc/llvm-17/llvm-project/build/bin/llvm-dis
+CLANG=clang-17
+OPT=opt-17
 current_dir=$(pwd)
 BRANCH2CALL_PROCESS="$current_dir/branch2call_process.py"
 
