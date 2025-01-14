@@ -96,19 +96,33 @@ void parseConfig(const std::string& filename) {
     };
 
     parseFunctionSettings(config["loopen"], loopen);
+    std::cout << "Parse config: " << "loopen" << "\n";
     parseFunctionSettings(config["ForObs"], ForObs);
+    std::cout << "Parse config: " << "ForObs" << "\n";
     parseFunctionSettings(config["SplitBasicBlocks"], SplitBasicBlocks);
+    std::cout << "Parse config: " << "SplitBasicBlocks" << "\n";
     parseFunctionSettings(config["branch2call"], branch2call);
+    std::cout << "Parse config: " << "branch2call_32" << "\n";
     parseFunctionSettings(config["branch2call_32"], branch2call_32);
+    std::cout << "Parse config: " << "Junkcode" << "\n";
     parseFunctionSettings(config["Junkcode"], Junkcode);
-    parseFunctionSettings(config["Antihook"], Antihook);
+    // std::cout << "Parse config: " << "Antihook" << "\n";
+    // parseFunctionSettings(config["Antihook"], Antihook);
+    std::cout << "Parse config: " << "antidebug" << "\n";
     parseFunctionSettings(config["antidebug"], antidebug);
+    std::cout << "Parse config: " << "indirect_branch" << "\n";
     parseFunctionSettings(config["indirect_branch"], indirect_branch);
+    std::cout << "Parse config: " << "indirect_call" << "\n";
     parseFunctionSettings(config["indirect_call"], indirect_call);
+    std::cout << "Parse config: " << "bogus_control_flow" << "\n";
     parseFunctionSettings(config["bogus_control_flow"], bogus_control_flow);
+    std::cout << "Parse config: " << "substitution" << "\n";
     parseFunctionSettings(config["substitution"], substitution);
+    std::cout << "Parse config: " << "flatten" << "\n";
     parseFunctionSettings(config["flatten"], flatten);
+    std::cout << "Parse config: " << "gv_encrypt" << "\n";
     parseFunctionSettings(config["gv_encrypt"], gv_encrypt);
+    
     
 }
 
@@ -118,15 +132,17 @@ void readConfig(const std::string& filename) {
     
     // 拼接相对路径
     std::filesystem::path filePath = currentDir / "Kotoamatsukami.config";
+
     
     // 转换为字符串
     std::string fileName = filePath.string();
 
     if (!isConfigured) {
+        std::cout <<  "Parse Config in " << fileName << "\n";
         parseConfig(fileName);  // 如果未读取，解析配置
         isConfigured = true;    // 标记为已读取
     } else {
-        std::cout << "Configuration already read." << std::endl;  // 提示已读取
+        // std::cout << "Configuration already read." << std::endl;  // 提示已读取
     }
 }
 

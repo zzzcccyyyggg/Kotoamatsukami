@@ -22,6 +22,7 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(json)
 
+
 # Include LLVM directories
 include_directories(${LLVM_INCLUDE_DIRS})
 include_directories("/home/zzzccc/cxzz/Kotoamatsukami/src/include")
@@ -54,6 +55,8 @@ add_llvm_pass_plugin(Kotoamatsukami
     src/utils/config.cpp
     src/utils/TaintAnalysis.cpp
     )
+
+
 # # # Define the executable
 # add_executable(jit_asm 
 #               src/utils/jitter.cpp
@@ -81,5 +84,16 @@ add_llvm_pass_plugin(Kotoamatsukami
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -rdynamic")
 # Use LLVM's target link libraries
 # target_link_libraries(Kotoamatsukami ${llvm_libs} ${LLVM_LIBRARIES})
+# # 添加 ASan 编译器和链接器标志
+# set(SANITIZER_FLAGS "-fsanitize=address -fno-omit-frame-pointer -g")
+
+# # 应用到所有目标
+# set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${SANITIZER_FLAGS}")
+# set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${SANITIZER_FLAGS}")
+
+
+# # 为 Kotoamatsukami 插件单独设置 ASan
+# target_compile_options(Kotoamatsukami PRIVATE -fsanitize=address -fno-omit-frame-pointer)
+# target_link_options(Kotoamatsukami PRIVATE -fsanitize=address)
 
 target_link_libraries(Kotoamatsukami nlohmann_json::nlohmann_json)
