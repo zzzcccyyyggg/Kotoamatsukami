@@ -1,6 +1,6 @@
 #!/bin/bash
 # arguments
-Kotoamatsukami_so=/home/root/Kotoamatsukami/build/Kotoamatsukami.so
+Kotoamatsukami_so=/home/zzzccc/cxzz/Kotoamatsukami/build/Kotoamatsukami.so
 CLANG=clang-17
 OPT=opt-17
 current_dir=$(pwd)
@@ -76,18 +76,8 @@ if [[ -f "$source_files" && "$source_files" == *".c" ]]; then
          fi
 
     else
-        $CLANG -S -emit-llvm "${clang_args[@]}" $source_files -o "${source_files%.c}.ll"
-        ll_file="${source_files%.c}.ll"
-        $OPT --load-pass-plugin=$Kotoamatsukami_so $ll_file --passes=""${kotoamatsukami_args[@]}"" -S -o "${ll_file%.ll}.obfuscated.ll"
-        # echo $OPT --load-pass-plugin=$Kotoamatsukami_so $ll_file --passes=""${kotoamatsukami_args[@]}"" -S -o "${ll_file%.ll}.obfuscated.ll"
-        obfuscated_ll_file="${ll_file%.ll}.obfuscated.ll"
-        # echo $CLANG "$obfuscated_ll_file" "${clang_args[@]}"  -Wno-unused-command-line-argument -o $output_file
-        $CLANG "$obfuscated_ll_file" "${clang_args[@]}" -Wno-unused-command-line-argument -o "$output_file"
-        
-        # Delete intermediate files
-        if [[ -z "$DEBUG" || "$DEBUG" != "1" ]]; then
-            rm "$ll_file" "$obfuscated_ll_file"
-        fi
+        $CLANG -fpass-plugin=$Kotoamatsukami_so $source_files -o "$output_file"
+        # echo $CLANG -fpass-plugin=$Kotoamatsukami_so $source_files -o "$output_file"
 
     fi
 else
