@@ -1,5 +1,7 @@
 #!/bin/bash
 # arguments
+# set -eux
+
 Kotoamatsukami_so=/home/zzzccc/cxzz/Kotoamatsukami/build/Kotoamatsukami.so
 CLANG=clang-17
 OPT=opt-17
@@ -19,21 +21,45 @@ clang_args=""
 # $CLANG $ANTIDEBUG_SOURCEFILE -O0 -emit-llvm -S -o ${ANTIDEBUG_SOURCEFILE%.c}.ll
 for arg in "$@"; do
     old_args+=("$arg")
-    if [[ "$in_kotoamatsukami_args" == true ]]; then
-        # 如果在读取 kotoamatsukami 的参数
-        if [[ "$arg" == "}" ]]; then
-          in_kotoamatsukami_args=false
-        elif [[ "$arg" == "{" ]]; then
-          continue
-        elif [[ "$arg" == "branch2call" || "$arg" == "branch2call-32" ]]; then
-            branch2call_enable=true
-            kotoamatsukami_args+=("$arg")
-        else
-          kotoamatsukami_args+=("$arg")
-        fi
-    elif [[ "$arg" == "-kotoamatsukami" ]]; then
-        in_kotoamatsukami_args=true
-        continue  # skip "kotoamatsukami"
+    if [[ "$arg" == "split-basic-block" ]]; then
+        echo "识别到 split-basic-block"
+        kotoamatsukami_args+=("$arg")
+    elif [[ "$arg" == "anti-debug" ]]; then
+        echo "识别到 anti-debug"
+        kotoamatsukami_args+=("$arg")
+    elif [[ "$arg" == "gv-encrypt" ]]; then
+        echo "识别到 gv-encrypt"
+        kotoamatsukami_args+=("$arg")
+    elif [[ "$arg" == "bogus-control-flow" ]]; then
+        echo "识别到 bogus-control-flow"
+        kotoamatsukami_args+=("$arg")
+    elif [[ "$arg" == "add-junk-code" ]]; then
+        echo "识别到 add-junk-code"
+        kotoamatsukami_args+=("$arg")
+    elif [[ "$arg" == "loopen" ]]; then
+        echo "识别到 loopen"
+        kotoamatsukami_args+=("$arg")
+    elif [[ "$arg" == "for-obs" ]]; then
+        echo "识别到 for-obs"
+        kotoamatsukami_args+=("$arg")
+    elif [[ "$arg" == "branch2call-32" ]]; then
+        echo "识别到 branch2call-32"
+        branch2call_enable=true
+    elif [[ "$arg" == "branch2call" ]]; then
+        echo "识别到 branch2call"
+        branch2call_enable=true
+    elif [[ "$arg" == "indirect-call" ]]; then
+        echo "识别到 indirect-call"
+        kotoamatsukami_args+=("$arg")
+    elif [[ "$arg" == "indirect-branch" ]]; then
+        echo "识别到 indirect-branch"
+        kotoamatsukami_args+=("$arg")
+    elif [[ "$arg" == "flatten" ]]; then
+        echo "识别到 flatten"
+        kotoamatsukami_args+=("$arg")
+    elif [[ "$arg" == "substitution" ]]; then
+        echo "识别到 substitution"
+        kotoamatsukami_args+=("$arg")
     elif [[ "$arg" == *".c" ]]; then
         source_files="$arg"
     elif [[ "$arg" == '-o' ]]; then
@@ -59,7 +85,6 @@ echo "kotoamatsukami args: ${kotoamatsukami_args[@]}"
 # 如果源文件存在且是 .c 文件，获取源文件所在的目录
 if [[ -f "$source_files" && "$source_files" == *".c" ]]; then
     if [[ "$branch2call_enable" == true ]]; then
-        echo $branch2call_enable
         $CLANG -S -emit-llvm "${clang_args[@]}" $source_files -o "${source_files%.c}.ll"
         ll_file="${source_files%.c}.ll"
         $OPT --load-pass-plugin=$Kotoamatsukami_so $ll_file --passes=""${kotoamatsukami_args[@]}"" -S -o "${ll_file%.ll}.obfuscated.ll"
@@ -76,8 +101,14 @@ if [[ -f "$source_files" && "$source_files" == *".c" ]]; then
          fi
 
     else
-        $CLANG -fpass-plugin=$Kotoamatsukami_so $source_files -o "$output_file"
-        # echo $CLANG -fpass-plugin=$Kotoamatsukami_so $source_files -o "$output_file"
+        $CLANG -S -emit-llvm "${clang_args[@]}" $source_files -o "${source_files%.c}.ll"
+        ll_file="${source_files%.c}.ll"
+        # 使用 IFS 设置分隔符为逗号
+        IFS=','
+        $OPT --load-pass-plugin=$Kotoamatsukami_so $ll_file --passes=""${kotoamatsukami_args[@]}"" -S -o "${ll_file%.ll}.obfuscated.ll" --print-pipeline-passes 
+        unset IFS
+        obfuscated_ll_file="${ll_file%.ll}.obfuscated.ll"
+        $CLANG "$obfuscated_ll_file" "${clang_args[@]}"  -Wno-unused-command-line-argument -o "$output_file"
 
     fi
 else

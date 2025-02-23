@@ -120,18 +120,9 @@ PreservedAnalyses IndirectBranch::run(Module& M, ModuleAnalysisManager& AM)
 {
     readConfig("/home/zzzccc/cxzz/Kotoamatsukami/config/config.json");
     bool is_processed = false;
-    if (indirect_branch.model) {
+    if (indirectBranch.model) {
         for (llvm::Function& F : M) {
-            if (indirect_branch.model == 2) {
-                if (std::find(indirect_branch.enable_function.begin(), indirect_branch.enable_function.end(), F.getName()) == indirect_branch.enable_function.end()) {
-                    continue;
-                }
-            } else if (indirect_branch.model == 3) {
-                if (std::find(indirect_branch.disable_function.begin(), indirect_branch.disable_function.end(), F.getName()) != indirect_branch.disable_function.end()) {
-                    continue;
-                }
-            }
-            if (!F.hasExactDefinition()) {
+            if (shouldSkip(F, indirectBranch)) {
                 continue;
             }
             Kotoamatsukami::IndirectBranch::process(F);

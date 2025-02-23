@@ -74,25 +74,13 @@ void SplitBasicBlock::split(Function *F, int splitNumber) {
 
 PreservedAnalyses SplitBasicBlock::run(Module &M, ModuleAnalysisManager &AM) {
     readConfig("/home/zzzccc/cxzz/Kotoamatsukami/config/config.json");
-    
-    if (SplitBasicBlocks.model){
+    if (splitBasicBlocks.model){
         for (llvm::Function &F : M) {
-            if(SplitBasicBlocks.model == 2){
-                if(std::find(SplitBasicBlocks.enable_function.begin(),SplitBasicBlocks.enable_function.end(),F.getName()) == SplitBasicBlocks.enable_function.end()){
-                    continue;                    
-                }
-            }else if (SplitBasicBlocks.model == 3)
-            {                
-                if(std::find(SplitBasicBlocks.disable_function.begin(),SplitBasicBlocks.disable_function.end(),F.getName()) != SplitBasicBlocks.disable_function.end()){
-                    continue;                    
-                }
-            }
-            
-            split(&F, SplitBasicBlocks.op1);
+            if (shouldSkip(F, splitBasicBlocks)){
+                continue;
+            }            
+            split(&F, splitBasicBlocks.op1);
         }
     }
-
-    
-    llvm::outs() << "Splitting completed.\n";
     return PreservedAnalyses::none();
 }

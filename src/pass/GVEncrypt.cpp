@@ -1,4 +1,4 @@
-// 这里是有可能由于并发bug导致多次解密的 在存在并发的情况下需要注意
+// ![Fix Me]: It is possible that multiple decryptions may occur due to concurrency bugs. You need to pay attention when concurrency exists. -- Solved via LLVM native atomic operations
 #include "GVEncrypt.h"
 #include "config.h"
 #include "utils.hpp"
@@ -74,8 +74,17 @@ Function* Kotoamatsukami::GVEncrypt::defineDecryptFunction(Module* M, GlobalVari
     builder.CreateStore(ConstantInt::get(Type::getInt32Ty(M->getContext()), 0), arrayIndexPtr);
     Type* elemType = GVIsDecrypted->getValueType()->getArrayElementType();
     Value* elementPtr = builder.CreateInBoundsGEP(elemType, GVIsDecrypted, index);
-    Value* elementValue = builder.CreateLoad(Type::getInt1Ty(M->getContext()), elementPtr);
-    Value* cond = builder.CreateICmpEQ(elementValue, ConstantInt::get(Type::getInt1Ty(M->getContext()), 0));
+
+    // Atomic option
+    Type* i1Ty = Type::getInt1Ty(M->getContext());
+    Value* expected = ConstantInt::get(i1Ty, 0);
+    Value* desired = ConstantInt::get(i1Ty, 1);
+    AtomicCmpXchgInst* cmpxchg = builder.CreateAtomicCmpXchg(
+        elementPtr, expected, desired,
+        MaybeAlign(), // 根据实际情况调整对齐
+        AtomicOrdering::AcquireRelease,
+        AtomicOrdering::Acquire);
+    Value* cond = builder.CreateExtractValue(cmpxchg, 1);
     builder.CreateCondBr(cond, forCond, endBB);
 
     // forCond
@@ -155,8 +164,7 @@ PreservedAnalyses GVEncrypt::run(Module& M, ModuleAnalysisManager& AM)
     readConfig("/home/zzzccc/cxzz/Kotoamatsukami/config/config.json");
     bool is_processed = false;
     const DataLayout& DL = M.getDataLayout();
-    if (gv_encrypt.model) {
-    llvm::errs() << "yes it is ";
+    if (gvEncrypt.model) {
         for (auto& GV : M.globals()) {
             if (!Kotoamatsukami::GVEncrypt::shouldSkip(GV) && needEncGV.find(&GV) == needEncGV.end()) {
                 needEncGV.insert(&GV);
@@ -184,7 +192,7 @@ PreservedAnalyses GVEncrypt::run(Module& M, ModuleAnalysisManager& AM)
                 }
             }
         }
-        // 初始化全局数组用于判断是否已经解密
+        // Initialize the global array to determine whether it has been decrypted
         std::vector<Constant*> Values(needEncGV_count);
         std::string globalName = M.getName().str() + "_isDecrypted";
         llvm::Module* module = &M;
@@ -195,9 +203,9 @@ PreservedAnalyses GVEncrypt::run(Module& M, ModuleAnalysisManager& AM)
             Constant* CValue = ConstantInt::get(Type::getInt1Ty(M.getContext()), 0);
             Values[i] = CValue;
         }
-        Constant* ValueArray = ConstantArray::get(AT, ArrayRef<Constant*>(Values));
+        Constant* valueArray = ConstantArray::get(AT, ArrayRef<Constant*>(Values));
         if (!GVIsDecrypted->hasInitializer()) {
-            GVIsDecrypted->setInitializer(ValueArray);
+            GVIsDecrypted->setInitializer(valueArray);
             GVIsDecrypted->setLinkage(GlobalValue::PrivateLinkage);
         }
 
@@ -207,18 +215,8 @@ PreservedAnalyses GVEncrypt::run(Module& M, ModuleAnalysisManager& AM)
             if (F.getName().str().find("Kotoamatsukami") != std::string::npos) {
                 continue;
             }
+            if (shouldSkip(F, gvEncrypt)) {
             
-            if (gv_encrypt.model == 2) {
-                if (std::find(gv_encrypt.enable_function.begin(), gv_encrypt.enable_function.end(), F.getName()) == gv_encrypt.enable_function.end()) {
-                    continue;
-                }
-            } else if (gv_encrypt.model == 3) {
-                if (std::find(gv_encrypt.disable_function.begin(), gv_encrypt.disable_function.end(), F.getName()) != gv_encrypt.disable_function.end()) {
-                    continue;
-                }
-            }
-            if (!F.hasExactDefinition()) {
-                continue;
             }
             Kotoamatsukami::GVEncrypt::encryptGV(&F, decryptFunction);
             is_processed = true;

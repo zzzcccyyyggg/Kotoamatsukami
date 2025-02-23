@@ -292,16 +292,7 @@ PreservedAnalyses llvm::Substitution::run(Module& M, ModuleAnalysisManager& AM)
     bool is_processed = false;
     if (substitution.model) {
         for (llvm::Function& F : M) {
-            if (substitution.model == 2) {
-                if (std::find(substitution.enable_function.begin(), substitution.enable_function.end(), F.getName()) == substitution.enable_function.end()) {
-                    continue;
-                }
-            } else if (substitution.model == 3) {
-                if (std::find(substitution.disable_function.begin(), substitution.disable_function.end(), F.getName()) != substitution.disable_function.end()) {
-                    continue;
-                }
-            }
-            if (!F.hasExactDefinition()) {
+            if (shouldSkip(F, substitution)) {
                 continue;
             }
             for (int i = 0; i < sub_times; i++) {

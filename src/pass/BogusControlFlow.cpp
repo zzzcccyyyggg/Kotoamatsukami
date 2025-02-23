@@ -25,6 +25,8 @@ namespace BogusControlFlow {
         }
         return false;
     }
+    // Cond will increase by 1 every time, but in the program it will definitely not be able to run until Cond is large enough, so the possible conditions still cannot be established.
+    // [Improve me]! I think just doing this is of little use
     Value* createMayRunBogusCmp(BasicBlock* insertAfter)
     {
         // if(( x * (x + 1) % 72 == 0))

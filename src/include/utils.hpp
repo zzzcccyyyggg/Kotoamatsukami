@@ -17,6 +17,7 @@ using namespace std;
 using namespace llvm;
 void demoteRegisters(llvm::Function *f);
 llvm::Function *createFuncFromGenerated(llvm::Module *M, std::string funcName, std::string moduleName);
+llvm::Function* createFuncFromString(Module* M, std::string funcName, std::string irString);
 uint64_t getRandomNumber();
 BasicBlock* cloneBasicBlock(BasicBlock* BB);
 #endif // LLVM_UTILS_H

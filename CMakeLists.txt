@@ -3,6 +3,7 @@ project(Kotoamatsukami)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 # set(WORKING_DIRECTORY "/home/zzzccc/cxzz/Kotoamatsukami/")
 # Find LLVM package
 set(LLVM_DIR "/home/zzzccc/llvm-17/llvm-project/build/lib/cmake/llvm")

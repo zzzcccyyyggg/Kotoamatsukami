@@ -91,16 +91,7 @@ PreservedAnalyses Flatten::run(Module& M, ModuleAnalysisManager& AM)
     bool is_processed = false;
     if (flatten.model) {
         for (llvm::Function& F : M) {
-            if (flatten.model == 2) {
-                if (std::find(flatten.enable_function.begin(), flatten.enable_function.end(), F.getName()) == flatten.enable_function.end()) {
-                    continue;
-                }
-            } else if (flatten.model == 3) {
-                if (std::find(flatten.disable_function.begin(), flatten.disable_function.end(), F.getName()) != flatten.disable_function.end()) {
-                    continue;
-                }
-            }
-            if (!F.hasExactDefinition()) {
+            if (shouldSkip(F, flatten)){
                 continue;
             }
             Kotoamatsukami::Flatten::flatten(F);

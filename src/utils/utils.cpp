@@ -64,6 +64,59 @@ Function* createFuncFromGenerated(Module* M, std::string funcName, std::string m
     return NewF;
 }
 
+Function* createFuncFromString(Module* M, std::string funcName, std::string irString)
+{
+    LLVMContext& Context = M->getContext();
+    
+    // 创建MemoryBuffer从字符串输入
+    std::unique_ptr<MemoryBuffer> buffer = MemoryBuffer::getMemBuffer(irString, "IRFromString");
+
+    // 创建一个 SMDiagnostic 来处理错误
+    SMDiagnostic Err;
+
+    // 解析 IR 到模块
+    std::unique_ptr<Module> SrcModule = parseIR(buffer->getMemBufferRef(), Err, Context);
+
+    // 错误处理，检查模块是否正确加载
+    if (!SrcModule) {
+        Err.print("createFuncFromString", errs());
+        return nullptr;
+    }
+
+    // 在加载的模块中查找指定的函数
+    Function* SrcFunc = SrcModule->getFunction(funcName);
+    if (!SrcFunc) {
+        errs() << "Function " << funcName << " not found in the input string.\n";
+        return nullptr;
+    }
+
+    // 创建新的函数
+    auto* NewF = Function::Create(SrcFunc->getFunctionType(), GlobalValue::PrivateLinkage, 
+                                   funcName, M);
+
+    // 参数映射
+    ValueToValueMapTy VMap;
+    auto NewFArgsIt = NewF->arg_begin();
+    auto FArgsIt = SrcFunc->arg_begin();
+
+    // 将参数映射到新函数
+    for (auto FArgsEnd = SrcFunc->arg_end(); FArgsIt != FArgsEnd; ++NewFArgsIt, ++FArgsIt) {
+        VMap[&*FArgsIt] = &*NewFArgsIt;
+    }
+
+    // 克隆函数内容
+    SmallVector<ReturnInst*, 8> Returns;
+    CloneFunctionInto(NewF, SrcFunc, VMap, CloneFunctionChangeType::DifferentModule, Returns);
+
+    // 保留函数属性
+    NewF->setCallingConv(SrcFunc->getCallingConv());
+    NewF->setAttributes(SrcFunc->getAttributes());
+    NewF->setDSOLocal(true);
+    
+    llvm::outs() << "[utils]: Function " << funcName << " successfully cloned into the target module.\n";
+    return NewF;
+}
+
 uint64_t getRandomNumber()
 {
     return (((uint64_t)rand()) << 32) | ((uint64_t)rand());

@@ -47,7 +47,6 @@ PreservedAnalyses IndirectCall::run(Module& M, ModuleAnalysisManager& AM)
     DataLayout Data = M.getDataLayout();
     int PtrSize = Data.getTypeAllocSize(Type::getInt8Ty(M.getContext())->getPointerTo());
     Type* PtrValueType = Type::getIntNTy(M.getContext(), PtrSize * 8);
-
     auto gloablName = M.getName().str() + "_FuncJmuptable";
     std::map<Function*, Kotoamatsukami::IndirectCallInfo> indirectCallinfos;
     int indirectCallinfos_count = 0;
@@ -79,16 +78,10 @@ PreservedAnalyses IndirectCall::run(Module& M, ModuleAnalysisManager& AM)
         JumpTable->setInitializer(ValueArray);
         JumpTable->setLinkage(GlobalValue::PrivateLinkage);
     }
-    if (indirect_call.model) {
+    if (indirectCall.model) {
         for (llvm::Function& F : M) {
-            if (indirect_call.model == 2) {
-                if (std::find(indirect_call.enable_function.begin(), indirect_call.enable_function.end(), F.getName()) == indirect_call.enable_function.end()) {
-                    continue;
-                }
-            } else if (indirect_call.model == 3) {
-                if (std::find(indirect_call.disable_function.begin(), indirect_call.disable_function.end(), F.getName()) != indirect_call.disable_function.end()) {
-                    continue;
-                }
+            if (shouldSkip(F, indirectCall)) {
+                continue;
             }
             Kotoamatsukami::IndirectCall::process(F, JumpTable, indirectCallinfos, AT);
             is_processed = true;

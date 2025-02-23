@@ -21,6 +21,7 @@ std::vector<BasicBlock*> BBTargets;
 std::set<BasicBlock*> processedBlocks;
 GlobalVariable* AllFunctions_IndirectBrTargets = nullptr;
 
+
 ArrayType* OuterArrayTy = nullptr;
 ArrayType* ATy = nullptr;
 
@@ -246,12 +247,12 @@ Value* getBasicBlockAddress(Value* FunctionID, Value* BlockID,
 void createIndirectCallFunc(Module& M)
 {
     LLVMContext& Ctx = M.getContext();
-    if (M.getFunction("IndirectCallFunc")) {
+    if (M.getFunction("kotoamatsukamiSpringboardFunction")) {
         return;
     }
     FunctionType* IndirectCallFuncTy = FunctionType::get(Type::getVoidTy(Ctx), {}, false);
     Function* IndirectCallFunc = Function::Create(
-        IndirectCallFuncTy, Function::ExternalLinkage, "IndirectCallFunc", &M);
+        IndirectCallFuncTy, Function::ExternalLinkage, "kotoamatsukamiSpringboardFunction", &M);
     BasicBlock* EntryBB = BasicBlock::Create(Ctx, "entry", IndirectCallFunc);
     IRBuilder<> Builder(EntryBB);
     IndirectCallFunc->addFnAttr(Attribute::Naked); // 裸函数属性，不生成栈帧
@@ -276,10 +277,10 @@ void createIndirectCallFunc(Module& M)
 void createIndirectConditionalJumpFunc(Module& M)
 {
     LLVMContext& Ctx = M.getContext();
-    if (M.getFunction("IndirectConditionalJumpFunc")) {
+    if (M.getFunction("kotoamatsukamiSpringboardFunctionCond")) {
         return;
     }
-    std::string funcName = "IndirectConditionalJumpFunc";
+    std::string funcName = "kotoamatsukamiSpringboardFunctionCond";
     FunctionType* IndirectConditionalJumpFuncTy = FunctionType::get(Type::getVoidTy(Ctx), {}, false);
     Function* IndirectConditionalJumpFunc = Function::Create(
         IndirectConditionalJumpFuncTy, Function::ExternalLinkage, funcName, &M);
@@ -320,28 +321,8 @@ int getBasicBlockCountIfNotSkipped(const Function& F)
     if (F.size() == 1) {
         return -1;
     }
-    if (functionName == "IndirectConditionalJumpFunc" || functionName == "IndirectCallFunc") {
+    if (shouldSkip(F, branch2call)) {
         return -1;
-    }
-
-    if (F.empty() || F.hasLinkOnceLinkage() || F.getSection() == ".text.startup") {
-        return -1;
-    }
-
-    if (branch2call_32.model == 2) {
-        if (std::find(branch2call_32.enable_function.begin(),
-                branch2call_32.enable_function.end(),
-                functionName)
-            == branch2call_32.enable_function.end()) {
-            return -1;
-        }
-    } else if (branch2call_32.model == 3) {
-        if (std::find(branch2call_32.disable_function.begin(),
-                branch2call_32.disable_function.end(),
-                functionName)
-            != branch2call_32.disable_function.end()) {
-            return -1;
-        }
     }
     return F.size();
 }
@@ -392,8 +373,8 @@ PreservedAnalyses Branch2Call_32::run(llvm::Module& M,
                     createIndirectCallFunc(M);
                     createIndirectConditionalJumpFunc(M);
                     ProcessPredecessorsAndInsertFuncCall(
-                        F, BB, FunctionID, F.getParent()->getFunction("IndirectCallFunc"),
-                        F.getParent()->getFunction("IndirectConditionalJumpFunc"));
+                        F, BB, FunctionID, F.getParent()->getFunction("kotoamatsukamiSpringboardFunction"),
+                        F.getParent()->getFunction("kotoamatsukamiSpringboardFunctionCond"));
                     ++block_count;
                 }
             }

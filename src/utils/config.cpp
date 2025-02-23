@@ -1,3 +1,4 @@
+#include <cstdlib>
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -5,21 +6,22 @@
 #include <filesystem>
 #include "json.hpp"
 #include "config.h"
+#include "Log.hpp"
 
 FunctionSettings loopen;
-FunctionSettings ForObs;
-FunctionSettings SplitBasicBlocks;
+FunctionSettings forObs;
+FunctionSettings splitBasicBlocks;
 FunctionSettings branch2call;
 FunctionSettings branch2call_32;
-FunctionSettings Junkcode;
+FunctionSettings junkCode;
 FunctionSettings Antihook;
 FunctionSettings antidebug;
-FunctionSettings indirect_branch;
-FunctionSettings indirect_call;
+FunctionSettings indirectBranch;
+FunctionSettings indirectCall;
 FunctionSettings bogus_control_flow;
 FunctionSettings substitution;
 FunctionSettings flatten;
-FunctionSettings gv_encrypt;
+FunctionSettings gvEncrypt;
 Arch targetArch;
 std::string target;
 int isConfigured = false;
@@ -64,11 +66,10 @@ Arch parseArch(const std::string& target) {
 }
 
 // 解析 JSON 并赋值
-void parseConfig(const std::string& filename) {
+int parseConfig(const std::string& filename) {
     std::ifstream configFile(filename);
     if (!configFile.is_open()) {
-        std::cerr << "Unable to open config file!" << std::endl;
-        return;
+        return 0;
     }
     json config;
     configFile >> config;
@@ -77,9 +78,18 @@ void parseConfig(const std::string& filename) {
         settings.model = j["model"];
         settings.enable_function = j["enable function"].get<std::vector<std::string>>();
         settings.disable_function = j["disable function"].get<std::vector<std::string>>();
+        // splitBasicBlocks settings
         if (j.contains("split number")) {
             settings.op1 = j["split number"];
         }
+        // forObs settings
+        if (j.contains("innerLoopBoundary")) {
+            settings.op1 = j["innerLoopBoundary"];
+        }
+        if (j.contains("outerLoopBoundary")) {
+            settings.op2 = j["outerLoopBoundary"];
+        } 
+        // Loopen settings
         if (j.contains("loopen_x_list"))
         {
             std::vector<int> tmp = j["loopen_x_list"].get<std::vector<int>>();
@@ -92,59 +102,89 @@ void parseConfig(const std::string& filename) {
             std::string tmp = j["module_name"].get<std::string>();
             settings.module_name = tmp;
         }
-        
+        // Loopen settings end
     };
 
     parseFunctionSettings(config["loopen"], loopen);
     std::cout << "Parse config: " << "loopen" << "\n";
-    parseFunctionSettings(config["ForObs"], ForObs);
-    std::cout << "Parse config: " << "ForObs" << "\n";
-    parseFunctionSettings(config["SplitBasicBlocks"], SplitBasicBlocks);
-    std::cout << "Parse config: " << "SplitBasicBlocks" << "\n";
+    parseFunctionSettings(config["forObs"], forObs);
+    std::cout << "Parse config: " << "forObs" << "\n";
+    parseFunctionSettings(config["splitBasicBlocks"], splitBasicBlocks);
+    std::cout << "Parse config: " << "splitBasicBlocks" << "\n";
     parseFunctionSettings(config["branch2call"], branch2call);
     std::cout << "Parse config: " << "branch2call_32" << "\n";
     parseFunctionSettings(config["branch2call_32"], branch2call_32);
-    std::cout << "Parse config: " << "Junkcode" << "\n";
-    parseFunctionSettings(config["Junkcode"], Junkcode);
+    std::cout << "Parse config: " << "junkCode" << "\n";
+    parseFunctionSettings(config["junkCode"], junkCode);
     // std::cout << "Parse config: " << "Antihook" << "\n";
     // parseFunctionSettings(config["Antihook"], Antihook);
     std::cout << "Parse config: " << "antidebug" << "\n";
     parseFunctionSettings(config["antidebug"], antidebug);
-    std::cout << "Parse config: " << "indirect_branch" << "\n";
-    parseFunctionSettings(config["indirect_branch"], indirect_branch);
-    std::cout << "Parse config: " << "indirect_call" << "\n";
-    parseFunctionSettings(config["indirect_call"], indirect_call);
+    std::cout << "Parse config: " << "indirectBranch" << "\n";
+    parseFunctionSettings(config["indirectBranch"], indirectBranch);
+    std::cout << "Parse config: " << "indirectCall" << "\n";
+    parseFunctionSettings(config["indirectCall"], indirectCall);
     std::cout << "Parse config: " << "bogus_control_flow" << "\n";
     parseFunctionSettings(config["bogus_control_flow"], bogus_control_flow);
     std::cout << "Parse config: " << "substitution" << "\n";
     parseFunctionSettings(config["substitution"], substitution);
     std::cout << "Parse config: " << "flatten" << "\n";
     parseFunctionSettings(config["flatten"], flatten);
-    std::cout << "Parse config: " << "gv_encrypt" << "\n";
-    parseFunctionSettings(config["gv_encrypt"], gv_encrypt);
+    std::cout << "Parse config: " << "gvEncrypt" << "\n";
+    parseFunctionSettings(config["gvEncrypt"], gvEncrypt);
     
     
 }
 
-void readConfig(const std::string& filename) {
-    // 获取当前工作目录
-    std::filesystem::path currentDir = std::filesystem::current_path();
-    
-    // 拼接相对路径
-    std::filesystem::path filePath = currentDir / "Kotoamatsukami.config";
-
-    
-    // 转换为字符串
-    std::string fileName = filePath.string();
-
+void readConfig(const std::string& fileName) {
     if (!isConfigured) {
-        std::cout <<  "Parse Config in " << fileName << "\n";
-        parseConfig(fileName);  // 如果未读取，解析配置
-        isConfigured = true;    // 标记为已读取
-    } else {
-        // std::cout << "Configuration already read." << std::endl;  // 提示已读取
+        if (parseConfig(fileName)){
+            PrintSuccess("Parse Config in ",fileName);
+            isConfigured = true;
+        }else {
+            std::filesystem::path currentDir = std::filesystem::current_path();
+            std::filesystem::path filePath = currentDir / "Kotoamatsukami.config";
+            if(parseConfig(filePath.string())){
+                PrintSuccess("Parse Config in ",filePath.string());
+                isConfigured = true;
+            }
+            else{
+                PrintError("Fail to read the config file in ",fileName);
+                exit(0);
+            }
+        }
     }
 }
 
+bool shouldSkip(const llvm::Function& F,const FunctionSettings& setting)
+{
+    std::string functionName = F.getName().str();
+    if (F.size() == 1) {
+        return 1;
+    }
+    if (functionName.find("Kotoamatsukami") != std::string::npos || functionName.find("kotoamatsukami") != std::string::npos) {
+        return true;
+    }
+    if (F.empty() || F.hasLinkOnceLinkage() || F.getSection() == ".text.startup" || !F.hasExactDefinition()) {
+        return 1;
+    }
+
+    if (setting.model == 2) {
+        if (std::find(setting.enable_function.begin(),
+                setting.enable_function.end(),
+                functionName)
+            == setting.enable_function.end()) {
+            return 1;
+        }
+    } else if (setting.model == 3) {
+        if (std::find(setting.disable_function.begin(),
+                setting.disable_function.end(),
+                functionName)
+            != setting.disable_function.end()) {
+            return 1;
+        }
+    }
+    return 0;
+}
 
 
