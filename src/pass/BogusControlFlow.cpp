@@ -97,18 +97,9 @@ PreservedAnalyses BogusControlFlow::run(Module& M, ModuleAnalysisManager& AM)
 {
     readConfig("/home/zzzccc/cxzz/Kotoamatsukami/config/config.json");
     bool is_processed = false;
-    if (bogus_control_flow.model) {
+    if (bogusControlFlow.model) {
         for (llvm::Function& F : M) {
-            if (bogus_control_flow.model == 2) {
-                if (std::find(bogus_control_flow.enable_function.begin(), bogus_control_flow.enable_function.end(), F.getName()) == bogus_control_flow.enable_function.end()) {
-                    continue;
-                }
-            } else if (bogus_control_flow.model == 3) {
-                if (std::find(bogus_control_flow.disable_function.begin(), bogus_control_flow.disable_function.end(), F.getName()) != bogus_control_flow.disable_function.end()) {
-                    continue;
-                }
-            }
-            if (!F.hasExactDefinition()) {
+            if (shouldSkip(F, bogusControlFlow)) {
                 continue;
             }
             // 申请一个局部变量 用来保证real block 确实会被运行

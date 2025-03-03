@@ -137,12 +137,12 @@ PreservedAnalyses AntiDebugPass::run(Module& M, ModuleAnalysisManager& AM)
     }
     bool isChanged = false;
     readConfig("/home/zzzccc/cxzz/Kotoamatsukami/config/config.json");
-    if (antidebug.model) {
+    if (antiDebug.model) {
         std::vector<llvm::Function*> antiDebugFuncs;
         antiDebugFuncs.push_back(createAntiDebugFunc1(&M));
         antiDebugFuncs.push_back(createAntiDebugFunc2(&M));
         for (auto& F : M) {
-            if (shouldSkip(F,antidebug))
+            if (shouldSkip(F,antiDebug))
                 continue;
             double random_value = static_cast<double>(rand()) / RAND_MAX;
             if (random_value < 0.5) {

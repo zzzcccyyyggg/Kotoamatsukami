@@ -4,6 +4,8 @@ project(Kotoamatsukami)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g")
 # set(WORKING_DIRECTORY "/home/zzzccc/cxzz/Kotoamatsukami/")
 # Find LLVM package
 set(LLVM_DIR "/home/zzzccc/llvm-17/llvm-project/build/lib/cmake/llvm")
@@ -25,6 +27,7 @@ FetchContent_MakeAvailable(json)
 
 
 # Include LLVM directories
+message(${LLVM_INCLUDE_DIRS})
 include_directories(${LLVM_INCLUDE_DIRS})
 include_directories("/home/zzzccc/cxzz/Kotoamatsukami/src/include")
 include_directories("/home/zzzccc/cxzz/Kotoamatsukami/lib/json/include")

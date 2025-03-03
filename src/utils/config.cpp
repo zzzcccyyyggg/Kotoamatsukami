@@ -14,11 +14,11 @@ FunctionSettings splitBasicBlocks;
 FunctionSettings branch2call;
 FunctionSettings branch2call_32;
 FunctionSettings junkCode;
-FunctionSettings Antihook;
-FunctionSettings antidebug;
+FunctionSettings antiHook;
+FunctionSettings antiDebug;
 FunctionSettings indirectBranch;
 FunctionSettings indirectCall;
-FunctionSettings bogus_control_flow;
+FunctionSettings bogusControlFlow;
 FunctionSettings substitution;
 FunctionSettings flatten;
 FunctionSettings gvEncrypt;
@@ -67,6 +67,7 @@ Arch parseArch(const std::string& target) {
 
 // 解析 JSON 并赋值
 int parseConfig(const std::string& filename) {
+    PrintInfo("start to parse config file: ",filename);
     std::ifstream configFile(filename);
     if (!configFile.is_open()) {
         return 0;
@@ -106,34 +107,34 @@ int parseConfig(const std::string& filename) {
     };
 
     parseFunctionSettings(config["loopen"], loopen);
-    std::cout << "Parse config: " << "loopen" << "\n";
+    // std::cout << "Parse config: " << "loopen" << "\n";
     parseFunctionSettings(config["forObs"], forObs);
-    std::cout << "Parse config: " << "forObs" << "\n";
+    // std::cout << "Parse config: " << "forObs" << "\n";
     parseFunctionSettings(config["splitBasicBlocks"], splitBasicBlocks);
-    std::cout << "Parse config: " << "splitBasicBlocks" << "\n";
+    // std::cout << "Parse config: " << "splitBasicBlocks" << "\n";
     parseFunctionSettings(config["branch2call"], branch2call);
-    std::cout << "Parse config: " << "branch2call_32" << "\n";
+    // std::cout << "Parse config: " << "branch2call" << "\n";
     parseFunctionSettings(config["branch2call_32"], branch2call_32);
-    std::cout << "Parse config: " << "junkCode" << "\n";
+    // std::cout << "Parse config: " << "branch2call_32" << "\n";
     parseFunctionSettings(config["junkCode"], junkCode);
-    // std::cout << "Parse config: " << "Antihook" << "\n";
-    // parseFunctionSettings(config["Antihook"], Antihook);
-    std::cout << "Parse config: " << "antidebug" << "\n";
-    parseFunctionSettings(config["antidebug"], antidebug);
-    std::cout << "Parse config: " << "indirectBranch" << "\n";
+    // std::cout << "Parse config: " << "junkCode" << "\n";
+    // std::cout << "Parse config: " << "antiHook" << "\n";
+    // parseFunctionSettings(config["antiHook"], antiHook);
+    parseFunctionSettings(config["antiDebug"], antiDebug);
+    // std::cout << "Parse config: " << "antiDebug" << "\n";
     parseFunctionSettings(config["indirectBranch"], indirectBranch);
-    std::cout << "Parse config: " << "indirectCall" << "\n";
+    // std::cout << "Parse config: " << "indirectBranch" << "\n";
     parseFunctionSettings(config["indirectCall"], indirectCall);
-    std::cout << "Parse config: " << "bogus_control_flow" << "\n";
-    parseFunctionSettings(config["bogus_control_flow"], bogus_control_flow);
-    std::cout << "Parse config: " << "substitution" << "\n";
+    // std::cout << "Parse config: " << "indirectCall" << "\n";
+    parseFunctionSettings(config["bogusControlFlow"], bogusControlFlow);
+    // std::cout << "Parse config: " << "bogusControlFlow" << "\n";
     parseFunctionSettings(config["substitution"], substitution);
-    std::cout << "Parse config: " << "flatten" << "\n";
+    // std::cout << "Parse config: " << "substitution" << "\n";
     parseFunctionSettings(config["flatten"], flatten);
-    std::cout << "Parse config: " << "gvEncrypt" << "\n";
+    // std::cout << "Parse config: " << "flatten" << "\n";
     parseFunctionSettings(config["gvEncrypt"], gvEncrypt);
-    
-    
+    // std::cout << "Parse config: " << "gvEncrypt" << "\n";
+    return 1;
 }
 
 void readConfig(const std::string& fileName) {

@@ -74,7 +74,7 @@ for arg in "$@"; do
 done
 
 # 检查是否找到了 kotoamatsukami 及其参数
-if [[ -z "$source_files" || ${#kotoamatsukami_args[@]} -eq 0 ]]; then
+if [[ -z "$source_files" || (${#kotoamatsukami_args[@]} -eq 0 && -z branch2call_enable) ]]; then
     $CLANG "$@"
     exit
 fi
@@ -94,7 +94,6 @@ if [[ -f "$source_files" && "$source_files" == *".c" ]]; then
         echo python3 $BRANCH2CALL_PROCESS $asm_file $asm_file
         python3 $BRANCH2CALL_PROCESS $asm_file $asm_file
         $CLANG "$asm_file" "${clang_args[@]}"  -Wno-unused-command-line-argument -o "$output_file"
-        
          # Delete intermediate files
          if [[ -z "$DEBUG" || "$DEBUG" != "1" ]]; then
             rm "$ll_file" "$obfuscated_ll_file" "$asm_file"
@@ -105,7 +104,7 @@ if [[ -f "$source_files" && "$source_files" == *".c" ]]; then
         ll_file="${source_files%.c}.ll"
         # 使用 IFS 设置分隔符为逗号
         IFS=','
-        $OPT --load-pass-plugin=$Kotoamatsukami_so $ll_file --passes=""${kotoamatsukami_args[@]}"" -S -o "${ll_file%.ll}.obfuscated.ll" --print-pipeline-passes 
+        $OPT --load-pass-plugin=$Kotoamatsukami_so $ll_file --passes=""${kotoamatsukami_args[@]}"" -S -o "${ll_file%.ll}.obfuscated.ll" 
         unset IFS
         obfuscated_ll_file="${ll_file%.ll}.obfuscated.ll"
         $CLANG "$obfuscated_ll_file" "${clang_args[@]}"  -Wno-unused-command-line-argument -o "$output_file"
