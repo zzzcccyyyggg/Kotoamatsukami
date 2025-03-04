@@ -159,7 +159,7 @@ Now you can use this obfucator easily,you just need install the clang-17 first,t
 The compile options to use as shown below:
 
 ```sh
-./clang_wrapper.sh -kotoamatsukami {obfuscation_options} <input_file> -o <output_file>
+./clang_wrapper.sh flatten branch2call …… <input_file> -o <output_file>
 ```
 
 - <input_file>: Path to the source code file you want to obfuscate (e.g., my_program.c).
