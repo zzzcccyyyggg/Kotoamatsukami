@@ -23,16 +23,17 @@ llvm::PassPluginLibraryInfo getKotoamatsukamiPluginInfo()
             // first way to use the pass
             PB.registerPipelineParsingCallback(
                 [](StringRef Name, ModulePassManager& MPM, ArrayRef<PassBuilder::PipelineElement>) {
-                    if (Name == "split-basic-block") {
+                    if (Name == "gv-encrypt"){
+                        MPM.addPass(GVEncrypt());
+                        return true;
+                    }
+                    else if (Name == "split-basic-block") {
                         MPM.addPass(SplitBasicBlock());
                         return true;
                     } else if (Name == "anti-debug") {
                         MPM.addPass(AntiDebugPass());
                         return true;
-                    } else if (Name == "gv-encrypt") {
-                        MPM.addPass(GVEncrypt());
-                        return true;
-                    } else if (Name == "bogus-control-flow") {
+                    }  else if (Name == "bogus-control-flow") {
                         MPM.addPass(BogusControlFlow());
                         return true;
                     } else if (Name == "add-junk-code") {

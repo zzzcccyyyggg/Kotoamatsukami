@@ -14,13 +14,16 @@
 #include "llvm/IR/Module.h"
 #include "llvm/IR/Type.h"
 #include "llvm/IR/Value.h"
+#include "llvm/Support/Alignment.h"
 #include "llvm/Support/Casting.h"
+#include "llvm/Support/raw_ostream.h"
 #include <cstdint>
 #include <map>
 #include <optional>
 #include <set>
 #include <string>
 #include <vector>
+#include "Log.hpp"
 std::set<llvm::GlobalVariable*> needEncGV;
 int needEncGV_count = 0;
 std::map<llvm::GlobalVariable*, Kotoamatsukami::GVEncrypt::GVInfo> needEncGVInfos;
@@ -42,6 +45,10 @@ bool Kotoamatsukami::GVEncrypt::shouldSkip(GlobalVariable& GV)
     // Make sure the GV doesn't belong to any custom section (which means it belongs .data section by default)
     // We conservatively skip data in custom section to avoid unexpected behaviors after obfuscation
     if (GV.hasSection()) {
+        return true;
+    }
+    llvm::Constant* initializer = GV.getInitializer();
+    if (llvm::isa<llvm::ConstantAggregateZero>(initializer)){
         return true;
     }
     return false;
@@ -76,9 +83,9 @@ Function* Kotoamatsukami::GVEncrypt::defineDecryptFunction(Module* M, GlobalVari
     Value* elementPtr = builder.CreateInBoundsGEP(elemType, GVIsDecrypted, index);
 
     // Atomic option
-    Type* i1Ty = Type::getInt1Ty(M->getContext());
-    Value* expected = ConstantInt::get(i1Ty, 0);
-    Value* desired = ConstantInt::get(i1Ty, 1);
+    Type* i8Ty = Type::getInt8Ty(M->getContext());
+    Value* expected = ConstantInt::get(i8Ty, 0);
+    Value* desired = ConstantInt::get(i8Ty, 1);
     AtomicCmpXchgInst* cmpxchg = builder.CreateAtomicCmpXchg(
         elementPtr, expected, desired,
         MaybeAlign(), // 根据实际情况调整对齐
@@ -150,7 +157,7 @@ bool Kotoamatsukami::GVEncrypt::encryptGV(llvm::Function* F,  Function* decryptF
         params.push_back(gvAsUInt8Ptr);
         builder.CreateCall(decryptFunction, params);
     }
-    F->print(llvm::outs());
+    // F->print(llvm::outs());
     return true;
 }
 static void encryptGvData(uint8_t* data, uint8_t key, int32_t len)
@@ -187,8 +194,8 @@ PreservedAnalyses GVEncrypt::run(Module& M, ModuleAnalysisManager& AM)
                     encryptGvData((uint8_t*)tmp, needEncGVInfos[&GV].key, size);
                     GV.setConstant(false);
                     GV.setInitializer(ConstantDataArray::getRaw(StringRef((char*)tmp, size),
-                        CA->getNumElements(),
-                        CA->getElementType()));
+                    CA->getNumElements(),
+                    CA->getElementType()));
                 }
             }
         }
@@ -197,10 +204,10 @@ PreservedAnalyses GVEncrypt::run(Module& M, ModuleAnalysisManager& AM)
         std::string globalName = M.getName().str() + "_isDecrypted";
         llvm::Module* module = &M;
         ArrayType* AT = ArrayType::get(
-            Type::getInt1Ty(M.getContext()), needEncGV_count);
+            Type::getInt8Ty(M.getContext()), needEncGV_count);
         GlobalVariable* GVIsDecrypted = (GlobalVariable*)module->getOrInsertGlobal(globalName, AT);
         for (int i = 0; i < needEncGV_count; i++) {
-            Constant* CValue = ConstantInt::get(Type::getInt1Ty(M.getContext()), 0);
+            Constant* CValue = ConstantInt::get(Type::getInt8Ty(M.getContext()), 0);
             Values[i] = CValue;
         }
         Constant* valueArray = ConstantArray::get(AT, ArrayRef<Constant*>(Values));
@@ -211,16 +218,13 @@ PreservedAnalyses GVEncrypt::run(Module& M, ModuleAnalysisManager& AM)
 
         Function* decryptFunction = Kotoamatsukami::GVEncrypt::defineDecryptFunction(&M, GVIsDecrypted);
         for (llvm::Function& F : M) {
-            llvm::outs() << F.getName().str() << "\n";
-            if (F.getName().str().find("Kotoamatsukami") != std::string::npos) {
-                continue;
-            }
             if (shouldSkip(F, gvEncrypt)) {
-            
+                continue;
             }
             Kotoamatsukami::GVEncrypt::encryptGV(&F, decryptFunction);
             is_processed = true;
         }
+        PrintSuccess("GVEncrypt successfully process module ", M.getName().str());
     }
 
     if (is_processed) {

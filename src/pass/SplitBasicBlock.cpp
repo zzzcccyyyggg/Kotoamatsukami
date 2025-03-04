@@ -24,14 +24,14 @@ void SplitBasicBlock::split(Function *F, int splitNumber) {
     std::random_device rd;
     std::default_random_engine e(rd());
 
-    llvm::outs() << "Processing Function: " << F->getName() << "\n";
+    // llvm::outs() << "Processing Function: " << F->getName() << "\n";
     for (BasicBlock &BB : *F) {
         origBB.push_back(&BB);
     }
     for (BasicBlock *BB : origBB) {
         int BBsize = BB->size();
         if (BBsize < 2 || containsPHI(BB)) {
-            llvm::outs() << "Skipping Basic Block (too small or contains PHI): " << BB->getName() << "\n";
+            // llvm::outs() << "Skipping Basic Block (too small or contains PHI): " << BB->getName() << "\n";
             continue;
         }
         if ((size_t)splitNumber >= BBsize) {
@@ -49,11 +49,11 @@ void SplitBasicBlock::split(Function *F, int splitNumber) {
         }
         std::sort(splitPointVec.begin(), splitPointVec.end());
 
-        llvm::outs() << "Split points: ";
-        for (int pt : splitPointVec) {
-            llvm::outs() << pt << " ";
-        }
-        llvm::outs() << "\n";
+        // llvm::outs() << "Split points: ";
+        // for (int pt : splitPointVec) {
+        //     llvm::outs() << pt << " ";
+        // }
+        // llvm::outs() << "\n";
 
         BasicBlock::iterator it = BB->begin();
         BasicBlock *toSplit = BB;

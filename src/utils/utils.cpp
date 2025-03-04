@@ -23,7 +23,7 @@ Function* createFuncFromGenerated(Module* M, std::string funcName, std::string m
 
     // 读取模块文件并加载它
     SMDiagnostic Err;
-    llvm::outs() << "[utils]: start createFuncFromGenerated " << moduleName << " " << funcName << "\n";
+    // llvm::outs() << "[utils]: start createFuncFromGenerated " << moduleName << " " << funcName << "\n";
     Context.setDiscardValueNames(false);
     std::unique_ptr<Module> SrcModule = parseIRFile(moduleName, Err, Context);
 
@@ -60,7 +60,7 @@ Function* createFuncFromGenerated(Module* M, std::string funcName, std::string m
     NewF->setCallingConv(SrcFunc->getCallingConv());
     NewF->setAttributes(SrcFunc->getAttributes());
     NewF->setDSOLocal(true);
-    llvm::outs() << "[utils]: Function " << funcName << " successfully cloned into the target module.\n";
+    // llvm::outs() << "[utils]: Function " << funcName << " successfully cloned into the target module.\n";
 
     return NewF;
 }
@@ -114,7 +114,7 @@ Function* createFuncFromString(Module* M, std::string funcName, std::string irSt
     NewF->setAttributes(SrcFunc->getAttributes());
     NewF->setDSOLocal(true);
     
-    llvm::outs() << "[utils]: Function " << funcName << " successfully cloned into the target module.\n";
+    // llvm::outs() << "[utils]: Function " << funcName << " successfully cloned into the target module.\n";
     return NewF;
 }
 
@@ -330,4 +330,19 @@ std::vector<BasicBlock*> splitBasicBlockRandomly(BasicBlock *BB, int numBlocks) 
     }
 
     return result;
+}
+
+#include <iostream>
+#include <string>
+#include <cstdarg>
+void PrintZZZCCC(){
+    std::cout << "\033[36m";
+    std::cout << " ________  ________  ________  ________  ________  ________     " << std::endl;
+    std::cout << "|\\_____  \\|\\_____  \\|\\_____  \\|\\   ____\\|\\   ____\\|\\   ____\\    " << std::endl;
+    std::cout << " \\|___/  /|\\|___/  /|\\|___/  /\\ \\  \\___|\\ \\  \\___|\\ \\  \\___|    " << std::endl;
+    std::cout << "     /  / /    /  / /    /  / /\\ \\  \\    \\ \\  \\    \\ \\  \\       " << std::endl;
+    std::cout << "    /  /_/__  /  /_/__  /  /_/__\\ \\  \\____\\ \\  \\____\\ \\  \\____  " << std::endl;
+    std::cout << "   |\\________\\\\________\\\\________\\ \\_______\\ \\_______\\ \\_______\\" << std::endl;
+    std::cout << "    \\|_______|\\|_______|\\|_______|\\|_______|\\|_______|\\|_______|" << std::endl;
+    std::cout << "\033[0m";
 }

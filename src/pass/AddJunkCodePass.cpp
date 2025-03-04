@@ -130,6 +130,7 @@ PreservedAnalyses AddJunkCodePass::run(Module &M, ModuleAnalysisManager &AM)
                     }
                 }
             }
+            PrintSuccess("AddJunkCodePass successfully process func ", F.getName().str());
         }
     }
 

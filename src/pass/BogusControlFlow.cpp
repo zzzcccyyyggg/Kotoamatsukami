@@ -10,6 +10,8 @@
 #include "llvm/IR/GlobalVariable.h"
 #include "llvm/IR/Type.h"
 #include "llvm/IR/Value.h"
+#include "llvm/Support/raw_ostream.h"
+#include "Log.hpp"
 #include <istream>
 using namespace llvm;
 namespace Kotoamatsukami {
@@ -36,7 +38,7 @@ namespace BogusControlFlow {
         if (!xptr->hasInitializer()) {
             xptr->setInitializer(ConstantInt::get(Type::getInt32Ty(context),2)); // 初始值为 0
         }
-        xptr->setLinkage(GlobalValue::CommonLinkage);
+        xptr->setLinkage(GlobalValue::PrivateLinkage);
         IRBuilder<> builder(context);
         builder.SetInsertPoint(insertAfter);
         LoadInst* x = builder.CreateLoad(Type::getInt32Ty(context), xptr);
@@ -147,7 +149,9 @@ PreservedAnalyses BogusControlFlow::run(Module& M, ModuleAnalysisManager& AM)
             }
             demoteRegisters(&F);
             is_processed = true;
+            PrintSuccess("BogusControlFlow successfully process func ", F.getName().str());
         }
+        // M.print(llvm::outs(),nullptr);
     }
     if (is_processed) {
         return PreservedAnalyses::none();

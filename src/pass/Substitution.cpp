@@ -4,6 +4,7 @@
 #include "Substitution.h"
 #include "config.h"
 #include "utils.hpp"
+#include "Log.hpp"
 
 using namespace llvm;
 using std::vector;
@@ -309,6 +310,7 @@ PreservedAnalyses llvm::Substitution::run(Module& M, ModuleAnalysisManager& AM)
                     }
                 }
             }
+            PrintSuccess("Substitution successfully process func ", F.getName().str());
             is_processed = true;
         }
     }

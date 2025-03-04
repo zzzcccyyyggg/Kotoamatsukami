@@ -1,6 +1,7 @@
 #include "../include/Branch2Call.h"
 /* Branch 2 Call 讲条件跳转指令转为call */
 
+#include "Log.hpp"
 #include "config.h"
 #include "llvm/IR/Constant.h"
 #include "llvm/IR/Constants.h"
@@ -148,7 +149,7 @@ int ProcessPredecessorsAndInsertFuncCall(Function& F, BasicBlock& BB,
                         + hexValue + ", %rax\n"
                                      "xor %rbx, %rbx\n"
                                      "mov $0, %bl\n" // Move Cond to rbx
-                                     "call IndirectConditionalJumpFunc\n",
+                                     "call kotoamatsukamiSpringboardFunctionCond\n",
                     "r",
                     true);
                 std::vector<Value*> Args = { Cond };
@@ -199,7 +200,7 @@ int ProcessPredecessorsAndInsertFuncCall(Function& F, BasicBlock& BB,
                     "push %rdi\n"
                     "mov $$0x"
                         + hexValue + ", %rax\n"
-                                     "call IndirectCallFunc\n",
+                                     "call kotoamatsukamiSpringboardFunction\n",
                     "",
                     true);
                 Builder.CreateCall(Asm);
@@ -253,18 +254,18 @@ Value* getBasicBlockAddress(Value* FunctionID, Value* BlockID,
     return BlockAddr;
 }
 
-void createIndirectCallFunc(Module& M)
+void createkotoamatsukamiSpringboardFunction(Module& M)
 {
     LLVMContext& Ctx = M.getContext();
     if (M.getFunction("kotoamatsukamiSpringboardFunction")) {
         return;
     }
-    FunctionType* IndirectCallFuncTy = FunctionType::get(Type::getVoidTy(Ctx), {}, false);
-    Function* IndirectCallFunc = Function::Create(
-        IndirectCallFuncTy, Function::InternalLinkage, "kotoamatsukamiSpringboardFunction", &M);
-    BasicBlock* EntryBB = BasicBlock::Create(Ctx, "entry", IndirectCallFunc);
+    FunctionType* kotoamatsukamiSpringboardFunctionTy = FunctionType::get(Type::getVoidTy(Ctx), {}, false);
+    Function* kotoamatsukamiSpringboardFunction = Function::Create(
+        kotoamatsukamiSpringboardFunctionTy, Function::InternalLinkage, "kotoamatsukamiSpringboardFunction", &M);
+    BasicBlock* EntryBB = BasicBlock::Create(Ctx, "entry", kotoamatsukamiSpringboardFunction);
     IRBuilder<> Builder(EntryBB);
-    IndirectCallFunc->addFnAttr(Attribute::Naked); // 裸函数属性，不生成栈帧
+    kotoamatsukamiSpringboardFunction->addFnAttr(Attribute::Naked); // 裸函数属性，不生成栈帧
 
     FunctionType* AsmFuncTy = FunctionType::get(Type::getInt64Ty(Ctx), {}, false);
     InlineAsm* LoadRax = InlineAsm::get(AsmFuncTy, "mov %rax, $0", "=r", true);
@@ -283,18 +284,18 @@ void createIndirectCallFunc(Module& M)
     Builder.CreateCall(BranchAsm, { BBAddr });
     Builder.CreateRetVoid();
 }
-void createIndirectConditionalJumpFunc(Module& M)
+void createkotoamatsukamiSpringboardFunctionCond(Module& M)
 {
     LLVMContext& Ctx = M.getContext();
     if (M.getFunction("kotoamatsukamiSpringboardFunctionCond")) {
         return;
     }
     std::string funcName = "kotoamatsukamiSpringboardFunctionCond";
-    FunctionType* IndirectConditionalJumpFuncTy = FunctionType::get(Type::getVoidTy(Ctx), {}, false);
-    Function* IndirectConditionalJumpFunc = Function::Create(
-        IndirectConditionalJumpFuncTy, Function::ExternalLinkage, funcName, &M);
-    IndirectConditionalJumpFunc->addFnAttr(Attribute::Naked);
-    BasicBlock* EntryBB = BasicBlock::Create(Ctx, "entry", IndirectConditionalJumpFunc);
+    FunctionType* kotoamatsukamiSpringboardFunctionCondTy = FunctionType::get(Type::getVoidTy(Ctx), {}, false);
+    Function* kotoamatsukamiSpringboardFunctionCond = Function::Create(
+        kotoamatsukamiSpringboardFunctionCondTy, Function::ExternalLinkage, funcName, &M);
+    kotoamatsukamiSpringboardFunctionCond->addFnAttr(Attribute::Naked);
+    BasicBlock* EntryBB = BasicBlock::Create(Ctx, "entry", kotoamatsukamiSpringboardFunctionCond);
     IRBuilder<> Builder(EntryBB);
 
     InlineAsm* LoadRax = InlineAsm::get(FunctionType::get(Type::getInt64Ty(Ctx), {}, false),
@@ -351,7 +352,7 @@ PreservedAnalyses Branch2Call::run(llvm::Module& M,
                 }
                 FunctionIndexMap[&F] = function_count++;
             }
-            llvm::outs() << "Final function count: " << function_count << "\n";
+            // llvm::outs() << "Final function count: " << function_count << "\n";
         }
         for (llvm::Function& F : M) {
             BBNumbering.clear();
@@ -367,8 +368,8 @@ PreservedAnalyses Branch2Call::run(llvm::Module& M,
                 auto* Terminator = BB.getTerminator();
 
                 if (!Terminator) {
-                    llvm::errs() << "Terminator is null for basic block: " << BB.getName()
-                                 << "\n";
+                    // llvm::errs() << "Terminator is null for basic block: " << BB.getName()
+                    //              << "\n";
                     // F.print(llvm::outs());
                     continue;
                 }
@@ -376,15 +377,15 @@ PreservedAnalyses Branch2Call::run(llvm::Module& M,
 
                 if (BI) {
                     unsigned FunctionID = FunctionIndexMap[&F];
-                    createIndirectCallFunc(M);
-                    createIndirectConditionalJumpFunc(M);
+                    createkotoamatsukamiSpringboardFunction(M);
+                    createkotoamatsukamiSpringboardFunctionCond(M);
                     ProcessPredecessorsAndInsertFuncCall(
                         F, BB, FunctionID, F.getParent()->getFunction("kotoamatsukamiSpringboardFunction"),
                         F.getParent()->getFunction("kotoamatsukamiSpringboardFunctionCond"));
                     ++block_count;
                 }
             }
-            // F.print(llvm::outs());
+            PrintSuccess("Branch2call successfully process func ", F.getName().str());
         }
     }
 

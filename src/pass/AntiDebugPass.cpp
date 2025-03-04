@@ -141,21 +141,15 @@ PreservedAnalyses AntiDebugPass::run(Module& M, ModuleAnalysisManager& AM)
         std::vector<llvm::Function*> antiDebugFuncs;
         antiDebugFuncs.push_back(createAntiDebugFunc1(&M));
         antiDebugFuncs.push_back(createAntiDebugFunc2(&M));
-        for (auto& F : M) {
-            if (shouldSkip(F,antiDebug))
-                continue;
-            double random_value = static_cast<double>(rand()) / RAND_MAX;
-            if (random_value < 0.5) {
-                if (antiDebugFuncs.size() > 0) {
-                    Function* antiDebugFunc = antiDebugFuncs[rand() % antiDebugFuncs.size()];
-                    if (F.size() > 0) {
-                        appendToGlobalCtors(M,antiDebugFunc, 55555);
-                    }
-                }
+        if (antiDebugFuncs.size() > 0) {
+            Function* antiDebugFunc = antiDebugFuncs[rand() % antiDebugFuncs.size()];
+            if (M.size() > 0) {
+                appendToGlobalCtors(M,antiDebugFunc, 55555);
             }
+            isInserted = true;
+            isChanged = true;
         }
-        isInserted = true;
-        isChanged = true;
+        PrintSuccess("AntiDebug successfully process Module ", M.getName().str());
     }
 
     if (isChanged)

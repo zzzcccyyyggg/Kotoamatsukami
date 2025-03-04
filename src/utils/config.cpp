@@ -147,6 +147,7 @@ void readConfig(const std::string& fileName) {
             std::filesystem::path filePath = currentDir / "Kotoamatsukami.config";
             if(parseConfig(filePath.string())){
                 PrintSuccess("Parse Config in ",filePath.string());
+                PrintZZZCCC();
                 isConfigured = true;
             }
             else{

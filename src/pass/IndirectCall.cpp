@@ -4,6 +4,7 @@
 #include "llvm/IR/Function.h"
 #include "llvm/IR/GlobalVariable.h"
 #include "llvm/IR/Value.h"
+#include "Log.hpp"
 using namespace llvm;
 namespace Kotoamatsukami {
 namespace IndirectCall {
@@ -33,7 +34,10 @@ namespace IndirectCall {
             Value* item = IRB.CreateLoad(
                 IRB.getInt8PtrTy(),
                 IRB.CreateGEP(AT, JumpTable, { IRB.getInt32(0), index }));
-            Value* CallPtr = IRB.CreateIntToPtr(IRB.CreateSub(item, KeyValue), Ty);
+            // Value* CallPtr = IRB.CreateIntToPtr(IRB.CreateSub(item, KeyValue), Ty);
+            Value* ItemInt = IRB.CreatePtrToInt(item, PtrValueType);
+            Value* SubResult = IRB.CreateSub(ItemInt, KeyValue);
+            Value* CallPtr = IRB.CreateIntToPtr(SubResult, Ty);
             CI->setCalledFunction(CI->getFunctionType(), CallPtr);
         }
     }
@@ -64,10 +68,11 @@ PreservedAnalyses IndirectCall::run(Module& M, ModuleAnalysisManager& AM)
     std::vector<Constant*> Values(indirectCallinfos_count);
     for (auto it = indirectCallinfos.begin(); it != indirectCallinfos.end(); it++) {
         Constant* CValue = ConstantExpr::getPtrToInt(
-            ConstantExpr::getBitCast(it->first, it->first->getFunctionType()->getPointerTo(), false), PtrValueType, false);
+            ConstantExpr::getBitCast(it->first, it->first->getFunctionType()->getPointerTo()),
+            PtrValueType
+        );
         CValue = ConstantExpr::getAdd(CValue, ConstantInt::get(PtrValueType, it->second.key));
-        CValue = ConstantExpr::getIntToPtr(
-            CValue, Type::getInt8Ty(M.getContext())->getPointerTo());
+        CValue = ConstantExpr::getIntToPtr(CValue, Type::getInt8PtrTy(M.getContext()));
         Values[it->second.index] = CValue;
     }
     ArrayType* AT = ArrayType::get(
@@ -85,6 +90,7 @@ PreservedAnalyses IndirectCall::run(Module& M, ModuleAnalysisManager& AM)
             }
             Kotoamatsukami::IndirectCall::process(F, JumpTable, indirectCallinfos, AT);
             is_processed = true;
+            PrintSuccess("IndirectCall successfully process func ", F.getName().str());
         }
     }
     if (is_processed) {

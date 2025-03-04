@@ -47,6 +47,7 @@ for arg in "$@"; do
         branch2call_enable=true
     elif [[ "$arg" == "branch2call" ]]; then
         echo "识别到 branch2call"
+        kotoamatsukami_args+=("$arg")
         branch2call_enable=true
     elif [[ "$arg" == "indirect-call" ]]; then
         echo "识别到 indirect-call"
@@ -84,32 +85,30 @@ echo "kotoamatsukami args: ${kotoamatsukami_args[@]}"
 
 # 如果源文件存在且是 .c 文件，获取源文件所在的目录
 if [[ -f "$source_files" && "$source_files" == *".c" ]]; then
+    $CLANG -S -emit-llvm "${clang_args[@]}" $source_files -o "${source_files%.c}.ll"
+    ll_file="${source_files%.c}.ll"
+
+    passes_str=$(printf "%s," "${kotoamatsukami_args[@]}")
+    passes_str=${passes_str%,}
+    echo $OPT --load-pass-plugin=$Kotoamatsukami_so $ll_file --passes="$passes_str" -S -o "${ll_file%.ll}.obfuscated.ll" 
+    $OPT --load-pass-plugin=$Kotoamatsukami_so $ll_file --passes="$passes_str" -S -o "${ll_file%.ll}.obfuscated.ll" 
     if [[ "$branch2call_enable" == true ]]; then
-        $CLANG -S -emit-llvm "${clang_args[@]}" $source_files -o "${source_files%.c}.ll"
-        ll_file="${source_files%.c}.ll"
-        $OPT --load-pass-plugin=$Kotoamatsukami_so $ll_file --passes=""${kotoamatsukami_args[@]}"" -S -o "${ll_file%.ll}.obfuscated.ll"
         obfuscated_ll_file="${ll_file%.ll}.obfuscated.ll"
         asm_file="${ll_file%.ll}.s"
         $CLANG "$obfuscated_ll_file" "${clang_args[@]}"  -Wno-unused-command-line-argument -S -o $asm_file
-        echo python3 $BRANCH2CALL_PROCESS $asm_file $asm_file
         python3 $BRANCH2CALL_PROCESS $asm_file $asm_file
         $CLANG "$asm_file" "${clang_args[@]}"  -Wno-unused-command-line-argument -o "$output_file"
-         # Delete intermediate files
-         if [[ -z "$DEBUG" || "$DEBUG" != "1" ]]; then
+        if [[ -z "$DEBUG" || "$DEBUG" != "1" ]]; then
             rm "$ll_file" "$obfuscated_ll_file" "$asm_file"
-         fi
-
+        fi
     else
-        $CLANG -S -emit-llvm "${clang_args[@]}" $source_files -o "${source_files%.c}.ll"
-        ll_file="${source_files%.c}.ll"
-        # 使用 IFS 设置分隔符为逗号
-        IFS=','
-        $OPT --load-pass-plugin=$Kotoamatsukami_so $ll_file --passes=""${kotoamatsukami_args[@]}"" -S -o "${ll_file%.ll}.obfuscated.ll" 
-        unset IFS
         obfuscated_ll_file="${ll_file%.ll}.obfuscated.ll"
         $CLANG "$obfuscated_ll_file" "${clang_args[@]}"  -Wno-unused-command-line-argument -o "$output_file"
-
+        if [[ -z "$DEBUG" || "$DEBUG" != "1" ]]; then
+            rm "$ll_file" "$obfuscated_ll_file"
+        fi
     fi
+
 else
     echo "Not a valid .c file. Passing to clang directly."
     $CLANG "$@"

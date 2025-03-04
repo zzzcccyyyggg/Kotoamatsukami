@@ -3,14 +3,15 @@
 #include "config.h"
 #include "Log.hpp"
 #include "llvm/IR/GlobalValue.h"
-std::string quickPowIR = R"(
+#include "llvm/Support/raw_ostream.h"
+std::string quickPowIR = R"XYZ(
     ; ModuleID = 'quick_pow.c'
     source_filename = "quick_pow.c"
     target datalayout = "e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128"
-    target triple = "x86_64-unknown-linux-gnu"
-
+    target triple = "x86_64-pc-linux-gnu"
+    
     ; Function Attrs: noinline nounwind optnone uwtable
-    define dso_local i32 @quick_pow(i32 noundef %0, i32 noundef %1, i32 noundef %2) #0 {
+    define dso_local i32 @Kotoamatsukami_quick_pow(i32 noundef %0, i32 noundef %1, i32 noundef %2) #0 {
       %4 = alloca i32, align 4
       %5 = alloca i32, align 4
       %6 = alloca i32, align 4
@@ -27,25 +28,25 @@ std::string quickPowIR = R"(
       %12 = load i32, ptr %6, align 4
       %13 = icmp ne i32 %12, 2
       br i1 %13, label %14, label %15
-
+    
     14:                                               ; preds = %3
       store i32 0, ptr %4, align 4
       br label %39
-
+    
     15:                                               ; preds = %3
       br label %16
-
+    
     16:                                               ; preds = %29, %15
       %17 = load i32, ptr %6, align 4
       %18 = icmp ugt i32 %17, 0
       br i1 %18, label %19, label %37
-
+    
     19:                                               ; preds = %16
       %20 = load i32, ptr %6, align 4
       %21 = urem i32 %20, 2
       %22 = icmp eq i32 %21, 1
       br i1 %22, label %23, label %29
-
+    
     23:                                               ; preds = %19
       %24 = load i32, ptr %8, align 4
       %25 = load i32, ptr %5, align 4
@@ -54,7 +55,7 @@ std::string quickPowIR = R"(
       %28 = urem i32 %26, %27
       store i32 %28, ptr %8, align 4
       br label %29
-
+    
     29:                                               ; preds = %23, %19
       %30 = load i32, ptr %5, align 4
       %31 = load i32, ptr %5, align 4
@@ -66,16 +67,31 @@ std::string quickPowIR = R"(
       %36 = udiv i32 %35, 2
       store i32 %36, ptr %6, align 4
       br label %16, !llvm.loop !6
-
+    
     37:                                               ; preds = %16
       %38 = load i32, ptr %8, align 4
       store i32 %38, ptr %4, align 4
       br label %39
-
+    
     39:                                               ; preds = %37, %14
       %40 = load i32, ptr %4, align 4
       ret i32 %40
-    })";
+    }
+    
+    attributes #0 = { noinline nounwind optnone uwtable "frame-pointer"="all" "min-legal-vector-width"="0" "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
+    
+    !llvm.module.flags = !{!0, !1, !2, !3, !4}
+    !llvm.ident = !{!5}
+    
+    !0 = !{i32 1, !"wchar_size", i32 4}
+    !1 = !{i32 8, !"PIC Level", i32 2}
+    !2 = !{i32 7, !"PIE Level", i32 2}
+    !3 = !{i32 7, !"uwtable", i32 2}
+    !4 = !{i32 7, !"frame-pointer", i32 2}
+    !5 = !{!"Ubuntu clang version 17.0.6 (9ubuntu1)"}
+    !6 = distinct !{!6, !7}
+    !7 = !{!"llvm.loop.mustprogress"}
+    )XYZ";
 // #include "llvm/Transforms/Utils/LowerSwitch.h"
 //  namespace
 // The modulus needs to be large enough to ensure that the square of x does not repeat
@@ -110,7 +126,7 @@ unsigned int quick_pow(unsigned int base, unsigned int exp, unsigned int mod)
 
 llvm::Function *createQuickPow(llvm::Module *M,std::string &moduleName)
 {
-    std::string funcName = "quick_pow";
+    std::string funcName = "Kotoamatsukami_quick_pow";
 
     // 在模块中检查是否已经存在同名的函数
     llvm::Function *existingFunc = M->getFunction(funcName);
@@ -243,7 +259,12 @@ void funcLoopen(IRBuilder<> &builder, LLVMContext &context, Function &F, Functio
             int yTrue = BB2Y[sucBBTrue];
             int xFalse = BB2X[sucBBFalse] - 1;
             int yFalse = BB2Y[sucBBFalse];
-            BranchInst *br = cast<BranchInst>(BB->getTerminator());
+            auto *br = dyn_cast<BranchInst>(BB->getTerminator());
+            if (!br || !br->isConditional()) { // 确保是条件分支
+                PrintError("Not a condition br");
+                BB->getTerminator()->print(llvm::outs());
+            }
+            // BranchInst *br = cast<BranchInst>(BB->getTerminator());
             Value *selX = builder.CreateSelect(br->getCondition(), ConstantInt::get(intType, xTrue), ConstantInt::get(intType, xFalse), "");
             Value *selY = builder.CreateSelect(br->getCondition(), ConstantInt::get(intType, yTrue), ConstantInt::get(intType, yFalse), "");
             builder.CreateStore(selX, outerLoopVar);
@@ -323,10 +344,11 @@ PreservedAnalyses Loopen::run(Module &M, ModuleAnalysisManager &AM)
                 // llvm::errs() << "Not enough instructions to insert before the second last one.\n";
                 continue;
             }
-            PrintInfo("start funcLoopen: ",F.getName().str());
+            // PrintInfo("start funcLoopen: ",F.getName().str());
             funcLoopen(Builder, context, F, quickPowFunc, xMax, yMax, &entryBB);
-            PrintInfo("start fix stack: ",F.getName().str());
+            // PrintInfo("start fix stack: ",F.getName().str());
             demoteRegisters(&F);
+            PrintSuccess("Loopen successfully process func ", F.getName().str());
         }
     }
 

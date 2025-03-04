@@ -41,5 +41,6 @@ void PrintSuccess(Args&&... success) {
     PrintMessage("[Kotoamatsukami] Success: ", GREEN, std::forward<Args>(success)...);
 }
 
+void PrintZZZCCC();
 
 #endif // AUXILIARY_HPP

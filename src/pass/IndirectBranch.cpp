@@ -10,6 +10,7 @@
 #include <cstdio>
 #include <string>
 #include <vector>
+#include "Log.hpp"
 using namespace llvm;
 namespace Kotoamatsukami {
 namespace IndirectBranch {
@@ -127,6 +128,7 @@ PreservedAnalyses IndirectBranch::run(Module& M, ModuleAnalysisManager& AM)
             }
             Kotoamatsukami::IndirectBranch::process(F);
             is_processed = true;
+            PrintSuccess("IndirectBranch successfully process func ", F.getName().str());
         }
     }
     if (is_processed) {
