@@ -4,13 +4,13 @@ Kotoamatsukami is an obfuscator based on LLVM-17, utilizing LLVM's new pass to i
 
 The name "Kotoamatsukami" is derived from my favorite anime, **Naruto**, which features the best genjutsu in my heart.
 
-I will provide a complete set of related documentation in the future,now you can find the dynamically link files-Kotoamatsukami.so in /bin/build,and the /bin/test contains the different files obsfucated by different methods.
+I will provide a complete set of related documentation in the future,now you can find the dynamically link files-Kotoamatsukami.so in /bin/build.
 
 PS:This project is written by myself out of interest, it may not be complete, if you have any questions about this project, please feel free to contact me.
 
 **Now u can taste it through my ugly site http://39.102.210.108:8080/**
 
-Welcome~!
+Chinese readme: https://github.com/zzzcccyyyggg/Kotoamatsukami/blob/llvm-17-plugins/readme-CN.md
 
 The obfuscation algorithm details in: https://github.com/zzzcccyyyggg/Kotoamatsukami/blob/llvm-17-plugins/docs/Obfuscation-algorithm.md
 
