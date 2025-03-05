@@ -32,6 +32,7 @@ These commands will install compiled products to <your-llvmdir>/build,then your 
 
 ```
 cd Kotoamatsukami
+git submodule update --init --recursive
 mkdir build
 cd build
 cmake ..

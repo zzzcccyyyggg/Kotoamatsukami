@@ -30,6 +30,7 @@ ninja install
 
 ```
 cd Kotoamatsukami
+git submodule update --init --recursive
 mkdir build
 cd build
 cmake ..
