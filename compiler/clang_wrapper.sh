@@ -92,7 +92,7 @@ if [[ -f "$source_files" && "$source_files" == *".c" ]]; then
     passes_str=${passes_str%,}
     echo $OPT --load-pass-plugin=$Kotoamatsukami_so $ll_file --passes="$passes_str" -S -o "${ll_file%.ll}.obfuscated.ll" 
     $OPT --load-pass-plugin=$Kotoamatsukami_so $ll_file --passes="$passes_str" -S -o "${ll_file%.ll}.obfuscated.ll" 
-    if [[ "$branch2call_enable" == true ]]; then
+    if [[ $branch2call_enable == true ]]; then
         obfuscated_ll_file="${ll_file%.ll}.obfuscated.ll"
         asm_file="${ll_file%.ll}.s"
         $CLANG "$obfuscated_ll_file" "${clang_args[@]}"  -Wno-unused-command-line-argument -S -o $asm_file
